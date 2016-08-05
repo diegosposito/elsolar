@@ -1,0 +1,111 @@
+<?xml version="1.0" ?>
+<xliff version="1.0">
+    <file orginal="global" source-language="en_US" datatype="plaintext">
+        <body>   
+            <trans-unit id="1">
+                <source>create</source>
+                <target>Nuevo</target>
+            </trans-unit>              
+            <trans-unit id="2">
+                <source>Actions</source>
+                <target>Acciones</target>
+            </trans-unit>              
+            <trans-unit id="3">
+                <source>filters</source>
+                <target>Filtros</target>
+            </trans-unit>              
+            <trans-unit id="4">
+                <source>filter</source>
+                <target>Filtrar</target>
+            </trans-unit>              
+            <trans-unit id="5">
+                <source>reset</source>
+                <target>Borrar</target>
+            </trans-unit>              
+            <trans-unit id="6">
+                <source>[0] no result|[1] 1 result|(1,+Inf] %1% results</source>
+                <target>[0] no existen resultados|[1] 1 resultado|(1,+Inf] %1% resultados</target>
+            </trans-unit>              
+            <trans-unit id="7">
+                <source>list</source>
+                <target>Listado</target>
+            </trans-unit>              
+            <trans-unit id="8">
+                <source>delete</source>
+                <target>Borrar</target>
+            </trans-unit>              
+            <trans-unit id="9">
+                <source>save</source>
+                <target>Guardar</target>
+            </trans-unit>              
+            <trans-unit id="10">
+                <source>save and add</source>
+                <target>Guardar y agregar nuevo</target>
+            </trans-unit>              
+            <trans-unit id="11">
+                <source>Your modifications have been saved</source>
+                <target>Las modificaciones han sido guardadas</target>
+            </trans-unit>      
+            <trans-unit id="12">
+                <source>Are you sure?</source>
+                <target>¿Esta seguro?</target>
+            </trans-unit>      
+            <trans-unit id="13">
+                <source>There are some errors that prevent the form to validate</source>
+                <target>Hay algunos errores, por favor corríjalos</target>
+            </trans-unit>      
+            <trans-unit id="14">
+                <source>no result</source>
+                <target>no existen resultados</target>
+            </trans-unit>      
+            <trans-unit id="15">
+                <source>Could not delete the selected %s </source>
+                <target>No puede eliminar el %s seleccionado</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>Could not delete the selected Establecimiento. Make sure it does not have any associated items.</source>
+                <target>No puede eliminar el Establecimiento seleccionado. Asegurese que no este siendo utilizado.</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>Could not delete the selected Turnos. Make sure it does not have any associated items.</source>
+                <target>No puede eliminar el Turno seleccionado. Asegurese que no este siendo utilizado.</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>edit</source>
+                <target>Editar</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>Unassociated</source>
+                <target>No Asociadas</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>Associated</source>
+                <target>Asociadas</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>New</source>
+                <target>Nuevo</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>The item has not been saved due to some errors</source>
+                <target>No es posible guardar ya que existe un error</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>Email address</source>
+                <target>Correo Electrónico:</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>The item has not been activated due to some errors</source>
+                <target>No es posible activar ya que existe un error</target>
+            </trans-unit>
+      	    <trans-unit id="25">
+        	<source>The item was activated successfully.</source>
+        	<target>El elemento fue activado satisfactoriamente.</target>
+      	    </trans-unit>     
+      	    <trans-unit id="26">
+        	<source>Say</source>
+        	<target>Publicar</target>
+      	    </trans-unit>           
+        </body>
+    </file>
+</xliff>

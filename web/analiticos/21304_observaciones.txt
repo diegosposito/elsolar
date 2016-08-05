@@ -1,0 +1,6 @@
+<p>1-Optativa de Formaci&oacute;n General I Integraci&oacute;n Econ&oacute;mica</p>
+<p>2-Optativa de Formaci&oacute;n General II T&eacute;cnicas de la Expresi&oacute;n Oral y Escrita</p>
+<p>3-Optativa de Formaci&oacute;n General III Teor&iacute;as de la Comunicaci&oacute;n Humana</p>
+<p>4-Optativa de Formaci&oacute;n General IV Nutrici&oacute;n Deportiva</p>
+<p>5-Optativa de Formaci&oacute;n General V Patolog&iacute;as con Trastorno Deglutorio</p>
+<p>6-Optativa de Formaci&oacute;n General VI Enfermedades Regionales End&eacute;micas</p>

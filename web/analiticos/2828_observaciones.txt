@@ -1,0 +1,45 @@
+<p><strong>PLAN DE ESTUDIOS 1992 - PRIMER A&Ntilde;O</strong></p>
+<table style="width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="width: 5%; text-align: center;"><strong>Ref.</strong></td>
+<td style="width: 10%; text-align: center;"><strong>Fecha</strong></td>
+<td style="width: 40%;"><strong>Asignatur </strong></td>
+<td style="width: 15%; text-align: center;"><strong>Calificaci&oacute;n</strong></td>
+<td style="text-align: center;"><strong>Libro</strong></td>
+<td style="text-align: center;"><strong>Folio</strong></td>
+</tr>
+<tr>
+<td style="width: 5%; text-align: center;">I</td>
+<td style="width: 10%; text-align: center;">23/03/2007</td>
+<td style="width: 40%;">Arquitectura I</td>
+<td style="width: 15%; text-align: center;">5 (Cinco)</td>
+<td style="text-align: center;">X154II20</td>
+<td style="text-align: center;">014</td>
+</tr>
+<tr>
+<td style="width: 5%; text-align: center;">II</td>
+<td style="width: 10%; text-align: center;">26/02/2007</td>
+<td style="width: 40%;">T&eacute;cnicas de Representaci&oacute;n I</td>
+<td style="width: 15%; text-align: center;">4 (Cuatro)</td>
+<td style="text-align: center;">X153II19</td>
+<td style="text-align: center;">201</td>
+</tr>
+<tr>
+<td style="width: 5%; text-align: center;">III</td>
+<td style="width: 10%; text-align: center;">26/02/2007</td>
+<td style="width: 40%;">Sistemas de Representaci&oacute;n I</td>
+<td style="width: 15%; text-align: center;">5 (Cinco)</td>
+<td style="text-align: center;">X153II19</td>
+<td style="text-align: center;">200</td>
+</tr>
+<tr>
+<td style="width: 5%; text-align: center;">IV</td>
+<td style="width: 10%; text-align: center;">07/05/2008</td>
+<td style="width: 40%;">Introducci&oacute;n a la Construcci&oacute;n</td>
+<td style="width: 15%; text-align: center;">5 (Cinco)</td>
+<td style="text-align: center;">X154II20</td>
+<td style="text-align: center;">186</td>
+</tr>
+</tbody>
+</table>

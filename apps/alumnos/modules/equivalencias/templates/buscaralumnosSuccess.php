@@ -1,0 +1,1 @@
+<?php include_component('personas', 'buscar', array('url'=>'equivalencias/solicitarequivalencia', 'titulo'=>'Ver', 'tipo' =>0)) ?>

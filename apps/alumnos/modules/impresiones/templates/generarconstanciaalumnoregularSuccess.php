@@ -1,0 +1,1 @@
+<?php include_component('personas', 'buscar', array('url'=>'impresiones/imprimirconstanciaalumnoregular', 'titulo'=>'Imprimir', 'tipo' =>0)) ?>

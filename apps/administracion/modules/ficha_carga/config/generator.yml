@@ -1,0 +1,41 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           FichaCarga
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          ficha_carga
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  
+         fecha: { date_format: dd/MM/yyyy, label: Fecha }
+         fechavencimiento: { date_format: dd/MM/yyyy, label: Vencimiento }
+         display: [idlibroacta, folio, fecha, idestadomateria, promedio, fechavencimiento, controlado, transferido]
+         nombremateria: {  label: Materia }
+         libroacta: {  label: Libro }
+         transferido: {  label: Trans. }
+         controlado: {  label: OK }
+      list:    
+         title: Ficha del Alumno
+         display: [idficha, fecha, nombremateria, promedio, libroacta, folio,  estadomateria, fechavencimiento,  transferido, controlado, comentarios, _modificado ]
+         batch_actions: {}
+         #object_actions: 
+         #  _new:
+          # _limpiar:
+         actions: 
+            _new:
+      filter:  
+         display: [ transferido]
+      form:    ~
+      edit:    
+         title: Editar Registro del Alumno
+         display: [idlibroacta, idmateriaplan,folio, fecha, idestadomateria, promedio, fechavencimiento]
+      new:     
+         title: Nuevo Registro del Alumno
+         display: [ fecha, idmateriaplan, promedio, idlibroacta, folio,  idestadomateria,  fechavencimiento]

@@ -1,0 +1,96 @@
+<p><strong>CARRERA DISE&Ntilde;ADOR DE INTERIORES (PLAN 1993)</strong></p>
+<p>PRIMER A&Ntilde;O</p>
+<table border="1">
+<tbody>
+<tr>
+<td style="text-align: center; width: 10%;">Referencias</td>
+<td style="text-align: center; width: 8%;">Fecha</td>
+<td style="text-align: center; width: 40%;">Asignatura</td>
+<td style="text-align: center; width: 10%;">Calificaci&oacute;n</td>
+<td style="text-align: center; width: 10%;">Libro</td>
+<td style="text-align: center; width: 8%;">Folio</td>
+</tr>
+<tr>
+<td style="text-align: center;">I</td>
+<td style="text-align: center; width: 8%;">06/12/93</td>
+<td>Tecnicas de Representaci&oacute;n I</td>
+<td style="text-align: center;">8 (ocho)</td>
+<td style="text-align: center;">X49II10</td>
+<td style="text-align: center;">004</td>
+</tr>
+<tr>
+<td style="text-align: center;">II</td>
+<td style="text-align: center;">06/12/93</td>
+<td>Sistemas de Reprentaci&oacute;n I</td>
+<td style="text-align: center;">6 (seis)</td>
+<td style="text-align: center;">X49II10</td>
+<td style="text-align: center;">003</td>
+</tr>
+<tr>
+<td style="text-align: center;">III</td>
+<td style="text-align: center;">22/12/93</td>
+<td>Tecnicas Constructivas I</td>
+<td style="text-align: center;">4 (cuatro)</td>
+<td style="text-align: center;">X49II10</td>
+<td style="text-align: center;">007</td>
+</tr>
+</tbody>
+</table>
+<p>SEGUNDO A&Ntilde;O</p>
+<table border="1">
+<tbody>
+<tr>
+<td style="text-align: center; width: 10%;">Referencias</td>
+<td style="text-align: center; width: 8%;">Fecha</td>
+<td style="text-align: center; width: 40%;">Asignatura</td>
+<td style="text-align: center; width: 10%;">Calificaci&oacute;n</td>
+<td style="text-align: center; width: 10%;">Libro</td>
+<td style="text-align: center; width: 8%;">Folio</td>
+</tr>
+<tr>
+<td style="text-align: center;">IV</td>
+<td style="text-align: center; width: 8%;">12/12/94</td>
+<td>Tecnicas de Representaci&oacute;n II</td>
+<td style="text-align: center;">5 (cinco)</td>
+<td style="text-align: center;">X49II10</td>
+<td style="text-align: center;">020</td>
+</tr>
+<tr>
+<td style="text-align: center;">V</td>
+<td style="text-align: center;">06/03/95</td>
+<td>Sistemas de Reprentaci&oacute;n II</td>
+<td style="text-align: center;">5 (cinco)</td>
+<td style="text-align: center;">X49II10</td>
+<td style="text-align: center;">033</td>
+</tr>
+</tbody>
+</table>
+<p>TERCER A&Ntilde;O</p>
+<table border="1">
+<tbody>
+<tr>
+<td style="text-align: center; width: 10%;">Referencias</td>
+<td style="text-align: center; width: 8%;">Fecha</td>
+<td style="text-align: center; width: 40%;">Asignatura</td>
+<td style="text-align: center; width: 10%;">Calificaci&oacute;n</td>
+<td style="text-align: center; width: 10%;">Libro</td>
+<td style="text-align: center; width: 8%;">Folio</td>
+</tr>
+<tr>
+<td style="text-align: center;">VI</td>
+<td style="text-align: center; width: 8%;">04/12/95</td>
+<td>Taller de Creatividad</td>
+<td style="text-align: center;">5 (cinco)</td>
+<td style="text-align: center;">X49II10</td>
+<td style="text-align: center;">062</td>
+</tr>
+<tr>
+<td style="text-align: center;">VII</td>
+<td style="text-align: center;">30/07/96</td>
+<td>Dise&ntilde;o Gr&aacute;fico Asistido por Computadora</td>
+<td style="text-align: center;">7 (siete)</td>
+<td style="text-align: center;">X49II10</td>
+<td style="text-align: center;">089</td>
+</tr>
+</tbody>
+</table>

@@ -1,0 +1,1 @@
+<?php include_partial('carreraspersonas', array('form' => $form, 'resultado' => $resultado, 'activo' => $activo)) ?>

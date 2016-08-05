@@ -1,0 +1,1 @@
+<?php echo $detalle_nota->getEscalasNotas(); ?>

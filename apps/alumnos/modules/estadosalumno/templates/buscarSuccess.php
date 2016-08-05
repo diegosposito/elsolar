@@ -1,0 +1,1 @@
+<?php include_component('personas', 'buscar', array('url'=>'estadosalumno/index', 'titulo'=>'Gestionar', 'tipo' =>1)) ?>

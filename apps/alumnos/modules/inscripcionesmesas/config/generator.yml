@@ -1,0 +1,32 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           inscripcionesmesas
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          inscripcionesmesas
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  
+        idllamado: {label: LL}
+      list:    
+        title: Listado de Inscripciones de Alumnos a Mesas
+        display: [_alumno, idcatedra, _carrera, _materia, idllamado, _condicion, _mesa, confirmado, created_by, created_at]
+        object_actions:
+          _edit:
+      filter:  
+        display: [confirmado]
+      form:    ~
+      edit:   
+        title: Editar Mensaje 
+        display: [ confirmado, comentario]
+        actions:
+          _save:
+          _list:
+      new:     ~

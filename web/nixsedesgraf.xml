@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<chart caption="Nuevos Inscriptos por Centro Regional (agrupado por Carrera)" shownames="1" showvalues="1" decimals="0" numberPrefix="">
+  <categories>
+    <category label="Ciclo de Licenciatura en Ense&#xF1;anza de la Matem&#xE1;tica"/>
+    <category label="Profesorado de Ense&#xF1;anza Superior"/>
+  </categories>
+  <dataset seriesName="2011" color="AFD8F8" showValues="0">
+    <set value="0"/>
+    <set value="0"/>
+  </dataset>
+  <dataset seriesName="2012" color="F6BD0F" showValues="0">
+    <set value="4"/>
+    <set value="20"/>
+  </dataset>
+  <dataset seriesName="2013" color="8BBA00" showValues="0">
+    <set value="0"/>
+    <set value="16"/>
+  </dataset>
+</chart>

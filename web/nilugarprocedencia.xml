@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<chart caption="Nuevos Inscriptos por Lugar de Nacimiento" xAxisName="Lugar de Origen" yAxisName="Cantidades" showValues="0" decimals="0" formatNumberScale="0" chartRightMargin="30">
+  <set label="Concepci&#xF3;n del Uruguay" value="115"/>
+  <set label="Col&#xF3;n" value="24"/>
+  <set label="Gualeguaych&#xFA;" value="17"/>
+  <set label="Concordia" value="9"/>
+  <set label="San Jos&#xE9;" value="8"/>
+  <set label="Paysand&#xFA;" value="7"/>
+  <set label="Paran&#xE1;" value="4"/>
+  <set label="Basavilbaso" value="3"/>
+  <set label="La Plata" value="3"/>
+  <set label="Gualeguay" value="3"/>
+  <set label="Capital Federal" value="2"/>
+  <set label="Cordoba" value="2"/>
+  <set label="Villa Elisa" value="2"/>
+  <set label="San Isidro" value="2"/>
+  <set label="Buenos Aires" value="2"/>
+  <set label="Mocoreta" value="2"/>
+  <set label="Monte Caseros" value="2"/>
+  <set label="Feliciano" value="1"/>
+  <set label="Ushuaia" value="1"/>
+  <set label="Villa Luzuriaga" value="1"/>
+  <set label="Puerto Rico" value="1"/>
+  <set label="Ciudad de Buenos Aires" value="1"/>
+  <set label="Apostoles" value="1"/>
+  <set label="Avellaneda" value="1"/>
+  <set label="La Paz" value="1"/>
+  <set label="Quilmes" value="1"/>
+  <set label="Mexicali" value="1"/>
+  <set label="Colonia Elia" value="1"/>
+  <set label="Larroque" value="1"/>
+  <set label="Villavicencio" value="1"/>
+  <set label="Capital" value="1"/>
+  <set label="Urdinarrain" value="1"/>
+  <set label="Cauca" value="1"/>
+  <set label="Capital Federal" value="1"/>
+  <set label="Federaci&#xF2;n" value="1"/>
+  <set label="Vicente Lopez" value="1"/>
+  <set label="Santa Cruz" value="1"/>
+  <set label="Gonzalez Risos" value="1"/>
+  <set label="Capital Federal" value="1"/>
+  <set label="Santiago" value="1"/>
+  <set label="Medellin" value="1"/>
+  <set label="San Salvador" value="1"/>
+  <set label="Nogoya" value="1"/>
+  <set label="25 De Mayo" value="1"/>
+  <set label="Rio Mayo" value="1"/>
+  <set label="San Cipriano" value="1"/>
+  <set label="Ayacucho" value="1"/>
+  <set label="Villa Paranacito" value="1"/>
+  <set label="Villa del Rosario" value="1"/>
+  <set label="Federacion" value="1"/>
+  <set label="Saladillo" value="1"/>
+  <set label="Azul" value="1"/>
+  <set label="MONTE GRANDE" value="1"/>
+  <set label="Villa Libertador General San Mart&#xED;n" value="1"/>
+  <set label="Diamante" value="1"/>
+  <set label="Montevideo" value="1"/>
+  <set label="Mar Del Plata" value="1"/>
+</chart>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<chart caption="Nuevos Inscriptos por Facultad agrupado por Carreras" shownames="1" showvalues="1" decimals="0" numberPrefix="">
+  <categories>
+    <category label="Tecnicatura Universitaria en Gesti&#xF3;n Administrativa Informatizada "/>
+    <category label="Licenciatura en Marketing"/>
+  </categories>
+  <dataset seriesName="2014" color="AFD8F8" showValues="0">
+    <set value="3"/>
+    <set value="7"/>
+  </dataset>
+  <dataset seriesName="2015" color="F6BD0F" showValues="0">
+    <set value="0"/>
+    <set value="2"/>
+  </dataset>
+  <dataset seriesName="2016" color="8BBA00" showValues="0">
+    <set value="0"/>
+    <set value="0"/>
+  </dataset>
+</chart>

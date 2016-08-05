@@ -1,0 +1,1 @@
+<?php include_partial('asociar', array('form' => $form,'resultado' => $resultado, 'post' => $post, 'msg' => $msg)) ?>

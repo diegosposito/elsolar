@@ -1,0 +1,30 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           personas
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          personas
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:    
+         display: [apellido, nombre, nrodoc, carrerasinscripto]
+         batch_actions: {}
+         object_actions: 
+          carreras:
+            name: planesestudios
+            action: planesestudios
+            params: idpersona=%%idpersona%%
+         actions: []
+      filter: 
+         display: [apellido, nombre,nrodoc]
+      form:    ~
+      edit:    ~
+      new:     ~

@@ -1,0 +1,6 @@
+<p>1-Filosof&iacute;a</p>
+<p>2-Ecolog&iacute;a</p>
+<p>3-T&eacute;cnicas de la Expresi&oacute;n Oral y Escrita</p>
+<p>4-Pol&iacute;tica Internacional Contempor&aacute;nea</p>
+<p>5-Enfermedades Regionales End&eacute;micas</p>
+<p>6-Psicolog&iacute;a Social</p>

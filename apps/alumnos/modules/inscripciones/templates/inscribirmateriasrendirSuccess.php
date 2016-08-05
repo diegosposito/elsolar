@@ -1,0 +1,1 @@
+<?php include_component('personas', 'buscar', array('url'=>'inscripciones/obtenermateriasaprobar', 'titulo'=>'Ver', 'tipo' =>0)) ?>

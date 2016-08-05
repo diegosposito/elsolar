@@ -1,0 +1,6 @@
+<p>1- Filosof&iacute;a</p>
+<p>2-Ecolog&iacute;a</p>
+<p>3-Historia Contempor&aacute;nea Argentina</p>
+<p>4- Sociolog&iacute;a</p>
+<p>5- Patolog&iacute;as con trastorno deglutorio</p>
+<p>6-Enfermedades regionales end&eacute;micas</p>

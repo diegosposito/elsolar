@@ -1,0 +1,240 @@
+estados_carreras:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                EstadosCarreras
+    module:               estadoscarreras
+    prefix_path:          /estadoscarreras
+    column:               idestadocarrera
+    with_wildcard_routes: true
+
+modalidades_carreras:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ModalidadesCarreras
+    module:               modalidadescarreras
+    prefix_path:          /modalidadescarreras
+    column:               idmodalidad
+    with_wildcard_routes: true
+
+
+carreras:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                carreras
+    module:               carreras
+    prefix_path:          /carreras
+    column:               idcarrera
+    with_wildcard_routes: true
+
+titulos_planes:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                TitulosPlanes
+    module:               titulosplanes
+    prefix_path:          /titulosplanes
+    column:               idtituloplan
+    with_wildcard_routes: true
+
+titulos:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Titulos
+    module:               titulos
+    prefix_path:          /titulos
+    column:               idtitulo
+    with_wildcard_routes: true
+
+tipos_titulos:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                TiposTitulos
+    module:               tipostitulos
+    prefix_path:          /tipostitulos
+    column:               idtipotitulo
+    with_wildcard_routes: true
+
+tipos_carreras:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                TiposCarreras
+    module:               tiposcarreras
+    prefix_path:          /tiposcarreras
+    column:               idtipocarrera
+    with_wildcard_routes: true
+
+materias_planes:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                MateriasPlanes
+    module:               materias_planes
+    prefix_path:          /materias_planes
+    column:               idmateriaplan
+    with_wildcard_routes: true
+    
+materias:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Materias
+    module:               materias
+    prefix_path:          /materias
+    column:               idmateria
+    with_wildcard_routes: true
+
+planes_estudios:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                PlanesEstudios
+    module:               planes_estudios
+    prefix_path:          /planes_estudios
+    column:               idplanestudio
+    with_wildcard_routes: true
+
+derivaciones:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                derivaciones
+    module:               derivaciones
+    prefix_path:          /derivaciones
+    column:               id
+    with_wildcard_routes: true
+
+grupomenu:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                grupomenu
+    module:               grupomenu
+    prefix_path:          /grupomenu
+    column:               id
+    with_wildcard_routes: true
+
+menu:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                menu
+    module:               menu
+    prefix_path:          /menu
+    column:               id
+    with_wildcard_routes: true
+
+sedes:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                sedes
+    module:               sedes
+    prefix_path:          /sedes
+    column:               idsede
+    with_wildcard_routes: true
+
+solicitudes:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                solicitudes
+    module:               solicitudes
+    prefix_path:          /solicitudes
+    column:               id
+    with_wildcard_routes: true    
+
+sectores:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                sectores
+    module:               sectores
+    prefix_path:          /sectores
+    column:               id
+    with_wildcard_routes: true
+
+personas:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                personas
+    module:               personas
+    prefix_path:          /personas
+    column:               id
+    with_wildcard_routes: true 
+
+profesores:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                profesores
+    module:               profesores
+    prefix_path:          /profesores
+    column:               id
+    with_wildcard_routes: true       
+
+calendarios:
+  url:   /calendarios
+  param: { module: calendarios, action: index }
+    
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# default rules 
+homepage:
+  url:   /
+  # param: { module: ingreso, action: index }
+  param: { module: sfGuardAuth, action: signin }
+
+sf_guard_signin:
+  url:   /login
+  param: { module: sfGuardAuth, action: signin }
+        
+sf_guard_signout:
+  url:   /logout
+  param: { module: sfGuardAuth, action: signout }
+        
+sf_guard_password:
+  url:   /request_password
+  param: { module: sfGuardAuth, action: password }
+  
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*
+
+sf_guard_user:
+  url:   /user
+  param: { module: sfGuardUser, action: index }
+
+sf_guard_group:
+  url:   /group
+  param: { module: sfGuardGroup, action: index }
+
+sf_guard_permission:
+  url:   /permission
+  param: { module: sfGuardPermission, action: index }
+
+libredeuda:
+  url:   /libredeuda
+  param: { module: libredeuda, action: index }
+
+ingreso:
+  url:   /ingreso
+  param: { module: ingreso, action: index }
+
+alumat:
+  url:   /alumat
+  param: { module: alumat, action: index }
+
+noticias:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                noticias
+    module:               noticias
+    prefix_path:          /noticias
+    column:               id
+    with_wildcard_routes: true
+
+expedientes:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                expedientes
+    module:               expedientes
+    prefix_path:          /expedientes
+    column:               id
+    with_wildcard_routes: true
+

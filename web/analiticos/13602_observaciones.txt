@@ -1,0 +1,7 @@
+<p>Optativas de Formaci&oacute;n General</p>
+<p>1- OFG I (Integraci&oacute;n Econ&oacute;mica)</p>
+<p>2- OFG II (Teor&iacute;a de la Comunicaci&oacute;n)</p>
+<p>3- OFG III (Sistema Pol&iacute;tico)</p>
+<p>4- OFG IV (Sociolog&iacute;a)</p>
+<p>5- OFG V (Nutrici&oacute;n Deportiva)</p>
+<p>6- OFG VI (Patolog&iacute;as con Trastornos Deglutorios)</p>

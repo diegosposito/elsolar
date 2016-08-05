@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<chart caption="Evolucion de Alumnos segun Actividad Academica 2015            Emitido: 12/11/2015" subcaption="Cada mes representa el acumulado desde principio de a&#xF1;o hasta el mes que se visualiza" lineThickness="1" showValues="1" formatNumberScale="0" anchorRadius="2" divLineAlpha="20" divLineColor="CC3300" divLineIsDashed="1" showAlternateHGridColor="1" alternateHGridAlpha="5" alternateHGridColor="CC3300" shadowAlpha="40" labelStep="1" numvdivlines="5" chartRightMargin="35" bgColor="FFFFFF,CC3300" bgAngle="270" bgAlpha="10,10">
+  <categories>
+    <category label="Ene"/>
+    <category label="Feb"/>
+    <category label="Mar"/>
+    <category label="Abr"/>
+    <category label="May"/>
+    <category label="Jun"/>
+    <category label="Jul"/>
+    <category label="Ago"/>
+    <category label="Set"/>
+    <category label="Oct"/>
+    <category label="Nov"/>
+    <category label="Dic"/>
+  </categories>
+  <dataset seriesName="Sede Central" color="DBDC25" anchorBorderColor="DBDC25" anchorBgColor="DBDC25">
+    <set value="23"/>
+    <set value="490"/>
+    <set value="1014"/>
+    <set value="1053"/>
+    <set value="1096"/>
+    <set value="1117"/>
+    <set value="1139"/>
+    <set value="1152"/>
+    <set value="1164"/>
+    <set value="1167"/>
+    <set value="1167"/>
+    <set value="1169"/>
+  </dataset>
+  <dataset seriesName="Centro Regional Gualeguaychu" color="F1683C" anchorBorderColor="F1683C" anchorBgColor="F1683C">
+    <set value="3"/>
+    <set value="127"/>
+    <set value="242"/>
+    <set value="278"/>
+    <set value="306"/>
+    <set value="311"/>
+    <set value="322"/>
+    <set value="338"/>
+    <set value="340"/>
+    <set value="342"/>
+    <set value="343"/>
+    <set value="343"/>
+  </dataset>
+  <dataset seriesName="Extensi&#xF3;n &#xC1;ulica Villaguay" color="2AD62A" anchorBorderColor="2AD62A" anchorBgColor="2AD62A">
+    <set value="0"/>
+    <set value="62"/>
+    <set value="116"/>
+    <set value="120"/>
+    <set value="148"/>
+    <set value="148"/>
+    <set value="149"/>
+    <set value="151"/>
+    <set value="151"/>
+    <set value="153"/>
+    <set value="153"/>
+    <set value="153"/>
+  </dataset>
+  <dataset seriesName="Centro Regional Rosario" color="E41111" anchorBorderColor="E11111" anchorBgColor="E11111">
+    <set value="1"/>
+    <set value="255"/>
+    <set value="407"/>
+    <set value="532"/>
+    <set value="561"/>
+    <set value="584"/>
+    <set value="605"/>
+    <set value="633"/>
+    <set value="641"/>
+    <set value="644"/>
+    <set value="644"/>
+    <set value="644"/>
+  </dataset>
+  <dataset seriesName="Centro Regional Santa F&#xE9;" color="0000FF" anchorBorderColor="0000FF" anchorBgColor="0000FF">
+    <set value="1"/>
+    <set value="26"/>
+    <set value="104"/>
+    <set value="116"/>
+    <set value="123"/>
+    <set value="139"/>
+    <set value="141"/>
+    <set value="224"/>
+    <set value="234"/>
+    <set value="255"/>
+    <set value="255"/>
+    <set value="256"/>
+  </dataset>
+  <dataset seriesName="Centro Regional Paran&#xE1;" color="00FFFF" anchorBorderColor="00FFFF" anchorBgColor="00FFFF">
+    <set value="0"/>
+    <set value="2"/>
+    <set value="6"/>
+    <set value="6"/>
+    <set value="15"/>
+    <set value="16"/>
+    <set value="18"/>
+    <set value="20"/>
+    <set value="21"/>
+    <set value="22"/>
+    <set value="22"/>
+    <set value="22"/>
+  </dataset>
+  <dataset seriesName="Extensi&#xF3;n &#xC1;ulica Gualeguay" color="DF01A5" anchorBorderColor="DF01A5" anchorBgColor="DF01A5">
+    <set value="0"/>
+    <set value="0"/>
+    <set value="4"/>
+    <set value="4"/>
+    <set value="11"/>
+    <set value="12"/>
+    <set value="12"/>
+    <set value="19"/>
+    <set value="21"/>
+    <set value="22"/>
+    <set value="22"/>
+    <set value="22"/>
+  </dataset>
+</chart>

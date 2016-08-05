@@ -1,0 +1,259 @@
+<p><span style="text-decoration: underline;"><strong>OBSERVACIONES:</strong></span><strong> P</strong><strong>LAN DE ESTUDIOS EN TRANSICI&Oacute;N</strong><span style="text-decoration: underline;"><strong><br /></strong></span></p>
+<p><span style="text-decoration: underline;"><strong>PLAN DE ESTUDIOS 1992</strong></span></p>
+<p><strong>PRIMER A&Ntilde;O</strong></p>
+<table border="1">
+<tbody>
+<tr>
+<td style="text-align: center; width: 10%;">Referencias</td>
+<td style="text-align: center; width: 8%;">Fecha</td>
+<td style="text-align: center; width: 40%;">Asignatura</td>
+<td style="text-align: center; width: 10%;">Calificaci&oacute;n</td>
+<td style="text-align: center; width: 10%;">Libro</td>
+<td style="text-align: center; width: 8%;">Folio</td>
+</tr>
+<tr>
+<td style="text-align: center;">I</td>
+<td style="text-align: center; width: 8%;">16/03/01</td>
+<td>Arquitectura I</td>
+<td style="text-align: center;">4 (cuatro)</td>
+<td style="text-align: center;">&nbsp;X89II17</td>
+<td style="text-align: center;">008</td>
+</tr>
+<tr>
+<td style="text-align: center;">II</td>
+<td style="text-align: center;">04/12/00</td>
+<td>Tecnicas de Representaci&oacute;n I</td>
+<td style="text-align: center;">4 (cuatro)</td>
+<td style="text-align: center;">&nbsp;X76II16</td>
+<td style="text-align: center;">&nbsp;152</td>
+</tr>
+<tr>
+<td style="text-align: center;">III</td>
+<td style="text-align: center;">04/12/00</td>
+<td>Sistemas de Reprentaci&oacute;n I</td>
+<td style="text-align: center;">6 (seis)</td>
+<td style="text-align: center;">&nbsp;X76II16</td>
+<td style="text-align: center;">&nbsp;151</td>
+</tr>
+<tr>
+<td style="text-align: center;">IV</td>
+<td style="text-align: center;">21/02/01</td>
+<td>Introducci&oacute;n a la Construcci&oacute;n</td>
+<td style="text-align: center;">&nbsp;5 (cinco)</td>
+<td style="text-align: center;">&nbsp;X76II16</td>
+<td style="text-align: center;">&nbsp;186</td>
+</tr>
+<tr>
+<td style="text-align: center;">V</td>
+<td style="text-align: center;">01/08/02</td>
+<td>Matematica</td>
+<td style="text-align: center;">7 (siete)</td>
+<td style="text-align: center;">&nbsp;X89II17</td>
+<td style="text-align: center;">&nbsp;126</td>
+</tr>
+</tbody>
+</table>
+<p><strong><br /></strong></p>
+<p><strong>SEGUNDO</strong><strong> A&Ntilde;O</strong></p>
+<table border="1">
+<tbody>
+<tr>
+<td style="text-align: center; width: 10%;">Referencias</td>
+<td style="text-align: center; width: 8%;">Fecha</td>
+<td style="text-align: center; width: 40%;">Asignatura</td>
+<td style="text-align: center; width: 10%;">Calificaci&oacute;n</td>
+<td style="text-align: center; width: 10%;">Libro</td>
+<td style="text-align: center; width: 8%;">Folio</td>
+</tr>
+<tr>
+<td style="text-align: center;">VI</td>
+<td style="text-align: center; width: 8%;">15/11/02</td>
+<td>Arquitectura II</td>
+<td style="text-align: center;">4 (cuatro)</td>
+<td style="text-align: center;">&nbsp;X89II17</td>
+<td style="text-align: center;">141</td>
+</tr>
+<tr>
+<td style="text-align: center;">VII</td>
+<td style="text-align: center;">29/04/02</td>
+<td>Tecnicas de Representaci&oacute;n II</td>
+<td style="text-align: center;">&nbsp;8 (ocho)</td>
+<td style="text-align: center;">&nbsp;X89II17</td>
+<td style="text-align: center;">&nbsp;100</td>
+</tr>
+<tr>
+<td style="text-align: center;">VIII</td>
+<td style="text-align: center;">17/12/01</td>
+<td>Sistemas de Reprentaci&oacute;n II</td>
+<td style="text-align: center;">6 (seis)</td>
+<td style="text-align: center;">X89II17</td>
+<td style="text-align: center;">&nbsp;064</td>
+</tr>
+<tr>
+<td style="text-align: center;">IX</td>
+<td style="text-align: center;">26/02/03</td>
+<td>Instalaciones I</td>
+<td style="text-align: center;">7 (siete)</td>
+<td style="text-align: center;">&nbsp;X89II17</td>
+<td style="text-align: center;">&nbsp;194</td>
+</tr>
+<tr>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">27/02/03</td>
+<td>Estructuras I</td>
+<td style="text-align: center;">4 (cuatro)</td>
+<td style="text-align: center;">&nbsp;X89II17</td>
+<td style="text-align: center;">&nbsp;198</td>
+</tr>
+<tr>
+<td style="text-align: center;">XI</td>
+<td style="text-align: center;">03/08/01</td>
+<td>Historia de la Arquitectura I</td>
+<td style="text-align: center;">5 (cinco)</td>
+<td style="text-align: center;">&nbsp;X89II17</td>
+<td style="text-align: center;">&nbsp;027</td>
+</tr>
+</tbody>
+</table>
+<p><strong><br /></strong></p>
+<p><strong>TERCER A&Ntilde;O</strong></p>
+<table border="1">
+<tbody>
+<tr>
+<td style="text-align: center; width: 10%;">Referencias</td>
+<td style="text-align: center; width: 8%;">Fecha</td>
+<td style="text-align: center; width: 40%;">Asignatura</td>
+<td style="text-align: center; width: 10%;">Calificaci&oacute;n</td>
+<td style="text-align: center; width: 10%;">Libro</td>
+<td style="text-align: center; width: 8%;">Folio</td>
+</tr>
+<tr>
+<td style="text-align: center;">XII</td>
+<td style="text-align: center;">&nbsp;27/11/04</td>
+<td>Arquitectura III</td>
+<td style="text-align: center;">6 (seis)</td>
+<td style="text-align: center;">&nbsp;X90II18</td>
+<td style="text-align: center;">152</td>
+</tr>
+<tr>
+<td style="text-align: center;">XIII</td>
+<td style="text-align: center;">&nbsp;17/11/03</td>
+<td>
+<p>T&eacute;cnnicas de Representaci&oacute;n III</p>
+</td>
+<td style="text-align: center;">5 (cinco)</td>
+<td style="text-align: center;">&nbsp;X90II18</td>
+<td style="text-align: center;">048</td>
+</tr>
+<tr>
+<td style="text-align: center;">XIV</td>
+<td style="text-align: center;">&nbsp;02/03/04</td>
+<td>&nbsp;Dibujo T&eacute;cnico</td>
+<td style="text-align: center;">&nbsp;5 (cinco)</td>
+<td style="text-align: center;">&nbsp;X90II18</td>
+<td style="text-align: center;">&nbsp;095</td>
+</tr>
+<tr>
+<td style="text-align: center;">XV</td>
+<td style="text-align: center;">&nbsp;18/02/04</td>
+<td>Construcciones I</td>
+<td style="text-align: center;">&nbsp;5 (cinco)</td>
+<td style="text-align: center;">&nbsp;X90II18</td>
+<td style="text-align: center;">&nbsp;085</td>
+</tr>
+<tr>
+<td style="text-align: center;">XVI</td>
+<td style="text-align: center;">12/05/05</td>
+<td>Estructuras II</td>
+<td style="text-align: center;">&nbsp;7 (siete)</td>
+<td style="text-align: center;">&nbsp;X153II19</td>
+<td style="text-align: center;">&nbsp;019</td>
+</tr>
+<tr>
+<td style="text-align: center;">XVII</td>
+<td style="text-align: center;">04/03/05</td>
+<td>Historia de la Arquitectura II</td>
+<td style="text-align: center;">7 (siete)</td>
+<td style="text-align: center;">&nbsp;X153II19</td>
+<td style="text-align: center;">&nbsp;003</td>
+</tr>
+</tbody>
+</table>
+<p><strong><br /></strong></p>
+<p><strong>CUARTO A&Ntilde;O</strong></p>
+<table border="1">
+<tbody>
+<tr>
+<td style="text-align: center; width: 10%;">Referencias</td>
+<td style="text-align: center; width: 8%;">Fecha</td>
+<td style="text-align: center; width: 40%;">Asignatura</td>
+<td style="text-align: center; width: 10%;">Calificaci&oacute;n</td>
+<td style="text-align: center; width: 10%;">Libro</td>
+<td style="text-align: center; width: 8%;">Folio</td>
+</tr>
+<tr>
+<td style="text-align: center;">XVIII</td>
+<td style="text-align: center;">&nbsp;18/11/05</td>
+<td>Arquitectura IV</td>
+<td style="text-align: center;">6 (seis)</td>
+<td style="text-align: center;">&nbsp;X153II19</td>
+<td style="text-align: center;">040</td>
+</tr>
+<tr>
+<td style="text-align: center;">XIX</td>
+<td style="text-align: center;">05/12/05</td>
+<td>
+<p>Taller de Creatividad</p>
+</td>
+<td style="text-align: center;">9 (nueve)</td>
+<td style="text-align: center;">&nbsp;X153II19</td>
+<td style="text-align: center;">050</td>
+</tr>
+<tr>
+<td style="text-align: center;">XX</td>
+<td style="text-align: center;">&nbsp;22/12/05</td>
+<td>Estructuras III</td>
+<td style="text-align: center;">6 (seis)</td>
+<td style="text-align: center;">&nbsp;X153II19</td>
+<td style="text-align: center;">078</td>
+</tr>
+<tr>
+<td style="text-align: center;">XXI</td>
+<td style="text-align: center;">28/02/06</td>
+<td>Instalaciones II</td>
+<td style="text-align: center;">6 (seis)</td>
+<td style="text-align: center;">&nbsp;X153II19</td>
+<td style="text-align: center;">094</td>
+</tr>
+<tr>
+<td style="text-align: center;">XXII</td>
+<td style="text-align: center;">&nbsp;01/08/05</td>
+<td>Computaci&oacute;n Gr&aacute;fica</td>
+<td style="text-align: center;">7 (siete)</td>
+<td style="text-align: center;">&nbsp;X153II19</td>
+<td style="text-align: center;">023</td>
+</tr>
+</tbody>
+</table>
+<p><strong><br /></strong></p>
+<p><strong>QUINTO A&Ntilde;O</strong></p>
+<table border="1">
+<tbody>
+<tr>
+<td style="text-align: center; width: 10%;">Referencias</td>
+<td style="text-align: center; width: 8%;">Fecha</td>
+<td style="text-align: center; width: 40%;">Asignatura</td>
+<td style="text-align: center; width: 10%;">Calificaci&oacute;n</td>
+<td style="text-align: center; width: 10%;">Libro</td>
+<td style="text-align: center; width: 8%;">Folio</td>
+</tr>
+<tr>
+<td style="text-align: center;">XXIII</td>
+<td style="text-align: center;">&nbsp;11/05/06</td>
+<td>&nbsp;Estructuras IV</td>
+<td style="text-align: center;">4 (cuatro)</td>
+<td style="text-align: center;">&nbsp;X153II19</td>
+<td style="text-align: center;">128</td>
+</tr>
+</tbody>
+</table>

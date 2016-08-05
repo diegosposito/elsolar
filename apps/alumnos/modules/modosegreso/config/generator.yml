@@ -1,0 +1,30 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           ModosEgreso
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          modos_egreso
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+          nombre: { label: Nombre }
+          descripcion: { label: Descripcion }      
+      list:
+        title: "Listado de Modos de Egreso"
+        display: [nombre, descripcion ]
+        batch_actions: {}        
+      filter:
+        display: [nombre]
+      form:
+        display: [nombre, descripcion]
+      edit:
+        title: "Editar Modo de Egreso"
+      new:
+        title: "Nuevo Modo de Egreso"

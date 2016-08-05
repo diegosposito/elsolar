@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<chart caption="Evolucion Nuevos Inscriptos por Carrera" shownames="1" showvalues="1" decimals="0" numberPrefix="">
+  <categories>
+    <category label="Ingenieria Agron&#xF3;mica"/>
+  </categories>
+  <dataset seriesName="2010" color="AFD8F8" showValues="0">
+    <set value="33"/>
+  </dataset>
+  <dataset seriesName="2011" color="F6BD0F" showValues="0">
+    <set value="0"/>
+  </dataset>
+  <dataset seriesName="2012" color="8BBA00" showValues="0">
+    <set value="0"/>
+  </dataset>
+</chart>

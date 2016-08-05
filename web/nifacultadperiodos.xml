@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<chart caption="Evolucion Nuevos Inscriptos por Facultad" shownames="1" showvalues="1" decimals="0" numberPrefix="">
+  <categories>
+    <category label="Facultad de Ciencias Econ&#xF3;micas"/>
+    <category label="Facultad de Ciencias Agrarias"/>
+    <category label="Facultad de Ciencias de la Comunicaci&#xF3;n y de la Educaci&#xF3;n"/>
+  </categories>
+  <dataset seriesName="2014" color="AFD8F8" showValues="0">
+    <set value="19"/>
+    <set value="16"/>
+    <set value="233"/>
+  </dataset>
+  <dataset seriesName="2015" color="F6BD0F" showValues="0">
+    <set value="21"/>
+    <set value="21"/>
+    <set value="273"/>
+  </dataset>
+  <dataset seriesName="2016" color="8BBA00" showValues="0">
+    <set value="1"/>
+    <set value="5"/>
+    <set value="26"/>
+  </dataset>
+</chart>

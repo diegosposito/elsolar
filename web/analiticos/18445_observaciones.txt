@@ -1,0 +1,6 @@
+<p>Materia Optativa I: Teor&iacute;a de la Comunicaci&oacute;n</p>
+<p>Materia Optativa II: T&eacute;cnicas de la Expresi&oacute;n Oral y Escrita</p>
+<p>Materia Optativa III: Filosof&iacute;a</p>
+<p>Materia Optativa IV: Nutrici&oacute;n Deportiva</p>
+<p>Materia Optativa V: Psicolog&iacute;a Social&nbsp;</p>
+<p>Materia Optativa VI: Sociolog&iacute;a</p>

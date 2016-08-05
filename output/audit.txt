@@ -1,0 +1,21 @@
+Foremost version 1.5.6 by Jesse Kornblum, Kris Kendall, and Nick Mikus
+Audit File
+
+Foremost started at Fri Jun 17 12:06:32 2011
+Invocation: foremost -t jpeg -i /dev/sda1 
+Output directory: /var/www/svnacademico/output
+Configuration file: /etc/foremost.conf
+------------------------------------------------------------------
+File: /dev/sda1
+Start: Fri Jun 17 12:06:32 2011
+Length: 100 MB (104857600 bytes)
+ 
+Num	 Name (bs=512)	       Size	 File Offset	 Comment 
+
+Finish: Fri Jun 17 12:06:33 2011
+
+0 FILES EXTRACTED
+	
+------------------------------------------------------------------
+
+Foremost finished at Fri Jun 17 12:06:33 2011

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<chart caption="Evolucion Nuevos Inscriptos por Centro Regional" shownames="1" showvalues="1" decimals="0" numberPrefix="">
+  <categories>
+    <category label="Universidad de Concepci&#xF3;n del Uruguay - Sede Central"/>
+    <category label="Secretaria CRG"/>
+    <category label="Centro Regional Rosario"/>
+    <category label="Centro Regional Santa Fe"/>
+    <category label="Centro Regional Paran&#xE1;"/>
+  </categories>
+  <dataset seriesName="2014" color="AFD8F8" showValues="0">
+    <set value="268"/>
+    <set value="414"/>
+    <set value="248"/>
+    <set value="196"/>
+    <set value="162"/>
+  </dataset>
+  <dataset seriesName="2015" color="F6BD0F" showValues="0">
+    <set value="315"/>
+    <set value="348"/>
+    <set value="267"/>
+    <set value="248"/>
+    <set value="221"/>
+  </dataset>
+  <dataset seriesName="2016" color="8BBA00" showValues="0">
+    <set value="23"/>
+    <set value="10"/>
+    <set value="6"/>
+    <set value="6"/>
+    <set value="6"/>
+  </dataset>
+</chart>

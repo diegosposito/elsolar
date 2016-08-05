@@ -1,0 +1,23 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           auditoria
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          auditoria
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:    
+        display: [_facultad, _sede, Ingresantes,Reg7,Docentes,Desigdocentes,Progplanif,Asistenciadoc,Diplomas,Equival,Certif,Actividades,Paseinterno]
+      filter:  
+        display: [idfacultad, idsede]
+      form:    ~
+      edit:    ~
+      new:     ~

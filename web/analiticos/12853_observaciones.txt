@@ -1,0 +1,7 @@
+<p>Optativas de Formaci&oacute;n General:</p>
+<p>1- OFG I (T&eacute;cnicas de Expresi&oacute;n Oral y Escritas)</p>
+<p>2- OFG II (Ecolog&iacute;a)</p>
+<p>3- OFG III (Psicolog&iacute;a Social)</p>
+<p>4- OFG IV (Sociolog&iacute;a)</p>
+<p>5- OFG V (Nutrici&oacute;n Deportiva)</p>
+<p>6- OFG VI (Patolog&iacute;as con Trastornos Deglutorios)</p>

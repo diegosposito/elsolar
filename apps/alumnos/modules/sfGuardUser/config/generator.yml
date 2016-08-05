@@ -1,0 +1,14 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    config:
+      form:
+        class: sfGuardUserAdminForm
+        display:
+          "Datos personales":                   [ Profile ]
+          "Permisos y grupos": [is_active, is_super_admin, groups_list, permissions_list]
+        fields:
+          is_active:  { credentials: [alumno] }
+          grupos:  { credentials: [admin] }
+          permisos:  { credentials: [admin] }
+          is_super_admin:  { credentials: [academica] }

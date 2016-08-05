@@ -1,0 +1,198 @@
+<p><strong>PLAN DE ESTUDIO 1992</strong></p>
+<p><span style="text-decoration: underline;"><strong>PRIMER A&Ntilde;O</strong></span></p>
+<table style="width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="width: 10%; text-align: center;" scope="col">Referencia</td>
+<td style="width: 10%; text-align: center;" scope="col">Fecha</td>
+<td style="width: 50%; text-align: center;" scope="col">Asignatura</td>
+<td style="width: 10%; text-align: center;" scope="col">Calificaci&oacute;n</td>
+<td style="width: 10%; text-align: center;" scope="col">Libro</td>
+<td style="width: 10%; text-align: center;" scope="col">Folio</td>
+</tr>
+<tr>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;I</td>
+<td style="width: 10%; text-align: center;" scope="col">18/11/05</td>
+<td style="width: 50%; text-align: left;" scope="col">Arquitectura I</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;8 (ocho)</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;X153II19</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;041</td>
+</tr>
+<tr>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;II</td>
+<td style="width: 10%; text-align: center;" scope="col">05/12/05</td>
+<td style="width: 50%; text-align: left;" scope="col">Tecnicas de Repreentaci&oacute;n I</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;4 (cuatro)</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;X153II19</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;053</td>
+</tr>
+<tr>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;III</td>
+<td style="width: 10%; text-align: center;" scope="col">27/02/06</td>
+<td style="width: 50%; text-align: left;" scope="col">Sistemas de Representaci&oacute;n I</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;5 (cinco)</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;X153II19</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;089</td>
+</tr>
+<tr>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;IV</td>
+<td style="width: 10%; text-align: center;" scope="col">22/12/05</td>
+<td style="width: 50%; text-align: left;" scope="col">Introducci&oacute;n a la Construcci&oacute;n</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;5 (cinco)</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;X153II19</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;075</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;<strong></strong><span style="text-decoration: underline;"><strong>SEGUNDO A&Ntilde;O</strong></span></p>
+<table style="width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="width: 10%; text-align: center;" scope="col">Referencia</td>
+<td style="width: 10%; text-align: center;" scope="col">Fecha</td>
+<td style="width: 50%; text-align: center;" scope="col">Asiganatura</td>
+<td style="width: 10%; text-align: center;" scope="col">Calificaci&oacute;n</td>
+<td style="width: 10%; text-align: center;" scope="col">Libro</td>
+<td style="width: 10%; text-align: center;" scope="col">Folio</td>
+</tr>
+<tr>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;V</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;17/11/06</td>
+<td style="width: 50%;" scope="col">Arquitectura II</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;5 (cinco)</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;X153II19</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;148</td>
+</tr>
+<tr>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;VI</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;26/02/07</td>
+<td style="width: 50%;" scope="col">Tecnicas de Repreentaci&oacute;n II</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;8 (ocho)</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;X153II19</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;203</td>
+</tr>
+<tr>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;VII</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;24/07/07</td>
+<td style="width: 50%;" scope="col">Sistemas de Representaci&oacute;n II</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;4 (cuatro)</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;X154II20</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;037</td>
+</tr>
+<tr>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;VIII</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;21/12/06</td>
+<td style="width: 50%;" scope="col">Instalaciones I</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;6 (seis)</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;X153II19</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;190</td>
+</tr>
+<tr>
+<td style="width: 10%; text-align: center;" scope="col">IX</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;29/12/08</td>
+<td style="width: 50%;" scope="col">&nbsp;Historia de la Arquitectura I</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;6 (seis)</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;ARQ.1.1.1</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;131</td>
+</tr>
+</tbody>
+</table>
+<p><span style="text-decoration: underline;"><strong>TERCER A&Ntilde;O</strong></span></p>
+<table style="width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="width: 10%; text-align: center;" scope="col">Referencia</td>
+<td style="width: 10%; text-align: center;" scope="col">Fecha</td>
+<td style="width: 50%; text-align: center;" scope="col">Asignatura</td>
+<td style="width: 10%; text-align: center;" scope="col">Calificaci&oacute;n</td>
+<td style="width: 10%; text-align: center;" scope="col">Libro</td>
+<td style="width: 10%; text-align: center;" scope="col">Folio</td>
+</tr>
+<tr>
+<td style="width: 10%; text-align: center;" scope="col">X&nbsp;</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;16/11/07</td>
+<td style="width: 50%;" scope="col">Arquitectura III</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;6 (seis)</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;X154II20</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;076</td>
+</tr>
+<tr>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;XI</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;03/12/07</td>
+<td style="width: 50%;" scope="col">Tecnicas de Representaci&oacute;n III</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;5 (cinco)</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;X154II20</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;089</td>
+</tr>
+<tr>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;XII</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;03/12/07</td>
+<td style="width: 50%;" scope="col">Dibujo Tecnico</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;7 (siete)</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;X154II20</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;090</td>
+</tr>
+<tr>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;XIII</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;27/02/08</td>
+<td style="width: 50%;" scope="col">Construcciones I</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;6 (seis)</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;X154II20</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;157</td>
+</tr>
+<tr>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;XIV</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;08/03/13</td>
+<td style="width: 50%;" scope="col">Historia de la Arquitectura II</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;9 (nueve)</td>
+<td style="width: 10%; text-align: left;" scope="col">&nbsp;ARQ.1.1.6</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;095</td>
+</tr>
+</tbody>
+</table>
+<p><span style="text-decoration: underline;"><strong>CUARTO A&Ntilde;O</strong></span></p>
+<table style="width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="width: 10%; text-align: center;" scope="col">Referencia</td>
+<td style="width: 10%; text-align: center;" scope="col">Fecha</td>
+<td style="width: 50%; text-align: center;" scope="col">Asignatura</td>
+<td style="width: 10%;" scope="col">Calificaci&oacute;n</td>
+<td style="width: 10%; text-align: center;" scope="col">Libro</td>
+<td style="width: 10%; text-align: center;" scope="col">Folio</td>
+</tr>
+<tr>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;XV</td>
+<td style="width: 10%;" scope="col">&nbsp;01/12/08</td>
+<td style="width: 50%;" scope="col">Taller de Creatividad</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;7 (siete)</td>
+<td style="width: 10%;" scope="col">&nbsp;ARQ.1.1.1</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;075</td>
+</tr>
+<tr>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;XVI</td>
+<td style="width: 10%;" scope="col">&nbsp;02/10/12</td>
+<td style="width: 50%;" scope="col">Instalaciones II</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;7 (siete)</td>
+<td style="width: 10%;" scope="col">&nbsp;ARQ.1.1.5</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;151</td>
+</tr>
+<tr>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;XVII</td>
+<td style="width: 10%;" scope="col">&nbsp;21/08/13</td>
+<td style="width: 50%;" scope="col">H.P.S.E.A.A. I</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;6 (seis)</td>
+<td style="width: 10%;" scope="col">&nbsp;ARQ.1.1.6</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;166</td>
+</tr>
+<tr>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;XVIII</td>
+<td style="width: 10%;" scope="col">&nbsp;10/05/12</td>
+<td style="width: 50%;" scope="col">Computaci&oacute;n Gr&aacute;fica</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;8 (ocho)</td>
+<td style="width: 10%;" scope="col">&nbsp;ARQ.1.1.5</td>
+<td style="width: 10%; text-align: center;" scope="col">&nbsp;102</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>

@@ -1,0 +1,26 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+# default values
+all:
+  perfil:
+    admin:       1
+    alumno:      2
+    facultad:    3
+    profesor:    4
+  envio_mail:
+    contacto: webmaster@ucu.edu.ar
+    administracion: tramitesalumnos@aelf.edu.ar
+  wsalumnoslan:
+    personas: http://128.1.32.3/ucu/sitio/webservices/personas.php?wsdl
+  wsalumnoswan:
+    personas: http://190.228.68.196/ucu/sitio/webservices/personas.php?wsdl
+  wsaranceles:
+    lan:
+      personascuenta: http://128.1.32.9:9090/administracion/webservices/personacuenta.php?wsdl
+    wan:
+      personascuenta: http://192.168.2.197:9090/administracion/webservices/personacuenta.php?wsdl
+  #wstest1:
+   # nuevaspersonas: http://192.168.2.195:9000/alumnos/nuevaspersonas.php?wsdl 
+  wstest1:
+    nuevaspersonas: http://192.168.2.196/alumnos/nuevaspersonas.php?wsdl      

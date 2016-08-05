@@ -1,0 +1,31 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           TiposTitulos
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          tipos_titulos
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+          nombre: { label: Nombre }
+          descripcion: { label: Descripcion }
+          tiempotrabajofinal: { label: Tiempo de trabajo final (años) }
+      list:
+        title: "Listado de Tipos de Títulos"
+        display: [nombre, descripcion, tiempotrabajofinal ]
+        batch_actions: {}        
+      filter:  
+        display: [nombre]
+      form:    
+        display: [nombre, descripcion, tiempotrabajofinal ]
+      edit:
+        title: "Editar Tipo de Título"
+      new:
+        title: "Nuevo Tipo de Título"

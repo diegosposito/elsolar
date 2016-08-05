@@ -1,0 +1,206 @@
+
+
+table.stats
+{
+/*text-align: center;*/
+font-family: Verdana, Geneva, Arial, Helvetica, sans-serif ;
+font-weight: normal;
+font-size: 11px;
+/*color: #000;*/
+/*width: 620px;*/
+background-color: #7b76b6;
+border: 1px;
+border-collapse: collapse;
+border-spacing: 0px;}
+
+.encabezadologin
+{
+text-align: center;
+border: 0;
+width: 100%;
+background-color: #7b76b6;
+}
+
+.titulo
+{
+text-align: center;
+width: 80%;
+color: #7b76b6;
+font-size: .100em;
+}
+
+.subtitnegro
+{
+text-align: center;
+width: 10%;
+}
+
+
+.cuerpo
+{
+text-align: center;
+border: 0;
+width: 100%;
+background-color: #bdbbdb;
+}
+
+.titulos
+{
+background-color: #E6E6FA !important;
+width: 620px;
+text-align: center;
+}
+
+
+table.tabla_buscador tr
+{
+font-family: Verdana, Geneva, Arial, Helvetica, sans-serif ;
+font-weight: normal;
+font-size: 11px;
+background-color:  #bdbbdb;
+border: 1px;
+border-collapse: collapse;
+border-spacing: 0px;
+width: 100%;
+}
+
+table.tabla_avisos tr
+{
+font-family: Verdana, Geneva, Arial, Helvetica, sans-serif ;
+font-weight: normal;
+font-size: 11px;
+background-color:  #8FCAFA;
+border: 1px;
+border-collapse: collapse;
+border-spacing: 0px;
+width: 100%;
+}
+
+table.mensaje_libredeuda_2
+{
+font-family: Verdana, Geneva, Arial, Helvetica, sans-serif ;
+font-weight: normal;
+font-size: 11px;
+text-align: center;
+background-color: #fff;
+color: #00ff00;
+border:1px solid #666666; 
+border-collapse: collapse;
+/*border-radius: 15px;*/
+width: 100%
+
+}
+
+
+.resaltar_verde
+{
+background-color: #49a449 !important;
+
+}
+
+.resaltar_gris
+{
+background-color: #A9A9A9 !important;
+
+}
+
+.resaltar_rojo
+{
+background-color: #ff0000 !important;
+
+}
+
+.resaltar_naranja
+{
+background-color: #FFD700 !important;
+
+}
+
+.resaltar_rojo_importante
+{
+background-color: #FFA500 !important;
+width: 620px;
+color: #fff;
+}
+
+.resaltar_amarilloclaro
+{
+background-color: #ffffa0 !important;
+}
+
+.resaltar_amarillosolido
+{
+background-color: #FFD700 !important;
+}
+
+
+table.stats td
+{
+background-color: #bdbbdb;
+color: #000;
+padding: 4px;
+/*text-align: left;*/
+vertical-align: top;
+border: 1px #fff solid;}
+
+table.stats td.hed
+{
+background-color: #666;
+color: #fff;
+padding: 4px;
+vertical-align: top;
+font-size: 12px;
+font-weight: bold;} 
+
+.button
+{ 
+  /*text-align: center;*/
+}
+
+p
+{
+padding: 0 0 0px
+} 
+
+.inscribir
+{ background: #fafafa url(/images/standard/add.png) no-repeat;
+  color: #464032;
+  border-color: #FFFFFF;
+  text-align: right;
+}
+.inscripto
+{ background:  url(/images/standard/ok.gif) no-repeat;
+  text-align: center;
+}
+
+.fila_0 { background-color: #F0E68C;} 
+.fila_1 { background-color: #E1E8F1;} 
+.fila_2 { background-color: #E1E8F1;} 
+.fila_3 { background-color: #bdbbdb;} 
+.fila_4 { background-color: #E1E8F1;} 
+.fila_5 { background-color: #E1E8F1;} 
+.fila_6 { background-color: #E1E8F1;} 
+.fila_7 { background-color: #E1E8F1;} 
+.fila_8 { background-color: #E1E8F1;} 
+.fila_9 { background-color: #7b76b6;} 
+.fila_10 { background-color: #E1E8F1;} 
+.fila_11 { background-color: #FA2137;} 
+.fila_importante { background-color: #F7E99F;} 
+
+
+/****** CAMBIOS MX  *****/
+
+.pielogin{
+text-align: center;
+border: 0;
+width: 100%;
+background-color: #7b76b6;
+}
+
+.pieloginon{
+	background-color: #707173;
+    border: 2px solid #DEDEDE;
+	text-align: center;
+	width: 100%;
+}
+

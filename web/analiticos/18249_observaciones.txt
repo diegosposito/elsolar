@@ -1,0 +1,4 @@
+<p class="MsoNormal">Materia Optativa de Formaci&oacute;n I: T&eacute;cnicas de la Expresi&oacute;n Oral y Escrita.</p>
+<p class="MsoNormal">Materia Optativa de Formaci&oacute;n II: Teor&iacute;a de la Comunicaci&oacute;n.</p>
+<p class="MsoNormal">Materia Optativa de Formaci&oacute;n III: Psicolog&iacute;a Social.</p>
+<p>Materia Optativa de Formaci&oacute;n IV: Filosof&iacute;a.</p>

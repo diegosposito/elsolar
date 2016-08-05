@@ -1,0 +1,24 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           mesasexamenes
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          mesasexamenes
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:    
+         display: [idmesaexamen, fecha, libro, folio , idestadomesaexamen]
+      filter:  
+         display: [libro]
+      form:    ~
+      edit:    
+         display: [idcondicion, fecha, libro, folio , idlibroacta]
+      new:     ~

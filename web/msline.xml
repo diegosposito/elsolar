@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<chart caption="Evolucion de Inscriptos" subcaption="Analisis ultimos 4 anios, desde 1 octubre hasta 31 marzo" lineThickness="1" showValues="0" formatNumberScale="0" anchorRadius="2" divLineAlpha="20" divLineColor="CC3300" divLineIsDashed="1" showAlternateHGridColor="1" alternateHGridAlpha="5" alternateHGridColor="CC3300" shadowAlpha="40" labelStep="1" numvdivlines="5" chartRightMargin="35" bgColor="FFFFFF,CC3300" bgAngle="270" bgAlpha="10,10">
+  <categories>
+    <category label="Octubre"/>
+    <category label="Noviembre"/>
+    <category label="Diciembre"/>
+    <category label="Enero"/>
+    <category label="Febrero"/>
+    <category label="Marzo"/>
+  </categories>
+  <dataset seriesName="2013" color="DBDC25" anchorBorderColor="DBDC25" anchorBgColor="DBDC25">
+    <set value="4"/>
+    <set value="0"/>
+    <set value="2"/>
+    <set value="0"/>
+    <set value="1"/>
+    <set value="0"/>
+  </dataset>
+  <dataset seriesName="2014" color="F1683C" anchorBorderColor="F1683C" anchorBgColor="F1683C">
+    <set value="7"/>
+    <set value="1"/>
+    <set value="0"/>
+    <set value="3"/>
+    <set value="0"/>
+    <set value="1"/>
+  </dataset>
+  <dataset seriesName="2015" color="2AD62A" anchorBorderColor="2AD62A" anchorBgColor="2AD62A">
+    <set value="5"/>
+    <set value="2"/>
+    <set value="3"/>
+    <set value="3"/>
+    <set value="1"/>
+    <set value="1"/>
+  </dataset>
+  <dataset seriesName="2016" color="1D8BD1" anchorBorderColor="1D8BD1" anchorBgColor="1D8BD1">
+    <set value="4"/>
+    <set value="1"/>
+    <set value="3"/>
+    <set value="2"/>
+    <set value="2"/>
+    <set value="0"/>
+  </dataset>
+</chart>

@@ -1,0 +1,34 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           planesestudios
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          planesestudios
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:    
+         display: [idplanestudio, idcarrera, nombrecarrera]
+         batch_actions: {}
+         object_actions: 
+          Cargar:
+            name: Cargar
+            action: fichaalumnos
+            params: idplanestudio=%%idplanestudio%%
+          Confirmar:
+            name: Confirmar
+            action: Confirmar
+            params: idplanestudio=%%idplanestudio%%
+         actions: []
+      filter: 
+         display: [idplanestudio]
+      form:    ~
+      edit:    ~
+      new:     ~

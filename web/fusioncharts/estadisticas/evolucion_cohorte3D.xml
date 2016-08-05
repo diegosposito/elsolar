@@ -1,0 +1,31 @@
+<chart caption='Evolucion Cohorte 2011' shownames='1' showvalues='0' decimals='0' numberPrefix=''>
+<categories>
+	<category label='Oct' />
+	<category label='Nov' />
+	<category label='Dic' />
+	<category label='Ene' />
+	<category label='Feb' />
+	<category label='Mar' />
+	<category label='Abr' />
+	<category label='May' />
+	<category label='Jun' />
+	<category label='Jul' />
+</categories>
+<dataset seriesName='2010' color='AFD8F8' showValues='0'>
+	<set value='13' />
+	<set value='20' />
+	<set value='17' />
+	<set value='35' />
+	<set value='38' />
+	<set value='20' />
+</dataset>
+<dataset seriesName='2011' color='F6BD0F' showValues='0'>
+	<set value='15' />
+	<set value='41' />
+	<set value='45' />
+	<set value='11' />
+	<set value='11' />
+	<set value='40' />
+</dataset>
+
+</chart>

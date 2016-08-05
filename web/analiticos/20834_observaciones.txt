@@ -1,0 +1,8 @@
+
+1 - Filosofía
+2 - Tec. de la Exp. Oral y Escrita
+3 - Ecología
+4 - Arte Argentino Contemporáneo
+5 - Política Internacional Contemporánea
+6 - Psicología Social
+

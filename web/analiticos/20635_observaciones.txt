@@ -1,0 +1,4 @@
+<p>Materia Optativa I: Tec. de la Exp. Oral y Escrita</p>
+<p>Materia Optativa II:Teor&iacute;a de la Comunicaci&oacute;n</p>
+<p>Materia Optativa III:Psicolog&iacute;a Social</p>
+<p>Materia Optativa IV:Filosof&iacute;a</p>

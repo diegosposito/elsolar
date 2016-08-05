@@ -1,0 +1,126 @@
+A.linknegro {
+	font-size:12px;
+	color:black;
+	text-decoration: none;
+	color:black;
+ 	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+
+A.linkcomun {
+	font-size:10px;
+	color:black;
+	text-decoration: underline;
+	color:black;
+ 	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+}
+
+A.linkcomun:Hover {
+	color:#FF9900;
+	text-decoration: none;
+}
+
+A.linksinbold {
+	font-size:12px;
+	color:black;
+	text-decoration: none;
+	color:black;
+ 	font-family: Arial, Helvetica, sans-serif;
+	
+}
+
+A.linksinbold:Hover {
+	color:#FF9900;
+	text-decoration: none;
+}
+
+A.linknegro:Hover {
+	color:#FF9900;
+	text-decoration: none;
+}
+
+.subtitnegro {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.Estilo4 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	list-style-image: url(../images/fle_2.gif);
+	text-decoration: none;
+	color:#000000;
+}
+
+
+.ul { list-style-image: url("fle_2.gif"); }
+.li { list-style-image: url("fle_2.gif"); }
+
+.form {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: red;
+	background-color:white;
+	border-color:#999999;
+	border-width:1px;
+	border-style:solid;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+}
+
+.form2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #044963;
+	background-color:white;
+	background-image: url(../images/back_textfield.jpg);
+	border-color:#999999;
+	border-width:1px;
+	border-style:solid;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	bottom: inherit;
+}
+
+
+.titulos {
+	font-family: Times New Roman, Times, serif;
+	font-size: 24px;
+	color: #666666;
+	
+}
+
+.estilo6 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	color: #666666;
+	
+}
+
+.boton {
+	color: #000000;
+	font-size: 11px;
+	font-weight: normal;
+	font-weight: bold;
+	text-decoration: none;
+	border: 1px none #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	background-color: #EFEFEF;
+	height: 16px;
+	width: 74px;
+	padding-top: 0px;
+	padding-right: 5px;
+	padding-bottom: 0px;
+	padding-left: 5px;
+}
+
+.boton:Hover {
+	color:#FF9900;
+	text-decoration: none;
+}

@@ -1,0 +1,6 @@
+<p>1-Filosof&iacute;a</p>
+<p>2-Psicolog&iacute;a Social</p>
+<p>3-Historia Contempor&aacute;nea Argentina</p>
+<p>4-Pol&iacute;tica Internacional Contempor&aacute;nea</p>
+<p>5-Enfermedades Regionales End&eacute;micas</p>
+<p>6-Nutrici&oacute;n Deportiva</p>

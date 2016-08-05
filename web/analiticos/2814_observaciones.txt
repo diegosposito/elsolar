@@ -1,0 +1,50 @@
+<p class="MsoNormal" style="margin-right: -9.1pt; text-align: justify;"><strong><span style="font-size: 9.0pt; font-family: 'Arial','sans-serif'; mso-fareast-font-family: 'Times New Roman';" lang="ES-AR">PLAN DE ESTUDIOS 1992 -</span>&nbsp; <span style="font-size: 9.0pt; font-family: 'Arial','sans-serif'; mso-fareast-font-family: 'Times New Roman';" lang="ES-AR">PRIMER </span></strong><strong style="mso-bidi-font-weight: normal;"><span style="font-size: 9.0pt; font-family: 'Arial','sans-serif';" lang="ES-AR">A&Ntilde;O</span></strong></p>
+<table style="width: 100%;" border="1">
+<tbody>
+<tr>
+<td align="center" valign="middle">
+<h4 style="margin: 0cm 11.4pt 0.0001pt 0.3pt; text-indent: 0cm;" align="center"><span style="font-size: 9.0pt; font-family: 'Arial','sans-serif'; mso-bidi-font-weight: bold;" lang="ES-AR">Ref.</span></h4>
+</td>
+<td align="center" valign="middle"><strong><span style="font-size: 9.0pt; font-family: 'Arial','sans-serif'; mso-fareast-font-family: 'Times New Roman'; mso-bidi-font-family: Tahoma; mso-ansi-language: ES; mso-bidi-language: #00FF;">Fecha</span></strong></td>
+<td align="center" valign="middle"><strong><span style="font-size: 9.0pt; font-family: 'Arial','sans-serif'; mso-fareast-font-family: 'Times New Roman'; mso-bidi-font-family: Tahoma; mso-ansi-language: ES; mso-bidi-language: #00FF;">Asignatura</span></strong></td>
+<td align="center" valign="middle"><strong><span style="font-size: 9.0pt; font-family: 'Arial','sans-serif'; mso-fareast-font-family: 'Times New Roman'; mso-bidi-font-family: Tahoma; mso-ansi-language: ES; mso-bidi-language: #00FF;">Calificaci&oacute;n</span></strong></td>
+<td align="center" valign="middle"><strong><span style="font-size: 9.0pt; font-family: 'Arial','sans-serif'; mso-fareast-font-family: 'Times New Roman'; mso-bidi-font-family: Tahoma; mso-ansi-language: ES; mso-bidi-language: #00FF;">Libro</span></strong></td>
+<td align="center" valign="middle"><strong><span style="font-size: 9.0pt; font-family: 'Arial','sans-serif'; mso-fareast-font-family: 'Times New Roman'; mso-bidi-font-family: Tahoma; mso-ansi-language: ES; mso-bidi-language: #00FF;">Folio</span></strong></td>
+</tr>
+<tr>
+<td align="center" valign="middle"><strong><span style="font-size: 9pt;" lang="ES-AR">I</span></strong></td>
+<td align="center" valign="middle"><strong><span style="font-size: 9.0pt; font-family: 'Arial','sans-serif'; mso-fareast-font-family: 'Times New Roman'; mso-bidi-font-family: Tahoma; mso-ansi-language: ES; mso-bidi-language: #00FF;">22/11/06</span></strong></td>
+<td align="center" valign="middle"><strong><span style="font-size: 9.0pt; font-family: 'Arial','sans-serif'; mso-fareast-font-family: 'Times New Roman'; mso-bidi-font-family: Tahoma; mso-ansi-language: ES; mso-bidi-language: #00FF;">Arquitectura I</span></strong></td>
+<td align="center" valign="middle"><strong style="mso-bidi-font-weight: normal;"><span style="font-size: 9.0pt; font-family: 'Arial','sans-serif'; mso-fareast-font-family: 'Times New Roman'; mso-bidi-font-family: Tahoma; color: black; mso-bidi-language: #00FF;" lang="ES-AR">5 (cinco)</span></strong></td>
+<td align="center" valign="middle"><strong style="mso-bidi-font-weight: normal;"><span style="font-size: 9.0pt; font-family: 'Arial','sans-serif'; mso-fareast-font-family: 'Times New Roman'; mso-bidi-font-family: Tahoma; color: black; mso-bidi-language: #00FF;" lang="ES-AR">X153II19</span></strong></td>
+<td align="center" valign="middle"><strong><span style="font-size: 9.0pt; font-family: 'Arial','sans-serif'; mso-fareast-font-family: 'Times New Roman'; mso-bidi-font-family: Tahoma; mso-ansi-language: ES; mso-bidi-language: #00FF;">158</span></strong></td>
+</tr>
+<tr>
+<td align="center" valign="middle"><strong><span style="font-size: 9pt;" lang="ES-AR">II</span></strong></td>
+<td align="center" valign="middle"><strong><span style="font-size: 9.0pt; font-family: 'Arial','sans-serif'; mso-fareast-font-family: 'Times New Roman'; mso-bidi-font-family: Tahoma; mso-ansi-language: ES; mso-bidi-language: #00FF;">04/12/06</span></strong></td>
+<td align="center" valign="middle"><strong><span style="font-size: 9.0pt; font-family: 'Arial','sans-serif'; mso-fareast-font-family: 'Times New Roman'; mso-bidi-font-family: Tahoma; mso-ansi-language: ES; mso-bidi-language: #00FF;">T&eacute;cnicas de Representaci&oacute;n I</span></strong></td>
+<td align="center" valign="middle">
+<p class="WW-Textoindependiente2" style="margin-right: -9.1pt;" align="center"><strong style="mso-bidi-font-weight: normal;"><span style="font-size: 9.0pt; font-family: 'Arial','sans-serif'; mso-fareast-font-family: 'Times New Roman'; mso-bidi-font-family: Tahoma; color: black; mso-bidi-language: #00FF;" lang="ES-AR">4 (cuatro)</span></strong></p>
+</td>
+<td align="center" valign="middle"><strong style="mso-bidi-font-weight: normal;"><span style="font-size: 9.0pt; font-family: 'Arial','sans-serif'; mso-fareast-font-family: 'Times New Roman'; mso-bidi-font-family: Tahoma; color: black; mso-bidi-language: #00FF;" lang="ES-AR">X153II19</span></strong></td>
+<td align="center" valign="middle"><strong><span style="font-size: 9.0pt; font-family: 'Arial','sans-serif'; mso-fareast-font-family: 'Times New Roman'; mso-bidi-font-family: Tahoma; mso-ansi-language: ES; mso-bidi-language: #00FF;">160</span></strong></td>
+</tr>
+<tr>
+<td align="center" valign="middle"><strong><span style="font-size: 9pt;" lang="ES-AR">III</span></strong></td>
+<td align="center" valign="middle"><strong><span style="font-size: 9.0pt; font-family: 'Arial','sans-serif'; mso-fareast-font-family: 'Times New Roman'; mso-bidi-font-family: Tahoma; mso-ansi-language: ES; mso-bidi-language: #00FF;">18/12/06</span></strong></td>
+<td align="center" valign="middle"><strong><span style="font-size: 9.0pt; font-family: 'Arial','sans-serif'; mso-fareast-font-family: 'Times New Roman'; mso-bidi-font-family: Tahoma; mso-ansi-language: ES; mso-bidi-language: #00FF;">Sistemas de Representaci&oacute;n I</span></strong></td>
+<td align="center" valign="middle"><strong style="mso-bidi-font-weight: normal;"><span style="font-size: 9.0pt; font-family: 'Arial','sans-serif'; mso-fareast-font-family: 'Times New Roman'; mso-bidi-font-family: Tahoma; color: black; mso-bidi-language: #00FF;" lang="ES-AR">4 (cuatro)</span></strong></td>
+<td align="center" valign="middle"><strong style="mso-bidi-font-weight: normal;"><span style="font-size: 9.0pt; font-family: 'Arial','sans-serif'; mso-fareast-font-family: 'Times New Roman'; mso-bidi-font-family: Tahoma; color: black; mso-bidi-language: #00FF;" lang="ES-AR">X153II19</span></strong></td>
+<td align="center" valign="middle"><strong><span style="font-size: 9.0pt; font-family: 'Arial','sans-serif'; mso-fareast-font-family: 'Times New Roman'; mso-bidi-font-family: Tahoma; mso-ansi-language: ES; mso-bidi-language: #00FF;">180</span></strong></td>
+</tr>
+<tr>
+<td align="center" valign="middle"><strong><span style="font-size: 9pt;" lang="ES-AR">IV</span></strong></td>
+<td align="center" valign="middle"><strong><span style="font-size: 9.0pt; font-family: 'Arial','sans-serif'; mso-fareast-font-family: 'Times New Roman'; mso-bidi-font-family: Tahoma; mso-ansi-language: ES; mso-bidi-language: #00FF;">19/12/07</span></strong></td>
+<td align="center" valign="middle"><strong><span style="font-size: 9.0pt; font-family: 'Arial','sans-serif'; mso-fareast-font-family: 'Times New Roman'; mso-bidi-font-family: Tahoma; mso-ansi-language: ES; mso-bidi-language: #00FF;">Introducci&oacute;n a la Construcci&oacute;n</span></strong></td>
+<td align="center" valign="middle"><strong style="mso-bidi-font-weight: normal;"><span style="font-size: 9.0pt; font-family: 'Arial','sans-serif'; mso-fareast-font-family: 'Times New Roman'; mso-bidi-font-family: Tahoma; color: black; mso-bidi-language: #00FF;" lang="ES-AR">6 (seis)</span></strong></td>
+<td align="center" valign="middle"><strong style="mso-bidi-font-weight: normal;"><span style="font-size: 9.0pt; font-family: 'Arial','sans-serif'; mso-fareast-font-family: 'Times New Roman'; mso-bidi-font-family: Tahoma; color: black; mso-bidi-language: #00FF;" lang="ES-AR">X154II20</span></strong></td>
+<td align="center" valign="middle"><strong><span style="font-size: 9.0pt; font-family: 'Arial','sans-serif'; mso-fareast-font-family: 'Times New Roman'; mso-bidi-font-family: Tahoma; mso-ansi-language: ES; mso-bidi-language: #00FF;">122</span></strong></td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>

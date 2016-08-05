@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<chart caption="Nuevos Inscriptos por Franja Etarea" xAxisName="Rango de Edades" yAxisName="Cantidades" showValues="0" decimals="0" formatNumberScale="0" chartRightMargin="30">
+  <set label="Menos de 18" value="6"/>
+  <set label="Entre 18 y 21" value="4"/>
+  <set label="Entre 22 y 25" value="0"/>
+  <set label="Entre 26 y 30" value="0"/>
+  <set label="Entre 31 y 35" value="3"/>
+  <set label="Entre 36 y 40" value="0"/>
+  <set label="Mas de 41" value="0"/>
+</chart>

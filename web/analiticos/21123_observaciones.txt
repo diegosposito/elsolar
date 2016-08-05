@@ -1,0 +1,6 @@
+<p>Materia Optativa I: T&eacute;cnicas de la Expresi&oacute;n Oral y Escrita</p>
+<p>Materia Optativa II: Historia Argentina Contempor&aacute;nea</p>
+<p>Materia Optativa III: Teor&iacute;a de la Comunicaci&oacute;n</p>
+<p>Materia Optativa IV: Filosof&iacute;a</p>
+<p>Materia Optativa V: Psicolog&iacute;a Social</p>
+<p>Materia Optativa VI: Integraci&oacute;n Econ&oacute;mica</p>

@@ -1,0 +1,34 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           TiposCarreras
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          tipos_carreras
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+          nombre: { label: Nombre }
+          descripcion: { label: Descripcion }
+          otorgatitulo: { label: Otorga título }
+          reportaaraucano: { label: Reporta Araucano }
+          permitematricular: { label: Permite matricular }
+          permiteinscribir: { label: Permite inscribir }
+      list:
+        title: "Listado de Tipos de Carreras"
+        display: [nombre, descripcion, otorgatitulo, reportaaraucano, permitematricular, permiteinscribir ]
+        batch_actions: {}        
+      filter:
+        display: [nombre]
+      form:
+        display: [nombre, descripcion, otorgatitulo, reportaaraucano, permitematricular, permiteinscribir ]
+      edit:   
+        title: "Editar Tipo de Carrera"
+      new:   
+        title: "Nuevo Tipo de Carrera"

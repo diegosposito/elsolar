@@ -1,0 +1,55 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+# default values
+#all:
+all:
+  pagination:
+    cantidad:    25
+
+  profesores:
+    csuadmin:          secgeneral@ucu.edu.ar
+    sedefacultad11:    fce@ucu.edu.ar
+    sedefacultad12:    academicafcjs@ucu.edu.ar
+    sedefacultad13:    profesoresfca@ucu.edu.ar
+    sedefacultad14:    secretariafccye@ucu.edu.ar
+    sedefacultad15:    fau@ucu.edu.ar
+    sedefacultad18:    fcm@ucu.edu.ar
+    sedefacultad21:    sistemasgchu@ucu.edu.ar
+    sedefacultad22:    academicafcjs@ucu.edu.ar
+    sedefacultad23:    sistemasgchu@ucu.edu.ar
+    sedefacultad24:    sistemasgchu@ucu.edu.ar
+    sedefacultad25:    sistemasgchu@ucu.edu.ar
+    sedefacultad28:    sistemasgchu@ucu.edu.ar
+    sedefacultad31:    uav@ucu.edu.ar
+    sedefacultad32:    academicafcjs@ucu.edu.ar
+    sedefacultad33:    uav@ucu.edu.ar
+    sedefacultad34:    uav@ucu.edu.ar
+    sedefacultad35:    uav@ucu.edu.ar
+    sedefacultad38:    uav@ucu.edu.ar
+    sedefacultad41:    crr@ucu.edu.ar
+    sedefacultad42:    crr@ucu.edu.ar
+    sedefacultad43:    crr@ucu.edu.ar
+    sedefacultad44:    crr@ucu.edu.ar
+    sedefacultad45:    crr@ucu.edu.ar
+    sedefacultad48:    crr@ucu.edu.ar
+    sedefacultad51:    crsf@ucu.edu.ar
+    sedefacultad52:    crsf@ucu.edu.ar
+    sedefacultad53:    crsf@ucu.edu.ar
+    sedefacultad54:    crsf@ucu.edu.ar
+    sedefacultad55:    crsf@ucu.edu.ar
+    sedefacultad58:    crsf@ucu.edu.ar
+    sedefacultad61:    crrp@ucu.edu.ar
+    sedefacultad62:    crrp@ucu.edu.ar
+    sedefacultad63:    crrp@ucu.edu.ar
+    sedefacultad64:    crrp@ucu.edu.ar
+    sedefacultad65:    crrp@ucu.edu.ar
+    sedefacultad68:    crrp@ucu.edu.ar
+    sedefacultad81:    secretariavt@ucu.edu.ar
+    sedefacultad82:    secretariavt@ucu.edu.ar
+
+#  wstestini:
+#    nuevaspersonas: http://192.168.2.195:9000/alumnos/nuevaspersonas.php?wsdl  
+  wstest1:
+    nuevaspersonas: http://192.168.2.196/ucu/sitio/webservices/nuevaspersonas.php?wsdl
+    #nuevaspersonas: http://192.168.2.195:9000/testpersonas/nuevaspersonas.php?wsdl

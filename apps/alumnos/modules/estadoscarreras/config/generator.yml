@@ -1,0 +1,28 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           EstadosCarreras
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          estados_carreras
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: "Listado de Estados de Carrera"
+        display: [nombre]
+        batch_actions: {}         
+        sort: [nombre, asc]
+      filter: 
+        display: [nombre]
+      form:    ~
+      edit:    
+        title: "Editar Estado de Carrera" 
+      new:
+        title: "Nuevo Estado de Carrera" 

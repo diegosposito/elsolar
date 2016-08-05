@@ -1,0 +1,1 @@
+<?php include_partial('buscar', array('form' => $form,'resultado' => $resultado,'msjErr' => $msjErr, 'post' => $post)) ?>

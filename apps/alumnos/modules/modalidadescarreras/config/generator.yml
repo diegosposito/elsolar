@@ -1,0 +1,30 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           ModalidadesCarreras
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          modalidades_carreras
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        nombre: { label: Nombre }
+        descripcion: { label: Descripcion }
+      list:
+        title: "Listado de Modalidades de Carreras"
+        display: [nombre, descripcion ]
+        batch_actions: {}    
+      filter:  
+        display: [nombre]
+      form:
+        display: [nombre, descripcion ]
+      edit:
+        title: "Editar Modalidad de Carrera"
+      new:
+        title: "Nueva Modalidad de Carrera"

@@ -1,0 +1,6 @@
+<p>Materia Optativa I:Filosof&iacute;a</p>
+<p>Materia Optativa II: Tec. de la Exp. Oral y Escrita</p>
+<p>Materia Optativa III: Historia Argentina Contempor&aacute;nea</p>
+<p>Materia Optativa IV: Nutrici&oacute;n Deportiva</p>
+<p>Materia Optativa V: Sociolog&iacute;a</p>
+<p>Materia Optativa VI: Teor&iacute;a de la Comunicaci&oacute;n</p>

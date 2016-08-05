@@ -1,0 +1,124 @@
+<p><span style="text-decoration: underline;"><strong>PLAN DE ESTUDIOS 1992</strong></span></p>
+<p><strong>PRIMER A&Ntilde;O</strong></p>
+<table style="width: 642px;" border="1">
+<tbody>
+<tr>
+<td style="text-align: center; width: 10%;">Referencias</td>
+<td style="text-align: center; width: 8%;">Fecha</td>
+<td style="text-align: center; width: 40%;">Asignatura</td>
+<td style="text-align: center; width: 10%;">Calificaci&oacute;n</td>
+<td style="text-align: center; width: 10%;">Libro</td>
+<td style="text-align: center; width: 8%;">Folio</td>
+</tr>
+<tr>
+<td style="text-align: center;">I</td>
+<td style="text-align: center; width: 8%;">05/07/07</td>
+<td>Arquitectura I</td>
+<td style="text-align: center;" colspan="3">&nbsp;Equivalencia Res. CSU N&ordm; 66/07</td>
+</tr>
+<tr>
+<td style="text-align: center;">II</td>
+<td style="text-align: center;">05/07/07</td>
+<td>Tecnicas de Representaci&oacute;n I</td>
+<td style="text-align: center;" colspan="3">&nbsp;Equivalencia Res. CSU N&ordm; 66/07</td>
+</tr>
+<tr>
+<td style="text-align: center;">III</td>
+<td style="text-align: center;">05/07/07</td>
+<td>Sistemas de Reprentaci&oacute;n I</td>
+<td style="text-align: center;" colspan="3">&nbsp;Equivalencia Res. CSU N&ordm; 66/07</td>
+</tr>
+<tr>
+<td style="text-align: center;">IV</td>
+<td style="text-align: center;">05/07/07</td>
+<td>&nbsp;Introducci&oacute;n a la Construcci&oacute;n</td>
+<td style="text-align: center;" colspan="3">&nbsp;Equivalencia Res. CSU N&ordm; 66/07</td>
+</tr>
+</tbody>
+</table>
+<p><strong><br /></strong></p>
+<p><strong>SEGUNDO A&Ntilde;O</strong></p>
+<table style="width: 642px; height: 112px;" border="1">
+<tbody>
+<tr>
+<td style="text-align: center; width: 10%;">Referencias</td>
+<td style="text-align: center; width: 8%;">Fecha</td>
+<td style="text-align: center; width: 40%;">Asignatura</td>
+<td style="text-align: center; width: 10%;">Calificaci&oacute;n</td>
+<td style="text-align: center; width: 10%;">Libro</td>
+<td style="text-align: center; width: 8%;">Folio</td>
+</tr>
+<tr>
+<td style="text-align: center;">V</td>
+<td style="text-align: center;">05/07/07</td>
+<td>Arquitectura II</td>
+<td style="text-align: center;" colspan="3">&nbsp; Equivalencia Res. CSU N&ordm; 66/07</td>
+</tr>
+<tr>
+<td style="text-align: center;">VI</td>
+<td style="text-align: center;">05/07/07</td>
+<td>Tecnicas de Representaci&oacute;n II</td>
+<td style="text-align: center;" colspan="3">&nbsp; Equivalencia Res. CSU N&ordm; 66/07</td>
+</tr>
+<tr>
+<td style="text-align: center;">VII</td>
+<td style="text-align: center;">05/07/07</td>
+<td>Sistemas de Representaci&oacute;n II</td>
+<td style="text-align: center;" colspan="3">&nbsp; Equivalencia Res. CSU N&ordm; 66/07</td>
+</tr>
+<tr>
+<td style="text-align: center;">IX</td>
+<td style="text-align: center;">02/08/12</td>
+<td>Estructuras I</td>
+<td style="text-align: center;" colspan="3">&nbsp; Equivalencia Res. CSU N&ordm; 66/07</td>
+</tr>
+<tr>
+<td style="text-align: center;">VIII</td>
+<td style="text-align: center;">27/02/09</td>
+<td>Historia de la Arquitectura I</td>
+<td style="text-align: center;">&nbsp;6 (seis)</td>
+<td style="text-align: center;">&nbsp;ARQ. 1.1.1</td>
+<td style="text-align: center;">&nbsp;172</td>
+</tr>
+</tbody>
+</table>
+<p><strong><br /></strong></p>
+<p><strong>T</strong><strong>ERCER</strong><strong> A&Ntilde;O</strong><strong></strong></p>
+<table style="width: 644px; height: 89px;" border="1">
+<tbody>
+<tr>
+<td style="text-align: center; width: 10%;">Referencias</td>
+<td style="text-align: center; width: 8%;">Fecha</td>
+<td style="text-align: center; width: 40%;">Asignatura</td>
+<td style="text-align: center; width: 10%;">Calificaci&oacute;n</td>
+<td style="text-align: center; width: 10%;">Libro</td>
+<td style="text-align: center; width: 8%;">Folio</td>
+</tr>
+<tr>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">03/12/07</td>
+<td>Tecnicas de Representaci&oacute;n III</td>
+<td style="text-align: center;">6 (seis)</td>
+<td style="text-align: center;">&nbsp;X154II20</td>
+<td style="text-align: center;">089</td>
+</tr>
+<tr>
+<td style="text-align: center;">XI</td>
+<td style="text-align: center;">03/12/07</td>
+<td>Dibujo Tecnico</td>
+<td style="text-align: center;">5 (cinco)</td>
+<td style="text-align: center;">X154II20</td>
+<td style="text-align: center;">090</td>
+</tr>
+<tr>
+<td style="text-align: center;">XII</td>
+<td style="text-align: center;">27/02/09</td>
+<td>Historia de la Arquitectura II</td>
+<td style="text-align: center;" colspan="3">Equivalencia Res. CSU N&ordm; 66/07</td>
+</tr>
+</tbody>
+</table>
+<p><strong>OBSERVACIONES: PLAN DE ESTUDIOS EN TRANSICI&Oacute;N</strong></p>
+<p><strong>Estructuras I: aprobada por equivalencia, adopta la fecha de aprobaci&oacute;n de Matematica III e Introducci&oacute;n a la F&iacute;sica.</strong></p>
+<p><strong>Historia de la Arquitectura II: aprobada por equivalencia, adopta la fecha de aprobaci&oacute;n de Historia de la Arquitectura I.-<br /></strong></p>
+<p>&nbsp;</p>

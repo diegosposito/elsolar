@@ -1,0 +1,4 @@
+<p>Materia Optativa de Formaci&oacute;n General I: T&eacute;cnicas de la Expresi&oacute;n Oral y Escrita.</p>
+<p>Materia Optativa de Formaci&oacute;n General II: Teor&iacute;a de la Comunicaci&oacute;n.</p>
+<p>Materia Optativa de Formaci&oacute;n General III: Filosof&iacute;a.</p>
+<p>Materia Optativa de Formaci&oacute;n General IV: Psicolog&iacute;a Social.</p>
