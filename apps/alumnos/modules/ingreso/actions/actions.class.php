@@ -10,73 +10,29 @@
  */
 class ingresoActions extends sfActions
 {		
-  public function executeIndex(sfWebRequest $request)
+    public function executeIndex(sfWebRequest $request)
   {
 	$user = $this->getUser();
-	$this->idarea = sfContext::getInstance()->getUser()->getAttribute('id_area','');
-	
+
 	if($user->isAuthenticated()) {
-		if ($request->getParameter('idsistema')) {
-			$this->idsistema = $request->getParameter('idsistema'); 
-			sfContext::getInstance()->getUser()->setAttribute('id_sistema',$this->idsistema);
-		} else {
-			$this->idsistema = sfContext::getInstance()->getUser()->getAttribute('id_sistema');
-		}
 	  	//obtengo datos del usuario
 		$this->usuario=$user->getUsername();
-		//$this->idarea = $user->getProfile()->getIdarea();
-		$this->idsede= $user->getProfile()->getIdsede();
-		$oAreas = Doctrine::getTable('Areas')->find($this->idarea);
-
-		$this->darea= $oAreas->getDescripcion();
-		
-		$oSedes = Doctrine::getTable('Sedes')->find($this->idsede);
-		$this->dsede= $oSedes->getNombre();
-
-		$oAreas = Doctrine::getTable('Areas')->find($this->idarea);
-		
-		if($this->getUser()->hasCredential('alumno')) {
-			$this->area = "Alumno";
-			//$this->redirect("http://alumnos.ucu.edu.ar/autogestion.php");
+		$this->idarea = $user->getProfile()->getIdarea();
+		$oAreas = Doctrine::getTable('Areas')->find(1);
+		if($this->getUser()->hasCredential('DesignacionesProfesores')) {
+			$this->area = "DesignacionesProfesores";
+		} elseif ($this->getUser()->hasCredential('DesignacionesSedes')) {
+			$this->area = "DesignacionesSedes";
+		} elseif ($this->getUser()->hasCredential('adminProfesores')) {
+			$this->area = "adminProfesores";	
 		} else {
-			$this->area = $oAreas->getDescripcion();
+			$current_link = "http://$_SERVER[HTTP_HOST]";
+			$this->redirect($current_link."/profesores.php/logout");
 		}
-		// obtener consultas de alumnos
-		$this->solicitudess = Doctrine_Core::getTable('Solicitudes')->obtenerSolicitudes($this->getUser()->getProfile()->getIdarea(), $this->getUser()->getProfile()->getIdsede(),0);
-
-	  	$oUsuario = $this->getUser()->getGuardUser();
-	 	$oPerfil = $oUsuario->getProfile();
-	  	$oAreasCarrera = Doctrine_Core::getTable('AreasCarrera')->findByIdArea($this->idarea);
-		$arregloCarreras = "";
-		$arregloFacultades = "";
-	  	foreach($oAreasCarrera as $ac){
-	  		$ca =$ac->getCarreras();
-	  		if ($ca->getIdtipocarrera()!=6) {
-				if ($arregloCarreras=='') $arregloCarreras = $ac->idcarrera;
-				$arregloCarreras = $ac->idcarrera.','.$arregloCarreras;
-				if ($arregloFacultades=='') $arregloFacultades = $ca->getIdfacultad();
-				$arregloFacultades .= ','.$ca->getIdfacultad();
-	  		}
-		}
-
-		$this->noticias = array();
-
-  		if(($this->getUser()->getGuardUser()) && ($arregloCarreras!="")) {
-			$this->noticias = Doctrine::getTable('Noticias')->obtenerNoticiasPrivadasPorCarrera($arregloCarreras,$this->getUser()->getProfile()->getIdsede());
-  		}
-  		$this->calendarioss = array();
-		if ($arregloFacultades = "") {
-			$this->calendarioss = Doctrine_Core::getTable('Calendarios')
-				->createQuery('a')
-				->where('idsede='.$oPerfil->getIdsede())
-				->andWhere('idfacultad IN ('.$arregloFacultades.')')
-				->andWhere('activo = 1')
-				->execute();			
-		} else {
-			$this->calendarioss = array();
-		}
-    
-	}
+		$this->area = "DesignacionesSedes";
+  	} else {
+  		$this->usuario = "";
+  	}
   }  
   
   public function executeIndexfacultad(sfWebRequest $request)
