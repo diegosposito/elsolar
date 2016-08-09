@@ -4,13 +4,7 @@
 <form action="<?php echo url_for('personas/buscar') ?>" method="post">
   <table cellspacing="0" class="stats" width="80%">
       <?php echo $form->renderGlobalErrors() ?>
-      <tr>
-        <td><b><?php echo $form['idplanestudio']->renderLabel() ?></b></td>
-        <td>
-          <?php echo $form['idplanestudio']->renderError() ?>
-          <?php echo $form['idplanestudio'] ?>
-        </td>
-      </tr>      
+          
       <tr>
         <td><b><?php echo $form['tipocriterio']->renderLabel() ?></b></td>
         <td>
