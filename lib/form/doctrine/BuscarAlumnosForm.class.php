@@ -6,7 +6,7 @@ class BuscarAlumnosForm extends sfForm
   public function configure()
   {        
   	$idarea = sfContext::getInstance()->getUser()->getAttribute('id_area','');
-  	$carreras = Doctrine_Core::getTable('AreasCarrera')->obtenerCarrerasPorArea($idarea);
+  	$carreras = Doctrine_Core::getTable('AreasCarrera')->obtenerCarrerasPorArea(1);
   	//$arr = array(1, 2, 6);
 	$arr = array(1);
   	foreach ($carreras as $carrera) {
@@ -21,7 +21,7 @@ class BuscarAlumnosForm extends sfForm
 	asort($arregloPlanes);
 	
 	// Se define el esquema del form
-  	$this->widgetSchema['idplanestudio'] = new sfWidgetFormSelect(array('choices' => $arregloPlanes));
+  	//$this->widgetSchema['idplanestudio'] = new sfWidgetFormSelect(array('choices' => $arregloPlanes));
 	$this->widgetSchema['tipocriterio'] = new sfWidgetFormSelect(array('choices' => self::$tiposcriterios));
 	$this->widgetSchema['criterio'] = new sfWidgetFormInput();
 	$this->widgetSchema['referer'] = new sfWidgetFormInputHidden();
@@ -30,13 +30,13 @@ class BuscarAlumnosForm extends sfForm
 	$this->widgetSchema['tipo'] = new sfWidgetFormInputHidden();
 	
  	// Se define los labels
-	$this->widgetSchema->setLabel('idplanestudio', '<p align="left">Carrera:</p>');
+	//$this->widgetSchema->setLabel('idplanestudio', '<p align="left">Carrera:</p>');
  	$this->widgetSchema->setLabel('tipocriterio', '<p align="left">Buscar en:</p>');
  	$this->widgetSchema->setLabel('criterio', '<p align="left"></p>');
 
  	// Se define los validadores 
 	$this->setValidators(array(
-		'idplanestudio'    => new sfValidatorString(),
+	//	'idplanestudio'    => new sfValidatorString(),
 		'tipocriterio'    => new sfValidatorString(),	
 		'criterio'    => new sfValidatorString(array('required' => false)),
 		'url' => new sfValidatorString(array('required' => false)),
