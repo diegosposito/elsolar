@@ -34,10 +34,8 @@
 	    </tr>
 	    <tr>
 	      <td width="5%" align="center" class="hed">Id</td>
-	      <td width="5%" align="center" class="hed">Legajo</td>
-	      <td width="45%" align="center" class="hed">Alumno</td>
-	      <td width="15%" align="center" class="hed">Ciclo Lectivo</td>
-	      <td width="30%" align="center" class="hed">Nro. de Documento</td>
+	      <td width="50%" align="center" class="hed">Nombre</td>
+	      <td width="45%" align="center" class="hed">Nro. de Documento</td>
 	      <td width="10%" align="center" class="hed"></td>
 	    </tr>
 	  </thead>
@@ -45,22 +43,17 @@
             <?php $i=0; ?>
 	    <?php foreach($resultado as $item){ ?>
 	    <tr class="fila_<?php echo $i%2 ; ?>">
-	      <td width="5%" align="center"><?php echo $item['idalumno'] ?></td>
-	      <td width="5%" align="center"><?php echo $item['legajo'] ?></td>
+	      <td width="5%" align="center"><?php echo $item['idpersona'] ?></td>
 	      <td width="45%"><?php echo $item['apellido'].", ".$item['nombre'] ?></td>
-	      <td width="15%" align="center"><?php echo $item['ciclo'] ?></td>
 	      <td width="30%" align="center"><?php echo $item['nrodoc'] ?></td>
-	      <td width="10%" align="center">
-			<form name="form_<?php echo $form->getValue('idplanestudio'); ?>" method="post" action="<?php echo url_for($form->getValue('url')) ?>">  
-				<input type="hidden" name="idplanestudio" value="<?php echo $form->getValue('idplanestudio'); ?>">
-				<input type="hidden" name="idalumno" value="<?php echo $item['idalumno']; ?>">
-				<input type="hidden" name="idpersona" value="<?php echo $item['idpersona']; ?>">
-				<input type="submit" value="<?php echo $titulo; ?>" title="<?php echo $titulo; ?>" id="Ver">
-			</form>
-	      </td>
+	      <td align="center"><?php echo link_to("Editar", 'personas/edit?idpersona='.$item['idpersona'] ,'class="mhead"'); ?></td>
 	    </tr>
             <?php $i++; ?>
 	    <?php } ?>
+
+	    <br>
+  <a href="<?php echo url_for('personas/new') ?>">Agregar nuevas personas</a>
+  <br><br>
 	  </tbody>
 	</table>
 	<br>
