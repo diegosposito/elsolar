@@ -395,7 +395,7 @@ Sede: '.$oSede.'
         		$this->titulo = $arreglo['titulo'];
         		$this->tipo = $arreglo['tipo'];
         	
-  				$this->resultado = Doctrine_Core::getTable('Alumnos')->buscarAlumnos($this->tipocriterio, $this->criterio, $this->idplanestudio, $this->getUser()->getProfile()->getIdsede(), $this->tipo);			
+  				$this->resultado = Doctrine_Core::getTable('Alumnos')->buscarPersonas($this->tipocriterio, $this->criterio, $this->idplanestudio, $this->getUser()->getProfile()->getIdsede(), $this->tipo);			
 			}
 		} else {
 			$this->resultado = array();
