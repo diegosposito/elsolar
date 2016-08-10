@@ -13,7 +13,7 @@ class PersonasForm extends BasePersonasForm
   public function configure()
   {
 
-        unset( $this['cantgrupofamiliar'],$this['titulo'],$this['idprofesion'],$this['vive'],$this['created_at'], $this['updated_at'], $this['created_by'], $this['updated_by'] ,$this['nrodoc'] ,$this['fechanac'],$this['fechaingreso'] ,$this['idciudadnac'],$this['idnacionalidad'],$this['estadocivil']         );
+        unset( $this['cantgrupofamiliar'],$this['titulo'],$this['idprofesion'],$this['vive'],$this['created_at'], $this['updated_at'], $this['nrolector'], $this['tienefoto'], $this['created_by'], $this['updated_by'] ,$this['nrodoc'] ,$this['fechanac'],$this['fechaingreso'] ,$this['idciudadnac'],$this['idnacionalidad'],$this['estadocivil']         );
      
         $years = range(date('Y') - 70, date('Y'));
     /*    $this->widgetSchema['fechanac'] = new sfWidgetFormJQueryDate(array(
@@ -36,18 +36,22 @@ class PersonasForm extends BasePersonasForm
          // Se define los labels
 	    $this->widgetSchema->setLabel('nombre', '<p align="left">Nombre:</p>');
  	    $this->widgetSchema->setLabel('apellido', '<p align="left">Apellido:</p>');
+      $this->widgetSchema->setLabel('idsexo', '<p align="left">Sexo:</p>');
  	    $this->widgetSchema->setLabel('idtipodoc', '<p align="left">Tipo Documento:</p>');
- 	   
- 	    $this->widgetSchema->setLabel('idsexo', '<p align="left">Sexo:</p>');
- 	    $this->widgetSchema->setLabel('numerodoc', '<p align="left">Numero Doc:</p>');
+      $this->widgetSchema->setLabel('numerodoc', '<p align="left">Numero Doc:</p>');
+      $this->widgetSchema->setLabel('direccion', '<p align="left">Dirección:</p>');
+      $this->widgetSchema->setLabel('email', '<p align="left">Email:</p>');
+      $this->widgetSchema->setLabel('telefono', '<p align="left">Teléfono:</p>');
+      $this->widgetSchema->setLabel('celular', '<p align="left">Celular:</p>');
+      $this->widgetSchema->setLabel('activo', '<p align="left">Activo:</p>');
+      $this->widgetSchema->setLabel('otrainformacionrelevante', '<p align="left">Observaciones:</p>');
+      
 
-        if(sfContext::getInstance()->getModuleName()=='personasegresadas'){ 	    
-		// add a post validator
+   	// add a post validator
             $this->validatorSchema->setPostValidator(
         	new sfValidatorCallback(array('callback' => array($this, 'checkDni')))
             );
-	}
-   }
+	 }
 
  
 
