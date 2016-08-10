@@ -74,7 +74,7 @@ ddaccordion.init({
       <table border="0" width="100%" cellpadding="0" cellspacing="0">
           <tr>
             <td colspan="2">
-            <img alt="" src="<?php echo $sf_request->getRelativeUrlRoot();?>/images/cabeceraucu2.png">
+            <img alt="" src="<?php echo $sf_request->getRelativeUrlRoot();?>/images/alcec3.jpg">
             </td>
           </tr>
           <tr height="21px" bgcolor="#707173">
@@ -178,7 +178,7 @@ ddaccordion.init({
 			<table width="100%" border="0">
 				<tr>
 					<td>
-					<img alt="" src="<?php echo $sf_request->getRelativeUrlRoot();?>/images/pieUCU.jpg">
+					<img alt="" src="<?php echo $sf_request->getRelativeUrlRoot();?>/images/alcec2.jpg">
 					</td>
 				</tr> 
 			</table>
@@ -186,6 +186,6 @@ ddaccordion.init({
       </tr>
   </tfoot>
 </table>
-<p style="text-align: center;"><small>copyright © 2012 U.C.U. | sistemas@ucu.edu.ar</small><br>
+<p style="text-align: center;"><small>copyright © 2016 A.L.C.E.C.U. | dsposito@gmail.com</small><br>
 </p>
 </body></html>
