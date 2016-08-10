@@ -488,7 +488,7 @@ Sede: '.$oSede.'
     // Obtener Analitico Final
     //***********************************
     
-    $soapclient = new nusoap_client("http://wssig.ucu.edu.ar/ucu/sitio/webservices/personas.php?wsdl");
+    $soapclient = new nusoap_client("http://prueba.com");
   
     //llamamos la función implementada en el server.php de la siguiente manera
     $resultado = $soapclient->call('getpersona',array( 'value'=> $request->getParameter('idp')));
