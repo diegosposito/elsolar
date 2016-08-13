@@ -545,7 +545,7 @@ Personas:
     celular: { type: string(200), primary: false, notnull: true, default: '' }
     direccion: { type: string(200), primary: false, notnull: true, default: '' }
     tienefoto: { type: boolean, primary: false, notnull: true, default: 0 }  
-    activo: { type: boolean, primary: false, notnull: true, default: 1 }  
+    activo: { type: boolean, primary: false, notnull: true, default: 0 }  
     nrolector: { type: string(10), primary: false, autoincrement: false, default: '' }
     otrainformacionrelevante: { type: string(2000) }
   relations:
