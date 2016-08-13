@@ -47,10 +47,7 @@ class PersonasForm extends BasePersonasForm
       $this->widgetSchema->setLabel('otrainformacionrelevante', '<p align="left">Observaciones:</p>');
       
 
-   	// add a post validator
-            $this->validatorSchema->setPostValidator(
-        	new sfValidatorCallback(array('callback' => array($this, 'checkDni')))
-            );
+   
 	 }
 
  
