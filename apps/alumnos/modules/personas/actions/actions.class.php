@@ -705,6 +705,9 @@ Sede: '.$oSede.'
     if ($form->isValid())
     {
       $personas = $form->save();
+      $nrodoc = preg_replace("/[^\d]/", "", $personas->getNumeroDoc());
+      $personas->setNroDoc($nrodoc);
+      $personas->save();
 
       $this->redirect('personas/edit?idpersona='.$personas->getIdpersona());
     }
