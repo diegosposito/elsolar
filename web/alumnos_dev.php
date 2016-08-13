@@ -7,10 +7,6 @@ if (!in_array(@$_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1')))
  // die('You are not allowed to access this file. Check '.basename(__FILE__).' for more information.');
 }
 
-if (!in_array(@$_SERVER['REMOTE_ADDR'], array('192.168.1.0/255.255.255.0', '::1')))
-{
- // die('You are not allowed to access this file. Check '.basename(__FILE__).' for more information.');
-}
 //echo '*******'.substr(@$_SERVER['REMOTE_ADDR'],0,3);
 
 
