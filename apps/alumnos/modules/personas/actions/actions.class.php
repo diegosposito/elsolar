@@ -402,6 +402,34 @@ Sede: '.$oSede.'
 		}
 	}
 
+	public function executeBuscarcobrador(sfWebRequest $request)
+	{
+		$this->form = new BuscarAlumnosForm(array(
+			'url' => $this->url,
+		    'titulo' => $this->titulo,
+			'tipo' => $this->tipo,				
+			'referer' => $request->getGetParameter('referer', str_replace($request->getUriPrefix(), '', $request->getUri()))
+		));	
+
+		if ($request->isMethod('post')) {
+			$this->form->bind($request->getParameter($this->form->getName()));
+
+			if ($this->form->isValid())	{
+				$arreglo = $request->getParameter($this->form->getName());
+				
+        		$this->idplanestudio = $arreglo['idplanestudio'];
+        		$this->tipocriterio = $arreglo['tipocriterio'];
+        		$this->criterio = $arreglo['criterio'];
+        		$this->titulo = $arreglo['titulo'];
+        		$this->tipo = $arreglo['tipo'];
+        	
+  				$this->resultado = Doctrine_Core::getTable('Alumnos')->buscarCobrador($this->tipocriterio, $this->criterio, $this->idplanestudio, $this->getUser()->getProfile()->getIdsede(), $this->tipo);			
+			}
+		} else {
+			$this->resultado = array();
+		}
+	}
+
 	
 	public function executeBuscarcertificado(sfWebRequest $request)
 	{
@@ -431,6 +459,30 @@ Sede: '.$oSede.'
 		}
 	}
 
+  
+  public function executeUpdatecobrador(sfWebRequest $request)
+  {
+    $this->forward404Unless($request->isMethod(sfRequest::POST) || $request->isMethod(sfRequest::PUT));
+    $this->forward404Unless($personas = Doctrine_Core::getTable('Personas')->find(array($request->getParameter('idpersona'))), sprintf('Object personas does not exist (%s).', $request->getParameter('idpersona')));
+    $this->form = new PersonasForm($personas);
+
+    $this->processcobradorForm($request, $this->form);
+
+    $this->setTemplate('editcobrador');
+
+  }
+
+  public function executeCreatecobrador(sfWebRequest $request)
+  {
+    $this->forward404Unless($request->isMethod(sfRequest::POST));
+
+    $this->form = new PersonasForm();
+
+    $this->processcobradorForm($request, $this->form);
+
+    $this->setTemplate('newcobrador');
+  }
+
 
   public function executeIndex(sfWebRequest $request)
   {
@@ -444,18 +496,29 @@ Sede: '.$oSede.'
     $this->form = new PersonasForm();
   }
 
+  public function executeNewcobrador(sfWebRequest $request)
+  {
+    $this->form = new PersonasForm();
+  }
+
   public function executeCreate(sfWebRequest $request)
   {
     $this->forward404Unless($request->isMethod(sfRequest::POST));
 
     $this->form = new PersonasForm();
 
-    $this->processForm($request, $this->form);
+    $this->processcobradorForm($request, $this->form);
 
     $this->setTemplate('new');
   }
 
   public function executeEdit(sfWebRequest $request)
+  {
+    $this->forward404Unless($personas = Doctrine_Core::getTable('Personas')->find(array($request->getParameter('idpersona'))), sprintf('Object personas does not exist (%s).', $request->getParameter('idpersona')));
+    $this->form = new PersonasForm($personas);
+  }
+
+  public function executeEditcobrador(sfWebRequest $request)
   {
     $this->forward404Unless($personas = Doctrine_Core::getTable('Personas')->find(array($request->getParameter('idpersona'))), sprintf('Object personas does not exist (%s).', $request->getParameter('idpersona')));
     $this->form = new PersonasForm($personas);
@@ -710,6 +773,21 @@ Sede: '.$oSede.'
       $personas->save();
 
       $this->redirect('personas/edit?idpersona='.$personas->getIdpersona());
+    }
+  }
+
+  protected function processcobradorForm(sfWebRequest $request, sfForm $form)
+  {
+    $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
+    if ($form->isValid())
+    {
+      $personas = $form->save();
+      $nrodoc = preg_replace("/[^\d]/", "", $personas->getNumeroDoc());
+      $personas->setNroDoc($nrodoc);
+      $personas->setSocio(false);
+      $personas->save();
+
+      $this->redirect('personas/editcobrador?idpersona='.$personas->getIdpersona());
     }
   }
 }
