@@ -1,0 +1,1 @@
+<?php include_partial('buscarcobrador', array('form' => $form,'resultado' => $resultado, 'titulo' => $titulo, 'tipo' => $tipo)) ?>
