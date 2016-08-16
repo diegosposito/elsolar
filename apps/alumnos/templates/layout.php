@@ -102,16 +102,11 @@ ddaccordion.init({
             </td>
             <td align="right" >
             	<font color="#ffffff"><b><?php echo $sf_user->getGuardUser()->getUsername().' (<a href="'.url_for('@sf_guard_signout').'">Salir</a>)'; ?></b><br>
-				<b>Perfil:</b>
+				<b>Perfil: Administrador</b>
 				<?php	
 				$credencial = '';
 				$arrCredenciales = array();
-				foreach ($sf_user->getCredentials() as $credencial) {
-					array_push($arrCredenciales, $credencial); 
-					echo '&nbsp'.$credencial;
-					if ($credencial=='alumno') $esalumno=true;
-				}
-				?></font>         
+			?></font>         
 			</td>            
 			<?php } else { ?>
 			<td colspan="2">&nbsp</td>	
@@ -119,7 +114,7 @@ ddaccordion.init({
           </tr>          
       </table>
 	<?php if($esalumno){ ?>
-	  <table><a href="http://alumnos.ucu.edu.ar/autogestion.php">INGRESAR DESDE AQUI</a></table>
+	  <table><a href="">INGRESAR DESDE AQUI</a></table>
 	<?php 
 		exit;
 	}; ?>
