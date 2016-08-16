@@ -347,13 +347,15 @@ class AlumnosTable extends Doctrine_Table
                 SELECT pe.* FROM personas pe 
                 WHERE
                         ((pe.apellido LIKE '%".$criterio."%') OR (pe.nombre LIKE '%".$criterio."%'))
+                        AND pe.socio 
                         ORDER BY pe.apellido ASC, pe.nombre ASC
             ");
         }else{
             $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc("
                 SELECT pe.* FROM personas pe 
                     WHERE
-                        (pe.nrodoc LIKE '%".$criterio."%')ORDER BY pe.apellido ASC, pe.nombre ASC
+                        (pe.nrodoc LIKE '%".$criterio."%') 
+                        AND pe.socio ORDER BY pe.apellido ASC, pe.nombre ASC
             ");
         }       
         
@@ -361,6 +363,32 @@ class AlumnosTable extends Doctrine_Table
         //exit;
         return $q;
     }  
+
+    // Busca todas los alumnos segun los criterios
+    public static function buscarCobrador($tipocriterio, $criterio, $idplanestudio, $idsede, $tipo)
+    {
+      
+        if($tipocriterio==1) {
+            $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc("
+                SELECT pe.* FROM personas pe 
+                WHERE
+                        ((pe.apellido LIKE '%".$criterio."%') OR (pe.nombre LIKE '%".$criterio."%'))
+                        AND NOT pe.socio 
+                        ORDER BY pe.apellido ASC, pe.nombre ASC
+            ");
+        }else{
+            $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc("
+                SELECT pe.* FROM personas pe 
+                    WHERE
+                        (pe.nrodoc LIKE '%".$criterio."%') 
+                        AND NOT pe.socio ORDER BY pe.apellido ASC, pe.nombre ASC
+            ");
+        }       
+        
+        //echo "SQL: ".$q->getSqlQuery();
+        //exit;
+        return $q;
+    }
        
     // Busca todas los alumnos segun los criterios
     public static function buscarAlumnosPorCiclo($tipocriterio, $criterio, $idplanestudio, $idciclolectivo)
