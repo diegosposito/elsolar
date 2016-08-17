@@ -98,6 +98,31 @@ Sede: '.$oSede.'
   		return sfView::NONE;  	
 	}
 
+	public function executeMesescobro(sfWebRequest $request)
+    {
+     
+      $this->persona = Doctrine::getTable('Personas')->find($request->getParameter('idpersona'));
+
+      $this->resultado = Doctrine_Core::getTable('MesesCobro')->obtenerMesesCobro($request->getParameter('idpersona'));
+     
+    }
+
+    public function executeRegistrarcobro(sfWebRequest $request)
+    {
+        $this->resultado = Doctrine_Core::getTable('MesesCobro')->borrarMesesCobro($request->getParameter('idpersona'));
+      
+       foreach($request->getParameter('meses') as $mes){
+          
+        	$oMesesCobro = new MesesCobro();
+  		
+			$oMesesCobro->setIdpersona($request->getParameter('idpersona'));
+			$oMesesCobro->setMes($mes);
+		  		
+		  	$oMesesCobro->save();
+        }
+     
+    }
+
 	public function executeRegistrar(sfWebRequest $request) {
        $this->mensaje = ""; $this->isPost = false; 
        $documento=$request->getParameter('nrodocumento');
