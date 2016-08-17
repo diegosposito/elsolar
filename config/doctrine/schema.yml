@@ -571,6 +571,20 @@ Personas:
       foreign: idsexo
       foreignAlias: Sexo 
 
+MesesCobro:
+  actAs: 
+    Timestampable: ~ 
+    fzblameable: ~
+  columns:
+    idpersona: { type: integer, primary: false, autoincrement: false, default: '1' }
+    mes: { type: integer, primary: false, autoincrement: false }
+    descripcion: { type: string(255), notnull: true }
+  relations:
+    Personas: 
+      local: idpersona
+      foreign: idpersona
+      foreignAlias: Personas       
+
 NoDocentes:
   actAs: 
     Timestampable: ~ 
