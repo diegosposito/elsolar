@@ -49,6 +49,7 @@
 	      <td width="40%" align="center"><?php echo $item['nrodoc'] ?></td>
 	      <td width="5%" align="center"><?php echo $item['activo'] ? "Si" : "No" ?></td>
 	      <td align="center"><?php echo link_to("Editar", 'personas/edit?idpersona='.$item['idpersona'] ,'class="mhead"'); ?></td>
+	      <td align="center"><?php echo link_to("Editar", 'personas/mesescobro?idpersona='.$item['idpersona'] ,'class="mhead"'); ?></td>
 	    </tr>
             <?php $i++; ?>
 	    <?php } ?>
