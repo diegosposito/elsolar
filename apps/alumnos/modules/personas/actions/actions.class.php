@@ -103,7 +103,8 @@ Sede: '.$oSede.'
      
       $this->persona = Doctrine::getTable('Personas')->find($request->getParameter('idpersona'));
 
-      $this->resultado = Doctrine_Core::getTable('MesesCobro')->obtenerMesesCobro($request->getParameter('idpersona'));
+      //$this->resultado = Doctrine_Core::getTable('MesesCobro')->obtenerMesesCobro($request->getParameter('idpersona'));
+      $this->resultado = Doctrine_Core::getTable('MesesCobro')->obtenerSoloMesesCobro($request->getParameter('idpersona'));
      
     }
 
@@ -111,7 +112,7 @@ Sede: '.$oSede.'
     {
         $this->resultado = Doctrine_Core::getTable('MesesCobro')->borrarMesesCobro($request->getParameter('idpersona'));
       
-       foreach($request->getParameter('meses') as $mes){
+        foreach($request->getParameter('meses') as $mes){
           
         	$oMesesCobro = new MesesCobro();
   		
@@ -120,6 +121,8 @@ Sede: '.$oSede.'
 		  		
 		  	$oMesesCobro->save();
         }
+
+        $this->redirect('personas/mesescobro?idpersona='.$request->getParameter('idpersona'));
      
     }
 
