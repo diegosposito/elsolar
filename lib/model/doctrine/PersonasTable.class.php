@@ -30,7 +30,40 @@ class PersonasTable extends Doctrine_Table
 	    	->fetchOne();
 	       
         return $q;
-    }	    
+    }	
+
+    // Obtener designaciones por persona, filtrando tambien por area y sede
+    public static function obtenerRecibosAGenerar()
+    {
+        $sql ="SELECT per.idpersona, per.nombre, per.apellido, '10' as monto, mc.mes, DATE_FORMAT(NOW(), '%Y-%m-%d') AS fecha
+        FROM
+        personas per JOIN meses_cobro mc ON per.idpersona = mc.idpersona
+        WHERE mc.mes = MONTH(NOW()); ";
+        
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
+
+        return $q;
+    }  
+
+    // crear recibos de personas seleccionadas
+    public static function crearRecibos($arrPersonas)
+    {
+        
+        // Definir elemenos para filtrar por IN
+        $datos=''; $cantidad=0;
+        foreach($arrDesignaciones as $info)
+            $datos .= $info.', ';
+        
+        $datos = substr($datos, 0, strlen($datos)-2);
+
+        // actualizar designaciones
+        $sql = "INSERT INTO recibosgenerados SELECT per.idpersona, per.nombre, per.apellido, '10' as monto,  DATE_FORMAT(NOW(), '%Y-%m-%d') AS fecha, MONTH(NOW()) as mes 
+        WHERE idpersona IN (".$datos.");";
+        
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection();
+        
+        return $q->execute($sql);
+    }  
 
     // Obtiene todas las carreras asociadas a una persona
 	public static function obtenerCarrerasPersona($nrodoc)
