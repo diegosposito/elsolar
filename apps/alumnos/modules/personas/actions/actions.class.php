@@ -149,6 +149,69 @@ Sede: '.$oSede.'
         $this->form = new BuscarPersonasForm();
     }
 
+    public function executeGenerarrecibos(sfWebRequest $request)
+    {
+	    $this->msgSuccess = $request->getParameter('msgSuccess', '');
+	    $this->msgError = $request->getParameter('msgError', '');
+	     
+	    // solo usuarios de sede central pueden asignar resoluciones
+	    if(sfContext::getInstance()->getUser()->getAttribute('id_sede','')<>'1'){
+	        $this->msgError = 'El usuario actual no está habilitado para asignar resoluciones!!';
+	        $this->resultado ='';
+	    }
+
+	    if ($idsede=='')
+	        $this->idsede = sfContext::getInstance()->getUser()->getAttribute('id_sede','');
+	     
+	    // Obtener Sedes
+	    $this->sedes = Doctrine_Core::getTable('Sedes')->findAll();
+	      
+	    $this->idsede = $idsede;
+     
+    }
+
+    public function executeGrabarrecibosgenerados(sfWebRequest $request)
+    {
+        $this->msgSuccess = $request->getParameter('msgSuccess', '');
+        $this->msgError = $request->getParameter('msgError', '');
+
+        $arr_personas = array();
+           
+        // Obtiene designaciones seleccionadas en la vista en un array
+        $idcase = $request->getParameter('idcase', '');
+
+        foreach($idcase as $seleccionados){
+            if(is_numeric($seleccionados)) 
+                $arr_personas[] = $seleccionados;
+        }
+
+            // Si existen para generar recibos
+            if ( count($arr_personas)>0 ){
+                $resultado = Doctrine_Core::getTable('Personas')->crearRecibos($arr_personas);
+                $estado = 'Los recibos fueron generados para los socios seleccionados.';
+                $this->redirect($this->generateUrl('default', array('module' => 'personas',
+                'action' => 'generarrecibos', 'msgSuccess' => $estado )));
+            } else {
+               $estado='No hay socios seleccionados para generar recibos';
+               $this->redirect($this->generateUrl('default', array('module' => 'personas',
+                'action' => 'generarrecibos', 'msgError' => $estado )));
+            }
+
+   }
+
+    public function executeObtenerrecibosgenerados(sfWebRequest $request)
+  {
+      
+
+      $this->msgSuccess = $request->getParameter('msgSuccess', '');
+      $this->msgError = $request->getParameter('msgError', '');
+      
+      $this->resultado = Doctrine_Core::getTable('Personas')->obtenerRecibosAGenerar();
+  
+      $this->permite_seleccionar = $request->getParameter('permite_seleccionar');
+
+  }
+
     public function executeModificarregistro(sfWebRequest $request)	{	
 
     	// Busca si existe la persona
