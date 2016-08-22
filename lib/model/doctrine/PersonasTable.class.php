@@ -189,7 +189,20 @@ class PersonasTable extends Doctrine_Table
         }       
         
         return $q;
-    }  
+    } 
+
+    // Busca todas los alumnos segun los criterios
+    public static function obtenerCobradores()
+    {   
+       
+            $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc("
+                SELECT p.idpersona, p.apellido, p.nombre, concat(p.apellido, ', ', p.nombre) as nombrecompleto, nrodoc
+                FROM personas p 
+                WHERE NOT p.socio "
+            );
+       
+            return $q;
+    }    
 
        // Total egresados detallado por rango
     public static function detalleEgresadosPorRango($fechadesde, $fechahasta)
