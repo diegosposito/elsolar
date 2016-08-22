@@ -529,6 +529,7 @@ Personas:
     apellido: { type: string(100), primary: false, notnull: true, default: '' }
     idsexo: { type: integer(4), primary: false, autoincrement: false, default: '1' }
     idtipodoc: { type: integer, primary: false, autoincrement: false, default: '1' }
+    idcobrador: { type: integer, primary: false, autoincrement: false, default: null }
     nrodoc: { type: string(80), primary: false, notnull: true, default: '' }
     numerodoc: { type: string(80), primary: false, notnull: true, default: '' }
     fechanac: { type: date(25), primary: false, notnull: true, default: '2002-01-01' }
