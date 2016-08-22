@@ -555,7 +555,7 @@ Sede: '.$oSede.'
   {
     $this->forward404Unless($request->isMethod(sfRequest::POST) || $request->isMethod(sfRequest::PUT));
     $this->forward404Unless($personas = Doctrine_Core::getTable('Personas')->find(array($request->getParameter('idpersona'))), sprintf('Object personas does not exist (%s).', $request->getParameter('idpersona')));
-    $this->form = new PersonasForm($personas);
+    $this->form = new CobradoresForm($personas);
 
     $this->processcobradorForm($request, $this->form);
 
@@ -567,7 +567,7 @@ Sede: '.$oSede.'
   {
     $this->forward404Unless($request->isMethod(sfRequest::POST));
 
-    $this->form = new PersonasForm();
+    $this->form = new CobradoresForm();
 
     $this->processcobradorForm($request, $this->form);
 
@@ -589,7 +589,7 @@ Sede: '.$oSede.'
 
   public function executeNewcobrador(sfWebRequest $request)
   {
-    $this->form = new PersonasForm();
+    $this->form = new CobradoresForm();
   }
 
   public function executeCreate(sfWebRequest $request)
@@ -598,7 +598,7 @@ Sede: '.$oSede.'
 
     $this->form = new PersonasForm();
 
-    $this->processcobradorForm($request, $this->form);
+    $this->processForm($request, $this->form);
 
     $this->setTemplate('new');
   }
@@ -612,7 +612,7 @@ Sede: '.$oSede.'
   public function executeEditcobrador(sfWebRequest $request)
   {
     $this->forward404Unless($personas = Doctrine_Core::getTable('Personas')->find(array($request->getParameter('idpersona'))), sprintf('Object personas does not exist (%s).', $request->getParameter('idpersona')));
-    $this->form = new PersonasForm($personas);
+    $this->form = new CobradoresForm($personas);
   }
 
   public function executeUpdate(sfWebRequest $request)
