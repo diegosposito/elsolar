@@ -35,10 +35,11 @@ class PersonasTable extends Doctrine_Table
     // Obtener designaciones por persona, filtrando tambien por area y sede
     public static function obtenerRecibosAGenerar()
     {
-        $sql ="SELECT per.idpersona, per.nombre, per.apellido, '10' as monto, mc.mes, DATE_FORMAT(NOW(), '%Y-%m-%d') AS fecha
+        $sql ="SELECT per.idpersona, per.nombre, per.apellido, per.monto, mc.mes, DATE_FORMAT(NOW(), '%Y-%m-%d') AS fecha, YEAR(NOW()) AS anio
         FROM
         personas per JOIN meses_cobro mc ON per.idpersona = mc.idpersona
-        WHERE mc.mes = MONTH(NOW()); ";
+        LEFT JOIN recibos_generados rg ON per.idpersona = rg.idpersona AND mc.mes = rg.mes AND anio = rg.anio
+        WHERE mc.mes = MONTH(NOW()) AND rg.id IS NULL;  ";
         
         $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
 
@@ -202,7 +203,21 @@ class PersonasTable extends Doctrine_Table
             );
        
             return $q;
+    }   
+
+    // Busca todas los alumnos segun los criterios
+    public static function obtenerSocios()
+    {   
+       
+            $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc("
+                SELECT p.idpersona, p.apellido, p.nombre, concat(p.apellido, ', ', p.nombre) as nombrecompleto, p.nrodoc, p.fechaingreso, IFNULL(concat(p2.apellido, ', ', p2.nombre),'') as cobrador
+                FROM personas p LEFT JOIN personas p2 ON p.idcobrador = p2.idpersona
+                WHERE p.socio AND p.activo ORDER BY p.apellido, p.nombre  "
+            );
+       
+            return $q;
     }    
+ 
 
        // Total egresados detallado por rango
     public static function detalleEgresadosPorRango($fechadesde, $fechahasta)
