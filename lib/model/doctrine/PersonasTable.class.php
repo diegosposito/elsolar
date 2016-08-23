@@ -51,14 +51,14 @@ class PersonasTable extends Doctrine_Table
         
         // Definir elemenos para filtrar por IN
         $datos=''; $cantidad=0;
-        foreach($arrDesignaciones as $info)
+        foreach($arrPersonas as $info)
             $datos .= $info.', ';
         
         $datos = substr($datos, 0, strlen($datos)-2);
 
         // actualizar designaciones
-        $sql = "INSERT INTO recibosgenerados SELECT per.idpersona, per.nombre, per.apellido, '10' as monto,  DATE_FORMAT(NOW(), '%Y-%m-%d') AS fecha, MONTH(NOW()) as mes 
-        WHERE idpersona IN (".$datos.");";
+        $sql = "INSERT INTO recibos_generados SELECT null, per.idpersona, per.idcobrador, MONTH(NOW()) as mes, YEAR(NOW()) as anio, '', per.monto, now(), now(),1,1 FROM personas per
+        WHERE per.idpersona IN (".$datos.");";
         
         $q = Doctrine_Manager::getInstance()->getCurrentConnection();
         
