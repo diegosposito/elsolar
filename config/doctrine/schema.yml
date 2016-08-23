@@ -550,6 +550,7 @@ Personas:
     socio: { type: boolean, primary: false, notnull: true, default: 1 }   
     nrolector: { type: string(10), primary: false, autoincrement: false, default: '' }
     otrainformacionrelevante: { type: string(2000) }
+    monto: { type: float, primary: false, notnull: true, default: '' }
   relations:
     TiposDocumentos: 
       local: idtipodoc
@@ -584,7 +585,32 @@ MesesCobro:
     Personas: 
       local: idpersona
       foreign: idpersona
-      foreignAlias: Personas       
+      foreignAlias: Personas 
+
+Meses:
+  actAs: 
+    Timestampable: ~ 
+    fzblameable: ~
+  columns:
+    mes: { type: integer, primary: false, autoincrement: false }
+    descripcion: { type: string(255), notnull: true }
+
+RecibosGenerados:
+  actAs: 
+    Timestampable: ~ 
+    fzblameable: ~
+  columns:
+    idpersona: { type: integer, primary: false, autoincrement: false, default: '1' }
+    idcobrador: { type: integer, primary: false, autoincrement: false, default: '1' }
+    mes: { type: integer, primary: false, autoincrement: false }
+    anio: { type: integer, primary: false, autoincrement: false }
+    mesanio: { type: string(255), notnull: true }
+    monto: { type: float, primary: false, notnull: true, default: '' }
+  relations:
+    Personas: 
+      local: idpersona
+      foreign: idpersona
+      foreignAlias: Personas             
 
 NoDocentes:
   actAs: 
