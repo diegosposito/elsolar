@@ -110,16 +110,20 @@ Sede: '.$oSede.'
 
     public function executeRegistrarcobro(sfWebRequest $request)
     {
-        $this->resultado = Doctrine_Core::getTable('MesesCobro')->borrarMesesCobro($request->getParameter('idpersona'));
+        
+        if ($request->getParameter('idpersona')>0){
+       
+       		$this->resultado = Doctrine_Core::getTable('MesesCobro')->borrarMesesCobro($request->getParameter('idpersona'));
       
-        foreach($request->getParameter('meses') as $mes){
-          
-        	$oMesesCobro = new MesesCobro();
-  		
-			$oMesesCobro->setIdpersona($request->getParameter('idpersona'));
-			$oMesesCobro->setMes($mes);
-		  		
-		  	$oMesesCobro->save();
+	        foreach($request->getParameter('meses') as $mes){
+	          
+	        	$oMesesCobro = new MesesCobro();
+	  		
+				$oMesesCobro->setIdpersona($request->getParameter('idpersona'));
+				$oMesesCobro->setMes($mes);
+			  		
+			  	$oMesesCobro->save();
+	        }
         }
 
         $this->redirect('personas/mesescobro?idpersona='.$request->getParameter('idpersona'));
