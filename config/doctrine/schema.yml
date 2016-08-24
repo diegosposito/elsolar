@@ -606,6 +606,7 @@ RecibosGenerados:
     anio: { type: integer, primary: false, autoincrement: false }
     mesanio: { type: string(255), notnull: true }
     monto: { type: float, primary: false, notnull: true, default: '' }
+    estado: { type: integer, primary: false, autoincrement: false }
   relations:
     Personas: 
       local: idpersona
