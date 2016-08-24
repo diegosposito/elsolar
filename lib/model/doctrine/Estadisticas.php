@@ -388,6 +388,38 @@ public function obtenerUltimosPeriodosSede($idSede) {
 				
         return $resultado;		     
 	}
+
+	public function obtenerNuevosSociosPorAnio($idCriterio) {
+
+       // Calcular rangos de fechas partiendo de fecha actual
+       // Se calculan los 3 periodos de los cuales se va a obtener informacion
+		$fecha = explode("-", date("Y-m-d"));
+		$anio= $fecha[0];
+		$anio1= $anio -1; $anio2= $anio -2;$anio3= $anio -3;$anio4= $anio -5;$anio5= $anio -5;
+		$anio6= $anio -6; $anio7= $anio -7;$anio8= $anio -8;
+				
+		switch ($idCriterio){
+			case 1:
+			    $filtro = " (".$anio.",".$anio1.",".$anio2.") ";
+				break;
+			case 2:
+			    $filtro = "( ".$anio.",".$anio1.",".$anio2.",".$anio3."".",".$anio4.") ";
+				break;
+			case 3:
+			    $filtro = "( ".$anio.",".$anio1.",".$anio3.",".$anio4.",".$anio5.",".$anio6.",".$anio7.",".$anio8.") ";
+				break;	
+			default:
+				  $filtro = " (".$anio.",".$anio1.",".$anio2.") ";
+				break;
+		};
+		
+	   // Obtener estadisticas ultimos 3 años , o 5 o 10
+	   $resultado = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc("SELECT COUNT(DISTINCT p.idpersona) as total, COUNT(DISTINCT IF(p.activo, p.idpersona, null)) as total_activos, COUNT(DISTINCT IF(NOT p.activo, p.idpersona, null)) as total_inactivos, YEAR(p.fechaingreso) as anio 
+			FROM personas p 
+			WHERE p.socio AND YEAR(p.fechaingreso) IN ".$filtro." GROUP BY YEAR(p.fechaingreso) ORDER BY anio desc; ");
+				
+        return $resultado;		     
+	}
 	
     public function obtenerInscriptosxFacultadxArea($idArea) {
 
