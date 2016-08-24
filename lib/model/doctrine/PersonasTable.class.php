@@ -58,8 +58,9 @@ class PersonasTable extends Doctrine_Table
         $datos = substr($datos, 0, strlen($datos)-2);
 
         // actualizar designaciones
-        $sql = "INSERT INTO recibos_generados SELECT null, per.idpersona, per.idcobrador, MONTH(NOW()) as mes, YEAR(NOW()) as anio, '', per.monto, now(), now(),1,1 FROM personas per
-        WHERE per.idpersona IN (".$datos.");";
+        $sql = "INSERT INTO recibos_generados SELECT null, per.idpersona, per.idcobrador, MONTH(NOW()) as mes, YEAR(NOW()) as anio, CONCAT(m.descripcion,' de ',YEAR(NOW())) as detalle, per.monto, now(), now(),1,1,1 FROM personas per 
+               JOIN meses m ON m.mes = MONTH(NOW()) 
+               WHERE per.idpersona IN (".$datos.");";
         
         $q = Doctrine_Manager::getInstance()->getCurrentConnection();
         
