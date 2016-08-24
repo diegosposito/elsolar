@@ -22,23 +22,23 @@ $(document).ready(function() {
     }); 
 })  
 </script>
-<h1>Evolución de Nuevos Inscriptos</h1> 
+<br>
+<h1>Evolución de Nuevos Socios</h1> 
 <br>
 <form method="post" action="nuevosinscriptosgraf" id="form1" name="form1" >
 <table cellspacing="0" class="stats" width="100%">
   <tr>
-  <td width="10%"><b>Facultad:</b></td>
+  <td width="10%"><b>Seleccionar Período:</b></td>
   <td>
   <?php
-	if (count($facultades) > 0){
 		//el bucle para cargar las opciones
 		echo "<select id='seleccionar' name='seleccionar' >";
 		echo "<option SELECTED value=''>-----SELECCIONAR-----</option>";
-		foreach ($facultades as $facultad){
-			echo "<option value=".$facultad["idfacultad"].">".$facultad["facultad"]."</option>";
+    
+    foreach ($items as $k => $v){
+			echo "<option value=".$k.">".$v."</option>";
 		}
 		echo "</select>";
-	}
 	?>
   </td>
   </tr>
