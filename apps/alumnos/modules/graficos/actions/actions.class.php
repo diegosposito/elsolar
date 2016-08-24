@@ -27,10 +27,17 @@ class graficosActions extends sfActions
   }
 
   public function executeNuevosinscriptos(sfWebRequest $request)
-  {
-  	 $oAreas = new Areas();
+  {  
+  	 $oEstadistica = new Estadisticas();
+  	 $resultado = $oEstadistica->obtenerNuevosSociosPorAnio(1);
 
-  	 $this->facultades = $oAreas->obtenerFacultadesPorArea($this->getUser()->getProfile()->getIdarea());  	  	 
+  	 $this->items = array(
+					    1 => "Ultimos 3 años",
+					    2 => "Ultimos 5 años",
+					    3 => "Ultimos 10 años"
+					);
+
+  	 //$this->facultades = $oAreas->obtenerFacultadesPorArea($this->getUser()->getProfile()->getIdarea());  	  	 
   }
   
  
@@ -38,12 +45,12 @@ class graficosActions extends sfActions
   {
       	$oEstadistica = new Estadisticas();
 
-      	  	
-       // Obtener estadisticas de nuevos incriptos ultimos 3 años agrupado por carrera
-      	$resultado = $oEstadistica->obtenerUltimosPeriodosArea($request->getParameter('seleccionar'),$this->getUser()->getProfile()->getIdarea(),sfContext::getInstance()->getUser()->getAttribute('id_sede',''));
+        // Obtener estadisticas de nuevos incriptos ultimos 3 años agrupado por carrera
+      //	$resultado = $oEstadistica->obtenerNuevosSociosPorAnio($request->getParameter('seleccionar'));
+      	$resultado = $oEstadistica->obtenerNuevosSociosPorAnio($request->getParameter('seleccionar'));
   	   	 	
         // Generar xml en archivo de texto
-	    $this->generarXml($resultado);
+	    $this->generarXml($resultado,$request->getParameter('seleccionar'));
   }
   
 public function executeNixsedes(sfWebRequest $request)
@@ -62,7 +69,7 @@ public function executeNixsedes(sfWebRequest $request)
        $resultado = $oEstadistica->obtenerUltimosPeriodosSede($request->getParameter('seleccionar'));
   	   	 
   	   // Generar xml en archivo de texto
-	   $this->generarXmlSedes($resultado);
+	   $this->generarXmlSedes($resultado,$request->getParameter('seleccionar'));
   }
   
 public function generarXmlSedes(&$resultados){
@@ -166,24 +173,28 @@ public function generarXmlSedes(&$resultados){
 		 echo $doc->saveXML();
   }
   
-  public function generarXml(&$resultados){
+  public function generarXml(&$resultados, $idCriterio){
 	  /* Calculo eje x */
   	     $fecha = explode("-", date("Y-m-d"));
-		 switch ($fecha[1]){
-			case 10:
-			case 11:
-			case 12:
-					$anio1 =   $fecha[0] - 1;
-					$anio2 =   $fecha[0] ;
-					$anio3 =   $fecha[0] + 1;
-					break;
+  	     $anio= $fecha[0];
+		 $anio1 =   $anio -1; $anio2 =  $anio -2; $anio3 = $anio -3;
+		 $anio4 =   $anio -4; $anio5 =  $anio -5; $anio6 = $anio -6;
+		 $anio7 =   $anio -7; $anio8 =  $anio -8; $anio9 = $anio -9;
+		 switch ($idCriterio){
+			case 1:
+			    $arr_anios = array($anio,$anio1,$anio2);
+				break;
+			case 2:
+			    $arr_anios = array($anio,$anio1,$anio2,$anio3,$anio4);
+				break;
+			case 3:
+			    $arr_anios = array($anio,$anio1,$anio2,$anio3,$anio4,$anio5,$anio6,$anio7,$anio8);
+				break;	
 			default:
-				    $anio1 =   $fecha[0] - 2;
-					$anio2 =   $fecha[0] - 1;
-					$anio3 =   $fecha[0];
-					break;
+				  $arr_anios = array($anio,$anio1,$anio2);
+				break;
 		};
-		  
+		 
 		 $doc = new DOMDocument();
 		  
 		 /*Especifico que el resultado tenga formato que incluye tabulaciones y espacios */
@@ -191,7 +202,7 @@ public function generarXmlSedes(&$resultados){
 		 
 		 /* Creo el nodo 'chart con sus atributos' */
 		 $r = $doc->createElement( "chart" );
-		 $r->setAttribute('caption', 'Nuevos Inscriptos por Facultad agrupado por Carreras');
+		 $r->setAttribute('caption', 'Nuevos socios por año de Ingreso');
 		 $r->setAttribute('shownames', '1');
 		 $r->setAttribute('showvalues', '1');
 		 $r->setAttribute('decimals', '0');
@@ -206,36 +217,33 @@ public function generarXmlSedes(&$resultados){
 		 
 		 /* Crear nodos 'dataset' y lo agrego dentro de chart*/
 		 $dat = $doc->createElement( "dataset" );
-		 $dat->setAttribute('seriesName', $anio1);
+		 $dat->setAttribute('seriesName', 'Total');
 		 $dat->setAttribute('color', 'AFD8F8');
 		 $dat->setAttribute('showValues', '0');
 		 $r->appendChild( $dat );
 		 
 		 $dat2 = $doc->createElement( "dataset" );
-		 $dat2->setAttribute('seriesName', $anio2);
+		 $dat2->setAttribute('seriesName', 'Activos');
 		 $dat2->setAttribute('color', 'F6BD0F');
 		 $dat2->setAttribute('showValues', '0');
 		 $r->appendChild( $dat2 );
 		 
 		 $dat3 = $doc->createElement( "dataset" );
-		 $dat3->setAttribute('seriesName', $anio3);
+		 $dat3->setAttribute('seriesName', 'Inactivos');
 		 $dat3->setAttribute('color', '8BBA00');
 		 $dat3->setAttribute('showValues', '0');
 		 $r->appendChild( $dat3 );
 		 
 		 // Recorro las distintas carreras y las agrego como nodos category */
 		 $carrera = "";
-		 foreach( $resultados as $datos )
+		 foreach( $arr_anios as $anio )
 		 {
 			
-		 	if ($datos['carrera']!=$carrera) {
-			 	
-		         $c = $doc->createElement( "category" );
-		         $c->setAttribute('label', $datos['carrera']);
-                 $carrera = $datos['carrera'];
+		 	     $c = $doc->createElement( "category" );
+		         $c->setAttribute('label', $anio);
+                 $carrera = $anio;
                  $cat->appendChild( $c );	 
 			 
-			 }
 		 } 
 		 
 		 // Creo variable xpath para buscar en el dom 
@@ -248,17 +256,17 @@ public function generarXmlSedes(&$resultados){
 
 		         $dataset = $doc->getElementsByTagName("dataset")->item(0);
 		         $set = $doc->createElement("set");
-		         $set->setAttribute('value', $datos['primeranio']);
+		         $set->setAttribute('value', $datos['total']);
 		         $dataset->appendChild($set);
 		         	         
 		 	     $dataset = $doc->getElementsByTagName("dataset")->item(1);
 		         $set = $doc->createElement("set");
-		         $set->setAttribute('value', $datos['segundoanio']);
+		         $set->setAttribute('value', $datos['total_activos']);
 		         $dataset->appendChild($set);
 		 	    	 	     
 		 	     $dataset = $doc->getElementsByTagName("dataset")->item(2);
 		         $set = $doc->createElement("set");
-		         $set->setAttribute('value', $datos['terceranio']);
+		         $set->setAttribute('value', $datos['total_inactivos']);
 		         $dataset->appendChild($set);		 	     
 		 	   
 		 } 
