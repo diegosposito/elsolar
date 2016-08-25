@@ -9,14 +9,8 @@ $(document).ready(function() {
         $('#loading').hide();
         $('#result').fadeIn('slow');
     });
-    $('#carrerasxsede').attr('disabled',true);	
-
-    $('#seleccionar').change(function(){
-        // cargar las ciudades de la carrera al combo
-        cargarComboCarreras('#carrerasxsede', $(this).val(), 0);
-    });	
-
-    $('#carrerasxsede').change(function() {
+       
+    $('#seleccionar2').change(function() {
         $.post("<?php echo url_for("graficos/nifranjaetareaxcarreragraf")?>", 
             $(this).serialize(),
             function(data) {
@@ -29,58 +23,40 @@ $(document).ready(function() {
     }); 
 })  
 
-//Cargar combo de ciudades
-function cargarComboCarreras(combo, id, idseleccionado){
-    // cargar las ciudades de la carrera al combo
-    $('#carrerasxsede').attr('disabled',false);	
-    $.post("<?php echo url_for('areas/obtenercarrerasxsede'); ?>",
-		{ idarea: id },
-		function(data){
-			if (data){
-				$(combo).html(data);
-				$(combo).attr('disabled',false);
-				$(combo).val(idseleccionado);	    	    	
-			}else{
-				$(combo).attr('disabled',true);
-				$(combo).html("<option value='0' selected='selected' >----NINGUNA----</option>");
-			}
-		}
-	);
-} 
+
 </script>
 <h1>Evolución Nuevos Inscriptos por Centro Regional</h1> 
 <br>
 <form method="post" action="nifranjaetareaxcarreragraf" id="nifranjaetareaxcarreragraf" name="nifranjaetareaxcarreragraf" >
 <table cellspacing="0" class="stats" width="100%">
   <tr>
-  <td width="15%"><b>Centro Regional:</b></td>
+  <td width="10%"><b>Seleccionar Año:</b></td>
   <td>
   <?php
-	if (count($areas) > 0){
-		//el bucle para cargar las opciones
-		echo "<select id='seleccionar' name='seleccionar' >";
-		echo "<option SELECTED value=''>-----SELECCIONAR-----</option>";
-		foreach ($areas as $area){
-			echo "<option value=".$area["idarea"].">".$area["descripcion"]."</option>";
-		}
-		echo "</select>";
-	}
-	?>
+    //el bucle para cargar las opciones
+    echo "<select id='seleccionar' name='seleccionar' >";
+    
+    foreach ($anios as $k => $v){
+      echo "<option value=".$k.">".$v."</option>";
+    }
+    echo "</select>";
+  ?>
   </td>
   </tr>
   <tr>
-  <td width="15%"><b>Carrera:</b></td>
+  <td width="10%"><b>Estado:</b></td>
   <td>
   <?php
-	if (count($areas) > 0){	
-		echo "<select id='carrerasxsede' name='carrerasxsede' >";
-		echo "<option SELECTED value=''>-----SELECCIONAR-----</option>";
-		echo "</select>";
-		echo "<br><br>";
-	}
-	?>
+    //el bucle para cargar las opciones
+    echo "<select id='seleccionar2' name='seleccionar2' >";
+    echo "<option SELECTED value=''>-----SELECCIONAR-----</option>";
+    foreach ($estados as $k => $v){
+      echo "<option value=".$k.">".$v."</option>";
+    }
+    echo "</select>";
+  ?>
   </td>
-  </tr>  
+  </tr>
   <?php 
   if ($_POST) { ?>
   <tr>
