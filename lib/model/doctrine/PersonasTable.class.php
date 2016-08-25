@@ -38,12 +38,57 @@ class PersonasTable extends Doctrine_Table
         $sql ="SELECT per.idpersona, per.nombre, per.apellido, per.monto, mc.mes, DATE_FORMAT(NOW(), '%Y-%m-%d') AS fecha, YEAR(NOW()) AS anio
         FROM
         personas per JOIN meses_cobro mc ON per.idpersona = mc.idpersona
-        LEFT JOIN recibos_generados rg ON per.idpersona = rg.idpersona AND mc.mes = rg.mes AND anio = rg.anio
+        LEFT JOIN recibos_generados rg ON per.idpersona = rg.idpersona AND mc.mes = rg.mes AND anio = rg.anio AND rg.estado <> 2
         WHERE mc.mes = MONTH(NOW()) AND rg.id IS NULL;  ";
         
         $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
 
         return $q;
+    } 
+
+    // Obtener recibos por estado
+    public static function obtenerRecibosPorEstado($idestado, $idcobrador=null)
+    {
+        $sql ="SELECT rg.id, per.idpersona, per.apellido, per.nombre, CONCAT(per.apellido, ', ', per.nombre) as socio, rg.mes, rg.anio, rg.mesanio,
+                per2.idpersona as idcobrador, CONCAT(per2.apellido, ', ', per2.nombre) as cobrador, rg.monto, rg.estado
+                FROM recibos_generados rg 
+                JOIN personas per ON rg.idpersona = per.idpersona
+                LEFT JOIN personas per2 ON rg.idcobrador = per2.idpersona
+                WHERE rg.estado = ".$idestado." ";
+
+        if ($idcobrador <> NULL){
+          $sql .=  " AND rg.idcobrador = ".$idcobrador." ";  
+        }
+
+        $sql .=  " ORDER BY per.apellido; ";        
+        
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
+
+        return $q;
+    }  
+
+    // crear recibos de personas seleccionadas
+    public static function obtenerRecibosGeneradosPorIds($arrIdRecibosGenerados)
+    {
+        
+        // Definir elemenos para filtrar por IN
+        $datos=''; $cantidad=0;
+        foreach($arrIdRecibosGenerados as $info)
+            $datos .= $info.', ';
+        
+        $datos = substr($datos, 0, strlen($datos)-2);
+
+        $sql ="SELECT rg.id, per.idpersona, per.apellido, per.nombre, CONCAT(per.apellido, ', ', per.nombre) as socio, rg.mes, rg.anio, rg.mesanio,
+                per2.idpersona as idcobrador, CONCAT(per2.apellido, ', ', per2.nombre) as cobrador, rg.monto, rg.estado
+                FROM recibos_generados rg 
+                JOIN personas per ON rg.idpersona = per.idpersona
+                LEFT JOIN personas per2 ON rg.idcobrador = per2.idpersona
+                WHERE rg.id IN (".$datos.") ORDER BY per.apellido;";
+
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
+
+        return $q;
+    
     }  
 
     // crear recibos de personas seleccionadas
