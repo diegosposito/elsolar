@@ -12,7 +12,7 @@ $(document).ready(function() {
        
     $('#seleccionar2').change(function() {
         $.post("<?php echo url_for("graficos/nifranjaetareaxcarreragraf")?>", 
-            $(this).serialize(),
+            { seleccionar: $("#seleccionar").val(), seleccionar2: $("#seleccionar2").val() },
             function(data) {
                 $('#result').html(data);
 
@@ -25,7 +25,8 @@ $(document).ready(function() {
 
 
 </script>
-<h1>Evolución Nuevos Inscriptos por Centro Regional</h1> 
+<br>
+<h1>Evolución Ingresos por Año Seleccionado</h1> 
 <br>
 <form method="post" action="nifranjaetareaxcarreragraf" id="nifranjaetareaxcarreragraf" name="nifranjaetareaxcarreragraf" >
 <table cellspacing="0" class="stats" width="100%">
@@ -37,7 +38,7 @@ $(document).ready(function() {
     echo "<select id='seleccionar' name='seleccionar' >";
     
     foreach ($anios as $k => $v){
-      echo "<option value=".$k.">".$v."</option>";
+      echo "<option value=".$v.">".$v."</option>";
     }
     echo "</select>";
   ?>
