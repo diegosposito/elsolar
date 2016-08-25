@@ -181,6 +181,6 @@ ddaccordion.init({
       </tr>
   </tfoot>
 </table>
-<p style="text-align: center;"><small>copyright © 2016 A.L.C.E.C.U. | dsposito@gmail.com</small><br>
+<p style="text-align: center;"><small>copyright © 2016 A.L.C.E.C. | dsposito@gmail.com</small><br>
 </p>
 </body></html>
