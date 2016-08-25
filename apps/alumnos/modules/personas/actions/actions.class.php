@@ -174,6 +174,17 @@ Sede: '.$oSede.'
      
     }
 
+    public function executeGestionrecibosgenerados(sfWebRequest $request)
+    {
+	    $this->msgSuccess = $request->getParameter('msgSuccess', '');
+	    $this->msgError = $request->getParameter('msgError', '');
+
+	    $this->cobradores = Doctrine_Core::getTable('Personas')->obtenerCobradores();
+
+	    $this->estados = array(1=>'Generados',2=>'Cancelados',3=>'Cobrados');	 
+	     
+	}
+
     public function executeGrabarrecibosgenerados(sfWebRequest $request)
     {
         $this->msgSuccess = $request->getParameter('msgSuccess', '');
@@ -203,6 +214,102 @@ Sede: '.$oSede.'
 
    }
 
+   public function executeImprimirrecibosseleccionados(sfWebRequest $request)
+    {
+        $this->msgSuccess = $request->getParameter('msgSuccess', '');
+        $this->msgError = $request->getParameter('msgError', '');
+
+        $arr_idrecibosgenerados = array();
+           
+        // Obtiene designaciones seleccionadas en la vista en un array
+        $idcase = $request->getParameter('idcase', '');
+
+        foreach($idcase as $seleccionados){
+            if(is_numeric($seleccionados)) 
+                $arr_idrecibosgenerados[] = $seleccionados;
+        }
+
+        // Si existen para generar recibos
+         if ( count($arr_idrecibosgenerados)>0 ){
+                $resultado = Doctrine_Core::getTable('Personas')->obtenerRecibosGeneradosPorIds($arr_idrecibosgenerados);
+        } else {
+               $estado='No hay recibos generados seleccionados';
+               $this->redirect($this->generateUrl('default', array('module' => 'personas',
+                'action' => 'generarrecibos', 'msgError' => $estado )));
+        }
+
+        // COMIENZA LA IMPRESION DE RECIBOS
+
+		$pdf = new PDF();
+
+		$pdf->SetFont("Times", "", 9);
+		$pdf->setPrintHeader(false);
+		$pdf->setPrintFooter(false); 
+ 
+		$pdf->AddPage();
+		$current_date = date("Y");
+		$encabezado = '
+			<div style="text-align: center; font-family: Times New Roman,Times,serif;"><span
+			style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/alcec3.jpg" width="550px">
+			Generar recibos: '.$current_date.'</div>';        
+
+		$pdf->writeHTML($encabezado, true, false, true, false, '');   
+		
+		$y = 60;
+		$pdf->SetXY(10,$y);
+		$pdf->Cell(10,5,'Nro Recibo',0,0,'C');    
+		$pdf->SetXY(20,$y);
+		$pdf->Cell(80,5,'Nombre',0,0,'C');    
+		$pdf->SetXY(20,$y);
+		$pdf->Cell(225,5,'Mes',0,0,'C'); 
+		$pdf->SetXY(20,$y);
+		$pdf->Cell(280,5,'Monto',0,0,'C'); 
+		$pdf->SetXY(20,$y);
+		$y = $y + 5;		
+		$contador = 1;
+		
+		$pdf->Line(10,$y,199,$y);
+		
+	    foreach ($resultado as $socio){	
+		    			    		
+		   	$pdf->SetXY(0,$y-5);
+            $pdf->SetXY(10,$y);
+		    $pdf->Cell(10,5,$socio['id'],0,0,'L');
+		    $pdf->SetXY(20,$y);        
+		    $pdf->Cell(80,5,$socio['socio'],0,0,'L');        
+		    $pdf->SetXY(120,$y); 
+		    $pdf->Cell(10,5,$socio['mesanio'],0,0,'L'); 
+		    $pdf->SetXY(160,$y); 
+		    $pdf->Cell(10,5,$socio['monto'],0,0,'L'); 
+		    
+		
+ 			$y = $y + 5;  
+		 	// add a page
+			if($y>=265) {
+				$pdf->AddPage();
+
+				$encabezado = '
+			<div style="text-align: center; font-family: Times New Roman,Times,serif;"><span
+			style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/alcec3.jpg" width="550px">
+			Generar Recibos: '.$current_date.'</div>';        
+	
+				$pdf->writeHTML($encabezado, true, false, true, false, '');   
+				$y=60;
+
+			}
+	
+		    } // fin (foreach)	
+
+			 
+		$pdf->Output('recibos.pdf', 'I');
+ 
+		// stop symfony process
+		throw new sfStopException();
+				
+		return sfView::NONE;
+
+   }
+
     public function executeObtenerrecibosgenerados(sfWebRequest $request)
   {
       
@@ -214,6 +321,18 @@ Sede: '.$oSede.'
   
       $this->permite_seleccionar = $request->getParameter('permite_seleccionar');
 
+  }
+
+   public function executeObtenerrecibosporestado(sfWebRequest $request)
+  {
+      
+
+      $this->msgSuccess = $request->getParameter('msgSuccess', '');
+      $this->msgError = $request->getParameter('msgError', '');
+      $this->permite_seleccionar = '1';
+      $this->resultado = Doctrine_Core::getTable('Personas')->obtenerRecibosPorEstado($request->getParameter('seleccionar'), $request->getParameter('seleccionar2'));
+  
+     
   }
 
     public function executeModificarregistro(sfWebRequest $request)	{	
