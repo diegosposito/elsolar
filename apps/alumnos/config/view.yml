@@ -6,7 +6,7 @@ default:
     content-type: text/html
 
   metas:
-    title:        Universidad de Concepción del Uruguay
+    title:        A.L.C.E.C.
     #description:  symfony project
     #keywords:     symfony, project
     #language:     en
