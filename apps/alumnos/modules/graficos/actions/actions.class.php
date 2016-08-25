@@ -1050,8 +1050,8 @@ public function generarXmlPeriodos(&$resultados){
   	 	  	
        // Obtener estadisticas de nuevos incriptos por lugar de procedencia 
        // agrupando por Carrera
-      //	$resultado = $oEstadistica->obtenerIngresosPorMesAnio( $request->getParameter('seleccionar2'),$request->getParameter('seleccionar2'));
-      		$resultado = $oEstadistica->obtenerIngresosPorMesAnio( 2016, 1);
+        $resultado = $oEstadistica->obtenerIngresosPorMesAnio( $request->getParameter('seleccionar'),$request->getParameter('seleccionar2'));
+      		//$resultado = $oEstadistica->obtenerIngresosPorMesAnio( 2016, 1);
   	   		
         // Generar xml en archivo de texto
 	    $this->generarXmlFranjaEtareaxCarrera($resultado);
