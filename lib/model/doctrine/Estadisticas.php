@@ -420,6 +420,16 @@ public function obtenerUltimosPeriodosSede($idSede) {
 				
         return $resultado;		     
 	}
+
+	public function obtenerIngresosPorMesAnio($anio, $estado) {
+
+       
+	   // Obtener estadisticas ultimos 3 años , o 5 o 10
+	   $resultado = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc("SELECT SUM(rg.monto) as monto, rg.mes, m.descripcion as mesdescripcion, rg.anio FROM recibos_generados rg JOIN meses m ON rg.mes = m.mes WHERE rg.estado = ".$estado." GROUP BY rg.mes, rg.anio HAVING rg.anio= ".$anio." ORDER BY rg.mes DESC
+			; ");
+				
+        return $resultado;		     
+	}
 	
     public function obtenerInscriptosxFacultadxArea($idArea) {
 
