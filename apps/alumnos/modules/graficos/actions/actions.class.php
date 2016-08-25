@@ -34,7 +34,7 @@ class graficosActions extends sfActions
   	 $this->items = array(
 					    1 => "Ultimos 3 años",
 					    2 => "Ultimos 5 años",
-					    3 => "Ultimos 10 años"
+					    3 => "Ultimos 8 años"
 					);
 
   	 //$this->facultades = $oAreas->obtenerFacultadesPorArea($this->getUser()->getProfile()->getIdarea());  	  	 
@@ -1031,9 +1031,17 @@ public function generarXmlPeriodos(&$resultados){
   // Nuevos Inscriptos por franja etarea
   public function executeNifranjaetareaxcarrera(sfWebRequest $request)
   {
-  	 $oAreas = new Areas();
-  	
-  	 $this->areas = $oAreas->getAreas(); 	 
+  	     $fecha = explode("-", date("Y-m-d"));
+  	     $anio= $fecha[0];
+		 $anio1 =   $anio -1; $anio2 =  $anio -2; $anio3 = $anio -3;
+		 $anio4 =   $anio -4; $anio5 =  $anio -5; $anio6 = $anio -6;
+		 $anio7 =   $anio -7; $anio8 =  $anio -8; $anio9 = $anio -9;
+		 $anio10 =   $anio -10; $anio11 =  $anio -11; $anio12 = $anio -12;
+		 $anio13 =   $anio -13; $anio14 =  $anio -14; $anio15 = $anio -15;
+		 $this->anios = array($anio,$anio1,$anio2,$anio3,$anio4,$anio5,$anio6,$anio7,$anio8,$anio9,$anio10,$anio11,$anio12,$anio13,$anio14);
+		
+		 
+  	     $this->estados = array(1=>'Generado',2=>'Cancelado',3=>'Cobrado');	 
   }
   
  public function executeNifranjaetareaxcarreragraf(sfWebRequest $request)
@@ -1042,7 +1050,8 @@ public function generarXmlPeriodos(&$resultados){
   	 	  	
        // Obtener estadisticas de nuevos incriptos por lugar de procedencia 
        // agrupando por Carrera
-      	$resultado = $oEstadistica->nixfranjaetareaxcarrera( $request->getParameter('carrerasxsede'));
+      //	$resultado = $oEstadistica->obtenerIngresosPorMesAnio( $request->getParameter('seleccionar2'),$request->getParameter('seleccionar2'));
+      		$resultado = $oEstadistica->obtenerIngresosPorMesAnio( 2016, 1);
   	   		
         // Generar xml en archivo de texto
 	    $this->generarXmlFranjaEtareaxCarrera($resultado);
@@ -1057,8 +1066,8 @@ public function generarXmlPeriodos(&$resultados){
 		 
 		 /* Creo el nodo 'chart con sus atributos' */
 		 $r = $doc->createElement( "chart" );
-		 $r->setAttribute('caption', 'Nuevos Inscriptos por Franja Etarea');
-		 $r->setAttribute('xAxisName', 'Rango de Edades');
+		 $r->setAttribute('caption', 'Ingreso por Año y Estado');
+		 $r->setAttribute('xAxisName', 'Meses del Año');
 		 $r->setAttribute('yAxisName', 'Cantidades');
 		 $r->setAttribute('showValues', '0');
 		 $r->setAttribute('decimals', '0');
@@ -1073,40 +1082,11 @@ public function generarXmlPeriodos(&$resultados){
 		 foreach( $resultados as $datos )
 		 {
 		         $c = $doc->createElement( "set" );
-		         $c->setAttribute('label', "Menos de 18");
-                 $c->setAttribute('value', $datos['menos18']);
+		         $c->setAttribute('label', $datos['mesdescripcion']);
+                 $c->setAttribute('value', $datos['monto']);
                  $r->appendChild( $c ); 
                  
-                 $c = $doc->createElement( "set" );
-		         $c->setAttribute('label', "Entre 18 y 21");
-                 $c->setAttribute('value', $datos['e18a21']);
-                 $r->appendChild( $c );
-                 
-                 $c = $doc->createElement( "set" );
-		         $c->setAttribute('label', "Entre 22 y 25");
-                 $c->setAttribute('value', $datos['e22a25']);
-                 $r->appendChild( $c );
-                 
-                 $c = $doc->createElement( "set" );
-		         $c->setAttribute('label', "Entre 26 y 30");
-                 $c->setAttribute('value', $datos['e26a30']);
-                 $r->appendChild( $c );
-                 
-                 $c = $doc->createElement( "set" );
-		         $c->setAttribute('label', "Entre 31 y 35");
-                 $c->setAttribute('value', $datos['e31a35']);
-                 $r->appendChild( $c );
-                 
-                 $c = $doc->createElement( "set" );
-		         $c->setAttribute('label', "Entre 36 y 40");
-                 $c->setAttribute('value', $datos['e36a40']);
-                 $r->appendChild( $c );
-                 
-                 $c = $doc->createElement( "set" );
-		         $c->setAttribute('label', "Mas de 41");
-                 $c->setAttribute('value', $datos['mas40']);
-                 $r->appendChild( $c );
-		 } 
+         } 
 		 
 		 $doc->save('nifranjaetarea.xml');
 		 echo $doc->saveXML();
