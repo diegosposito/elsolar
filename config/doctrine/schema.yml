@@ -545,6 +545,7 @@ Personas:
     telefono: { type: string(200), primary: false, notnull: true, default: '' }
     celular: { type: string(200), primary: false, notnull: true, default: '' }
     direccion: { type: string(200), primary: false, notnull: true, default: '' }
+    direccioncobro: { type: string(200), primary: false, notnull: true, default: '' }
     tienefoto: { type: boolean, primary: false, notnull: true, default: 0 }  
     activo: { type: boolean, primary: false, notnull: true, default: 0 } 
     socio: { type: boolean, primary: false, notnull: true, default: 1 }   
