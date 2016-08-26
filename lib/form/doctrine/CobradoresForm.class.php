@@ -13,7 +13,7 @@ class CobradoresForm extends BasePersonasForm
   public function configure()
   {
 
-        unset( $this['cantgrupofamiliar'],$this['titulo'],$this['idcobrador'],$this['idprofesion'],$this['vive'],$this['created_at'], $this['updated_at'], $this['nrolector'], $this['tienefoto'], $this['created_by'], $this['updated_by'] ,$this['nrodoc'] ,$this['fechanac'],$this['fechaingreso'] ,$this['idciudadnac'],$this['idnacionalidad'],$this['estadocivil']         );
+        unset( $this['cantgrupofamiliar'],$this['direccioncobro'],$this['monto'],$this['titulo'],$this['idcobrador'],$this['idprofesion'],$this['vive'],$this['created_at'], $this['updated_at'], $this['nrolector'], $this['tienefoto'], $this['created_by'], $this['updated_by'] ,$this['nrodoc'] ,$this['fechanac'],$this['fechaingreso'] ,$this['idciudadnac'],$this['idnacionalidad'],$this['estadocivil']         );
      
        
   
@@ -46,7 +46,17 @@ class CobradoresForm extends BasePersonasForm
       $this->widgetSchema->setLabel('telefono', '<p align="left">Teléfono:</p>');
       $this->widgetSchema->setLabel('celular', '<p align="left">Celular:</p>');
       $this->widgetSchema->setLabel('activo', '<p align="left">Activo:</p>');
+      $this->widgetSchema['socio'] = new sfWidgetFormInputHidden();
       $this->widgetSchema->setLabel('otrainformacionrelevante', '<p align="left">Observaciones:</p>');
+
+      $this->setValidators(array(
+        'apellido' => new sfValidatorString(array('required' => true), array('required' => 'El apellido es obligatorio.')),
+        'nombre' => new sfValidatorString(array('required' => true), array('required' => 'El nombre es obligatorio.')),
+        'numerodoc' => new sfValidatorString(array('required' => true), array('required' => 'El documento es obligatorio.')),
+        ));
+
+      $this->validatorSchema->setOption('allow_extra_fields',true); 
+      
       
 
    
