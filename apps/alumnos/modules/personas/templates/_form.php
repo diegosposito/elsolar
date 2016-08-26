@@ -11,7 +11,7 @@
         <td colspan="2">
           &nbsp;<a href="<?php echo url_for('personas/buscar') ?>">Volver al listado de Socios</a>
           
-          <input type="submit" value="Save" />
+          <input type="submit" value="Guardar" />
         </td>
       </tr>
     </tfoot>
