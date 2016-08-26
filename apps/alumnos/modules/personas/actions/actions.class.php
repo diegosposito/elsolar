@@ -707,12 +707,15 @@ Sede: '.$oSede.'
 
   public function executeNew(sfWebRequest $request)
   {
-    $this->form = new PersonasForm();
+     // $this->socio = $request->getParameter('socio');
+      $this->form = new PersonasForm();
+      $this->form->setDefault('socio', 1);  
   }
 
   public function executeNewcobrador(sfWebRequest $request)
   {
     $this->form = new CobradoresForm();
+    $this->form->setDefault('socio', 0);  
   }
 
   public function executeCreate(sfWebRequest $request)
