@@ -326,10 +326,16 @@ Sede: '.$oSede.'
    public function executeObtenerrecibosporestado(sfWebRequest $request)
   {
     
-    $fechaa = explode("/", $request->getParameter('inicio'));
-    $fechadesde = $fechaa[2]."-".$fechaa[0]."-".$fechaa[1]; 
-    $fechab = explode("/", $request->getParameter('fin'));
-    $fechahasta = $fechab[2]."-".$fechab[0]."-".$fechab[1]; 
+    if($request->getParameter('inicio')){
+    	$fechaa = explode("/", $request->getParameter('inicio'));
+        $fechadesde = $fechaa[2]."-".$fechaa[0]."-".$fechaa[1]; 
+    }
+    
+    if($request->getParameter('fin')){
+    	 $fechab = explode("/", $request->getParameter('fin'));
+         $fechahasta = $fechab[2]."-".$fechab[0]."-".$fechab[1]; 
+    }
+   
 
 
       $this->msgSuccess = $request->getParameter('msgSuccess', '');
