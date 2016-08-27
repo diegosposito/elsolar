@@ -325,12 +325,21 @@ Sede: '.$oSede.'
 
    public function executeObtenerrecibosporestado(sfWebRequest $request)
   {
-      
+    
+    $fechaa = explode("/", $request->getParameter('inicio'));
+    $fechadesde = $fechaa[2]."-".$fechaa[0]."-".$fechaa[1]; 
+    $fechab = explode("/", $request->getParameter('fin'));
+    $fechahasta = $fechab[2]."-".$fechab[0]."-".$fechab[1]; 
+
 
       $this->msgSuccess = $request->getParameter('msgSuccess', '');
       $this->msgError = $request->getParameter('msgError', '');
-      $this->permite_seleccionar = '1';
-      $this->resultado = Doctrine_Core::getTable('Personas')->obtenerRecibosPorEstado($request->getParameter('seleccionar'), $request->getParameter('seleccionar2'));
+      if ($request->getParameter('seleccionar')==1)
+          $this->permite_seleccionar = '1';
+      else
+          $this->permite_seleccionar = '0';
+
+      $this->resultado = Doctrine_Core::getTable('Personas')->obtenerRecibosPorEstado($request->getParameter('seleccionar'), $request->getParameter('seleccionar2'),$fechadesde, $fechahasta);
   
      
   }
