@@ -1,11 +1,14 @@
 <script>
 
 $(document).ready(function(){
+
+    $("#inicio").datepicker();
+    $("#fin").datepicker();
  
     $('#botonlista').click(function() {
     // guardar la informacion de documentacion adicional del alumnos ingresada
         $.post("<?php echo url_for('personas/obtenerrecibosporestado'); ?>",
-          { seleccionar: $("#seleccionar").val(), seleccionar2: $("#seleccionar2").val()},
+          { seleccionar: $("#seleccionar").val(), seleccionar2: $("#seleccionar2").val(), inicio: $("#inicio").val(), fin: $("#fin").val()},
         function(data){
             $('#idresultados').html(data);
         }
@@ -53,6 +56,15 @@ $(document).ready(function(){
      ?>
     </td>
   </tr> 
+
+  <tr>
+  <td colspan="2" width="10%"><b>Fecha Desde:</b></td>
+  <td><input type="text" name="inicio" id="inicio"></td>
+</tr>
+<tr>
+  <td colspan="2" width="10%"><b>Fecha Hasta:</b></td>
+  <td><input type="text" name="fin" id="fin"></td>
+</tr>
     
     <tfoot>
       <tr>
