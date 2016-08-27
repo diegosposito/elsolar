@@ -47,7 +47,7 @@ class PersonasTable extends Doctrine_Table
     } 
 
     // Obtener recibos por estado
-    public static function obtenerRecibosPorEstado($idestado, $idcobrador=null)
+    public static function obtenerRecibosPorEstado($idestado, $idcobrador=null, $fechadesde=null, $fechahasta=null)
     {
         $sql ="SELECT rg.id, per.idpersona, per.apellido, per.nombre, CONCAT(per.apellido, ', ', per.nombre) as socio, rg.mes, rg.anio, rg.mesanio,
                 per2.idpersona as idcobrador, CONCAT(per2.apellido, ', ', per2.nombre) as cobrador, rg.monto, rg.estado
@@ -59,9 +59,15 @@ class PersonasTable extends Doctrine_Table
         if ($idcobrador <> NULL){
           $sql .=  " AND rg.idcobrador = ".$idcobrador." ";  
         }
+        if ($fechadesde <> NULL){
+          $sql .=  " AND DATE(rg.created_at) >= DATE('".$fechadesde."') ";  
+        }
+        if ($fechahasta <> NULL){
+          $sql .=  " AND DATE(rg.created_at) <= DATE('".$fechahasta."') ";  
+        }
 
-        $sql .=  " ORDER BY per.apellido; ";        
-        
+        $sql .=  " ORDER BY per.apellido; ";  
+
         $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
 
         return $q;
