@@ -36,11 +36,7 @@ $(document).ready(function(){
         	<tr>
         		<td colspan="2">Se accedio con el e-mail: <b><?php echo $usuario; ?></td>
         	</tr>
-        	<tr>
-        		<td width="50%">Area asignada: <b><?php echo $darea.' <a style="color:#FFFFFF"> ('.$idarea.')</a>'; ?></b></td>
-        		<td width="50%">Sede asignada: <b><?php echo $dsede.' <a style="color:#FFFFFF"> ('.$idsede.')</a>'; ?></b></td>
-        	</tr>
-		</table> <br>      	        		
+     	</table> <br>      	        		
 	<?php } else {?>
 		<p>ALCEC.</p><br>
 	<?php } ?>
