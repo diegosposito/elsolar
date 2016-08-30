@@ -44,7 +44,7 @@ textarea { overflow: auto; }
 
 .shell { padding: 5px 20px 0 20px; width: 938px; margin: 0 auto; background: #efefef; }
 
-#header { position: relative; padding: 0 0 29px 16px; width: 922px; }
+#header { position: relative; padding: 0 0 6px 16px; width: 922px; }
 
 #top-navigation { display: inline; float: right; }
 #top-navigation ul { list-style: none; display: inline; float: right; }
