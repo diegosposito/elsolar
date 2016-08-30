@@ -125,7 +125,7 @@ a.buy-now:hover { text-decoration: none; }
  
 #main h2 { font-family: 'Trebuchet MS', arial, helvetica, sans-serif; font-size: 24px; color: #7dbf0d; line-height: 44px; border-bottom: dotted 2px #e9e9e9; font-weight: normal; }
 
-#content  { display: inline; float: left; width: 628px; padding: 0 0 0 15px; }
+#content  { display: inline; float: left; width: 628px; padding: 0 5px 0 15px; }
 .post h2 { margin-bottom: 13px; }
 .post p { padding-bottom: 22px; }
 
