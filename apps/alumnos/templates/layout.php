@@ -64,9 +64,14 @@
 				<ul>
 					<li><a class="start" title="My Account" href="#"><span></span>My Account</a></li>
 					<li><a class="cart" title="shopping cart" href="#"><span></span>shopping cart </a></li>
-					<li><a class="end" title="checkout" href="#">Logout<span></span></a></li>				
-				</ul>		
-			</div>				
+					<?php echo '<li>'.link_to('Salir', 'sf_guard_signout').'</li>' ; ?>
+				</ul>
+			</div>	
+			
+			<div align="right">
+			<font color="#000000"><?php if ($autenticated){ echo '<b>Usuario:</b> '.$sf_user->getGuardUser()->getUsername(); } ?>
+			</div>
+
 			<!-- END Top Navigation -->	
 			<div class="cl"></div>		
 		</div>
