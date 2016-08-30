@@ -121,7 +121,7 @@
 			<!-- Sidebar -->
 			<div id="sidebar">
 				<div class="box">
-					<h2>Quick Links</h2>
+					<h2>Gestión General</h2>
 					<ul>
 					    <?php   if ($autenticated){
 					                if ($sf_user->getGuardUser()->getIsSuperAdmin()) {
