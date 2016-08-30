@@ -54,38 +54,15 @@
 	<div class="shell">
 		<!-- Header -->
 		<div id="header">
-			<!-- Search  -->			
-			<div id="search">
-				<div class="search-holder">
-					<form action="" method="post">					
-						<input type="text" class="field" value="Keywords" title="Keywords" />
-						<input type="submit" value="" class="submit-button" />						
-					</form>
-					<?php if ($sf_user->isAuthenticated()) { 
-						$esalumno = false;
-						$credencial = '';
-						$arrCredenciales = array();
-						foreach ($sf_user->getCredentials() as $credencial) {
-							array_push($arrCredenciales, $credencial); 
-						}
-						$sis=$sf_user->getGuardUser()->obtenerSistemas();
-					?>
-					<font color="#000000"><b><?php echo $sf_user->getGuardUser()->getUsername().' (<a href="'.url_for('@sf_guard_signout').'">Salir</a>)'; ?></b><br>
-					<?php } ?>	
-					<div class="cl"></div>
-				</div>	
-			</div>
-			<!-- END Search -->						
 			<div class="cl"></div>
 			<!-- Logo -->
-			<h1 id="logo"><a title="Home" href="#">Mega Store</a></h1>
+			<img alt="Smiley face" height="142" width="442" src="<?php echo $sf_request->getRelativeUrlRoot();?>/images/logo.png">
 			<!-- Top Navigation -->
 			<div id="top-navigation">	
 				<ul>
-					<li>0 items  $ 0,00</li>
 					<li><a class="start" title="My Account" href="#"><span></span>My Account</a></li>
 					<li><a class="cart" title="shopping cart" href="#"><span></span>shopping cart </a></li>
-					<li><a class="end" title="checkout" href="#">checkout<span></span></a></li>				
+					<li><a class="end" title="checkout" href="#">Logout<span></span></a></li>				
 				</ul>		
 			</div>				
 			<!-- END Top Navigation -->	
