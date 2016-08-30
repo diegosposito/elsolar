@@ -1,45 +1,5 @@
-<script>
-$(document).ready(function(){
-	<?php if (count($calendarioss) == 1) { ?>
-	$(".botonOcultar").show();
-	$(".botonMostrar").hide();
-	$(".cal").show();
-	<?php } else { ?>
-	$(".botonOcultar").hide();
-	$(".botonMostrar").show();
-	$(".cal").hide();
-	<?php } ?>
-	$(".botonOcultar").click(function(){   
-		var Id = $(this).attr("id");	
-		var indice = Id.substring(1);
-		
-		$('#calendario_'+indice).hide(400);
-		$('#O'+indice).hide(400);
-		$('#M'+indice).show(400);
-	});  
-
-	$(".botonMostrar").click(function(){ 
-		var Id = $(this).attr("id");	
-		var indice = Id.substring(1);
-		
-		$('#calendario_'+indice).show(400);
-		$('#O'+indice).show(400);
-		$('#M'+indice).hide(400);
-	});  		 
-});
-</script>    
-<div id="column2">
-	<br>
-	<h1>Bienvenido</h1>
-	<?php if($usuario) { ?>
-        <table class="stats" width="100%">
-        	<tr>
-        		<td colspan="2">Se accedio con el e-mail: <b><?php echo $usuario; ?></td>
-        	</tr>
-     	</table> <br>      	        		
-	<?php } else {?>
-		<p>ALCEC.</p><br>
-	<?php } ?>
-
-<br>
+<div class="post">
+					<h2>Welcome to MEGAStore</h2>
+					<p><strong>Proin hendrerit vehicula cursus.</strong> In tempor metus eget magna varius sagittis et ac nisi. Vestibulum massa nisl, tincidunt at sodales a, adipiscing iaculis nunc. Sed rutrum justo vitae sem aliquet bibendum. <strong>Quisque vestibulum, velit ut cursus blandit, orci quam adipiscing arcu, a ultricies felis urna sed risus. Etiam in dolor eu massa sodales faucibus non et purus.</strong> Nam facilisis aliquet adipiscing. Maecenas ligula mi, porttitor faucibus imperdiet eu, porta nec urna. In vel ligula quam. </p>
+					<p>Proin in nunc nibh, in suscipit enim. Nunc fermentum metus ut diam faucibus rhoncus. Duis augue sapien, pharetra sit amet mollis at, luctus ut eros.</p>
 </div>

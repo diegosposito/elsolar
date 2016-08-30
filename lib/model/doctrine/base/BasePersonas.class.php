@@ -10,6 +10,7 @@
  * @property string $apellido
  * @property integer $idsexo
  * @property integer $idtipodoc
+ * @property integer $idcobrador
  * @property string $nrodoc
  * @property string $numerodoc
  * @property date $fechanac
@@ -21,9 +22,17 @@
  * @property integer $idprofesion
  * @property integer $cantgrupofamiliar
  * @property string $titulo
+ * @property string $email
+ * @property string $telefono
+ * @property string $celular
+ * @property string $direccion
+ * @property string $direccioncobro
  * @property boolean $tienefoto
+ * @property boolean $activo
+ * @property boolean $socio
  * @property string $nrolector
  * @property string $otrainformacionrelevante
+ * @property float $monto
  * @property TiposDocumentos $TiposDocumentos
  * @property Paises $Paises
  * @property Ciudades $Ciudades
@@ -36,6 +45,7 @@
  * @method string              getApellido()                 Returns the current record's "apellido" value
  * @method integer             getIdsexo()                   Returns the current record's "idsexo" value
  * @method integer             getIdtipodoc()                Returns the current record's "idtipodoc" value
+ * @method integer             getIdcobrador()               Returns the current record's "idcobrador" value
  * @method string              getNrodoc()                   Returns the current record's "nrodoc" value
  * @method string              getNumerodoc()                Returns the current record's "numerodoc" value
  * @method date                getFechanac()                 Returns the current record's "fechanac" value
@@ -47,9 +57,17 @@
  * @method integer             getIdprofesion()              Returns the current record's "idprofesion" value
  * @method integer             getCantgrupofamiliar()        Returns the current record's "cantgrupofamiliar" value
  * @method string              getTitulo()                   Returns the current record's "titulo" value
+ * @method string              getEmail()                    Returns the current record's "email" value
+ * @method string              getTelefono()                 Returns the current record's "telefono" value
+ * @method string              getCelular()                  Returns the current record's "celular" value
+ * @method string              getDireccion()                Returns the current record's "direccion" value
+ * @method string              getDireccioncobro()           Returns the current record's "direccioncobro" value
  * @method boolean             getTienefoto()                Returns the current record's "tienefoto" value
+ * @method boolean             getActivo()                   Returns the current record's "activo" value
+ * @method boolean             getSocio()                    Returns the current record's "socio" value
  * @method string              getNrolector()                Returns the current record's "nrolector" value
  * @method string              getOtrainformacionrelevante() Returns the current record's "otrainformacionrelevante" value
+ * @method float               getMonto()                    Returns the current record's "monto" value
  * @method TiposDocumentos     getTiposDocumentos()          Returns the current record's "TiposDocumentos" value
  * @method Paises              getPaises()                   Returns the current record's "Paises" value
  * @method Ciudades            getCiudades()                 Returns the current record's "Ciudades" value
@@ -61,6 +79,7 @@
  * @method Personas            setApellido()                 Sets the current record's "apellido" value
  * @method Personas            setIdsexo()                   Sets the current record's "idsexo" value
  * @method Personas            setIdtipodoc()                Sets the current record's "idtipodoc" value
+ * @method Personas            setIdcobrador()               Sets the current record's "idcobrador" value
  * @method Personas            setNrodoc()                   Sets the current record's "nrodoc" value
  * @method Personas            setNumerodoc()                Sets the current record's "numerodoc" value
  * @method Personas            setFechanac()                 Sets the current record's "fechanac" value
@@ -72,9 +91,17 @@
  * @method Personas            setIdprofesion()              Sets the current record's "idprofesion" value
  * @method Personas            setCantgrupofamiliar()        Sets the current record's "cantgrupofamiliar" value
  * @method Personas            setTitulo()                   Sets the current record's "titulo" value
+ * @method Personas            setEmail()                    Sets the current record's "email" value
+ * @method Personas            setTelefono()                 Sets the current record's "telefono" value
+ * @method Personas            setCelular()                  Sets the current record's "celular" value
+ * @method Personas            setDireccion()                Sets the current record's "direccion" value
+ * @method Personas            setDireccioncobro()           Sets the current record's "direccioncobro" value
  * @method Personas            setTienefoto()                Sets the current record's "tienefoto" value
+ * @method Personas            setActivo()                   Sets the current record's "activo" value
+ * @method Personas            setSocio()                    Sets the current record's "socio" value
  * @method Personas            setNrolector()                Sets the current record's "nrolector" value
  * @method Personas            setOtrainformacionrelevante() Sets the current record's "otrainformacionrelevante" value
+ * @method Personas            setMonto()                    Sets the current record's "monto" value
  * @method Personas            setTiposDocumentos()          Sets the current record's "TiposDocumentos" value
  * @method Personas            setPaises()                   Sets the current record's "Paises" value
  * @method Personas            setCiudades()                 Sets the current record's "Ciudades" value
@@ -123,6 +150,11 @@ abstract class BasePersonas extends sfDoctrineRecord
              'primary' => false,
              'autoincrement' => false,
              'default' => '1',
+             ));
+        $this->hasColumn('idcobrador', 'integer', null, array(
+             'type' => 'integer',
+             'primary' => false,
+             'autoincrement' => false,
              ));
         $this->hasColumn('nrodoc', 'string', 80, array(
              'type' => 'string',
@@ -195,11 +227,58 @@ abstract class BasePersonas extends sfDoctrineRecord
              'default' => '',
              'length' => 100,
              ));
+        $this->hasColumn('email', 'string', 200, array(
+             'type' => 'string',
+             'primary' => false,
+             'notnull' => true,
+             'default' => '',
+             'length' => 200,
+             ));
+        $this->hasColumn('telefono', 'string', 200, array(
+             'type' => 'string',
+             'primary' => false,
+             'notnull' => true,
+             'default' => '',
+             'length' => 200,
+             ));
+        $this->hasColumn('celular', 'string', 200, array(
+             'type' => 'string',
+             'primary' => false,
+             'notnull' => true,
+             'default' => '',
+             'length' => 200,
+             ));
+        $this->hasColumn('direccion', 'string', 200, array(
+             'type' => 'string',
+             'primary' => false,
+             'notnull' => true,
+             'default' => '',
+             'length' => 200,
+             ));
+        $this->hasColumn('direccioncobro', 'string', 200, array(
+             'type' => 'string',
+             'primary' => false,
+             'notnull' => true,
+             'default' => '',
+             'length' => 200,
+             ));
         $this->hasColumn('tienefoto', 'boolean', null, array(
              'type' => 'boolean',
              'primary' => false,
              'notnull' => true,
              'default' => 0,
+             ));
+        $this->hasColumn('activo', 'boolean', null, array(
+             'type' => 'boolean',
+             'primary' => false,
+             'notnull' => true,
+             'default' => 0,
+             ));
+        $this->hasColumn('socio', 'boolean', null, array(
+             'type' => 'boolean',
+             'primary' => false,
+             'notnull' => true,
+             'default' => 1,
              ));
         $this->hasColumn('nrolector', 'string', 10, array(
              'type' => 'string',
@@ -211,6 +290,12 @@ abstract class BasePersonas extends sfDoctrineRecord
         $this->hasColumn('otrainformacionrelevante', 'string', 2000, array(
              'type' => 'string',
              'length' => 2000,
+             ));
+        $this->hasColumn('monto', 'float', null, array(
+             'type' => 'float',
+             'primary' => false,
+             'notnull' => true,
+             'default' => '',
              ));
     }
 
@@ -237,7 +322,7 @@ abstract class BasePersonas extends sfDoctrineRecord
              'local' => 'idsexo',
              'foreign' => 'idsexo'));
 
-        $this->hasMany('Alumnos as Personas', array(
+        $this->hasMany('MesesCobro as Personas', array(
              'local' => 'idpersona',
              'foreign' => 'idpersona'));
 

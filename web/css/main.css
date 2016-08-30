@@ -317,11 +317,11 @@ ul.error_list li
 
 /* footer */
 #footer
-{ float: left;
+{ /*float: left;*/
   padding: 9px 0px 3px 0px;
   width: 901px;
   text-align: center;
-  height: 22px;
+  /*height: 22px;*/
 }
 
 #footer a, #footer a:hover{text-decoration: none;}

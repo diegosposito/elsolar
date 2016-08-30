@@ -12,19 +12,7 @@ class ingresoActions extends sfActions
 {		
     public function executeIndex(sfWebRequest $request)
   {
-	$user = $this->getUser();
-
-
-
-	if($user->isAuthenticated()) {
-		//obtengo datos del usuario
-		$this->usuario=$user->getUsername();
-		$this->idarea = $user->getProfile()->getIdarea();
-		$oAreas = Doctrine::getTable('Areas')->find(1);
-		$this->area = "Alumno";
-  	} else {
-  		$this->usuario = "";
-  	}
+	
   }  
   
   public function executeIndexfacultad(sfWebRequest $request)

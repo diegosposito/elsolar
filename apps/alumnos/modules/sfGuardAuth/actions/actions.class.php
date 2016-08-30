@@ -73,6 +73,6 @@ class sfGuardAuthActions extends BasesfGuardAuthActions
   {
     $this->getUser()->signOut();
 
-    $this->redirect('@homepage');
+    $this->redirect('@ingreso');
   }	
 }
