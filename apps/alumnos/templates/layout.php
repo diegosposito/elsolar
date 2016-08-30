@@ -39,8 +39,10 @@
 </head>
 <body>
 <?php
+	$autenticated =false;
 	if ($sf_user->isAuthenticated()) { 
 	    $esalumno = false;
+	    $autenticated =true;
 	    $credencial = '';
 		$arrCredenciales = array();
 		foreach ($sf_user->getCredentials() as $credencial) {
@@ -121,7 +123,11 @@
 				<div class="box">
 					<h2>Quick Links</h2>
 					<ul>
-					    <?php echo '<li>'.link_to('Gestión Personas', 'personas/new').'</li>' ; ?>
+					    <?php   if ($autenticated){
+					                if ($sf_user->getGuardUser()->getIsSuperAdmin()) {
+					    	            echo '<li>'.link_to('Gestión de Usuarios', 'sf_guard_user').'</li>' ; 
+					    	        } 
+					    	    } ?>   
 						<?php echo '<li>'.link_to('Gestión Personas', 'personas/new').'</li>' ; ?>
 						<?php echo '<li>'.link_to('Gestión Personas', 'personas/new').'</li>' ; ?>
 						<?php echo '<li>'.link_to('Gestión Personas', 'personas/new').'</li>' ; ?>
@@ -135,15 +141,6 @@
 			<div class="cl"></div>
 			<!-- Feartured Products -->
 			<div class="products featured">
-				<h2>Featured Products</h2>
-				<div class="products-slider">
-					<ul>
-						<li>
-							<a title="Details" href="#"><img src="/images/1.jpg" alt="Silver half transparent with blue lights computer case" /></a>
-							<p>Model Name</p>
-						</li>
-					</ul>
-				</div>
 			</div>
 			<!-- END Featured Products -->			
 			<!-- Footer  -->
