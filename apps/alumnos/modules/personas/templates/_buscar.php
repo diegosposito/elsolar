@@ -52,7 +52,7 @@
 	    <?php } ?>
 
 	    <br>
-  <a href="<?php echo url_for('personas/new') ?>">Agregar nuevos socios</a>
+  <a href="<?php echo url_for('personas/new') ?>">Agregar nuevas personas</a>
   <br><br>
 	  </tbody>
 	</table>
