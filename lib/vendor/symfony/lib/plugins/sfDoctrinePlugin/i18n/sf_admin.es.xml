@@ -22,6 +22,10 @@
         <target>Listado</target>
       </trans-unit>
       <trans-unit>
+        <source>Back to list</source>
+        <target>Volver al listado</target>
+      </trans-unit>
+      <trans-unit>
         <source>Save</source>
         <target>Guardar</target>
       </trans-unit>
@@ -41,6 +45,10 @@
         <source>go</source>
         <target>ok</target>
       </trans-unit>
+      <trans-unit>
+                    <source>Are you sure?</source>
+                    <target>¿Esta seguro?</target>
+       </trans-unit>
 
       <!-- Filters -->
       <trans-unit>
