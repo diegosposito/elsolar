@@ -13,7 +13,7 @@ class CobradoresForm extends BasePersonasForm
   public function configure()
   {
 
-        unset( $this['cantgrupofamiliar'],$this['direccioncobro'],$this['monto'],$this['titulo'],$this['idcobrador'],$this['idprofesion'],$this['vive'],$this['created_at'], $this['updated_at'], $this['nrolector'], $this['tienefoto'], $this['created_by'], $this['updated_by'] ,$this['nrodoc'] ,$this['fechanac'],$this['fechaingreso'] ,$this['idciudadnac'],$this['idnacionalidad'],$this['estadocivil']         );
+        unset( $this['cantgrupofamiliar'],$this['monto'],$this['titulo'],$this['idcobrador'],$this['idprofesion'],$this['vive'],$this['created_at'], $this['updated_at'], $this['nrolector'], $this['tienefoto'], $this['created_by'], $this['updated_by'] ,$this['nrodoc'] ,$this['fechanac'],$this['fechaingreso'] ,$this['idciudadnac'],$this['idnacionalidad'],$this['estadocivil']         );
      
        
   
