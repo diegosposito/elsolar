@@ -21,17 +21,17 @@ generator:
         last_login: { label: "Ultimo Acceso" , date_format: dd/M/yyyy hh:mm}
 
       filter: 
-        display: [first_name, last_name, email_address]
+        display: [email_address]
     
       list:
         title:   Listado de usuarios
-        display: [=username, created_at, updated_at, last_login, sede, area]
+        display: [=username, created_at, updated_at, last_login]
 
 
       form:
         class: sfGuardUserAdminForm
         display:
-          "Usuario":                   [first_name, last_name, email_address, username, password, password_again]
+          "Usuario":                   [email_address, username, password, password_again]
           
 
       edit:
