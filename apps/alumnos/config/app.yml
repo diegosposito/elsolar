@@ -11,24 +11,24 @@ all:
     facultad:    3
     profesor:    4
   envio_mail:
-    contacto: webmaster@ucu.edu.ar
-    administracion: tramitesalumnos@aelf.edu.ar
+    contacto: webmaster@correo.edu.ar
+    administracion: tramitesalumnos@correo.edu.ar
   wsalumnoslan:
     personas: http://128.1.32.3/ucu/sitio/webservices/personas.php?wsdl
   wsalumnoswan:
-    personas: http://190.228.68.196/ucu/sitio/webservices/personas.php?wsdl
+    personas: http://128.1.32.3/ucu/sitio/webservices/personas.php?wsdl
   wsestadisticas:
-    alumnos: http://190.228.68.196/ucu/sitio/webservices/estadisticas.php?wsdl   
+    alumnos: http://128.1.32.3/ucu/sitio/webservices/estadisticas.php?wsdl   
   ws_aranceles:
     lan:
-      personascuenta: http://192.168.2.194/personacuenta.php?wsdl
+      personascuenta: http://128.1.32.3/personacuenta.php?wsdl
     wan:
-      personascuenta: http://192.168.2.194/personacuenta.php?wsdl
+      personascuenta: http://128.1.32.3/personacuenta.php?wsdl
 #  wstest1:
 #    nuevaspersonas: http://wssig/ucu/sitio/webservices/nuevaspersonas.php?wsdl
 
   wstest1:
-    nuevaspersonas: http://192.168.2.196/ucu/sitio/webservices/nuevaspersonas.php?wsdl
+    nuevaspersonas: http://128.1.32.3/ucu/sitio/webservices/nuevaspersonas.php?wsdl
 #  wstest1:
 #    nuevaspersonas: http://192.168.2.195:9000/alumnos/nuevaspersonas.php?wsdl
 
