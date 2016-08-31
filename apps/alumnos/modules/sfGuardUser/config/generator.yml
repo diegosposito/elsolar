@@ -5,7 +5,6 @@ generator:
       form:
         class: sfGuardUserAdminForm
         display:
-          "Datos personales":                   [ Profile ]
           "Permisos y grupos": [is_active, is_super_admin]
         fields:
           is_active:  { credentials: [alumno] }
