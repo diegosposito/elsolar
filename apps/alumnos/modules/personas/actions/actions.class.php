@@ -18,7 +18,7 @@ class personasActions extends sfActions
 		$oPersona->setNombre(ucwords(strtolower($request->getParameter('nombre'))));
 		$oPersona->save();
 		
-		$destinatario = array('auditoriaacademica@ucu.edu.ar' => 'UCU - Auditoria Academica','informatica@ucu.edu.ar' => 'Dpto Informatica');
+		$destinatario = array('auditoriaacademica@correo.edu.ar' => 'UCU - Auditoria Academica','informatica@correo.edu.ar' => 'Dpto Informatica');
 
 		$remitente = $this->getUser()->getGuardUser()->getEmailAddress();
 		$oArea = Doctrine_Core::getTable('Areas')->find($this->getUser()->getProfile()->getIdarea());
