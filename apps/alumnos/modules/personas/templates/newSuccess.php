@@ -3,7 +3,7 @@
   </style>
 
 <br>
-<h1>Nuevos Socios</h1>
+<h1>Nuevas Personas</h1>
 <br>
 
 <?php include_partial('form', array('form' => $form)) ?>
