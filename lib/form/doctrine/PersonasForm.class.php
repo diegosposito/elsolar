@@ -13,14 +13,13 @@ class PersonasForm extends BasePersonasForm
   public function configure()
   {
 
-        unset( $this['cantgrupofamiliar'],$this['titulo'],$this['idprofesion'],$this['vive'],$this['created_at'], $this['updated_at'], $this['nrolector'], $this['tienefoto'], $this['created_by'], $this['updated_by'] ,$this['nrodoc'] ,$this['fechanac'],$this['fechaingreso'] ,$this['idciudadnac'],$this['idnacionalidad'],$this['estadocivil']         );
+        unset( $this['cantgrupofamiliar'],$this['titulo'],$this['monto'],$this['idcobrador'], $this['activo'], $this['idprofesion'],$this['vive'],$this['created_at'], $this['updated_at'], $this['nrolector'], $this['tienefoto'], $this['created_by'], $this['updated_by'] ,$this['nrodoc'] ,$this['fechanac'],$this['fechaingreso'] ,$this['idciudadnac'],$this['idnacionalidad'],$this['estadocivil']         );
      
-        $cobradores = Doctrine_Core::getTable('Personas')->obtenerCobradores();
+       /* $cobradores = Doctrine_Core::getTable('Personas')->obtenerCobradores();
         foreach ($cobradores as $cobrador) {
           $arregloCobradores[$cobrador['idpersona']] = $cobrador['apellido'].', '.$cobrador['nombre'];
         }
-        asort($arregloCobradores);
-  
+        asort($arregloCobradores*/  
         $years = range(date('Y') - 70, date('Y'));
     /*    $this->widgetSchema['fechanac'] = new sfWidgetFormJQueryDate(array(
             'config' => '{}',
@@ -50,10 +49,10 @@ class PersonasForm extends BasePersonasForm
       $this->widgetSchema->setLabel('email', '<p align="left">Email:</p>');
       $this->widgetSchema->setLabel('telefono', '<p align="left">Teléfono:</p>');
       $this->widgetSchema->setLabel('celular', '<p align="left">Celular:</p>');
-      $this->widgetSchema->setLabel('activo', '<p align="left">Activo:</p>');
+      /*$this->widgetSchema->setLabel('activo', '<p align="left">Activo:</p>');*/
       $this->widgetSchema['socio'] = new sfWidgetFormInputHidden();
-      $this->widgetSchema['idcobrador'] = new sfWidgetFormSelect(array('choices' => $arregloCobradores));
-      $this->widgetSchema->setLabel('idcobrador', '<p align="left">Cobrador:</p>');
+     /* $this->widgetSchema['idcobrador'] = new sfWidgetFormSelect(array('choices' => $arregloCobradores));
+      $this->widgetSchema->setLabel('idcobrador', '<p align="left">Cobrador:</p>'); */
       $this->widgetSchema->setLabel('otrainformacionrelevante', '<p align="left">Observaciones:</p>');
 
       $this->setValidators(array(
