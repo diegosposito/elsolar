@@ -105,7 +105,11 @@
       	    <trans-unit id="26">
         	<source>Say</source>
         	<target>Publicar</target>
-      	    </trans-unit>           
+      	    </trans-unit> 
+            <trans-unit id="29">
+                <source>Back to list</source>
+                <target>Volver al listado</target>
+            </trans-unit>          
         </body>
     </file>
 </xliff>
