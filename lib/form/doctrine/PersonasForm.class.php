@@ -45,7 +45,6 @@ class PersonasForm extends BasePersonasForm
  	    $this->widgetSchema->setLabel('idtipodoc', '<p align="left">Tipo Documento:</p>');
       $this->widgetSchema->setLabel('numerodoc', '<p align="left">Numero Doc:</p>');
       $this->widgetSchema->setLabel('direccion', '<p align="left">Dirección:</p>');
-      $this->widgetSchema->setLabel('direccioncobro', '<p align="left">Dirección Cobro:</p>');
       $this->widgetSchema->setLabel('email', '<p align="left">Email:</p>');
       $this->widgetSchema->setLabel('telefono', '<p align="left">Teléfono:</p>');
       $this->widgetSchema->setLabel('celular', '<p align="left">Celular:</p>');
