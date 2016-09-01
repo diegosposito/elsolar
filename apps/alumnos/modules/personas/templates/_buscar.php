@@ -26,7 +26,7 @@
   </table>
 </form>
 <br>
-<a href="<?php echo url_for('personas/new') ?>">Agregar nuevas personas</a>
+<a href="<?php echo url_for('personas/new') ?>">Agregar Nuevos Profesionales</a>
 
 <br>
 <?php if (count($resultado) > 0){ ?>		    	   	

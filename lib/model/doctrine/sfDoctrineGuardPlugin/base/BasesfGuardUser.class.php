@@ -233,7 +233,7 @@ abstract class BasesfGuardUser extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'sf_guard_user_id'));
 
-        $this->hasMany('EstadosMesasExamenesHistorial as sfGuardUser', array(
+        $this->hasMany('Personas as sfGuardUser', array(
              'local' => 'id',
              'foreign' => 'idusuario'));
 

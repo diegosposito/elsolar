@@ -26,18 +26,19 @@
  * @property string $telefono
  * @property string $celular
  * @property string $direccion
- * @property string $direccioncobro
  * @property boolean $tienefoto
  * @property boolean $activo
  * @property boolean $socio
  * @property string $nrolector
  * @property string $otrainformacionrelevante
  * @property float $monto
+ * @property integer $idusuario
  * @property TiposDocumentos $TiposDocumentos
  * @property Paises $Paises
  * @property Ciudades $Ciudades
  * @property EstadoCivil $EstadoCivil
  * @property Sexo $Sexo
+ * @property sfGuardUser $sfGuardUser
  * @property Doctrine_Collection $Personas
  * 
  * @method integer             getIdpersona()                Returns the current record's "idpersona" value
@@ -61,18 +62,19 @@
  * @method string              getTelefono()                 Returns the current record's "telefono" value
  * @method string              getCelular()                  Returns the current record's "celular" value
  * @method string              getDireccion()                Returns the current record's "direccion" value
- * @method string              getDireccioncobro()           Returns the current record's "direccioncobro" value
  * @method boolean             getTienefoto()                Returns the current record's "tienefoto" value
  * @method boolean             getActivo()                   Returns the current record's "activo" value
  * @method boolean             getSocio()                    Returns the current record's "socio" value
  * @method string              getNrolector()                Returns the current record's "nrolector" value
  * @method string              getOtrainformacionrelevante() Returns the current record's "otrainformacionrelevante" value
  * @method float               getMonto()                    Returns the current record's "monto" value
+ * @method integer             getIdusuario()                Returns the current record's "idusuario" value
  * @method TiposDocumentos     getTiposDocumentos()          Returns the current record's "TiposDocumentos" value
  * @method Paises              getPaises()                   Returns the current record's "Paises" value
  * @method Ciudades            getCiudades()                 Returns the current record's "Ciudades" value
  * @method EstadoCivil         getEstadoCivil()              Returns the current record's "EstadoCivil" value
  * @method Sexo                getSexo()                     Returns the current record's "Sexo" value
+ * @method sfGuardUser         getSfGuardUser()              Returns the current record's "sfGuardUser" value
  * @method Doctrine_Collection getPersonas()                 Returns the current record's "Personas" collection
  * @method Personas            setIdpersona()                Sets the current record's "idpersona" value
  * @method Personas            setNombre()                   Sets the current record's "nombre" value
@@ -95,18 +97,19 @@
  * @method Personas            setTelefono()                 Sets the current record's "telefono" value
  * @method Personas            setCelular()                  Sets the current record's "celular" value
  * @method Personas            setDireccion()                Sets the current record's "direccion" value
- * @method Personas            setDireccioncobro()           Sets the current record's "direccioncobro" value
  * @method Personas            setTienefoto()                Sets the current record's "tienefoto" value
  * @method Personas            setActivo()                   Sets the current record's "activo" value
  * @method Personas            setSocio()                    Sets the current record's "socio" value
  * @method Personas            setNrolector()                Sets the current record's "nrolector" value
  * @method Personas            setOtrainformacionrelevante() Sets the current record's "otrainformacionrelevante" value
  * @method Personas            setMonto()                    Sets the current record's "monto" value
+ * @method Personas            setIdusuario()                Sets the current record's "idusuario" value
  * @method Personas            setTiposDocumentos()          Sets the current record's "TiposDocumentos" value
  * @method Personas            setPaises()                   Sets the current record's "Paises" value
  * @method Personas            setCiudades()                 Sets the current record's "Ciudades" value
  * @method Personas            setEstadoCivil()              Sets the current record's "EstadoCivil" value
  * @method Personas            setSexo()                     Sets the current record's "Sexo" value
+ * @method Personas            setSfGuardUser()              Sets the current record's "sfGuardUser" value
  * @method Personas            setPersonas()                 Sets the current record's "Personas" collection
  * 
  * @package    sig
@@ -255,13 +258,6 @@ abstract class BasePersonas extends sfDoctrineRecord
              'default' => '',
              'length' => 200,
              ));
-        $this->hasColumn('direccioncobro', 'string', 200, array(
-             'type' => 'string',
-             'primary' => false,
-             'notnull' => true,
-             'default' => '',
-             'length' => 200,
-             ));
         $this->hasColumn('tienefoto', 'boolean', null, array(
              'type' => 'boolean',
              'primary' => false,
@@ -297,6 +293,12 @@ abstract class BasePersonas extends sfDoctrineRecord
              'notnull' => true,
              'default' => '',
              ));
+        $this->hasColumn('idusuario', 'integer', null, array(
+             'type' => 'integer',
+             'primary' => false,
+             'autoincrement' => false,
+             'default' => '1',
+             ));
     }
 
     public function setUp()
@@ -321,6 +323,10 @@ abstract class BasePersonas extends sfDoctrineRecord
         $this->hasOne('Sexo', array(
              'local' => 'idsexo',
              'foreign' => 'idsexo'));
+
+        $this->hasOne('sfGuardUser', array(
+             'local' => 'idusuario',
+             'foreign' => 'id'));
 
         $this->hasMany('MesesCobro as Personas', array(
              'local' => 'idpersona',
