@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-    <title>CSS Free Templates with jQuery Slider</title>
+    <title>CIRCULO ODONTOLOGICO CONCEPCION DEL URUGUAY</title>
     <?php include_http_metas() ?>
     <?php include_metas() ?>
     <?php include_title() ?>
@@ -58,15 +58,17 @@
 		<div id="header">
 			<div class="cl"></div>
 			<!-- Logo -->
-			<img alt="Smiley face" height="142" width="442" src="<?php echo $sf_request->getRelativeUrlRoot();?>/images/logo.png">
+			<img alt="Smiley face" height="142" width="542" src="<?php echo $sf_request->getRelativeUrlRoot();?>/images/logo.png">
+
+			<?php if ($autenticated){ ?>
 			<!-- Top Navigation -->
 			<div id="top-navigation">	
 				<ul>
-					<li><a class="start" title="My Account" href="#"><span></span>My Account</a></li>
-					<li><a class="cart" title="shopping cart" href="#"><span></span>shopping cart </a></li>
+					<li><a class="start" title="Mi Cuenta" href="#"><span></span>Mi Cuenta</a></li>
 					<?php echo '<li>'.link_to('Salir', 'sf_guard_signout').'</li>' ; ?>
 				</ul>
 			</div>	
+			<?php } ?>
 			
 			<div align="right">
 			<font color="#000000"><?php if ($autenticated){ echo '<b>Usuario:</b> '.$sf_user->getGuardUser()->getUsername(); } ?>
@@ -133,12 +135,11 @@
 					    	            echo '<li>'.link_to('Gestión de Usuarios', 'sf_guard_user').'</li>' ; 
 					    	        } 
 					    	    } ?>   
-						<?php echo '<li>'.link_to('Gestión Personas', 'personas/new').'</li>' ; ?>
-						<?php echo '<li>'.link_to('Gestión Personas', 'personas/new').'</li>' ; ?>
-						<?php echo '<li>'.link_to('Gestión Personas', 'personas/new').'</li>' ; ?>
-						<?php echo '<li>'.link_to('Gestión Personas', 'personas/new').'</li>' ; ?>
-						<?php echo '<li>'.link_to('Gestión Personas', 'personas/new').'</li>' ; ?>
-						<?php echo '<li>'.link_to('Salir', 'personas/new').'</li>' ; ?>
+						<?php echo '<li>'.link_to('Gestión Personas', 'personas/buscar').'</li>' ; ?>
+						<?php echo '<li>'.link_to('Gestión de Documentos', 'personas/new').'</li>' ; ?>
+						<?php echo '<li>'.link_to('Gestión de Contenido', 'personas/new').'</li>' ; ?>
+						<?php echo '<li>'.link_to('Gestión Profesionales', 'personas/new').'</li>' ; ?>
+						<?php echo '<li>'.link_to('Herramientas', 'personas/new').'</li>' ; ?>
 					</ul>
 				</div>
 			</div>	
