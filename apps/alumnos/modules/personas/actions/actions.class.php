@@ -724,7 +724,7 @@ Sede: '.$oSede.'
   {
      // $this->socio = $request->getParameter('socio');
       $this->form = new PersonasForm();
-      $this->form->setDefault('socio', 1);  
+    
   }
 
   public function executeNewcobrador(sfWebRequest $request)
@@ -996,12 +996,18 @@ Sede: '.$oSede.'
 
   protected function processForm(sfWebRequest $request, sfForm $form)
   {
+   // var_dump($request->getParameterHolder()->getAll());
+    //echo "ver".$request->getPostParameter('personas[apellido]');
+   
     $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
     if ($form->isValid())
     {
       $personas = $form->save();
       $nrodoc = preg_replace("/[^\d]/", "", $personas->getNumeroDoc());
       $personas->setNroDoc($nrodoc);
+      $personas->setIdtipodoc($request->getPostParameter('personas[idtipodoc]'));
+      $personas->setIdusuario($request->getPostParameter('personas[idusuario]'));
+      $personas->setIdsexo($request->getPostParameter('personas[idsexo]'));
       $personas->save();
 
       $this->redirect('personas/edit?idpersona='.$personas->getIdpersona());
