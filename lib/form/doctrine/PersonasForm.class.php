@@ -13,42 +13,18 @@ class PersonasForm extends BasePersonasForm
   public function configure()
   {
 
-        unset( $this['cantgrupofamiliar'],$this['email'],$this['titulo'],$this['monto'],$this['idcobrador'], $this['activo'], $this['idprofesion'],$this['vive'],$this['created_at'], $this['updated_at'], $this['nrolector'], $this['tienefoto'], $this['created_by'], $this['updated_by'] ,$this['nrodoc'] ,$this['fechanac'],$this['fechaingreso'] ,$this['idciudadnac'],$this['idnacionalidad'],$this['estadocivil']         );
+        unset( $this['cantgrupofamiliar'],$this['email'],$this['titulo'],$this['monto'],$this['idcobrador'], $this['activo'], $this['idprofesion'],$this['vive'],$this['created_at'], $this['updated_at'], $this['nrolector'], $this['tienefoto'], $this['created_by'], $this['updated_by'] ,$this['nrodoc'] ,$this['fechanac'],$this['socio'],$this['fechaingreso'] ,$this['idciudadnac'],$this['idnacionalidad'],$this['estadocivil']         );
      
-       /* $cobradores = Doctrine_Core::getTable('Personas')->obtenerCobradores();
-        foreach ($cobradores as $cobrador) {
-          $arregloCobradores[$cobrador['idpersona']] = $cobrador['apellido'].', '.$cobrador['nombre'];
-        }
-        asort($arregloCobradores*/  
-        $years = range(date('Y') - 70, date('Y'));
-    /*    $this->widgetSchema['fechanac'] = new sfWidgetFormJQueryDate(array(
-            'config' => '{}',
-            'image'=>'/images/calendar.gif',
-            'culture' => substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2),
-            'config' => "{firstDay: 1, dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa'], 
-                   monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']}", 
-            'date_widget' => new sfWidgetFormDate(array('format' => '%day%/%month%/%year%','years' => array_combine($years, $years))) 
-        ));
-        $this->widgetSchema['fechaingreso'] = new sfWidgetFormJQueryDate(array(
-            'config' => '{}',
-            'image'=>'/images/calendar.gif',
-            'culture' => substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2),
-            'config' => "{firstDay: 1, dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa'], 
-                   monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']}", 
-            'date_widget' => new sfWidgetFormDate(array('format' => '%day%/%month%/%year%')) 
-        ));*/
-        
-         // Se define los labels
+      // Se define los labels
 	    $this->widgetSchema->setLabel('nombre', '<p align="left">Nombre:</p>');
  	    $this->widgetSchema->setLabel('apellido', '<p align="left">Apellido:</p>');
       $this->widgetSchema->setLabel('idsexo', '<p align="left">Sexo:</p>');
  	    $this->widgetSchema->setLabel('idtipodoc', '<p align="left">Tipo Documento:</p>');
+      $this->widgetSchema->setLabel('idusuario', '<p align="left">Usuario:</p>');
       $this->widgetSchema->setLabel('numerodoc', '<p align="left">Numero Doc:</p>');
       $this->widgetSchema->setLabel('direccion', '<p align="left">Dirección:</p>');
       $this->widgetSchema->setLabel('telefono', '<p align="left">Teléfono:</p>');
       $this->widgetSchema->setLabel('celular', '<p align="left">Celular:</p>');
-      /*$this->widgetSchema->setLabel('activo', '<p align="left">Activo:</p>');*/
-      $this->widgetSchema['socio'] = new sfWidgetFormInputHidden();
      /* $this->widgetSchema['idcobrador'] = new sfWidgetFormSelect(array('choices' => $arregloCobradores));
       $this->widgetSchema->setLabel('idcobrador', '<p align="left">Cobrador:</p>'); */
       $this->widgetSchema->setLabel('otrainformacionrelevante', '<p align="left">Observaciones:</p>');
@@ -57,6 +33,10 @@ class PersonasForm extends BasePersonasForm
         'apellido' => new sfValidatorString(array('required' => true), array('required' => 'El apellido es obligatorio.')),
         'nombre' => new sfValidatorString(array('required' => true), array('required' => 'El nombre es obligatorio.')),
         'numerodoc' => new sfValidatorString(array('required' => true), array('required' => 'El documento es obligatorio.')),
+        'celular' => new sfValidatorString(array('max_length' => 200, 'required' => false)),
+        'direccion' => new sfValidatorString(array('max_length' => 200, 'required' => false)),
+        'telefono' => new sfValidatorString(array('max_length' => 200, 'required' => false)),
+        'otrainformacionrelevante' => new sfValidatorString(array('max_length' => 2000, 'required' => false)),
         ));
 
       $this->validatorSchema->setOption('allow_extra_fields',true); 
