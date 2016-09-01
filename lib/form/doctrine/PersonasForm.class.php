@@ -13,7 +13,7 @@ class PersonasForm extends BasePersonasForm
   public function configure()
   {
 
-        unset( $this['cantgrupofamiliar'],$this['titulo'],$this['monto'],$this['idcobrador'], $this['activo'], $this['idprofesion'],$this['vive'],$this['created_at'], $this['updated_at'], $this['nrolector'], $this['tienefoto'], $this['created_by'], $this['updated_by'] ,$this['nrodoc'] ,$this['fechanac'],$this['fechaingreso'] ,$this['idciudadnac'],$this['idnacionalidad'],$this['estadocivil']         );
+        unset( $this['cantgrupofamiliar'],$this['email'],$this['titulo'],$this['monto'],$this['idcobrador'], $this['activo'], $this['idprofesion'],$this['vive'],$this['created_at'], $this['updated_at'], $this['nrolector'], $this['tienefoto'], $this['created_by'], $this['updated_by'] ,$this['nrodoc'] ,$this['fechanac'],$this['fechaingreso'] ,$this['idciudadnac'],$this['idnacionalidad'],$this['estadocivil']         );
      
        /* $cobradores = Doctrine_Core::getTable('Personas')->obtenerCobradores();
         foreach ($cobradores as $cobrador) {
@@ -45,7 +45,6 @@ class PersonasForm extends BasePersonasForm
  	    $this->widgetSchema->setLabel('idtipodoc', '<p align="left">Tipo Documento:</p>');
       $this->widgetSchema->setLabel('numerodoc', '<p align="left">Numero Doc:</p>');
       $this->widgetSchema->setLabel('direccion', '<p align="left">Dirección:</p>');
-      $this->widgetSchema->setLabel('email', '<p align="left">Email:</p>');
       $this->widgetSchema->setLabel('telefono', '<p align="left">Teléfono:</p>');
       $this->widgetSchema->setLabel('celular', '<p align="left">Celular:</p>');
       /*$this->widgetSchema->setLabel('activo', '<p align="left">Activo:</p>');*/
