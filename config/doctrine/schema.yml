@@ -1143,6 +1143,20 @@ DesignacionesMesas:
       foreign: idmesaexamen
       foreignAlias: MesasExamenes
 
+ObrasSociales:
+  actAs: 
+    Timestampable: ~ 
+    fzblameable: ~
+  columns:
+    idobrasocial: { type: integer, primary: true, autoincrement: true }
+    denominacion: { type: string(120), primary: false, notnull: true, default: ' ', autoincrement: false }
+    abreviada: { type: string(120), primary: false, notnull: true, default: ' ', autoincrement: false }
+    estado: { type: integer, primary: false, autoincrement: false } 
+    fechaarancel: { type: date, notnull: true }
+    fechaultimoperiodo: { type: date, notnull: true }
+    fechaaranceltexto: { type: string(120), primary: false, notnull: true, default: ' ', autoincrement: false }
+    fechaultimoperiodotexto: { type: string(120), primary: false, notnull: true, default: ' ', autoincrement: false }
+
 Empleados:
   actAs: 
     Timestampable: ~ 
