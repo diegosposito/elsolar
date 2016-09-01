@@ -25,6 +25,8 @@
     </tr>    
   </table>
 </form>
+<br>
+<a href="<?php echo url_for('personas/new') ?>">Agregar nuevas personas</a>
 
 <br>
 <?php if (count($resultado) > 0){ ?>		    	   	
@@ -52,7 +54,7 @@
 	    <?php } ?>
 
 	    <br>
-  <a href="<?php echo url_for('personas/new') ?>">Agregar nuevas personas</a>
+  
   <br><br>
 	  </tbody>
 	</table>
