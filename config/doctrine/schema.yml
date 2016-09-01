@@ -551,6 +551,7 @@ Personas:
     nrolector: { type: string(10), primary: false, autoincrement: false, default: '' }
     otrainformacionrelevante: { type: string(2000) }
     monto: { type: float, primary: false, notnull: true, default: '' }
+    idusuario: { type: integer, primary: false, autoincrement: false, default: '1' }
   relations:
     TiposDocumentos: 
       local: idtipodoc
@@ -571,7 +572,11 @@ Personas:
     Sexo: 
       local: idsexo
       foreign: idsexo
-      foreignAlias: Sexo 
+      foreignAlias: Sexo
+    sfGuardUser: 
+      local: idusuario
+      foreign: id
+      foreignAlias: sfGuardUser  
 
 MesesCobro:
   actAs: 
