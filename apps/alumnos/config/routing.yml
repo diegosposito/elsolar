@@ -61,6 +61,15 @@ estados_carreras:
     column:               idestadocarrera
     with_wildcard_routes: true
 
+obras_sociales:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ObrasSociales
+    module:               obrassociales
+    prefix_path:          /obrassociales
+    column:               idobrasocial
+    with_wildcard_routes: true    
+
 modalidades_carreras:
   class: sfDoctrineRouteCollection
   options:
