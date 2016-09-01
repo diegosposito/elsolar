@@ -81,11 +81,11 @@
 		<!-- Navigation -->
 		<div id="navigation">
 			<ul>
-				<li><a title="Home" href="#">Home<span class="sep-right"></span></a></li>
+				<li><a title="Home" href="#">Inicio<span class="sep-right"></span></a></li>
 				<li>
-					<a title="Games" href="#"><span class="sep-left"></span>Gamer<span class="sep-right"></span></a>
+					<a title="Games" href="#"><span class="sep-left"></span>Profesionales<span class="sep-right"></span></a>
 				</li>
-				<li><a title="Abstract" href="#"><span class="sep-left"></span>abstract<span class="sep-right"></span></a></li>
+				<li><a title="Abstract" href="#"><span class="sep-left"></span>Obras sociales<span class="sep-right"></span></a></li>
 				<li>
 					<a title="Retro" href="#"><span class="sep-left"></span>Retro<span class="sep-right"></span></a>
 					<div class="dd">
@@ -106,8 +106,7 @@
 					</div>
 				</li>
 				<li><a title="HI Tech" href="#"><span class="sep-left"></span>HI Tech<span class="sep-right"></span></a></li>
-				<li><a title="For Children" href="#"><span class="sep-left"></span>For Children<span class="sep-right"></span></a></li>
-				<li><a title="For Ladies" href="#"><span class="sep-left"></span>For Ladies<span class="sep-right"></span></a></li>
+				<li><a title="For Children" href="#"><span class="sep-left"></span>Acerca de<span class="sep-right"></span></a></li>
 			</ul>
 			<div class="cl"></div>
 		</div>
