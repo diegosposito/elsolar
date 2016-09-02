@@ -1,8 +1,8 @@
  <style type="text/css">
     p { margin-left:5em; /* Or another measurement unit, like px */ }
   </style>
+  <br>
 <h1 align="center" style="color:black;">Listado de Obras Sociales</h1>
-<br>
 <table cellspacing="0" class="stats">
     <thead>
       <tr>
@@ -31,7 +31,6 @@
 
       <br>
   
-  <br><br>
     </tbody>
   </table>
 
