@@ -83,9 +83,11 @@
 			<ul>
 				<li><a title="Home" href="#">Inicio<span class="sep-right"></span></a></li>
 				<li>
-					<a title="Games" href="#"><span class="sep-left"></span>Profesionales<span class="sep-right"></span></a>
+					<a title="Profesionales" href="<?php echo url_for('personas/buscar') ?>"><span class="sep-left"></span>Profesionales<span class="sep-right"></span></a>
 				</li>
-				<li><a title="Abstract" href="#"><span class="sep-left"></span>Obras sociales<span class="sep-right"></span></a></li>
+				<li>
+					<a title="Profesionales" href="<?php echo url_for('obrassociales/index') ?>"><span class="sep-left"></span>Obras Sociales<span class="sep-right"></span></a>
+				</li>
 				<li>
 					<a title="Retro" href="#"><span class="sep-left"></span>Retro<span class="sep-right"></span></a>
 					<div class="dd">
@@ -105,7 +107,6 @@
 						</ul>
 					</div>
 				</li>
-				<li><a title="HI Tech" href="#"><span class="sep-left"></span>HI Tech<span class="sep-right"></span></a></li>
 				<li><a title="For Children" href="#"><span class="sep-left"></span>Acerca de<span class="sep-right"></span></a></li>
 			</ul>
 			<div class="cl"></div>
@@ -131,13 +132,13 @@
 					<ul>
 					    <?php   if ($autenticated){
 					                if ($sf_user->getGuardUser()->getIsSuperAdmin()) {
-					    	            echo '<li>'.link_to('Gestión Usuarios', 'sf_guard_user').'</li>' ; 
+					    	            echo '<li>'.link_to('Usuarios', 'sf_guard_user').'</li>' ; 
 					    	        } 
 					    	    } ?>   
-						<?php echo '<li>'.link_to('Gestión Profesionales', 'personas/buscar').'</li>' ; ?>
-						<?php echo '<li>'.link_to('Gestión Documentos', 'personas/new').'</li>' ; ?>
+						<?php echo '<li>'.link_to('Profesionales', 'personas/buscar').'</li>' ; ?>
+						<?php echo '<li>'.link_to('Obras Sociales', 'obrassociales/new').'</li>' ; ?>
 						<?php echo '<li>'.link_to('Gestión Contenido', 'personas/new').'</li>' ; ?>
-						<?php echo '<li>'.link_to('Gestión Tipo Contenido', 'personas/new').'</li>' ; ?>
+						<?php echo '<li>'.link_to('Documentos', 'personas/new').'</li>' ; ?>
 						<?php echo '<li>'.link_to('Herramientas', 'personas/new').'</li>' ; ?>
 					</ul>
 				</div>
