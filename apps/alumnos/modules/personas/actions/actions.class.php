@@ -722,8 +722,12 @@ Sede: '.$oSede.'
 
   public function executeNew(sfWebRequest $request)
   {
-     // $this->socio = $request->getParameter('socio');
-      $this->form = new PersonasForm();
+     // Redirige al inicio si no tiene acceso
+     if (!$this->getUser()->getGuardUser()->getIsSuperAdmin())
+     	$this->redirect('ingreso');
+     
+
+     $this->form = new PersonasForm();
     
   }
 
@@ -746,6 +750,12 @@ Sede: '.$oSede.'
 
   public function executeEdit(sfWebRequest $request)
   {
+    
+    // Redirige al inicio si no tiene acceso
+    if (!$this->getUser()->getGuardUser()->getIsSuperAdmin())
+     	$this->redirect('ingreso');
+ 
+    
     $this->forward404Unless($personas = Doctrine_Core::getTable('Personas')->find(array($request->getParameter('idpersona'))), sprintf('Object personas does not exist (%s).', $request->getParameter('idpersona')));
     $this->form = new PersonasForm($personas);
   }
@@ -769,6 +779,12 @@ Sede: '.$oSede.'
 
   public function executeDelete(sfWebRequest $request)
   {
+     
+    // Redirige al inicio si no tiene acceso
+    if (!$this->getUser()->getGuardUser()->getIsSuperAdmin())
+     	$this->redirect('ingreso');
+ 
+
     $request->checkCSRFProtection();
 
     $this->forward404Unless($personas = Doctrine_Core::getTable('Personas')->find(array($request->getParameter('idpersona'))), sprintf('Object personas does not exist (%s).', $request->getParameter('idpersona')));
