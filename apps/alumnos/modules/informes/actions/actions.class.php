@@ -189,7 +189,84 @@ class informesActions extends sfActions
 				$this->executeRegistrosEstadosPorCiclopdf($request);			        
 		        break;
 		}       
-	}	 
+	}	
+
+	public function executeObrassocialespdf(sfWebRequest $request){
+
+		$oObrasSociales = Doctrine_Core::getTable('ObrasSociales')->obtenerObrasSociales();
+
+		// pdf object
+		$pdf = new PDF();
+
+    	// settings
+		$pdf->SetFont("Times", "", 9);
+		// sentencias para retirar encabezados y pie por defecto
+		$pdf->setPrintHeader(false);
+		$pdf->setPrintFooter(false); 
+ 
+        // add a page
+		$pdf->AddPage();
+		$current_date = date("Y");
+		$encabezado = '
+			<div style="text-align: center; font-family: Times New Roman,Times,serif;"><span
+			style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/logo.png" height="70px" width="550px">
+			<b>Obras Sociales:</b> '.$current_date.'</div>';        
+
+		$pdf->writeHTML($encabezado, true, false, true, false, '');   
+		
+		$y = 45;
+		$pdf->SetXY(10,$y);
+		$pdf->Cell(15,5,'Obra Social',0,0,'C');    
+		$pdf->SetXY(45,$y);
+		$pdf->Cell(120,5,'Estado',0,0,'C');    
+		$pdf->SetXY(20,$y);
+		$pdf->Cell(235,5,'Fecha Arancel',0,0,'C'); 
+		$pdf->SetXY(20,$y);
+		$pdf->Cell(280,5,'Fecha Ult. Periodo',0,0,'C'); 
+		$pdf->SetXY(20,$y);
+		$y = $y + 5;		
+		$contador = 1;
+		
+		$pdf->Line(10,$y,190,$y);
+		
+	    foreach ($oObrasSociales as $osocial){	
+		    			    		
+		   	$pdf->SetXY(0,$y-5);
+            $pdf->SetXY(10,$y);
+		    $pdf->Cell(15,5,$osocial['denominacion'],0,0,'L');
+		    $pdf->SetXY(100,$y);        
+		    $pdf->Cell(120,5,$osocial['estado'],0,0,'L');        
+		    $pdf->SetXY(130,$y); 
+		    $pdf->Cell(10,5,$osocial['fechaarancelformat'],0,0,'L'); 
+		    $pdf->SetXY(150,$y); 
+		    $pdf->Cell(10,5,$osocial['fechaultimoperiodoformat'],0,0,'L'); 
+		    
+		
+ 			$y = $y + 5;  
+		 	// add a page
+			if($y>=265) {
+				$pdf->AddPage();
+
+				$encabezado = '
+			<div style="text-align: center; font-family: Times New Roman,Times,serif;"><span
+			style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/logo.png" width="550px">
+			Padron Socios: '.$current_date.'</div>';        
+	
+				$pdf->writeHTML($encabezado, true, false, true, false, '');   
+				$y=60;
+
+			}
+	
+		    } // fin (foreach)	
+
+			 
+		$pdf->Output('planilla.pdf', 'I');
+ 
+		// stop symfony process
+		throw new sfStopException();
+				
+		return sfView::NONE;
+  } 
 
 	// 1 Listado de Aspirantes por Carrera
 	public function executeAspirantescarrerapdf(sfWebRequest $request) 
