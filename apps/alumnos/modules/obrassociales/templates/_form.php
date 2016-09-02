@@ -8,12 +8,17 @@
   <table>
     <tfoot>
       <tr>
-        <td colspan="2">
-          &nbsp;<a href="<?php echo url_for('obrassociales/index') ?>">Back to list</a>
-          <?php if (!$form->getObject()->isNew()): ?>
-            &nbsp;<?php echo link_to('Delete', 'obrassociales/delete?idobrasocial='.$form->getObject()->getIdobrasocial(), array('method' => 'delete', 'confirm' => 'Are you sure?')) ?>
-          <?php endif; ?>
-          <input type="submit" value="Save" />
+        <td>
+        </td>
+        <td align="center">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          &nbsp;<a href="<?php echo url_for('obrassociales/index') ?>">Volver al listado de O. Sociales</a>
+        </td>
+        <td align="center">
+          <input type="submit" value="Guardar" />
         </td>
       </tr>
     </tfoot>
