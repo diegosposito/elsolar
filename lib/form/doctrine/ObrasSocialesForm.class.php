@@ -35,7 +35,7 @@ class ObrasSocialesForm extends BaseObrasSocialesForm
         'estado'    => new sfValidatorInteger(array('required' => false)),
         'fechaarancel' => new sfValidatorString(array('max_length' => 200, 'required' => false)),
         'fechaultimoperiodo' => new sfValidatorString(array('max_length' => 200, 'required' => false)),
-        'fechaultimoperiodo' => new sfValidatorString(array('max_length' => 200, 'required' => false)),
+        'fechaaranceltexto' => new sfValidatorString(array('max_length' => 200, 'required' => false)),
         'fechaultimoperiodotexto' => new sfValidatorString(array('max_length' => 200, 'required' => false)),
         ));
 
