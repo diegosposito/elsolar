@@ -45,6 +45,76 @@ class obrassocialesActions extends sfActions
     $this->form = new ObrasSocialesForm($obras_sociales);
   }
 
+  public function executeImpresion(sfWebRequest $request){
+
+      $obras_sociales = Doctrine_Core::getTable('ObrasSociales')
+      ->createQuery('a')
+      ->execute();
+     
+      $pdf = new PDF();
+
+$pdf->SetFont("Times", "", 9);
+$pdf->setPrintHeader(false);
+$pdf->setPrintFooter(false); 
+ 
+$pdf->AddPage();
+$current_date = date("Y");
+$encabezado = '
+      <div style="text-align: center; font-family: Times New Roman,Times,serif;"><span
+      style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/alcec3.jpg" width="550px">
+      Generar recibos: '.$current_date.'</div>';        
+
+$pdf->writeHTML($encabezado, true, false, true, false, '');   
+    
+$y = 60;
+$pdf->SetXY(10,$y);
+$pdf->Cell(10,5,'Obra Social',0,0,'C');    
+$pdf->SetXY(20,$y);
+$pdf->Cell(80,5,'Abrev.',0,0,'C');    
+$pdf->SetXY(20,$y);
+$pdf->Cell(225,5,'Fecha1',0,0,'C'); 
+$pdf->SetXY(20,$y);
+$pdf->Cell(280,5,'Fecha2',0,0,'C'); 
+$pdf->SetXY(20,$y);
+$y = $y + 5;    
+$contador = 1;
+    
+$pdf->Line(10,$y,199,$y);
+    
+    foreach ($obras_sociales as $osocial){ 
+
+        $pdf->SetXY(0,$y-5);
+        $pdf->SetXY(10,$y);
+        $pdf->Cell(10,5,$osocial->getDenominacion(),0,0,'L');
+        $pdf->SetXY(20,$y);        
+        $pdf->Cell(80,5,$estado,0,0,'L');        
+        $pdf->SetXY(120,$y); 
+        $pdf->Cell(10,5,$obras_sociales->getDenominacion(),0,0,'L'); 
+        $pdf->SetXY(160,$y); 
+        $pdf->Cell(10,5,$obras_sociales->getFechaultimoperiodo(),0,0,'L'); 
+            
+        $y = $y + 5;  
+        // add a page
+        if($y>=265) {
+            $pdf->AddPage();
+
+            $encabezado = '
+              <div style="text-align: center; font-family: Times New Roman,Times,serif;"><span
+              style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/alcec3.jpg" width="550px">Generar Recibos: '.$current_date.'</div>';        
+      
+            $pdf->writeHTML($encabezado, true, false, true, false, '');   
+            $y=60;
+         }
+      
+      } // fin (foreach)  
+
+       
+     $pdf->Output('recibos.pdf', 'I');
+ 
+     return sfView::NONE;
+  }
+
+
   public function executeUpdate(sfWebRequest $request)
   {
     $this->forward404Unless($request->isMethod(sfRequest::POST) || $request->isMethod(sfRequest::PUT));
