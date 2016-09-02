@@ -25,17 +25,14 @@
     </tr>    
   </table>
 </form>
-<br>
 <a href="<?php echo url_for('personas/new') ?>">Agregar Nuevos Profesionales</a>
 
-<br>
 <?php if (count($resultado) > 0){ ?>		    	   	
 	<table cellspacing="0" class="stats">
 	    <tr>
 	      <td colspan="6" width="100%">Se han encontrado <?php echo count($resultado); ?> coincidencias de la búsqueda <?php echo $form->getValue('criterio') ?> por <?php if($form->getValue('tipocriterio')==1){ echo "Apellido";} else {echo "Nro. Documento";} ?>.</td>
 	    </tr>
 	    <tr>
-	      <td width="5%" align="center" class="hed">Id</td>
 	      <td width="50%" align="center" class="hed">Nombre</td>
 	      <td width="40%" align="center" class="hed">Nro. de Documento</td>
 	      <td width="10%" align="center" class="hed">Edicion</td>
@@ -45,7 +42,6 @@
             <?php $i=0; ?>
 	    <?php foreach($resultado as $item){ ?>
 	    <tr class="fila_<?php echo $i%2 ; ?>">
-	      <td width="5%" align="center"><?php echo $item['idpersona'] ?></td>
 	      <td width="50%"><?php echo $item['apellido'].", ".$item['nombre'] ?></td>
 	      <td width="40%" align="center"><?php echo $item['nrodoc'] ?></td>
 	      <td align="center"><?php echo link_to("Editar", 'personas/edit?idpersona='.$item['idpersona'] ,'class="mhead"'); ?></td>

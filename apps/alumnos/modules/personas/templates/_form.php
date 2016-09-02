@@ -8,9 +8,16 @@
   <table>
     <tfoot>
       <tr>
-        <td colspan="2">
+        <td>
+        </td>
+        <td align="center">
+        </td>
+      </tr>
+      <tr>
+        <td>
           &nbsp;<a href="<?php echo url_for('personas/buscar') ?>">Volver al listado de Profesionales</a>
-          
+        </td>
+        <td align="center">
           <input type="submit" value="Guardar" />
         </td>
       </tr>
