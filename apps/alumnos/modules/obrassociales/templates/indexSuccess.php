@@ -3,10 +3,13 @@
   </style>
   <br>
 <h1 align="center" style="color:black;">Listado de Obras Sociales</h1>
-<img src='<?php echo $sf_request->getRelativeUrlRoot();?>/images/new.png' align='center' size='20' />
- <a href="<?php echo url_for('obrassociales/new') ?>">Nueva Obra Social</a>
+<?php if($sf_user->getGuardUser()->getIsSuperAdmin()){ ?>
+         <img src='<?php echo $sf_request->getRelativeUrlRoot();?>/images/new.png' align='center' size='20' />
+         <a href="<?php echo url_for('obrassociales/new') ?>">Nueva Obra Social</a>
+  <?php } ?>
+
  <br>
- <a href="<?php echo url_for('obrassociales/imprimir') ?>"><img src='<?php echo $sf_request->getRelativeUrlRoot();?>/images/printer.png' align='center' size='20' /></a>
+ <a href="<?php echo url_for('informes/obrassocialespdf') ?>"><img src='<?php echo $sf_request->getRelativeUrlRoot();?>/images/printer.png' align='center' size='20' /></a>
 <table cellspacing="0" class="stats">
     <thead>
       <tr>
