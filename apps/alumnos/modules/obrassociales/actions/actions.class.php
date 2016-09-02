@@ -25,7 +25,11 @@ class obrassocialesActions extends sfActions
 
   public function executeNew(sfWebRequest $request)
   {
-    $this->form = new ObrasSocialesForm();
+    // Redirige al inicio si no tiene acceso
+    if (!$this->getUser()->getGuardUser()->getIsSuperAdmin())
+      $this->redirect('ingreso');
+
+     $this->form = new ObrasSocialesForm();
   }
 
   public function executeCreate(sfWebRequest $request)
@@ -41,15 +45,22 @@ class obrassocialesActions extends sfActions
 
   public function executeEdit(sfWebRequest $request)
   {
-    $this->forward404Unless($obras_sociales = Doctrine_Core::getTable('ObrasSociales')->find(array($request->getParameter('idobrasocial'))), sprintf('Object obras_sociales does not exist (%s).', $request->getParameter('idobrasocial')));
-    $this->form = new ObrasSocialesForm($obras_sociales);
+      // Redirige al inicio si no tiene acceso
+      if (!$this->getUser()->getGuardUser()->getIsSuperAdmin())
+         $this->redirect('ingreso');
+
+      $this->forward404Unless($obras_sociales = Doctrine_Core::getTable('ObrasSociales')->find(array($request->getParameter('idobrasocial'))), sprintf('Object obras_sociales does not exist (%s).', $request->getParameter('idobrasocial')));
+      $this->form = new ObrasSocialesForm($obras_sociales);
   }
 
   public function executeImpresion(sfWebRequest $request){
 
-      $obras_sociales = Doctrine_Core::getTable('ObrasSociales')
-      ->createQuery('a')
-      ->execute();
+         // Redirige al inicio si no tiene acceso
+      if (!$this->getUser()->getGuardUser()->getIsSuperAdmin())
+         $this->redirect('ingreso');
+
+      $obras_sociales = Doctrine_Core::getTable('ObrasSociales')->obtenerObrasSociales();
+      
      
       $pdf = new PDF();
 
@@ -85,13 +96,13 @@ $pdf->Line(10,$y,199,$y);
 
         $pdf->SetXY(0,$y-5);
         $pdf->SetXY(10,$y);
-        $pdf->Cell(10,5,$osocial->getDenominacion(),0,0,'L');
+        $pdf->Cell(10,5,$osocial['idobrasocial'],0,0,'L');
         $pdf->SetXY(20,$y);        
-        $pdf->Cell(80,5,$estado,0,0,'L');        
+        $pdf->Cell(80,5,$osocial['idobrasocial'],0,0,'L');        
         $pdf->SetXY(120,$y); 
-        $pdf->Cell(10,5,$obras_sociales->getDenominacion(),0,0,'L'); 
+        $pdf->Cell(10,5,$osocial['idobrasocial'],0,0,'L'); 
         $pdf->SetXY(160,$y); 
-        $pdf->Cell(10,5,$obras_sociales->getFechaultimoperiodo(),0,0,'L'); 
+        $pdf->Cell(10,5,$osocial['idobrasocial'],0,0,'L'); 
             
         $y = $y + 5;  
         // add a page
@@ -128,6 +139,10 @@ $pdf->Line(10,$y,199,$y);
 
   public function executeDelete(sfWebRequest $request)
   {
+         // Redirige al inicio si no tiene acceso
+      if (!$this->getUser()->getGuardUser()->getIsSuperAdmin())
+         $this->redirect('ingreso');
+       
     $request->checkCSRFProtection();
 
     $this->forward404Unless($obras_sociales = Doctrine_Core::getTable('ObrasSociales')->find(array($request->getParameter('idobrasocial'))), sprintf('Object obras_sociales does not exist (%s).', $request->getParameter('idobrasocial')));
