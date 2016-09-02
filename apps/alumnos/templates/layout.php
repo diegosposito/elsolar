@@ -64,18 +64,14 @@
 			<!-- Top Navigation -->
 			<div id="top-navigation">	
 				<ul>
-					<li><a class="start" title="Mi Cuenta" href="#"><span></span>Mi Cuenta</a></li>
+				    <li><a class="start" title="Mi Cuenta" href="#"><span></span><?php echo '<b>Usuario:</b> '.$sf_user->getGuardUser()->getUsername(); ?></a></li>
 					<?php echo '<li>'.link_to('Salir', 'sf_guard_signout').'</li>' ; ?>
 				</ul>
 			</div>	
 			<?php } ?>
 			
-			<div align="right">
-			<font color="#000000"><?php if ($autenticated){ echo '<b>Usuario:</b> '.$sf_user->getGuardUser()->getUsername(); } ?>
-			</div>
-
+		
 			<!-- END Top Navigation -->	
-			<div class="cl"></div>		
 		</div>
 		<!-- END Header -->
 		<!-- Navigation -->
