@@ -25,6 +25,13 @@ class informesActions extends sfActions
 		$this->mensaje = "";
 		$this->form = new BuscarCiclosLectivosForm();
 	}
+
+	public function executeObrassociales(sfWebRequest $request)
+	{
+	    $this->obras_socialess = Doctrine_Core::getTable('ObrasSociales')
+	      ->createQuery('a')
+	      ->execute();
+	}
 	
 	public function executeBuscarciclolectivoacad(sfWebRequest $request)	
 	{
