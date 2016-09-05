@@ -19,7 +19,7 @@ prod:
           host:       smtp.gmail.com
           port:       465
           encryption: ssl
-          username:   tramitesalumnos@aelf.edu.ar
+          username:   tramitesalumnos@nada.edu.ar
           password:   522ucu2013
 
 test:
@@ -45,7 +45,7 @@ test:
           host:       smtp.gmail.com
           port:       465
           encryption: ssl
-          username:   tramitesalumnos@aelf.edu.ar
+          username:   tramitesalumnos@nada.edu.ar
           password:   522ucu2013
 
 dev:
@@ -61,7 +61,7 @@ dev:
           host:       smtp.gmail.com
           port:       465
           encryption: ssl
-          username:   tramitesalumnos@aelf.edu.ar
+          username:   tramitesalumnos@nada.edu.ar
           password:   522ucu2013
 
 all:
