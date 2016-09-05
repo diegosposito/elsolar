@@ -1,28 +1,35 @@
-<h1>Cargo autoridadess List</h1>
+ <style type="text/css">
+    p { margin-left:5em; /* Or another measurement unit, like px */ }
+  </style>
+  <br>
+<h1 align="center" style="color:black;">Listado de Cargos de Autoridades</h1>
+<?php if($sf_user->getGuardUser()->getIsSuperAdmin()){ ?>
+         <img src='<?php echo $sf_request->getRelativeUrlRoot();?>/images/new.png' align='center' size='20' />
+         <a href="<?php echo url_for('cargoautoridades/new') ?>">Nuevo Cargo de Autoridad</a>
+  <?php } ?>
 
-<table>
-  <thead>
-    <tr>
-      <th>Idcargoautoridad</th>
-      <th>Nombre</th>
-      <th>Created at</th>
-      <th>Updated at</th>
-      <th>Created by</th>
-      <th>Updated by</th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php foreach ($cargo_autoridadess as $cargo_autoridades): ?>
-    <tr>
-      <td><a href="<?php echo url_for('cargoautoridades/show?idcargoautoridad='.$cargo_autoridades->getIdcargoautoridad()) ?>"><?php echo $cargo_autoridades->getIdcargoautoridad() ?></a></td>
-      <td><?php echo $cargo_autoridades->getNombre() ?></td>
-      <td><?php echo $cargo_autoridades->getCreatedAt() ?></td>
-      <td><?php echo $cargo_autoridades->getUpdatedAt() ?></td>
-      <td><?php echo $cargo_autoridades->getCreatedBy() ?></td>
-      <td><?php echo $cargo_autoridades->getUpdatedBy() ?></td>
-    </tr>
-    <?php endforeach; ?>
-  </tbody>
-</table>
+ <br>
+ <a href="<?php echo url_for('informes/obrassocialespdf') ?>"><img src='<?php echo $sf_request->getRelativeUrlRoot();?>/images/printer.png' align='center' size='20' /></a>
+<table cellspacing="0" class="stats">
+    <thead>
+      <tr>
+        <td width="40%" align="center" class="hed">Cargo de Autoridad</td>
+        <td width="10%" align="center" class="hed">Fecha de Creación</td>
+        <td width="10%" align="center" class="hed">Edicion</td>
+      </tr>
+    </thead>
+    <tbody>
+      <?php $i=0; ?>
+      <?php foreach ($cargo_autoridadess as $cargo_autoridades){ ?>
+      <tr class="fila_<?php echo $i%2 ; ?>">
+        <td width="40%" align="center"><?php echo $cargo_autoridades->getNombre() ?></td>
+        <td width="10%"><?php echo date("d/m/Y", strtotime($cargo_autoridades->getCreatedAt())) ?></td>
+        <td align="center"><?php echo link_to("Editar", 'cargoautoridades/edit?idcargoautoridad='.$cargo_autoridades->getIdcargoautoridad() ,'class="mhead"'); ?></td>
+      </tr>
+      <?php $i++; ?>
+      <?php } ?>
 
-  <a href="<?php echo url_for('cargoautoridades/new') ?>">New</a>
+      <br>
+  
+    </tbody>
+  </table>
