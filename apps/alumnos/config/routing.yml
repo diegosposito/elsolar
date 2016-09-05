@@ -427,6 +427,24 @@ empleados:
     column:               id
     with_wildcard_routes: true
 
+autoridades:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Autoridades
+    module:               autoridades
+    prefix_path:          /autoridades
+    column:               idautoridad
+    with_wildcard_routes: true    
+
+cargo_autoridades:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                CargoAutoridades
+    module:               cargo_autoridades
+    prefix_path:          /cargo_autoridades
+    column:               idautoridad
+    with_wildcard_routes: true    
+
     
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
