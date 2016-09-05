@@ -22,15 +22,15 @@ default:
   # page orientation (P=portrait, L=landscape)
   PDF_PAGE_ORIENTATION: "P"
   # document creator
-  PDF_CREATOR: "UCU - Gabinete de Informatica"
+  PDF_CREATOR: "Circulo Odontologico"
   # document author
-  PDF_AUTHOR: "UCU - Gabinete de Informatica"
+  PDF_AUTHOR: "Circulo Odontologico"
   # header title
-  PDF_HEADER_TITLE: "Asociación Educacionista 'La Fraternidad'"
+  PDF_HEADER_TITLE: "Circulo Odontologico"
   # header description string
-  PDF_HEADER_STRING: "Sistema de Socios"
+  PDF_HEADER_STRING: "Sistema de Gestion"
   # image logo
-  PDF_HEADER_LOGO: "CabeceraSIG-UCU.jpg"
+  PDF_HEADER_LOGO: "Logo.png"
   # header logo image width [mm]
   PDF_HEADER_LOGO_WIDTH: 10
   # document unit of measure [pt=point, mm=millimeter, cm=centimeter, in=inch]
@@ -59,7 +59,7 @@ default:
 # Configuracion A4
 config_a4:
   # header title
-  PDF_HEADER_TITLE: "Universidad de Concepción del Uruguay"
+  PDF_HEADER_TITLE: "Circulo Odontologico"
   # page format
   PDF_PAGE_FORMAT: "A4"
   # header margin
