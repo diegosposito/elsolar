@@ -8,6 +8,28 @@ Facultades:
     decano: { type: string(200) } 
     nombreabrev: { type: string(50) } 
 
+Autoridades:
+  actAs: 
+    Timestampable: ~ 
+    fzblameable: ~
+  columns: 
+    idautoridad: { type: integer, primary: true, autoincrement: true }
+    nombre: { type: string(200) }
+    idcargoautoridad: { type: integer, notnull: true, default: '0' } 
+  relations:
+    CargoAutoridades: 
+      local: idcargoautoridad
+      foreign: idcargoautoridad
+      foreignAlias: CargoAutoridades    
+
+CargoAutoridades:
+  actAs: 
+    Timestampable: ~ 
+    fzblameable: ~
+  columns: 
+    idcargoautoridad: { type: integer, primary: true, autoincrement: true }
+    nombre: { type: string(200) } 
+
 Carreras:
   actAs: 
     Timestampable: ~ 
