@@ -30,7 +30,7 @@ class ObrasSocialesForm extends BaseObrasSocialesForm
   
 
       $this->setValidators(array(
-        'denominacion' => new sfValidatorString(array('required' => true), array('required' => 'El nombre es obligatorio.')),
+        'denominacion' => new sfValidatorString(array('required' => true), array('required' => 'El nombre de la O.Social es obligatorio.')),
         'abreviada' => new sfValidatorString(array('max_length' => 200, 'required' => false)),
         'estado'    => new sfValidatorInteger(array('required' => false)),
         'fechaarancel' => new sfValidatorString(array('max_length' => 200, 'required' => false)),
