@@ -82,7 +82,7 @@
 					<a title="Profesionales" href="<?php echo url_for('personas/buscar') ?>"><span class="sep-left"></span>Profesionales<span class="sep-right"></span></a>
 				</li>
 				<li>
-					<a title="Profesionales" href="<?php echo url_for('obrassociales/index') ?>"><span class="sep-left"></span>Obras Sociales<span class="sep-right"></span></a>
+					<a title="Profesionales" href="<?php echo url_for('informes/obrassociales') ?>"><span class="sep-left"></span>Obras Sociales<span class="sep-right"></span></a>
 				</li>
 				<li>
 					<a title="Retro" href="#"><span class="sep-left"></span>Retro<span class="sep-right"></span></a>
