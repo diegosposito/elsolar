@@ -1,10 +1,6 @@
 <table>
   <tbody>
     <tr>
-      <th>Idobrasocial:</th>
-      <td><?php echo $obras_sociales->getIdobrasocial() ?></td>
-    </tr>
-    <tr>
       <th>Denominacion:</th>
       <td><?php echo $obras_sociales->getDenominacion() ?></td>
     </tr>
@@ -17,34 +13,26 @@
       <td><?php echo $obras_sociales->getEstado() ?></td>
     </tr>
     <tr>
-      <th>Fechaarancel:</th>
+      <th>Fecha Arancel:</th>
       <td><?php echo $obras_sociales->getFechaarancel() ?></td>
     </tr>
     <tr>
-      <th>Fechaultimoperiodo:</th>
+      <th>Fecha Ultimo Periodo:</th>
       <td><?php echo $obras_sociales->getFechaultimoperiodo() ?></td>
     </tr>
     <tr>
-      <th>Created at:</th>
+      <th>Fecha Alta:</th>
       <td><?php echo $obras_sociales->getCreatedAt() ?></td>
     </tr>
     <tr>
-      <th>Updated at:</th>
+      <th>Fecha Ultima Modificación:</th>
       <td><?php echo $obras_sociales->getUpdatedAt() ?></td>
     </tr>
-    <tr>
-      <th>Created by:</th>
-      <td><?php echo $obras_sociales->getCreatedBy() ?></td>
-    </tr>
-    <tr>
-      <th>Updated by:</th>
-      <td><?php echo $obras_sociales->getUpdatedBy() ?></td>
-    </tr>
-  </tbody>
+   </tbody>
 </table>
 
 <hr />
 
-<a href="<?php echo url_for('obrassociales/edit?idobrasocial='.$obras_sociales->getIdobrasocial()) ?>">Edit</a>
+
 &nbsp;
-<a href="<?php echo url_for('obrassociales/index') ?>">List</a>
+<a href="<?php echo url_for('informes/obrassociales') ?>">Volver al listado</a>
