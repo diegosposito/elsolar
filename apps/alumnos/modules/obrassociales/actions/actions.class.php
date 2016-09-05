@@ -26,6 +26,7 @@ class obrassocialesActions extends sfActions
   public function executeNew(sfWebRequest $request)
   {
     // Redirige al inicio si no tiene acceso
+    if($this->getUser())
     if (!$this->getUser()->getGuardUser()->getIsSuperAdmin())
       $this->redirect('ingreso');
 
