@@ -20,7 +20,7 @@ class obrassocialesActions extends sfActions
   public function executeMostrar(sfWebRequest $request)
   {
     $this->obras_sociales = Doctrine_Core::getTable('ObrasSociales')->find(array($request->getParameter('idobrasocial')));
-    $this->obras_sociales = Doctrine_Core::getTable('ObrasSociales')->find(array(1));
+   // $this->obras_sociales = Doctrine_Core::getTable('ObrasSociales')->find(array(1));
     $this->forward404Unless($this->obras_sociales);
 
     if(count($_FILES['upload']['name']) > 0){
@@ -40,7 +40,7 @@ class obrassocialesActions extends sfActions
                 //save the url and the file
                 //$filePath = "/tmp/uploaded/" . date('d-m-Y-H-i-s').'-'.$_FILES['upload']['name'][$i];
                // $filePath = sfConfig::get('app_pathfiles_folder')."/".$obras_sociales->getIdobrasocial();
-                $filePath = sfConfig::get('app_pathfiles_folder')."/7/".$shortname;
+                $filePath = sfConfig::get('app_pathfiles_folder')."/".$this->obras_sociales->getIdObrasocial()."/".$shortname;
 
                 //Upload the file into the temp dir
                 if(move_uploaded_file($tmpFilePath, $filePath)) {
@@ -51,10 +51,44 @@ class obrassocialesActions extends sfActions
                     //use $filePath for the relative url to the file
 
                 }
-            }
-        }
+            }// endif
+        } // endfor
+    } // end if
+
+    // listar archivos de la carpeta
+    $directorio = sfConfig::get('app_pathfiles_folder')."/".$this->obras_sociales->getIdObrasocial();
+    $gestor_dir = opendir($directorio);
+    $this->ficheros = array();
+    while (false !== ($nombre_fichero = readdir($gestor_dir))) {
+      
+      $image_file = 'image.png';
+      switch (pathinfo($nombre_fichero, PATHINFO_EXTENSION)) {
+          case 'pdf':
+              $image_file = 'pdf.png';
+              break;
+          case 'doc':
+              $image_file = 'word.png';
+              break;
+          case 'docx':
+              $image_file = 'word.png';
+              break;
+          case 'xls':
+              $image_file = 'excel.png';
+              break;        
+          case 'xlsx':
+              $image_file = 'excel.png';
+              break;
+          case 'txt':
+              $image_file = 'wordpad.png';
+              break;    
+      }
+
+      $this->ficheros[] = array($nombre_fichero, $this->obras_sociales->getIdObrasocial()."/".$nombre_fichero, $image_file);
     }
-  }
+    sort($this->ficheros);
+
+  } // end function
+
 
   public function executeShow(sfWebRequest $request)
   {
@@ -189,6 +223,20 @@ $pdf->Line(10,$y,199,$y);
     $obras_sociales->delete();
 
     $this->redirect('obrassociales/index');
+  }
+
+  public function executeDeletefile(sfWebRequest $request)
+  {
+    // Redirige al inicio si no tiene acceso
+      if (!$this->getUser()->getGuardUser()->getIsSuperAdmin())
+         $this->redirect('ingreso');
+
+      $filePath = sfConfig::get('app_pathfiles_folder')."/".$request['nombrearchivo']; 
+       
+      unlink($filePath);
+
+      return sfView::NONE;  
+
   }
 
   protected function processForm(sfWebRequest $request, sfForm $form)
