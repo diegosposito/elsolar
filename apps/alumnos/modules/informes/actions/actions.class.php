@@ -26,9 +26,88 @@ class informesActions extends sfActions
 		$this->form = new BuscarCiclosLectivosForm();
 	}
 
+	public function executeMostrararchivos(sfWebRequest $request)
+  {
+    $this->obras_sociales = Doctrine_Core::getTable('ObrasSociales')->find(array($request->getParameter('idobrasocial')));
+   // $this->obras_sociales = Doctrine_Core::getTable('ObrasSociales')->find(array(1));
+    $this->forward404Unless($this->obras_sociales);
+
+    if(count($_FILES['upload']['name']) > 0){
+        //Loop through each file
+        for($i=0; $i<count($_FILES['upload']['name']); $i++) {
+          //Get the temp file path
+            $tmpFilePath = $_FILES['upload']['tmp_name'][$i];
+            
+            
+
+            //Make sure we have a filepath
+            if($tmpFilePath != ""){
+            
+                //save the filename
+                $shortname = $_FILES['upload']['name'][$i];
+
+                //save the url and the file
+                //$filePath = "/tmp/uploaded/" . date('d-m-Y-H-i-s').'-'.$_FILES['upload']['name'][$i];
+               // $filePath = sfConfig::get('app_pathfiles_folder')."/".$obras_sociales->getIdobrasocial();
+                $filePath = sfConfig::get('app_pathfiles_folder')."/".$this->obras_sociales->getIdObrasocial()."/".$shortname;
+
+                //Upload the file into the temp dir
+                if(move_uploaded_file($tmpFilePath, $filePath)) {
+
+                    $files[] = $shortname;
+                    //insert into db 
+                    //use $shortname for the filename
+                    //use $filePath for the relative url to the file
+
+                }
+            }// endif
+        } // endfor
+    } // end if
+
+    // listar archivos de la carpeta
+    $directorio = sfConfig::get('app_pathfiles_folder')."/".$this->obras_sociales->getIdObrasocial();
+    $gestor_dir = opendir($directorio);
+    $this->ficheros = array();
+    while (false !== ($nombre_fichero = readdir($gestor_dir))) {
+      
+      $image_file = 'image.png';
+      switch (pathinfo($nombre_fichero, PATHINFO_EXTENSION)) {
+          case 'pdf':
+              $image_file = 'pdf.png';
+              break;
+          case 'doc':
+              $image_file = 'word.png';
+              break;
+          case 'docx':
+              $image_file = 'word.png';
+              break;
+          case 'xls':
+              $image_file = 'excel.png';
+              break;        
+          case 'xlsx':
+              $image_file = 'excel.png';
+              break;
+          case 'txt':
+              $image_file = 'wordpad.png';
+              break;    
+      }
+
+      $this->ficheros[] = array($nombre_fichero, $this->obras_sociales->getIdObrasocial()."/".$nombre_fichero, $image_file);
+    }
+    sort($this->ficheros);
+
+  } // end function
+
 	public function executeObrassociales(sfWebRequest $request)
 	{
 	    $this->obras_socialess = Doctrine_Core::getTable('ObrasSociales')
+	      ->createQuery('a')
+	      ->execute();
+	}
+
+	public function executeProfesionales(sfWebRequest $request)
+	{
+	    $this->profesionaless = Doctrine_Core::getTable('Personas')
 	      ->createQuery('a')
 	      ->execute();
 	}
@@ -257,7 +336,7 @@ class informesActions extends sfActions
 				$encabezado = '
 			<div style="text-align: center; font-family: Times New Roman,Times,serif;"><span
 			style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/logo.png" width="550px">
-			Padron Socios: '.$current_date.'</div>';        
+			Obras Sociales: '.$current_date.'</div>';        
 	
 				$pdf->writeHTML($encabezado, true, false, true, false, '');   
 				$y=60;
@@ -274,6 +353,84 @@ class informesActions extends sfActions
 				
 		return sfView::NONE;
   } 
+
+  public function executeProfesionalespdf(sfWebRequest $request){
+
+  	  	$oPersonas = Doctrine_Core::getTable('Personas')->obtenerProfesionales(1);
+
+		// pdf object
+		$pdf = new PDF();
+
+    	// settings
+		$pdf->SetFont("Times", "", 9);
+		// sentencias para retirar encabezados y pie por defecto
+		$pdf->setPrintHeader(false);
+		$pdf->setPrintFooter(false); 
+ 
+        // add a page
+		$pdf->AddPage();
+		$current_date = date("Y");
+		$encabezado = '
+			<div style="text-align: center; font-family: Times New Roman,Times,serif;"><span
+			style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/logo.png" height="70px" width="550px">
+			<b>Profesionales:</b> '.$current_date.'</div>';        
+
+		$pdf->writeHTML($encabezado, true, false, true, false, '');   
+		
+		$y = 45;
+		$pdf->SetXY(10,$y);
+		$pdf->Cell(15,5,'Nombre',0,0,'C');    
+		$pdf->SetXY(45,$y);
+		$pdf->Cell(100,5,'Matrícula',0,0,'C');    
+		$pdf->SetXY(20,$y);
+		$pdf->Cell(190,5,'Dirección',0,0,'C'); 
+		$pdf->SetXY(20,$y);
+		$pdf->Cell(280,5,'Teléfono',0,0,'C'); 
+		$pdf->SetXY(20,$y);
+		$y = $y + 5;		
+		$contador = 1;
+		
+		$pdf->Line(10,$y,190,$y);
+		
+	    foreach ($oPersonas as $opersona){	
+		    			    		
+		   	$pdf->SetXY(0,$y-5);
+            $pdf->SetXY(10,$y);
+		    $pdf->Cell(15,5,$opersona['apellido'].", ".$opersona['nombre'],0,0,'L');
+		    $pdf->SetXY(90,$y);        
+		    $pdf->Cell(60,5,$opersona['matricula'],0,0,'L');        
+		    $pdf->SetXY(110,$y); 
+		    $pdf->Cell(10,5,$opersona['direccion'],0,0,'L'); 
+		    $pdf->SetXY(160,$y); 
+		    $pdf->Cell(10,5,$opersona['telefono'],0,0,'L'); 
+		    
+		
+ 			$y = $y + 5;  
+		 	// add a page
+			if($y>=265) {
+				$pdf->AddPage();
+
+				$encabezado = '
+			<div style="text-align: center; font-family: Times New Roman,Times,serif;"><span
+			style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/logo.png" width="550px">
+			Profesionales: '.$current_date.'</div>';        
+	
+				$pdf->writeHTML($encabezado, true, false, true, false, '');   
+				$y=60;
+
+			}
+	
+		    } // fin (foreach)	
+
+			 
+		$pdf->Output('profesionales.pdf', 'I');
+ 
+		// stop symfony process
+		throw new sfStopException();
+				
+		return sfView::NONE;
+  } 
+
 
 	// 1 Listado de Aspirantes por Carrera
 	public function executeAspirantescarrerapdf(sfWebRequest $request) 
