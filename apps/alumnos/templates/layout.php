@@ -77,9 +77,11 @@
 		<!-- Navigation -->
 		<div id="navigation">
 			<ul>
-				<li><a title="Home" href="#">Inicio<span class="sep-right"></span></a></li>
 				<li>
-					<a title="Profesionales" href="<?php echo url_for('personas/buscar') ?>"><span class="sep-left"></span>Profesionales<span class="sep-right"></span></a>
+					<a title="Profesionales" href="<?php echo url_for('ingreso/index') ?>"><span class="sep-left"></span>Inicio<span class="sep-right"></span></a>
+				</li>
+				<li>
+					<a title="Profesionales" href="<?php echo url_for('informes/profesionales') ?>"><span class="sep-left"></span>Profesionales<span class="sep-right"></span></a>
 				</li>
 				<li>
 					<a title="Profesionales" href="<?php echo url_for('informes/obrassociales') ?>"><span class="sep-left"></span>Obras Sociales<span class="sep-right"></span></a>
@@ -134,7 +136,7 @@
 						<?php echo '<li>'.link_to('Profesionales', 'personas/buscar').'</li>' ; ?>
 						<?php echo '<li>'.link_to('Obras Sociales', 'obrassociales/new').'</li>' ; ?>
 						<?php echo '<li>'.link_to('Autoridades', 'autoridades').'</li>' ; ?>
-						<?php echo '<li>'.link_to('Cargo Autoridades', 'cargo_autoridades').'</li>' ; ?>
+						<?php echo '<li>'.link_to('Cargo Autoridades', 'cargoautoridades/index').'</li>' ; ?>
 						<?php echo '<li>'.link_to('Gestión Contenido', 'personas/new').'</li>' ; ?>
 						<?php echo '<li>'.link_to('Documentos', 'personas/new').'</li>' ; ?>
 					</ul>
