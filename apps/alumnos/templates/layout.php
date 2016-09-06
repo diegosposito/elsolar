@@ -155,39 +155,31 @@
 					<div class="col styles">
 						<h3>Styles</h3>
 						<ul>
-							<li><a title="gamer" href="#"><span class="bullet"></span>gamer</a></li>
-							<li><a title="abstract" href="#"><span class="bullet"></span>abstract</a></li>
-							<li><a title="retro" href="#"><span class="bullet"></span>retro</a></li>
-							<li><a title="hi tech" href="#"><span class="bullet"></span>hi tech</a></li>
-							<li><a title="for children" href="#"><span class="bullet"></span>for children</a></li>
-							<li><a title="for ladies" href="#"><span class="bullet"></span>for ladies</a></li>							
+							<li><a title="Acerca de" href="#"><span class="bullet"></span>Acerca de</a></li>
+							<li><a title="abstract" href="#"><span class="bullet"></span>Misión</a></li>
 						</ul>
 					</div>
 					<div class="col info">
-						<h3>Information</h3>
+						<h3>Información</h3>
 						<ul>
-							<li><a title="About MEGAStore" href="#"><span class="bullet"></span>About MEGAStore</a></li>
-							<li><a title="Privacy Policy" href="#"><span class="bullet"></span>Privacy Policy</a></li>
-							<li><a title="Terms &amp; Conditions" href="#"><span class="bullet"></span>Terms &amp; Conditions</a></li>
-							<li><a title="Contact Us" href="#"><span class="bullet"></span>Contact Us</a></li>
-							<li><a title="Site Map" href="#"><span class="bullet"></span>Site Map</a></li>												
+							<li><a title="Políticas de Privacidad" href="#"><span class="bullet"></span>Políticas Privacidad</a></li>
+							<li><a title="@CopyRight" href="#"><span class="bullet"></span>@CopyRight</a></li>
 						</ul>
 					</div>
 					<div class="col newsletter">
 						<h3>Newsletter</h3>
-						<p>NO SPAM! Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 						<form action="" method="post">
-							<div class="field-holder"><input type="text" class="field" value="Enter Your Email" title="Enter Your Email" /></div>
+							<div class="field-holder"><input type="text" class="field" value="Ingrese su Email" title="Ingrese su Email" /></div>
 							<div class="cl"></div>
 							<input type="checkbox" name="check-box" value="" id="check-box" />
-							<label for="check-box">Lorem ipsum dolor sit amet, consectetur </label>
-							<input type="submit" value="submit" class="submit-button" />
+							<label for="check-box">Confirmo que deseo recibir correspondencia. </label>
+							<input type="submit" value="Registrarse" class="submit-button" />
 						</form>
 					</div>
 					<div class="cl"></div>
 				</div>
 				<div id="footer-bottom">
-					<p>&copy; MegaStore. Design by <a href="http://css-free-templates.com/">CSS-FREE-TEMPLATES.COM</a></p>
+					<p>&copy; Círculo Odontológico. Diseñado por <a href="#">C.del U.</a></p>
 				</div>
 			</div>
 			<!-- END Footer -->
