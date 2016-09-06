@@ -17,6 +17,45 @@ class obrassocialesActions extends sfActions
       ->execute();
   }
 
+  public function executeMostrar(sfWebRequest $request)
+  {
+    $this->obras_sociales = Doctrine_Core::getTable('ObrasSociales')->find(array($request->getParameter('idobrasocial')));
+    $this->obras_sociales = Doctrine_Core::getTable('ObrasSociales')->find(array(1));
+    $this->forward404Unless($this->obras_sociales);
+
+    if(count($_FILES['upload']['name']) > 0){
+        //Loop through each file
+        for($i=0; $i<count($_FILES['upload']['name']); $i++) {
+          //Get the temp file path
+            $tmpFilePath = $_FILES['upload']['tmp_name'][$i];
+            
+            
+
+            //Make sure we have a filepath
+            if($tmpFilePath != ""){
+            
+                //save the filename
+                $shortname = $_FILES['upload']['name'][$i];
+
+                //save the url and the file
+                //$filePath = "/tmp/uploaded/" . date('d-m-Y-H-i-s').'-'.$_FILES['upload']['name'][$i];
+               // $filePath = sfConfig::get('app_pathfiles_folder')."/".$obras_sociales->getIdobrasocial();
+                $filePath = sfConfig::get('app_pathfiles_folder')."/7/".$shortname;
+
+                //Upload the file into the temp dir
+                if(move_uploaded_file($tmpFilePath, $filePath)) {
+
+                    $files[] = $shortname;
+                    //insert into db 
+                    //use $shortname for the filename
+                    //use $filePath for the relative url to the file
+
+                }
+            }
+        }
+    }
+  }
+
   public function executeShow(sfWebRequest $request)
   {
     $this->obras_sociales = Doctrine_Core::getTable('ObrasSociales')->find(array($request->getParameter('idobrasocial')));
@@ -158,6 +197,12 @@ $pdf->Line(10,$y,199,$y);
     if ($form->isValid())
     {
       $obras_sociales = $form->save();
+
+      $folder_path_name = sfConfig::get('app_pathfiles_folder')."/".$obras_sociales->getIdobrasocial();
+      
+      if (!is_dir($folder_path_name) && !mkdir($folder_path_name)){
+          die("Error creating folder $uploaddir");
+      }
 
       $this->redirect('obrassociales/edit?idobrasocial='.$obras_sociales->getIdobrasocial());
     }
