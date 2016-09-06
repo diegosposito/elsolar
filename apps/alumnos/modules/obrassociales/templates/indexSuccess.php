@@ -18,7 +18,8 @@
         <td width="15%" align="center" class="hed">Estado</td>
         <td width="10%" align="center" class="hed">Fec.Arancel</td>
         <td width="10%" align="center" class="hed">Fec.Ult.Per</td>
-        <td width="10%" align="center" class="hed">Edicion</td>
+        <td width="5%" align="center" class="hed">Edicion</td>
+        <td width="5%" align="center" class="hed">Archivos</td>
       </tr>
     </thead>
     <tbody>
@@ -32,6 +33,7 @@
         <td width="10%"><?php echo $obras_sociales->getFechaarancel() ?></td>
         <td width="10%"><?php echo $obras_sociales->getFechaultimoperiodo() ?></td>
         <td align="center"><?php echo link_to("Editar", 'obrassociales/edit?idobrasocial='.$obras_sociales->getIdobrasocial() ,'class="mhead"'); ?></td>
+         <td align="center"><?php echo link_to("Agregar", 'obrassociales/mostrar?idobrasocial='.$obras_sociales->getIdobrasocial() ,'class="mhead"'); ?></td>
       </tr>
       <?php $i++; ?>
       <?php } ?>
