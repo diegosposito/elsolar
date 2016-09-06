@@ -30,7 +30,23 @@ class PersonasTable extends Doctrine_Table
 	    	->fetchOne();
 	       
         return $q;
-    }	
+    }
+
+    // Obtener obras sociales
+    public static function obtenerProfesionales($estado=NULL)
+    {
+        $sql ="SELECT per.idpersona, per.nombre, per.apellido, per.direccion, per.nrodoc, per.nrolector as matricula, per.email, per.telefono, per.celular, per.ciudad
+        FROM personas per ";
+
+        if($estado !== NULL)
+            $sql .=  " WHERE per.activo = ".$estado." "; 
+
+        $sql .= " ORDER BY per.apellido;";
+        
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
+
+        return $q;
+    } 	
 
     // Obtener designaciones por persona, filtrando tambien por area y sede
     public static function obtenerRecibosAGenerar()
