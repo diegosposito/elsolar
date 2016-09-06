@@ -33,17 +33,19 @@
 	      <td colspan="6" width="100%">Se han encontrado <?php echo count($resultado); ?> coincidencias de la búsqueda <?php echo $form->getValue('criterio') ?> por <?php if($form->getValue('tipocriterio')==1){ echo "Apellido";} else {echo "Nro. Documento";} ?>.</td>
 	    </tr>
 	    <tr>
-	      <td width="50%" align="center" class="hed">Nombre</td>
-	      <td width="40%" align="center" class="hed">Nro. de Documento</td>
-	      <td width="10%" align="center" class="hed">Edicion</td>
+	      <td width="40%" align="center" class="hed">Nombre</td>
+	      <td width="20%" align="center" class="hed">Matrícula Nro.</td>
+	      <td width="20%" align="center" class="hed">Nro. de Documento</td>
+	      <td width="20%" align="center" class="hed">Edicion</td>
 	    </tr>
 	  </thead>
 	  <tbody>
             <?php $i=0; ?>
 	    <?php foreach($resultado as $item){ ?>
 	    <tr class="fila_<?php echo $i%2 ; ?>">
-	      <td width="50%"><?php echo $item['apellido'].", ".$item['nombre'] ?></td>
-	      <td width="40%" align="center"><?php echo $item['nrodoc'] ?></td>
+	      <td width="40%"><?php echo $item['apellido'].", ".$item['nombre'] ?></td>
+	      <td width="20%" align="center"><?php echo $item['nrolector'] ?></td>
+	      <td width="20%" align="center"><?php echo $item['nrodoc'] ?></td>
 	      <td align="center"><?php echo link_to("Editar", 'personas/edit?idpersona='.$item['idpersona'] ,'class="mhead"'); ?></td>
 	    </tr>
             <?php $i++; ?>
