@@ -13,6 +13,8 @@ all:
   envio_mail:
     contacto: webmaster@correo.edu.ar
     administracion: tramitesalumnos@correo.edu.ar
+  pathfiles:
+    folder: /home/newp/circulo/web/files  
   wsalumnoslan:
     personas: http://128.1.32.3/ucu/sitio/webservices/personas.php?wsdl
   wsalumnoswan:
