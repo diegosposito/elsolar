@@ -1,14 +1,11 @@
 <div class="post">
-					<h2>HOME PAGE del Circulo Odontológico CdelU</h2>
-					<p><strong>Proin hendrerit vehicula cursus.</strong> In tempor metus eget magna varius sagittis et ac nisi. Vestibulum massa nisl, tincidunt at sodales a, adipiscing iaculis nunc. Sed rutrum justo vitae sem aliquet bibendum. <strong>Quisque vestibulum, velit ut cursus blandit, orci quam adipiscing arcu, a ultricies felis urna sed risus. Etiam in dolor eu massa sodales faucibus non et purus.</strong> Nam facilisis aliquet adipiscing. Maecenas ligula mi, porttitor faucibus imperdiet eu, porta nec urna. In vel ligula quam. </p>
-					<p>Proin in nunc nibh, in suscipit enim. Nunc fermentum metus ut diam faucibus rhoncus. Duis augue sapien, pharetra sit amet mollis at, luctus ut eros.</p>
+					<h2>CIRCULO ODONTOLOGICO Concepción del Uruguay</h2>
+					<p><strong>Fundado el 03/12/1979</strong> en la ciudad de Concepción del Uruguay, Provincia de Entre Ríos.<strong> Todos los presentes involucrados atestiguan el acontencimiento..</strong> Bienvenidos al sitio web online. </p>
+					<p><strong>Circulo Odontogócio Concepcion del Uruguay.</strong> En la ciudad de Concepción del Uruguay, Provincia de Entre Ríos, a los 3 días del mes de Diciembre de 1999 y siendo las 19 y 1/2 horas, los Doctores en Odontología y Dentistas al margen anotados reunidos en la casa del Dr. Víctor F. Perez y con la conformidad de los Dres. Perez Sosa, exteriorizando un anhelo colectivo dentro de la profesión de constituir una asociación de sus colegas con los objetivos más elevados en bien de los intereses morales, intelectuales y materiales de la profesión común, resolvieron constituir dicha asociación. A moción de la Dra. Lopez designó Presidente Provisional al Dr. Perez y Secretario al Dr. Miguel Gonzalez. Acto continuo el Dr. Perez presenta la moción, que fue aceptada, de que este centro llevara el nombre de 'Círculo Odontológico Concepción del Uruguay'...“</p>
 </div>
 
 <div class="post">
 					<h2>Bienvenido al nuevo sitio WEB Online</h2>
 					<img src="/images/1.jpg" alt="Silver half transparent with blue lights computer case" />
-					<p><strong>Proin hendrerit vehicula cursus.</strong> In tempor metus eget magna varius sagittis et ac nisi. Vestibulum massa nisl, tincidunt at sodales a, adipiscing iaculis nunc. Sed rutrum justo vitae sem aliquet bibendum. <strong>Quisque vestibulum, velit ut cursus blandit, orci quam adipiscing arcu, a ultricies felis urna sed risus. Etiam in dolor eu massa sodales faucibus non et purus.</strong> Nam facilisis aliquet adipiscing. Maecenas ligula mi, porttitor faucibus imperdiet eu, porta nec urna. In vel ligula quam. </p>
-					<p>Proin in nunc nibh, in suscipit enim. Nunc fermentum metus ut diam faucibus rhoncus. Duis augue sapien, pharetra sit amet mollis at, luctus ut eros.</p>
+					<p><strong>Bienvenido al nuevo sitio web Online.</strong> En la ciudad de Concepción del Uruguay, Provincia de Entre Ríos, a los 3 días del mes de Diciembre de 1999 y siendo las 19 y 1/2 horas, los Doctores en Odontología y Dentistas al margen anotados reunidos en la casa del Dr. Víctor F. Perez y con la conformidad de los Dres. Perez Sosa, exteriorizando un anhelo colectivo dentro de la profesión de constituir una asociación de sus colegas con los objetivos más elevados en bien de los intereses morales, intelectuales y materiales de la profesión común, resolvieron constituir dicha asociación. A moción de la Dra. Lopez designó Presidente Provisional al Dr. Perez y Secretario al Dr. Miguel Gonzalez. Acto continuo el Dr. Perez presenta la moción, que fue aceptada, de que este centro llevara el nombre de 'Círculo Odontológico Concepción del Uruguay'...“</p>
 </div>
-
-	
