@@ -104,7 +104,8 @@ td .tutulo_sistema
 }
 
 #footer, #footer a
-{ background-color: #fbe603;
+{ 
+  /*background-color: #fbe603;*/
   color: #53434B;
 }
 
