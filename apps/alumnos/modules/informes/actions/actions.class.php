@@ -295,7 +295,7 @@ class informesActions extends sfActions
 		$current_date = date("Y");
 		$encabezado = '
 			<div style="text-align: center; font-family: Times New Roman,Times,serif;"><span
-			style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/logo.png" height="70px" width="550px">
+			style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/headerlogo.png" height="70px" width="550px">
 			<b>Obras Sociales:</b> '.$current_date.'</div>';        
 
 		$pdf->writeHTML($encabezado, true, false, true, false, '');   
@@ -335,7 +335,7 @@ class informesActions extends sfActions
 
 				$encabezado = '
 			<div style="text-align: center; font-family: Times New Roman,Times,serif;"><span
-			style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/logo.png" width="550px">
+			style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/headerlogo.png" width="550px">
 			Obras Sociales: '.$current_date.'</div>';        
 	
 				$pdf->writeHTML($encabezado, true, false, true, false, '');   
@@ -372,7 +372,7 @@ class informesActions extends sfActions
 		$current_date = date("Y");
 		$encabezado = '
 			<div style="text-align: center; font-family: Times New Roman,Times,serif;"><span
-			style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/logo.png" height="70px" width="550px">
+			style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/headerlogo.png" height="70px" width="550px">
 			<b>Profesionales:</b> '.$current_date.'</div>';        
 
 		$pdf->writeHTML($encabezado, true, false, true, false, '');   
@@ -412,7 +412,7 @@ class informesActions extends sfActions
 
 				$encabezado = '
 			<div style="text-align: center; font-family: Times New Roman,Times,serif;"><span
-			style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/logo.png" width="550px">
+			style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/headerlogo.png" width="550px">
 			Profesionales: '.$current_date.'</div>';        
 	
 				$pdf->writeHTML($encabezado, true, false, true, false, '');   
