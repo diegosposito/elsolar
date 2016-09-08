@@ -58,16 +58,10 @@
 		<div id="header">
 			<div class="cl"></div>
 			<!-- Logo -->
-			<img alt="Smiley face" height="142" width="542" src="<?php echo $sf_request->getRelativeUrlRoot();?>/images/logo.png">
+			<img alt="Smiley face" height="142" width="900" src="<?php echo $sf_request->getRelativeUrlRoot();?>/images/headerlogo.png">
 
 			<?php if ($autenticated){ ?>
-			<!-- Top Navigation -->
-			<div id="top-navigation">	
-				<ul>
-				    <li><a class="start" title="Mi Cuenta" href="#"><span></span><?php echo '<b>Usuario:</b> '.$sf_user->getGuardUser()->getUsername(); ?></a></li>
-					<?php echo '<li>'.link_to('Salir', 'sf_guard_signout').'</li>' ; ?>
-				</ul>
-			</div>	
+			<p align="right"><?php echo '<b>Usuario:</b> '.$sf_user->getGuardUser()->getUsername(); ?> </p>
 			<?php } ?>
 			
 		
@@ -139,6 +133,7 @@
 						<?php echo '<li>'.link_to('Cargo Autoridades', 'cargoautoridades/index').'</li>' ; ?>
 						<?php echo '<li>'.link_to('Gestión Contenido', 'personas/new').'</li>' ; ?>
 						<?php echo '<li>'.link_to('Documentos', 'personas/new').'</li>' ; ?>
+						<?php echo '<li>'.link_to('Salir', 'sf_guard_signout').'</li>' ; ?>
 					</ul>
 				</div>
 			</div>	
