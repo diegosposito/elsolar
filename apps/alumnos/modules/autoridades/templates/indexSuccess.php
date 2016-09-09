@@ -13,8 +13,8 @@
 <table cellspacing="0" class="stats">
     <thead>
       <tr>
-        <td width="40%" align="center" class="hed">Autoridad</td>
-        <td width="10%" align="center" class="hed">Fecha de Creación</td>
+        <td width="70%" align="center" class="hed">Autoridad</td>
+        <td width="20%" align="center" class="hed">Fecha Creación</td>
         <td width="10%" align="center" class="hed">Edicion</td>
       </tr>
     </thead>
@@ -22,8 +22,8 @@
       <?php $i=0; ?>
       <?php foreach ($autoridadess as $autoridades){ ?>
       <tr class="fila_<?php echo $i%2 ; ?>">
-        <td width="40%" align="center"><?php echo $autoridades->getNombre() ?></td>
-        <td width="10%"><?php echo date("d/m/Y", strtotime($autoridades->getCreatedAt())) ?></td>
+        <td width="70%" align="center"><?php echo $autoridades->getNombre() ?></td>
+        <td width="20%"><?php echo date("d/m/Y", strtotime($autoridades->getCreatedAt())) ?></td>
         <td align="center"><?php echo link_to("Editar", 'autoridades/edit?idautoridad='.$autoridades->getIdautoridad() ,'class="mhead"'); ?></td>
       </tr>
       <?php $i++; ?>
