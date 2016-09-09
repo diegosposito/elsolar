@@ -118,25 +118,59 @@
 			</div>
 			<!-- ЕND Content  -->
 			<!-- Sidebar -->
-			<div id="sidebar">
-				<div class="box">
-					<h2>Gestión General</h2>
-					<ul>
-					    <?php   if ($autenticated){
-					                if ($sf_user->getGuardUser()->getIsSuperAdmin()) {
-					    	            echo '<li>'.link_to('Usuarios', 'sf_guard_user').'</li>' ; 
-					    	        } 
-					    	    } ?>   
-						<?php echo '<li>'.link_to('Profesionales', 'personas/buscar').'</li>' ; ?>
-						<?php echo '<li>'.link_to('Obras Sociales', 'obrassociales/index').'</li>' ; ?>
-						<?php echo '<li>'.link_to('Autoridades', 'autoridades').'</li>' ; ?>
-						<?php echo '<li>'.link_to('Entidades', 'cargoautoridades/index').'</li>' ; ?>
-						<?php echo '<li>'.link_to('Gestión Contenido', 'personas/new').'</li>' ; ?>
-						<?php echo '<li>'.link_to('Documentos', 'personas/new').'</li>' ; ?>
-						<?php echo '<li>'.link_to('Salir', 'sf_guard_signout').'</li>' ; ?>
-					</ul>
-				</div>
-			</div>	
+			<?php if ($autenticated){ ?>
+					<div id="sidebar">
+						<div class="box">
+							<h2>Gestión General</h2>
+							<ul>
+							    <?php   if ($autenticated){
+							                if ($sf_user->getGuardUser()->getIsSuperAdmin()) {
+							    	            echo '<li>'.link_to('Usuarios', 'sf_guard_user').'</li>' ; 
+							    	        } 
+							    	    } ?>   
+								<?php echo '<li>'.link_to('Profesionales', 'personas/buscar').'</li>' ; ?>
+								<?php echo '<li>'.link_to('Obras Sociales', 'obrassociales/index').'</li>' ; ?>
+								<?php echo '<li>'.link_to('Autoridades', 'autoridades').'</li>' ; ?>
+								<?php echo '<li>'.link_to('Entidades', 'cargoautoridades/index').'</li>' ; ?>
+								<?php echo '<li>'.link_to('Gestión Contenido', 'personas/new').'</li>' ; ?>
+								<?php echo '<li>'.link_to('Documentos', 'personas/new').'</li>' ; ?>
+								<?php echo '<li>'.link_to('Salir', 'sf_guard_signout').'</li>' ; ?>
+							</ul>
+						</div>
+					</div>	
+			<?php } else { ?>	
+				     <div id="sidebar">
+					    
+					    <div class="box" style="background-color:#7dbf0d;width=200px">
+								<p style="text-align:center;color:#ffffff;font-weight:bold">Administrador</p>
+						</div>
+						<div id="divderecho" style="width=200px">
+							<img align="center" alt="Smiley face"  src="<?php echo $sf_request->getRelativeUrlRoot();?>/images/ingreso-new.png">
+						</div>
+                        <br>
+                        <div class="box" style="background-color:#7dbf0d;width=200px">
+								<p style="text-align:center;color:#ffffff;font-weight:bold">Circulo Odontologico</p>
+						</div>
+						<div class="box" style="width=200px">
+							<img alt="Smiley face" height="100" width="220" src="<?php echo $sf_request->getRelativeUrlRoot();?>/images/cop.jpeg">
+						</div>
+                        <br>
+						<div class="box" style="background-color:#7dbf0d;width=200px">
+								<p style="text-align:center;color:#ffffff;font-weight:bold">Circulo Odontologico</p>
+						</div>
+						<div class="box" style="width=200px">
+							<img alt="Smiley face" height="100" width="220" src="<?php echo $sf_request->getRelativeUrlRoot();?>/images/sospe logo.gif">
+						</div>
+                        <br>
+						<div class="box" style="background-color:#7dbf0d;width=200px">
+								<p style="text-align:center;color:#ffffff;font-weight:bold">Circulo Odontologico</p>
+						</div>
+						<div class="box" style="width=200px">
+							<img alt="Smiley face" height="100" width="220" src="<?php echo $sf_request->getRelativeUrlRoot();?>/images/suo logo.gif">
+						</div>
+					
+					</div>	 
+			<?php } ?>	
 			<!-- END Sidebar -->
 			<div class="cl"></div>
 			<!-- Feartured Products -->
