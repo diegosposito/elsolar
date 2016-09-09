@@ -84,7 +84,7 @@
 					<a title="Institucionales" href="#"><span class="sep-left"></span>Institucionales<span class="sep-right"></span></a>
 					<div class="dd">
 						<ul>
-							<li><a title="Autoridades" href="<?php echo url_for('autoridades/index') ?>"><span class="sep-left"></span>Autoridades</a></li>
+							<li><a title="Autoridades" href="<?php echo url_for('informes/autoridades') ?>"><span class="sep-left"></span>Autoridades</a></li>
 							<li>
 								<a title="Drop down menu 2" href="#"><span class="sep-left"></span>Drop down menu 2</a>
 								<div class="dd">
