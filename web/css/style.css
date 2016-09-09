@@ -129,7 +129,7 @@ a.buy-now:hover { text-decoration: none; }
 .post h2 { margin-bottom: 13px; }
 .post p { padding-bottom: 22px; }
 
-#sidebar { display: inline; float: right; width: 243px; }
+#sidebar { display: inline; float: right; width: 220px; }
 .box ul li { list-style: none; font-family: 'Trebuchet MS', arial, helvetica, sans-serif; font-size: 18px; line-height: 30px; }
 .box ul li a { display: block; padding-left: 23px; width: 203px; background: url(images/quick-link.png) no-repeat 0 50%; }
 .box h2 { margin-bottom: 7px; }
@@ -191,3 +191,4 @@ a.buy-now:hover { text-decoration: none; }
 .newsletter label { color: #fff; line-height: 11px; }
 .newsletter .submit-button { display: inline; float: left; width: 116px; margin-top: 28px; height: 33px; border: 0; background: url(images/submit-button.png) no-repeat 0 0; }
 .newsletter .submit-button { font-family: 'Museo900', serif; font-size: 15px; color: #fff; cursor: pointer; } 
+
