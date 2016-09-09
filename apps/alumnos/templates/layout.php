@@ -142,12 +142,11 @@
 				     <div id="sidebar">
 					    
 					    <div class="box" style="background-color:#7dbf0d;width=200px">
-								<p style="text-align:center;color:#ffffff;font-weight:bold">Administrador</p>
+								<p style="text-align:center;color:#ffffff;font-weight:bold"><a style="text-align:center;color:#ffffff;font-weight:bold" href="<?php echo url_for('guard/login') ?>">Administrador</a></p>
 						</div>
-						<div id="divderecho" style="width=200px">
-							<img align="center" alt="Smiley face"  src="<?php echo $sf_request->getRelativeUrlRoot();?>/images/ingreso-new.png">
+						<div class="box" style="width=200px">
+							<a  href="<?php echo url_for('guard/login') ?>"><img alt="Smiley face"  src="<?php echo $sf_request->getRelativeUrlRoot();?>/images/login.png"></a>
 						</div>
-                        <br>
                         <div class="box" style="background-color:#7dbf0d;width=200px">
 								<p style="text-align:center;color:#ffffff;font-weight:bold">Circulo Odontologico</p>
 						</div>
