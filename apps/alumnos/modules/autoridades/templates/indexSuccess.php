@@ -9,7 +9,7 @@
   <?php } ?>
 
  <br>
- <a href="<?php echo url_for('informes/obrassocialespdf') ?>"><img src='<?php echo $sf_request->getRelativeUrlRoot();?>/images/printer.png' align='center' size='20' /></a>
+ <a href="<?php echo url_for('informes/autoridadespdf') ?>"><img src='<?php echo $sf_request->getRelativeUrlRoot();?>/images/printer.png' align='center' size='20' /></a>
 <table cellspacing="0" class="stats">
     <thead>
       <tr>
