@@ -128,9 +128,9 @@
 					    	        } 
 					    	    } ?>   
 						<?php echo '<li>'.link_to('Profesionales', 'personas/buscar').'</li>' ; ?>
-						<?php echo '<li>'.link_to('Obras Sociales', 'obrassociales/new').'</li>' ; ?>
+						<?php echo '<li>'.link_to('Obras Sociales', 'obrassociales/index').'</li>' ; ?>
 						<?php echo '<li>'.link_to('Autoridades', 'autoridades').'</li>' ; ?>
-						<?php echo '<li>'.link_to('Cargo Autoridades', 'cargoautoridades/index').'</li>' ; ?>
+						<?php echo '<li>'.link_to('Entidades', 'cargoautoridades/index').'</li>' ; ?>
 						<?php echo '<li>'.link_to('Gestión Contenido', 'personas/new').'</li>' ; ?>
 						<?php echo '<li>'.link_to('Documentos', 'personas/new').'</li>' ; ?>
 						<?php echo '<li>'.link_to('Salir', 'sf_guard_signout').'</li>' ; ?>
