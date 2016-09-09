@@ -12,7 +12,7 @@
 <table cellspacing="0" class="stats">
     <thead>
       <tr>
-        <td width="40%" align="center" class="hed">Cargo de Autoridad</td>
+        <td width="40%" align="center" class="hed">Entidad</td>
         <td width="10%" align="center" class="hed">Fecha de Creación</td>
         <td width="10%" align="center" class="hed">Edicion</td>
       </tr>
