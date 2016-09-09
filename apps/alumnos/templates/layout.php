@@ -81,10 +81,10 @@
 					<a title="Profesionales" href="<?php echo url_for('informes/obrassociales') ?>"><span class="sep-left"></span>Obras Sociales<span class="sep-right"></span></a>
 				</li>
 				<li>
-					<a title="Retro" href="#"><span class="sep-left"></span>Retro<span class="sep-right"></span></a>
+					<a title="Institucionales" href="#"><span class="sep-left"></span>Institucionales<span class="sep-right"></span></a>
 					<div class="dd">
-						<ul>z
-							<li><a title="Drop down menu 1" href="#"><span class="sep-left"></span>Drop down menu 1</a></li>
+						<ul>
+							<li><a title="Autoridades" href="<?php echo url_for('autoridades/index') ?>"><span class="sep-left"></span>Autoridades</a></li>
 							<li>
 								<a title="Drop down menu 2" href="#"><span class="sep-left"></span>Drop down menu 2</a>
 								<div class="dd">
