@@ -20,7 +20,7 @@ class AutoridadesForm extends BaseAutoridadesForm
       'idcargoautoridad' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('CargoAutoridades'), 'required' => true)),
     ));
 
-    $this->widgetSchema->setLabel('idcargoautoridad', '<p align="left">Cargo de Autoridad:</p>');
+    $this->widgetSchema->setLabel('idcargoautoridad', '<p align="left">Entidad:</p>');
 
      
      
