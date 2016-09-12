@@ -104,7 +104,14 @@ class informesActions extends sfActions
 	}
 
 	public function executeMostrararchivos(sfWebRequest $request)
-  {
+   {
+    
+    $currentUser = sfContext::getInstance()->getUser();
+
+    if (!$currentUser->isAuthenticated()) {
+   		$this->redirect('guard/login');
+   	}
+  
     $this->obras_sociales = Doctrine_Core::getTable('ObrasSociales')->find(array($request->getParameter('idobrasocial')));
    // $this->obras_sociales = Doctrine_Core::getTable('ObrasSociales')->find(array(1));
     $this->forward404Unless($this->obras_sociales);
