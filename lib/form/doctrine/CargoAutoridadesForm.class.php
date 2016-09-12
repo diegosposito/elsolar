@@ -14,7 +14,7 @@ class CargoAutoridadesForm extends BaseCargoAutoridadesForm
   {
 
   	    unset( $this['created_at'], $this['updated_at'], $this['created_by'], $this['updated_by'] );
-        $this->widgetSchema->setLabel('nombre', '<p align="left">Cargo de Autoridad:</p>');
+        $this->widgetSchema->setLabel('nombre', '<p align="left">Entidad:</p>');
 
         $this->setValidators(array(
          'idcargoautoridad' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('idcargoautoridad')), 'empty_value' => $this->getObject()->get('idcargoautoridad'), 'required' => false)),
