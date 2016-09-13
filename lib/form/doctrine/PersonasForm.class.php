@@ -30,6 +30,7 @@ class PersonasForm extends BasePersonasForm
      /* $this->widgetSchema['idcobrador'] = new sfWidgetFormSelect(array('choices' => $arregloCobradores));
       $this->widgetSchema->setLabel('idcobrador', '<p align="left">Cobrador:</p>'); */
       $this->widgetSchema->setLabel('otrainformacionrelevante', '<p align="left">Observaciones:</p>');
+      $this->widgetSchema->setLabel('mostrarinfocontacto', '<p align="left">Muestra Info Contacto?:</p>');
 
       $this->setValidators(array(
         'apellido' => new sfValidatorString(array('required' => true), array('required' => 'El apellido es obligatorio.')),
@@ -40,6 +41,7 @@ class PersonasForm extends BasePersonasForm
         'direccion' => new sfValidatorString(array('max_length' => 200, 'required' => false)),
         'ciudad' => new sfValidatorString(array('max_length' => 200, 'required' => false)),
         'telefono' => new sfValidatorString(array('max_length' => 200, 'required' => false)),
+        'mostrarinfocontacto' => new sfValidatorString(array('required' => false)),
         'otrainformacionrelevante' => new sfValidatorString(array('max_length' => 2000, 'required' => false)),
         ));
 
