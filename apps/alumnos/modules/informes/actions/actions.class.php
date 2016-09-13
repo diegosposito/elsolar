@@ -19,7 +19,8 @@ class informesActions extends sfActions
 	{
 	    $this->autoridadess = Doctrine_Core::getTable('Autoridades')
 	      ->createQuery('a')
-	      ->orderBy('a.idcargoautoridad')
+	      ->innerJoin('a.CargoAutoridades ca')
+	      ->orderBy('ca.orden')
 	      ->execute();
 	}
 
