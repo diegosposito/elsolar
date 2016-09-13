@@ -186,7 +186,7 @@ class informesActions extends sfActions
 	{
 	    $this->obras_socialess = Doctrine_Core::getTable('ObrasSociales')
 	      ->createQuery('a')
-	      ->orderBy('a.denominacion')
+	      ->orderBy('a.ninterno')
 	      ->execute();
 	}
 
