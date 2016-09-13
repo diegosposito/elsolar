@@ -470,14 +470,15 @@ class informesActions extends sfActions
 		$pdf->Cell(100,5,'Matrícula',0,0,'C');    
 		$pdf->SetXY(20,$y);
 		$pdf->Cell(190,5,'Dirección',0,0,'C'); 
-		$pdf->SetXY(20,$y);
+		$pdf->SetXY(25,$y);
 		$pdf->Cell(280,5,'Teléfono',0,0,'C'); 
 		$pdf->SetXY(20,$y);
 		$y = $y + 5;		
 		$contador = 1;
 		
 		$pdf->Line(10,$y,190,$y);
-		
+
+
 	    foreach ($oPersonas as $opersona){	
 		    			    		
 		   	$pdf->SetXY(0,$y-5);
@@ -485,10 +486,10 @@ class informesActions extends sfActions
 		    $pdf->Cell(15,5,$opersona['apellido'].", ".$opersona['nombre'],0,0,'L');
 		    $pdf->SetXY(90,$y);        
 		    $pdf->Cell(60,5,$opersona['matricula'],0,0,'L');        
-		    $pdf->SetXY(110,$y); 
-		    $pdf->Cell(10,5,$opersona['direccion'],0,0,'L'); 
+		    $pdf->SetXY(105,$y); 
+		    $pdf->Cell(10,5,$opersona['mostrarinfocontacto'] ? $opersona['direccion'].' ('. $opersona['ciudad']. ') ' : ' - ',0,0,'L'); 
 		    $pdf->SetXY(160,$y); 
-		    $pdf->Cell(10,5,$opersona['telefono'],0,0,'L'); 
+		    $pdf->Cell(10,5,$opersona['mostrarinfocontacto'] ? $opersona['telefono'] : ' - ',0,0,'L'); 
 		    
 		
  			$y = $y + 5;  
