@@ -20,7 +20,7 @@ class ObrasSocialesTable extends Doctrine_Table
     // Obtener obras sociales
     public static function obtenerObrasSociales($estado=NULL)
     {
-        $sql ="SELECT os.idobrasocial, os.denominacion as denominacion, os.abreviada, if(os.estado=1,'Habilitada','No Habilitada') as estado, os.fechaarancel, os.fechaultimoperiodo, DATE_FORMAT(os.fechaarancel, '%d/%m/%Y') as fechaarancelformat, DATE_FORMAT(os.fechaultimoperiodo, '%d/%m/%Y') as fechaultimoperiodoformat, os.fechaaranceltexto, os.fechaultimoperiodotexto
+        $sql ="SELECT os.idobrasocial, os.denominacion as denominacion, os.general, os.ortodoncia, os.implantes, os.protesis, os.abreviada, if(os.estado=1,'Habilitada','No Habilitada') as estado, os.fechaarancel, os.fechaultimoperiodo, DATE_FORMAT(os.fechaarancel, '%d/%m/%Y') as fechaarancelformat, DATE_FORMAT(os.fechaultimoperiodo, '%d/%m/%Y') as fechaultimoperiodoformat, os.fechaaranceltexto, os.fechaultimoperiodotexto
 				FROM obras_sociales os ";
 
 		if($estado !== NULL)
