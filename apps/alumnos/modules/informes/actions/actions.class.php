@@ -389,12 +389,16 @@ class informesActions extends sfActions
 		$y = 45;
 		$pdf->SetXY(10,$y);
 		$pdf->Cell(15,5,'Obra Social',0,0,'C');    
-		$pdf->SetXY(45,$y);
-		$pdf->Cell(120,5,'Estado',0,0,'C');    
+		$pdf->SetXY(28,$y);
+		$pdf->Cell(120,5,'Abrev.',0,0,'C');    
 		$pdf->SetXY(20,$y);
-		$pdf->Cell(235,5,'Fecha Arancel',0,0,'C'); 
+		$pdf->Cell(175,5,'General',0,0,'C'); 
+		$pdf->SetXY(17,$y);
+		$pdf->Cell(228,5,'Prótesis',0,0,'C'); 
 		$pdf->SetXY(20,$y);
-		$pdf->Cell(280,5,'Fecha Ult. Periodo',0,0,'C'); 
+		$pdf->Cell(259,5,'Ortodoncia',0,0,'C'); 
+		$pdf->SetXY(20,$y);
+		$pdf->Cell(297,5,'Implantes',0,0,'C'); 
 		$pdf->SetXY(20,$y);
 		$y = $y + 5;		
 		$contador = 1;
@@ -406,12 +410,16 @@ class informesActions extends sfActions
 		   	$pdf->SetXY(0,$y-5);
             $pdf->SetXY(10,$y);
 		    $pdf->Cell(15,5,$osocial['denominacion'],0,0,'L');
-		    $pdf->SetXY(100,$y);        
-		    $pdf->Cell(120,5,$osocial['estado'],0,0,'L');        
-		    $pdf->SetXY(130,$y); 
-		    $pdf->Cell(10,5,$osocial['fechaarancelformat'],0,0,'L'); 
-		    $pdf->SetXY(150,$y); 
-		    $pdf->Cell(10,5,$osocial['fechaultimoperiodoformat'],0,0,'L'); 
+		    $pdf->SetXY(83,$y);        
+		    $pdf->Cell(100,5,$osocial['abreviada'],0,0,'L');        
+		    $pdf->SetXY(101,$y); 
+		    $pdf->Cell(10,5,$osocial['general']==1 ? 'Habilitada' : 'No Habilitada',0,0,'L'); 
+		    $pdf->SetXY(122,$y); 
+		    $pdf->Cell(10,5,$osocial['protesis']==1 ? 'Habilitada' : 'No Habilitada',0,0,'L'); 
+		    $pdf->SetXY(142,$y); 
+		    $pdf->Cell(10,5,$osocial['ortodoncia']==1 ? 'Habilitada' : 'No Habilitada',0,0,'L'); 
+		    $pdf->SetXY(162,$y); 
+		    $pdf->Cell(10,5,$osocial['implantes']==1 ? 'Habilitada' : 'No Habilitada',0,0,'L'); 
 		    
 		
  			$y = $y + 5;  
