@@ -245,6 +245,32 @@ $pdf->Line(10,$y,199,$y);
     if ($form->isValid())
     {
       $obras_sociales = $form->save();
+      
+      if ($request->getPostParameter('obras_sociales[general]') == 'on') {
+        $obras_sociales->setGeneral(1);
+      } else {
+        $obras_sociales->setGeneral(0);
+      }
+
+      if ($request->getPostParameter('obras_sociales[protesis]') == 'on') {
+        $obras_sociales->setProtesis(1);
+      } else {
+        $obras_sociales->setProtesis(0);
+      }
+
+      if ($request->getPostParameter('obras_sociales[ortodoncia]') == 'on') {
+        $obras_sociales->setOrtodoncia(1);
+      } else {
+        $obras_sociales->setOrtodoncia(0);
+      }
+
+      if ($request->getPostParameter('obras_sociales[implantes]') == 'on') {
+        $obras_sociales->setImplantes(1);
+      } else {
+        $obras_sociales->setImplantes(0);
+      }
+
+      $obras_sociales->save();
 
       $folder_path_name = sfConfig::get('app_pathfiles_folder')."/".$obras_sociales->getIdobrasocial();
       
