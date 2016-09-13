@@ -28,7 +28,8 @@ CargoAutoridades:
     fzblameable: ~
   columns: 
     idcargoautoridad: { type: integer, primary: true, autoincrement: true }
-    nombre: { type: string(200) } 
+    nombre: { type: string(200) }
+    orden: { type: integer, notnull: true, default: '0' } 
 
 Carreras:
   actAs: 
