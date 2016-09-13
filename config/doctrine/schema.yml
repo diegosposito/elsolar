@@ -571,6 +571,7 @@ Personas:
     tienefoto: { type: boolean, primary: false, notnull: true, default: 0 }  
     activo: { type: boolean, primary: false, notnull: true, default: 1 } 
     socio: { type: boolean, primary: false, notnull: true, default: 1 }   
+    mostrarinfocontacto: { type: boolean, primary: false, notnull: true, default: 0 }  
     nrolector: { type: string(10), primary: false, autoincrement: false, default: '' }
     otrainformacionrelevante: { type: string(2000) }
     monto: { type: float, primary: false, notnull: true, default: '' }
@@ -1175,6 +1176,7 @@ ObrasSociales:
     denominacion: { type: string(200), primary: false, notnull: true, default: '' }
     abreviada: { type: string(120), primary: false, notnull: true, default: '' }
     estado: { type: integer, primary: false, autoincrement: false } 
+    ninterno: { type: integer, primary: false, autoincrement: false } 
     fechaarancel: { type: date, notnull: true }
     fechaultimoperiodo: { type: date, notnull: true }
     fechaaranceltexto: { type: string(120), primary: false, notnull: true, default: ' ', autoincrement: false }
