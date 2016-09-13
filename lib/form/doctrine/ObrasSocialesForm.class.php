@@ -25,11 +25,31 @@ class ObrasSocialesForm extends BaseObrasSocialesForm
       $this->widgetSchema->setLabel('protesis', '<p align="left">Prótesis:</p>');
       $this->widgetSchema->setLabel('ortodoncia', '<p align="left">Ortodoncia:</p>');
       $this->widgetSchema->setLabel('implantes', '<p align="left">Implantes:</p>');
+      
 
 
- 	    $this->widgetSchema['fechaarancel'] = new sfWidgetFormInput(array('label' => '<p align="left"><b>Actualización de Aranceles:</b></p>'), array('size' =>'10'));
-		  $this->widgetSchema['fechaultimoperiodo'] = new sfWidgetFormInput(array('label' => '<p align="left"><b>Ultimo Período Abonado:</b></p>'), array('size' =>'10'));
-	
+ 	    
+      $this->widgetSchema['fechaarancel'] = new sfWidgetFormJQueryDate(array(
+    'config' => '{}',
+    'image'=> sfContext::getInstance()->getRequest()->getRelativeUrlRoot().'/images/calendar.gif',
+    'culture' => substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2),
+    'config' => "{firstDay: 1, dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa'], 
+      monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']}", 
+            'date_widget' => new sfWidgetFormDate(array('format' => '%day%/%month%/%year%')) 
+        ));
+
+        $this->widgetSchema['fechaultimoperiodo'] = new sfWidgetFormJQueryDate(array(
+    'config' => '{}',
+    'image'=> sfContext::getInstance()->getRequest()->getRelativeUrlRoot().'/images/calendar.gif',
+    'culture' => substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2),
+    'config' => "{firstDay: 1, dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa'], 
+      monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']}", 
+            'date_widget' => new sfWidgetFormDate(array('format' => '%day%/%month%/%year%')) 
+        ));
+
+      $this->widgetSchema->setLabel('fechaarancel', '<p align="left">Fecha Arancel:</p>');
+      $this->widgetSchema->setLabel('fechaultimoperiodo', '<p align="left">Ultimo período abonado:</p>');
+
       $arregloEstados = array('1' => 'Habilitada', '0' => 'No Habilitada');
     
       $this->widgetSchema['estado'] = new sfWidgetFormSelect(array('label' => '<p align="left"><b>Estado:</b></p>', 'choices' => $arregloEstados));
