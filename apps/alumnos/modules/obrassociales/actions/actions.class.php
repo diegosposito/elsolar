@@ -14,6 +14,7 @@ class obrassocialesActions extends sfActions
   {
     $this->obras_socialess = Doctrine_Core::getTable('ObrasSociales')
       ->createQuery('a')
+      ->orderBy('a.ninterno')
       ->execute();
   }
 
@@ -245,6 +246,8 @@ $pdf->Line(10,$y,199,$y);
     if ($form->isValid())
     {
       $obras_sociales = $form->save();
+
+      $obras_sociales->setNinterno($request->getPostParameter('obras_sociales[ninterno]'));
       
       if ($request->getPostParameter('obras_sociales[general]') == 'on') {
         $obras_sociales->setGeneral(1);
