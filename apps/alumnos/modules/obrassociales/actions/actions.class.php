@@ -247,6 +247,10 @@ $pdf->Line(10,$y,199,$y);
     {
       $obras_sociales = $form->save();
 
+      $obras_sociales->setFechaarancel($request->getPostParameter('obras_sociales[fechaarancel][year]').'-'.$request->getPostParameter('obras_sociales[fechaarancel][month]').'-'.$request->getPostParameter('obras_sociales[fechaarancel][day]'));
+      $obras_sociales->setFechaultimoperiodo($request->getPostParameter('obras_sociales[fechaultimoperiodo][year]').'-'.$request->getPostParameter('obras_sociales[fechaultimoperiodo][month]').'-'.$request->getPostParameter('obras_sociales[fechaultimoperiodo][day]'));
+
+
       $obras_sociales->setNinterno($request->getPostParameter('obras_sociales[ninterno]'));
       
       if ($request->getPostParameter('obras_sociales[general]') == 'on') {
