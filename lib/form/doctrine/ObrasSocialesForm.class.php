@@ -20,6 +20,12 @@ class ObrasSocialesForm extends BaseObrasSocialesForm
  	    $this->widgetSchema->setLabel('abreviada', '<p align="left">Nombre Abreviado:</p>');
       $this->widgetSchema->setLabel('fechaaranceltexto', '<p align="left">Aranceles / Texto:</p>');
  	    $this->widgetSchema->setLabel('fechaultimoperiodotexto', '<p align="left">Ultimo Período / Texto:</p>');
+      $this->widgetSchema->setLabel('ninterno', '<p align="left">Nro.Interno:</p>');
+      $this->widgetSchema->setLabel('general', '<p align="left">General:</p>');
+      $this->widgetSchema->setLabel('protesis', '<p align="left">Prótesis:</p>');
+      $this->widgetSchema->setLabel('ortodoncia', '<p align="left">Ortodoncia:</p>');
+      $this->widgetSchema->setLabel('implantes', '<p align="left">Implantes:</p>');
+
 
  	    $this->widgetSchema['fechaarancel'] = new sfWidgetFormInput(array('label' => '<p align="left"><b>Actualización de Aranceles:</b></p>'), array('size' =>'10'));
 		  $this->widgetSchema['fechaultimoperiodo'] = new sfWidgetFormInput(array('label' => '<p align="left"><b>Ultimo Período Abonado:</b></p>'), array('size' =>'10'));
