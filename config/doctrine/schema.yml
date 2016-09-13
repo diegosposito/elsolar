@@ -1177,6 +1177,10 @@ ObrasSociales:
     abreviada: { type: string(120), primary: false, notnull: true, default: '' }
     estado: { type: integer, primary: false, autoincrement: false } 
     ninterno: { type: integer, primary: false, autoincrement: false } 
+    general: { type: boolean, primary: false, notnull: true, default: 0 } 
+    protesis: { type: boolean, primary: false, notnull: true, default: 0 } 
+    ortodoncia: { type: boolean, primary: false, notnull: true, default: 0 } 
+    implantes: { type: boolean, primary: false, notnull: true, default: 0 } 
     fechaarancel: { type: date, notnull: true }
     fechaultimoperiodo: { type: date, notnull: true }
     fechaaranceltexto: { type: string(120), primary: false, notnull: true, default: ' ', autoincrement: false }
