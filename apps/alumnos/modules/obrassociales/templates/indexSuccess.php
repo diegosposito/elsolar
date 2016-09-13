@@ -30,10 +30,10 @@
         <td width="5%"><?php echo $obras_sociales->getAbreviada() ?></td>
         <?php $estado = ($obras_sociales->getEstado()==1) ? 'Habilitada' : 'No Habilitada'; ?>
         <td width="15%"><?php echo $estado ?></td>
-        <td width="10%"><?php echo $obras_sociales->getFechaarancel() ?></td>
-        <td width="10%"><?php echo $obras_sociales->getFechaultimoperiodo() ?></td>
+        <td width="10%"><?php echo date("d/m/Y", strtotime($obras_sociales->getFechaarancel())) ?></td>
+        <td width="10%"><?php echo date("d/m/Y", strtotime($obras_sociales->getFechaultimoperiodo())) ?></td>
         <td align="center"><?php echo link_to("Editar", 'obrassociales/edit?idobrasocial='.$obras_sociales->getIdobrasocial() ,'class="mhead"'); ?></td>
-         <td align="center"><?php echo link_to("Agregar", 'obrassociales/mostrar?idobrasocial='.$obras_sociales->getIdobrasocial() ,'class="mhead"'); ?></td>
+        <td align="center"><?php echo link_to("Agregar", 'obrassociales/mostrar?idobrasocial='.$obras_sociales->getIdobrasocial() ,'class="mhead"'); ?></td>
       </tr>
       <?php $i++; ?>
       <?php } ?>
