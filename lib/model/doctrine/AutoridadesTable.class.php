@@ -23,7 +23,7 @@ class AutoridadesTable extends Doctrine_Table
         $sql ="
 SELECT aut.idautoridad, aut.nombre as autoridad, ent.nombre as entidad FROM autoridades aut JOIN cargo_autoridades ent ON aut.idcargoautoridad = ent.idcargoautoridad ";
 
-		$sql .= " ORDER BY aut.idcargoautoridad ;";
+		$sql .= " ORDER BY ent.orden ;";
         
         $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
 
