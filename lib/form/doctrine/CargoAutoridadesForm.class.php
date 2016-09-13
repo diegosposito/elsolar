@@ -19,6 +19,7 @@ class CargoAutoridadesForm extends BaseCargoAutoridadesForm
         $this->setValidators(array(
          'idcargoautoridad' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('idcargoautoridad')), 'empty_value' => $this->getObject()->get('idcargoautoridad'), 'required' => false)),
         'nombre' => new sfValidatorString(array('required' => true), array('required' => 'El nombre de la Entidad es obligatoria.')),
+        'orden'            => new sfValidatorInteger(array('required' => false)),
         ));
   } 
 }
