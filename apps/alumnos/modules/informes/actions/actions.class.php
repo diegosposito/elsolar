@@ -186,6 +186,7 @@ class informesActions extends sfActions
 	{
 	    $this->obras_socialess = Doctrine_Core::getTable('ObrasSociales')
 	      ->createQuery('a')
+	      ->orderBy('a.denominacion')
 	      ->execute();
 	}
 
@@ -193,6 +194,7 @@ class informesActions extends sfActions
 	{
 	    $this->profesionaless = Doctrine_Core::getTable('Personas')
 	      ->createQuery('a')
+	      ->orderBy('a.apellido')
 	      ->execute();
 	}
 	
