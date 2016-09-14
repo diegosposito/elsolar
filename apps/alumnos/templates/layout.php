@@ -107,9 +107,9 @@
 		<!-- Main  -->
 		<div id="main">
 			<!-- Slider -->
-			<div id="slider-holder">				
+			<!-- <div id="slider-holder">				
 				
-			</div>
+			</div> -->
 			<!-- END Slider -->
 
             <!-- Content -->
@@ -133,14 +133,15 @@
 								<?php echo '<li>'.link_to('Autoridades', 'autoridades').'</li>' ; ?>
 								<?php echo '<li>'.link_to('Entidades', 'cargoautoridades/index').'</li>' ; ?>
 								<?php echo '<li>'.link_to('Gestión Contenido', 'personas/new').'</li>' ; ?>
-								<?php echo '<li>'.link_to('Documentos', 'personas/new').'</li>' ; ?>
 								<?php echo '<li>'.link_to('Salir', 'sf_guard_signout').'</li>' ; ?>
 							</ul>
 						</div>
 					</div>	
 			<?php } else { ?>	
 				     <div id="sidebar">
-					    
+
+				        <div class="box" style="width=200px"><br></div>	
+				        
 					    <div class="box" style="background-color:#7dbf0d;width=200px">
 								<p style="text-align:center;color:#ffffff;font-weight:bold"><a style="text-align:center;color:#ffffff;font-weight:bold" href="<?php echo url_for('guard/login') ?>">Administrador</a></p>
 						</div>
@@ -181,22 +182,20 @@
 				<div id="footer-top"></div>
 				<div id="footer-middle">
 					<div class="col styles">
-						<h3>Styles</h3>
+						<h3>Quienes somos?</h3>
 						<ul>
-							<li><a title="Acerca de" href="#"><span class="bullet"></span>Acerca de</a></li>
-							<li><a title="abstract" href="#"><span class="bullet"></span>Misión</a></li>
+							<li><a title="Acerca de" href="#"><span class="bullet"></span>Misión</a></li>
 						</ul>
 					</div>
 					<div class="col info">
 						<h3>Información</h3>
 						<ul>
 							<li><a title="Políticas de Privacidad" href="#"><span class="bullet"></span>Políticas Privacidad</a></li>
-							<li><a title="@CopyRight" href="#"><span class="bullet"></span>@CopyRight</a></li>
 						</ul>
 					</div>
 					<div class="col newsletter">
 						<h3>Newsletter</h3>
-						<form action="" method="post">
+						 <form name="registrarse" method="post" action="<?php echo url_for('ingreso/index' ) ?>"> 
 							<div class="field-holder"><input type="text" class="field" value="Ingrese su Email" title="Ingrese su Email" /></div>
 							<div class="cl"></div>
 							<input type="checkbox" name="check-box" value="" id="check-box" />
@@ -207,7 +206,7 @@
 					<div class="cl"></div>
 				</div>
 				<div id="footer-bottom">
-					<p>&copy; Círculo Odontológico. Diseñado por <a href="#">C.del U.</a></p>
+					<p>&copy;Copyright  Círculo Odontológico. Diseñado por <a href="#">C.del U.</a></p>
 				</div>
 			</div>
 			<!-- END Footer -->
