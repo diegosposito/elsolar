@@ -58,7 +58,7 @@
 		<div id="header">
 			<div class="cl"></div>
 			<!-- Logo -->
-			<img alt="Smiley face" height="142" width="900" src="<?php echo $sf_request->getRelativeUrlRoot();?>/images/headerlogo.png">
+			<img alt="Smiley face" height="142" width="900" src="<?php echo $sf_request->getRelativeUrlRoot();?>/images/headerlogo2.png">
 
 			<?php if ($autenticated){ ?>
 			<p align="right"><?php echo '<b>Usuario:</b> '.$sf_user->getGuardUser()->getUsername(); ?> </p>
