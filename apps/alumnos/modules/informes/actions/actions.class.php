@@ -386,15 +386,15 @@ class informesActions extends sfActions
 		$y = 45;
 		$pdf->SetXY(10,$y);
 		$pdf->Cell(15,5,'Obra Social',0,0,'C');    
-		$pdf->SetXY(28,$y);
+		$pdf->SetXY(68,$y);
 		$pdf->Cell(120,5,'Abrev.',0,0,'C');    
-		$pdf->SetXY(36,$y);
+		$pdf->SetXY(66,$y);
 		$pdf->Cell(200,5,'General',0,0,'C'); 
-		$pdf->SetXY(32,$y);
+		$pdf->SetXY(62,$y);
 		$pdf->Cell(268,5,'Prótesis',0,0,'C'); 
-		$pdf->SetXY(50,$y);
+		$pdf->SetXY(80,$y);
 		$pdf->Cell(299,5,'Ortodoncia',0,0,'C'); 
-		$pdf->SetXY(55,$y);
+		$pdf->SetXY(85,$y);
 		$pdf->Cell(350,5,'Implantes',0,0,'C'); 
 		$pdf->SetXY(20,$y);
 		$y = $y + 5;		
@@ -407,15 +407,15 @@ class informesActions extends sfActions
 		   	$pdf->SetXY(0,$y-5);
             $pdf->SetXY(10,$y);
 		    $pdf->Cell(15,5,$osocial['denominacion'],0,0,'L');
-		    $pdf->SetXY(83,$y);        
+		    $pdf->SetXY(123,$y);        
 		    $pdf->Cell(100,5,$osocial['abreviada'],0,0,'L');        
-		    $pdf->SetXY(130,$y); 
-		    $pdf->Cell(10,5,$osocial['general']==1 ? 'Habilitada' : 'No Habilitada',0,0,'L'); 
 		    $pdf->SetXY(160,$y); 
-		    $pdf->Cell(10,5,$osocial['protesis']==1 ? 'Habilitada' : 'No Habilitada',0,0,'L'); 
+		    $pdf->Cell(10,5,$osocial['general']==1 ? 'Habilitada' : 'No Habilitada',0,0,'L'); 
 		    $pdf->SetXY(190,$y); 
-		    $pdf->Cell(10,5,$osocial['ortodoncia']==1 ? 'Habilitada' : 'No Habilitada',0,0,'L'); 
+		    $pdf->Cell(10,5,$osocial['protesis']==1 ? 'Habilitada' : 'No Habilitada',0,0,'L'); 
 		    $pdf->SetXY(220,$y); 
+		    $pdf->Cell(10,5,$osocial['ortodoncia']==1 ? 'Habilitada' : 'No Habilitada',0,0,'L'); 
+		    $pdf->SetXY(250,$y); 
 		    $pdf->Cell(10,5,$osocial['implantes']==1 ? 'Habilitada' : 'No Habilitada',0,0,'L'); 
 		    
 		
@@ -426,6 +426,23 @@ class informesActions extends sfActions
 	
 				$pdf->writeHTML($encabezado, true, false, true, false, '');   
 				$y=45;
+
+				$pdf->SetXY(10,$y);
+				$pdf->Cell(15,5,'Obra Social',0,0,'C');    
+				$pdf->SetXY(68,$y);
+				$pdf->Cell(120,5,'Abrev.',0,0,'C');    
+				$pdf->SetXY(66,$y);
+				$pdf->Cell(200,5,'General',0,0,'C'); 
+				$pdf->SetXY(62,$y);
+				$pdf->Cell(268,5,'Prótesis',0,0,'C'); 
+				$pdf->SetXY(80,$y);
+				$pdf->Cell(299,5,'Ortodoncia',0,0,'C'); 
+				$pdf->SetXY(85,$y);
+				$pdf->Cell(350,5,'Implantes',0,0,'C'); 
+				$pdf->SetXY(20,$y);
+				$y = $y + 5;		
+				$contador = 1;
+				$pdf->Line(10,$y,280,$y);
 
 			}
 	
@@ -502,7 +519,23 @@ class informesActions extends sfActions
 				$pdf->AddPage();
 
 				$pdf->writeHTML($encabezado, true, false, true, false, '');   
-				$y=45;
+		
+				$y = 45;
+				$pdf->SetXY(10,$y);
+				$pdf->Cell(15,5,'Nombre',0,0,'C');    
+				$pdf->SetXY(45,$y);
+				$pdf->Cell(100,5,'Matrícula',0,0,'C');    
+				$pdf->SetXY(20,$y);
+				$pdf->Cell(190,5,'Dirección',0,0,'C'); 
+				$pdf->SetXY(45,$y);
+				$pdf->Cell(300,5,'Teléfono',0,0,'C'); 
+				$pdf->SetXY(45,$y);
+				$pdf->Cell(350,5,'Email',0,0,'C'); 
+				$pdf->SetXY(20,$y);
+				$y = $y + 5;		
+				$contador = 1;
+				
+				$pdf->Line(10,$y,280,$y);
 
 			}
 	
