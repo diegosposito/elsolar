@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-    <title>CIRCULO ODONTOLOGICO CONCEPCION DEL URUGUAY</title>
+    <title>EL SOLAR URUGUAY - GESTION</title>
     <?php include_http_metas() ?>
     <?php include_metas() ?>
     <?php include_title() ?>
@@ -58,7 +58,7 @@
 		<div id="header">
 			<div class="cl"></div>
 			<!-- Logo -->
-			<img alt="Smiley face" height="142" width="940" src="<?php echo $sf_request->getRelativeUrlRoot();?>/images/headerlogo2.png">
+			<img alt="Smiley face" height="110" width="940" src="<?php echo $sf_request->getRelativeUrlRoot();?>/images/header_elsolar.png">
 
 			<?php if ($autenticated){ ?>
 			<p align="right"><?php echo '<b>Usuario:</b> '.$sf_user->getGuardUser()->getUsername(); ?> </p>
@@ -141,35 +141,26 @@
 
 				        <div class="box" style="width=200px"><br></div>	
 				        
-					    <div class="box" style="background-color:#7dbf0d;width=200px">
-								<p style="text-align:left;color:#ffffff;font-weight:bold"><a style="text-align:left;color:#ffffff;font-weight:bold" href="<?php echo url_for('guard/login') ?>">Administrador</a></p>
+					    <div class="box" style="background-color:#AA4375;width=200px">
+								<p style="text-align:center;color:#ffffff;font-weight:bold"><a style="text-align:left;color:#ffffff;font-weight:bold" href="<?php echo url_for('guard/login') ?>">Administrador</a></p>
 						</div>
 						<div class="box" style="width=200px">
 							<a  href="<?php echo url_for('guard/login') ?>"><img alt="Smiley face"  src="<?php echo $sf_request->getRelativeUrlRoot();?>/images/login.png"></a>
 						</div>
-                        <div class="box" style="background-color:#7dbf0d;width=200px">
-								<p style="text-align:left;color:#ffffff;font-weight:bold">Circulo Odontologico</p>
+                        <div class="box" style="background-color:#AA4375;width=200px">
+								<p style="text-align:center;color:#ffffff;font-weight:bold"><a style="text-align:left;color:#ffffff;font-weight:bold" href="<?php echo url_for('guard/login') ?>">Comunicación</a></p>
 						</div>
 						<div class="box" style="width=200px">
-							<img alt="Smiley face" height="100" width="220" src="<?php echo $sf_request->getRelativeUrlRoot();?>/images/cop.jpeg">
+						   <a  href="<?php echo url_for('guard/login') ?>"><img alt="Comunicaciones" height="100" width="220" src="<?php echo $sf_request->getRelativeUrlRoot();?>/images/comunicaciones.jpg"></a>
 						</div>
                         <br>
-						<div class="box" style="background-color:#7dbf0d;width=200px">
-								<p style="text-align:left;color:#ffffff;font-weight:bold">&nbsp;&nbsp;Saludent</p>
+                        <div class="box" style="background-color:#AA4375;width=200px">
+								<p style="text-align:center;color:#ffffff;font-weight:bold"><a style="text-align:left;color:#ffffff;font-weight:bold" href="<?php echo url_for('guard/login') ?>">Biblioteca</a></p>
 						</div>
 						<div class="box" style="width=200px">
-							<img alt="Smiley face" height="100" width="220" src="<?php echo $sf_request->getRelativeUrlRoot();?>/images/saludent.jpg">
+					        <a  href="<?php echo url_for('guard/login') ?>"><img alt="libros" height="100" width="220" src="<?php echo $sf_request->getRelativeUrlRoot();?>/images/libros.jpg"></a>
 						</div>
                         <br>
-                        <div class="box" style="background-color:#7dbf0d;width=200px">
-								<p style="text-align:left;color:#ffffff;font-weight:bold">&nbsp;&nbsp;S.O.S.P.E.</p>
-						</div>
-						<br>
-                        <div class="box" style="width=200px">
-							<img alt="Smiley face" height="100" width="220" src="<?php echo $sf_request->getRelativeUrlRoot();?>/images/sospe logo.gif">
-						</div>
-                        <br>
-					
 					</div>	 
 			<?php } ?>	
 			<!-- END Sidebar -->
