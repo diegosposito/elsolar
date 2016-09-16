@@ -29,7 +29,7 @@ class informesActions extends sfActions
 		$oAutoridades = Doctrine_Core::getTable('Autoridades')->obtenerAutoridades();
 
 		// pdf object
-		$pdf = new PDF();
+		$pdf = new PDF('P');
 
     	// settings
 		$pdf->SetFont("Times", "", 9);
@@ -42,7 +42,7 @@ class informesActions extends sfActions
 		$current_date = date("Y");
 		$encabezado = '
 			<div style="text-align: center; font-family: Times New Roman,Times,serif;"><span
-			style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/headerlogo.png" height="70px" width="550px">
+			style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/headerlogo2.png" height="70px" width="550px">
 			<b>Autoridades:</b> '.$current_date.'</div>';        
 
 		$pdf->writeHTML($encabezado, true, false, true, false, '');   
@@ -71,11 +71,7 @@ class informesActions extends sfActions
 		 	// add a page
 			if($y>=265) {
 				$pdf->AddPage();
-
-				$encabezado = '
-			<div style="text-align: center; font-family: Times New Roman,Times,serif;"><span
-			style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/headerlogo.png" width="550px">
-			Autoridades: '.$current_date.'</div>';        
+ 
 	
 				$pdf->writeHTML($encabezado, true, false, true, false, '');   
 				$y=60;
@@ -372,7 +368,7 @@ class informesActions extends sfActions
 		$pdf = new PDF();
 
     	// settings
-		$pdf->SetFont("Times", "", 9);
+		$pdf->SetFont("Times", "", 10);
 		// sentencias para retirar encabezados y pie por defecto
 		$pdf->setPrintHeader(false);
 		$pdf->setPrintFooter(false); 
@@ -382,7 +378,7 @@ class informesActions extends sfActions
 		$current_date = date("Y");
 		$encabezado = '
 			<div style="text-align: center; font-family: Times New Roman,Times,serif;"><span
-			style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/headerlogo.png" height="70px" width="550px">
+			style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/headerlogo2.png" height="70px" width="850px">
 			<b>Obras Sociales:</b> '.$current_date.'</div>';        
 
 		$pdf->writeHTML($encabezado, true, false, true, false, '');   
@@ -392,19 +388,19 @@ class informesActions extends sfActions
 		$pdf->Cell(15,5,'Obra Social',0,0,'C');    
 		$pdf->SetXY(28,$y);
 		$pdf->Cell(120,5,'Abrev.',0,0,'C');    
-		$pdf->SetXY(20,$y);
-		$pdf->Cell(175,5,'General',0,0,'C'); 
-		$pdf->SetXY(17,$y);
-		$pdf->Cell(228,5,'Prótesis',0,0,'C'); 
-		$pdf->SetXY(20,$y);
-		$pdf->Cell(259,5,'Ortodoncia',0,0,'C'); 
-		$pdf->SetXY(20,$y);
-		$pdf->Cell(297,5,'Implantes',0,0,'C'); 
+		$pdf->SetXY(36,$y);
+		$pdf->Cell(200,5,'General',0,0,'C'); 
+		$pdf->SetXY(32,$y);
+		$pdf->Cell(268,5,'Prótesis',0,0,'C'); 
+		$pdf->SetXY(50,$y);
+		$pdf->Cell(299,5,'Ortodoncia',0,0,'C'); 
+		$pdf->SetXY(55,$y);
+		$pdf->Cell(350,5,'Implantes',0,0,'C'); 
 		$pdf->SetXY(20,$y);
 		$y = $y + 5;		
 		$contador = 1;
 		
-		$pdf->Line(10,$y,190,$y);
+		$pdf->Line(10,$y,280,$y);
 		
 	    foreach ($oObrasSociales as $osocial){	
 		    			    		
@@ -413,28 +409,23 @@ class informesActions extends sfActions
 		    $pdf->Cell(15,5,$osocial['denominacion'],0,0,'L');
 		    $pdf->SetXY(83,$y);        
 		    $pdf->Cell(100,5,$osocial['abreviada'],0,0,'L');        
-		    $pdf->SetXY(101,$y); 
+		    $pdf->SetXY(130,$y); 
 		    $pdf->Cell(10,5,$osocial['general']==1 ? 'Habilitada' : 'No Habilitada',0,0,'L'); 
-		    $pdf->SetXY(122,$y); 
+		    $pdf->SetXY(160,$y); 
 		    $pdf->Cell(10,5,$osocial['protesis']==1 ? 'Habilitada' : 'No Habilitada',0,0,'L'); 
-		    $pdf->SetXY(142,$y); 
+		    $pdf->SetXY(190,$y); 
 		    $pdf->Cell(10,5,$osocial['ortodoncia']==1 ? 'Habilitada' : 'No Habilitada',0,0,'L'); 
-		    $pdf->SetXY(162,$y); 
+		    $pdf->SetXY(220,$y); 
 		    $pdf->Cell(10,5,$osocial['implantes']==1 ? 'Habilitada' : 'No Habilitada',0,0,'L'); 
 		    
 		
  			$y = $y + 5;  
 		 	// add a page
-			if($y>=265) {
+			if($y>=180) {
 				$pdf->AddPage();
-
-				$encabezado = '
-			<div style="text-align: center; font-family: Times New Roman,Times,serif;"><span
-			style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/headerlogo.png" width="550px">
-			Obras Sociales: '.$current_date.'</div>';        
 	
 				$pdf->writeHTML($encabezado, true, false, true, false, '');   
-				$y=60;
+				$y=45;
 
 			}
 	
@@ -457,7 +448,7 @@ class informesActions extends sfActions
 		$pdf = new PDF();
 
     	// settings
-		$pdf->SetFont("Times", "", 9);
+		$pdf->SetFont("Times", "", 10);
 		// sentencias para retirar encabezados y pie por defecto
 		$pdf->setPrintHeader(false);
 		$pdf->setPrintFooter(false); 
@@ -467,7 +458,7 @@ class informesActions extends sfActions
 		$current_date = date("Y");
 		$encabezado = '
 			<div style="text-align: center; font-family: Times New Roman,Times,serif;"><span
-			style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/headerlogo.png" height="70px" width="550px">
+			style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/headerlogo2.png" height="70px" width="850px">
 			<b>Profesionales:</b> '.$current_date.'</div>';        
 
 		$pdf->writeHTML($encabezado, true, false, true, false, '');   
@@ -479,13 +470,15 @@ class informesActions extends sfActions
 		$pdf->Cell(100,5,'Matrícula',0,0,'C');    
 		$pdf->SetXY(20,$y);
 		$pdf->Cell(190,5,'Dirección',0,0,'C'); 
-		$pdf->SetXY(25,$y);
-		$pdf->Cell(280,5,'Teléfono',0,0,'C'); 
+		$pdf->SetXY(45,$y);
+		$pdf->Cell(300,5,'Teléfono',0,0,'C'); 
+		$pdf->SetXY(45,$y);
+		$pdf->Cell(350,5,'Email',0,0,'C'); 
 		$pdf->SetXY(20,$y);
 		$y = $y + 5;		
 		$contador = 1;
 		
-		$pdf->Line(10,$y,190,$y);
+		$pdf->Line(10,$y,280,$y);
 
 
 	    foreach ($oPersonas as $opersona){	
@@ -497,22 +490,19 @@ class informesActions extends sfActions
 		    $pdf->Cell(60,5,$opersona['matricula'],0,0,'L');        
 		    $pdf->SetXY(105,$y); 
 		    $pdf->Cell(10,5,$opersona['mostrarinfocontacto'] ? $opersona['direccion'].' ('. $opersona['ciudad']. ') ' : ' - ',0,0,'L'); 
-		    $pdf->SetXY(160,$y); 
+		    $pdf->SetXY(180,$y); 
 		    $pdf->Cell(10,5,$opersona['mostrarinfocontacto'] ? $opersona['telefono'] : ' - ',0,0,'L'); 
+		    $pdf->SetXY(215,$y); 
+		    $pdf->Cell(10,5,$opersona['mostrarinfocontacto'] ? $opersona['email'] : ' - ',0,0,'L'); 
 		    
 		
  			$y = $y + 5;  
 		 	// add a page
-			if($y>=265) {
+			if($y>=180) {
 				$pdf->AddPage();
 
-				$encabezado = '
-			<div style="text-align: center; font-family: Times New Roman,Times,serif;"><span
-			style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/headerlogo.png" width="550px">
-			Profesionales: '.$current_date.'</div>';        
-	
 				$pdf->writeHTML($encabezado, true, false, true, false, '');   
-				$y=60;
+				$y=45;
 
 			}
 	
