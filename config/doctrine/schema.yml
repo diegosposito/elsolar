@@ -575,6 +575,7 @@ Personas:
     mostrarinfocontacto: { type: boolean, primary: false, notnull: true, default: 0 }  
     nrolector: { type: string(10), primary: false, autoincrement: false, default: '' }
     otrainformacionrelevante: { type: string(2000) }
+    horarios: { type: string(2000) }
     monto: { type: float, primary: false, notnull: true, default: '' }
     idusuario: { type: integer, primary: false, autoincrement: false, default: '1' }
   relations:
