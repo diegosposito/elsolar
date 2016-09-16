@@ -13,7 +13,7 @@ class PersonasForm extends BasePersonasForm
   public function configure()
   {
 
-        unset( $this['cantgrupofamiliar'],$this['email'],$this['titulo'],$this['monto'],$this['idcobrador'], $this['activo'], $this['idprofesion'],$this['vive'],$this['created_at'], $this['updated_at'], $this['tienefoto'], $this['created_by'], $this['updated_by'] ,$this['nrodoc'] ,$this['fechanac'],$this['socio'],$this['fechaingreso'] ,$this['idciudadnac'],$this['idnacionalidad'],$this['estadocivil']         );
+        unset( $this['cantgrupofamiliar'],$this['titulo'],$this['monto'],$this['idcobrador'], $this['activo'], $this['idprofesion'],$this['vive'],$this['created_at'], $this['updated_at'], $this['tienefoto'], $this['created_by'], $this['updated_by'] ,$this['nrodoc'] ,$this['fechanac'],$this['socio'],$this['fechaingreso'] ,$this['idciudadnac'],$this['idnacionalidad'],$this['estadocivil']         );
      
       // Se define los labels
 	    $this->widgetSchema->setLabel('nombre', '<p align="left">Nombre:</p>');
@@ -24,11 +24,13 @@ class PersonasForm extends BasePersonasForm
       $this->widgetSchema->setLabel('numerodoc', '<p align="left">Numero Doc:</p>');
       $this->widgetSchema->setLabel('direccion', '<p align="left">Dirección:</p>');
       $this->widgetSchema->setLabel('ciudad', '<p align="left">Ciudad:</p>');
+      $this->widgetSchema->setLabel('email', '<p align="left">Email:</p>');
       $this->widgetSchema->setLabel('telefono', '<p align="left">Teléfono:</p>');
       $this->widgetSchema->setLabel('celular', '<p align="left">Celular:</p>');
       $this->widgetSchema->setLabel('nrolector', '<p align="left">Matrícula Nro.:</p>');
      /* $this->widgetSchema['idcobrador'] = new sfWidgetFormSelect(array('choices' => $arregloCobradores));
       $this->widgetSchema->setLabel('idcobrador', '<p align="left">Cobrador:</p>'); */
+      $this->widgetSchema->setLabel('horarios', '<p align="left">Horarios:</p>');
       $this->widgetSchema->setLabel('otrainformacionrelevante', '<p align="left">Observaciones:</p>');
       $this->widgetSchema->setLabel('mostrarinfocontacto', '<p align="left">Muestra Info Contacto?:</p>');
 
@@ -40,8 +42,10 @@ class PersonasForm extends BasePersonasForm
         'nrolector' => new sfValidatorString(array('max_length' => 200, 'required' => false)),
         'direccion' => new sfValidatorString(array('max_length' => 200, 'required' => false)),
         'ciudad' => new sfValidatorString(array('max_length' => 200, 'required' => false)),
+        'email' => new sfValidatorString(array('max_length' => 200, 'required' => false)),
         'telefono' => new sfValidatorString(array('max_length' => 200, 'required' => false)),
         'mostrarinfocontacto' => new sfValidatorString(array('required' => false)),
+        'horarios' => new sfValidatorString(array('required' => false)),
         'otrainformacionrelevante' => new sfValidatorString(array('max_length' => 2000, 'required' => false)),
         ));
 
