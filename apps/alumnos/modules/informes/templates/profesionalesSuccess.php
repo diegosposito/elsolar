@@ -20,7 +20,7 @@
       <?php foreach ($profesionaless as $profesionales){ ?>
       <tr class="fila_<?php echo $i%2 ; ?>">
         <td width="5%" align="left"><?php echo $profesionales->getNrolector() ?></td>
-        <td width="30%" align="left"><?php echo $profesionales->getApellido().', '.$profesionales->getNombre() ?></td>
+        <td width="30%" align="left"><a href="#" title="<?php echo $profesionales->getHorarios() ?>"> <?php echo $profesionales->getApellido().', '.$profesionales->getNombre() ?> </a></td>
         <td width="20%" align="left"><?php echo $profesionales->getMostrarinfocontacto() ? $profesionales->getDireccion() : ' - ' ?></td>
         <td width="10%" align="left"><?php echo $profesionales->getMostrarinfocontacto() ? $profesionales->getTelefono() : ' - '  ?></td>
         <td width="35%" align="left"><?php echo $profesionales->getCiudad() ?></td>
