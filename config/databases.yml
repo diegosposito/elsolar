@@ -4,6 +4,6 @@ all:
   doctrine:
     class: sfDoctrineDatabase
     param:
-      dsn:      mysql:host=localhost;dbname=circulo
+      dsn:      mysql:host=localhost;dbname=elsolar
       username: root
       password: root911
