@@ -85,21 +85,20 @@
 					<div class="dd">
 						<ul>
 							<li><a title="Autoridades" href="<?php echo url_for('informes/autoridades') ?>"><span class="sep-left"></span>Autoridades</a></li>
-							<li>
-								<a title="Drop down menu 2" href="#"><span class="sep-left"></span>Drop down menu 2</a>
-								<div class="dd">
-									<ul>
-										<li><a title="Drop down menu 1" href="#"><span class="sep-left"></span><span class="dd-first"></span>Drop down menu 1</a></li>
-										<li><a title="Drop down menu 2" href="#"><span class="sep-left"></span>Drop down menu 2</a></li>
-										<li><a title="Drop down menu 3" href="#"><span class="sep-left"></span>Drop down menu 3</a></li>										
-									</ul>
-								</div>
-							</li>
-							<li><a title="Drop down menu 3" href="#"><span class="sep-left"></span>Drop down menu 3</a></li>							
+							<li><a title="Historia" href="<?php echo url_for('ingreso/historia') ?>"><span class="sep-left"></span>Historia</a></li>
+							<li><a title="Saludent" href="<?php echo url_for('ingreso/saludent') ?>"><span class="sep-left"></span>Saludent</a></li>
 						</ul>
 					</div>
 				</li>
-				<li><a title="For Children" href="#"><span class="sep-left"></span>Acerca de<span class="sep-right"></span></a></li>
+				<li>
+					<a title="Contacto" href="#"><span class="sep-left"></span>Contacto<span class="sep-right"></span></a>
+					<div class="dd">
+						<ul>
+							<li><a title="Ubicacion" href="<?php echo url_for('ingreso/ubicacion') ?>"><span class="sep-left"></span>Ubicación</a></li>
+							<li><a title="Concacto" href="<?php echo url_for('ingreso/contacto') ?>"><span class="sep-left"></span>Contacto</a></li>
+						</ul>
+					</div>
+				</li>
 			</ul>
 			<div class="cl"></div>
 		</div>
