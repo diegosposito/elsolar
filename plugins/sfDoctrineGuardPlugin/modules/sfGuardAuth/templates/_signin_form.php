@@ -14,7 +14,7 @@ $(document).ready(function(){
       </style>
 <table border="0" width="100%">      
    <tr>
-   <td width="50%"><img src="<?php echo $sf_request->getRelativeUrlRoot();?>/images/logo-sao.png" border="0"></td>
+   <td width="50%"><img src="<?php echo $sf_request->getRelativeUrlRoot();?>/images/seguridad.png" border="0"></td>
    <td width="50%"> 
 	<form action="<?php echo url_for('@sf_guard_signin') ?>" name="login" id="formLogin" method="post">
 	  <table border="0">
