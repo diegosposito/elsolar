@@ -10,10 +10,30 @@
  */
 class ingresoActions extends sfActions
 {		
-    public function executeIndex(sfWebRequest $request)
+  public function executeIndex(sfWebRequest $request)
   {
 	
-  }  
+  } 
+
+  public function executeHistoria(sfWebRequest $request)
+  {
+  
+  }
+
+  public function executeSaludent(sfWebRequest $request)
+  {
+  
+  } 
+
+  public function executeUbicacion(sfWebRequest $request)
+  {
+  
+  }
+
+  public function executeContacto(sfWebRequest $request)
+  {
+  
+  } 
   
   public function executeIndexfacultad(sfWebRequest $request)
   {
