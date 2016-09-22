@@ -344,18 +344,18 @@ class AlumnosTable extends Doctrine_Table
       
         if($tipocriterio==1) {
             $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc("
-                SELECT pe.* FROM personas pe 
+                SELECT sf.username, pe.* FROM personas pe JOIN sf_guard_user sf ON pe.idusuario = sf.id 
                 WHERE
                         ((pe.apellido LIKE '%".$criterio."%') OR (pe.nombre LIKE '%".$criterio."%'))
-                        AND pe.socio 
+                        AND pe.idprofesion = 1  
                         ORDER BY pe.apellido ASC, pe.nombre ASC
             ");
         }else{
             $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc("
-                SELECT pe.* FROM personas pe 
+                SELECT sf.username, pe.* FROM personas pe JOIN sf_guard_user sf ON pe.idusuario = sf.id 
                     WHERE
                         (pe.nrodoc LIKE '%".$criterio."%') 
-                        AND pe.socio ORDER BY pe.apellido ASC, pe.nombre ASC
+                        AND pe.idprofesion = 1 ORDER BY pe.apellido ASC, pe.nombre ASC
             ");
         }       
         
