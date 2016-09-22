@@ -34,7 +34,7 @@
 	    </tr>
 	    <tr>
 	      <td width="40%" align="center" class="hed">Nombre</td>
-	      <td width="20%" align="center" class="hed">Matrícula Nro.</td>
+	      <td width="20%" align="center" class="hed">Usuario</td>
 	      <td width="20%" align="center" class="hed">Nro. de Documento</td>
 	      <td width="20%" align="center" class="hed">Edicion</td>
 	    </tr>
@@ -44,7 +44,7 @@
 	    <?php foreach($resultado as $item){ ?>
 	    <tr class="fila_<?php echo $i%2 ; ?>">
 	    <td width="40%" align="left"><a href="#" title="<?php echo $item['horarios'] ?>"> <?php echo $item['apellido'].', '.$item['nombre'] ?> </a></td>
-	      <td width="20%" align="center"><?php echo $item['nrolector'] ?></td>
+	      <td width="20%" align="center"><?php echo $item['username'] ?></td>
 	      <td width="20%" align="center"><?php echo $item['nrodoc'] ?></td>
 	      <td align="center"><?php echo link_to("Editar", 'personas/edit?idpersona='.$item['idpersona'] ,'class="mhead"'); ?></td>
 	    </tr>
