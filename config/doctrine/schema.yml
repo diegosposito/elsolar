@@ -542,6 +542,21 @@ Profesiones:
     idprofesion: { type: integer, primary: true, autoincrement: true }
     descripcion: { type: string(100) } 
 
+Horarios:
+  actAs: 
+    Timestampable: ~ 
+    fzblameable: ~
+  columns:
+    idpersona: { type: integer, primary: false, autoincrement: false, default: '1' }
+    anulado: { type: boolean, primary: false, notnull: true, default: 1 } 
+    tiporegistro: { type: string(1), notnull: true }
+    observaciones: { type: string(255), notnull: true }
+  relations:
+    Personas: 
+      local: idpersona
+      foreign: idpersona
+      foreignAlias: Personas    
+
 Personas:
   actAs: 
     Timestampable: ~ 
@@ -552,7 +567,7 @@ Personas:
     apellido: { type: string(100), primary: false, notnull: true, default: '' }
     idsexo: { type: integer(4), primary: false, autoincrement: false, default: '1' }
     idtipodoc: { type: integer, primary: false, autoincrement: false, default: '1' }
-    idcobrador: { type: integer, primary: false, autoincrement: false, default: null }
+    idcargo: { type: integer, primary: false, autoincrement: false, default: null }
     nrodoc: { type: string(80), primary: false, notnull: true, default: '' }
     numerodoc: { type: string(80), primary: false, notnull: true, default: '' }
     fechanac: { type: date(25), primary: false, notnull: true, default: '2002-01-01' }
