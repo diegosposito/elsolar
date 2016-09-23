@@ -191,6 +191,7 @@ class informesActions extends sfActions
 	{
 	    $this->profesionaless = Doctrine_Core::getTable('Personas')
 	      ->createQuery('a')
+	      ->where('idprofesion=1')
 	      ->orderBy('a.apellido')
 	      ->execute();
 	}
@@ -475,7 +476,7 @@ class informesActions extends sfActions
 		$current_date = date("Y");
 		$encabezado = '
 			<div style="text-align: center; font-family: Times New Roman,Times,serif;"><span
-			style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/headerlogo2.png" height="70px" width="850px">
+			style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/header_elsolar.png" height="70px" width="850px">
 			<b>Profesionales:</b> '.$current_date.'</div>';        
 
 		$pdf->writeHTML($encabezado, true, false, true, false, '');   
@@ -506,7 +507,7 @@ class informesActions extends sfActions
 		    $pdf->SetXY(90,$y);        
 		    $pdf->Cell(60,5,$opersona['matricula'],0,0,'L');        
 		    $pdf->SetXY(105,$y); 
-		    $pdf->Cell(10,5,$opersona['mostrarinfocontacto'] ? $opersona['direccion'].' ('. $opersona['ciudad']. ') ' : ' - ',0,0,'L'); 
+		    $pdf->Cell(10,5,$opersona['mostrarinfocontacto'] ? $opersona['direccion'] : ' - ',0,0,'L'); 
 		    $pdf->SetXY(180,$y); 
 		    $pdf->Cell(10,5,$opersona['mostrarinfocontacto'] ? $opersona['telefono'] : ' - ',0,0,'L'); 
 		    $pdf->SetXY(215,$y); 
