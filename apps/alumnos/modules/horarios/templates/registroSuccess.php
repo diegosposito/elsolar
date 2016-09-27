@@ -3,7 +3,7 @@
   </style>
   <br>
 <div id="boton" align='center'>
- <a target="_blank" href="<?php echo url_for('informes/profesionalespdf') ?>"><img style="width:200px;height=200px"src='<?php echo $sf_request->getRelativeUrlRoot();?>/images/registrarme.jpeg' size='20' /></a>
+ <a target="_blank" href="<?php echo url_for('horarios/ingresar') ?>"><img style="width:200px;height=200px"src='<?php echo $sf_request->getRelativeUrlRoot();?>/images/registrarme.jpeg' size='20' /></a>
 </div>
 <br>
 <p align="left" style="color:black;">Ultimos Ingresos/Egresos Registrados</h1>
