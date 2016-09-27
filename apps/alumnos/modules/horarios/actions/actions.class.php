@@ -14,6 +14,20 @@ class horariosActions extends sfActions
   {
     $this->horarioss = Doctrine_Core::getTable('Horarios')
       ->createQuery('a')
+      ->where('a.anulado = false')
+      ->execute();
+  }
+
+  public function executeIngresar(sfWebRequest $request)
+  {
+  }
+
+  public function executeRegistro(sfWebRequest $request)
+  {
+    $this->horarioss = Doctrine_Core::getTable('Horarios')
+      ->createQuery('a')
+      ->where('a.anulado = false')
+      ->orderBy('a.id DESC limit 50 ')
       ->execute();
   }
 

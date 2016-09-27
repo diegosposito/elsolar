@@ -1,5 +1,4 @@
 <div class="post">
-					<h2>EL SOLAR URUGUAY</h2>
 					<h2>Misión</h2>
 					<p>Brindar un espacio para <strong>niños, adolescentes, jóvenes y adultos</strong> que por determinadas circunstancias requieran una atención educativa y/o terapéutica que posibiliten el logro de una vida digna optimizando la calidad de la misma.</p>
 					

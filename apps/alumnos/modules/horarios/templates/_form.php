@@ -9,11 +9,11 @@
     <tfoot>
       <tr>
         <td colspan="2">
-          &nbsp;<a href="<?php echo url_for('horarios/index') ?>">Back to list</a>
+          &nbsp;<a href="<?php echo url_for('horarios/registro') ?>">Volver al listado</a>
           <?php if (!$form->getObject()->isNew()): ?>
-            &nbsp;<?php echo link_to('Delete', 'horarios/delete?id='.$form->getObject()->getId(), array('method' => 'delete', 'confirm' => 'Are you sure?')) ?>
+            &nbsp;<?php echo link_to('Borrar', 'horarios/delete?id='.$form->getObject()->getId(), array('method' => 'delete', 'confirm' => 'Estas seguro de borrar este registro?')) ?>
           <?php endif; ?>
-          <input type="submit" value="Save" />
+          <input type="submit" value="Guardar Cambios" />
         </td>
       </tr>
     </tfoot>
