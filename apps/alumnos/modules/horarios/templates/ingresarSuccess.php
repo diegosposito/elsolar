@@ -1,7 +1,7 @@
 <br/>
 <h1 align="center">Registrar Ingreso / Egreso</h1>
 <br/>
-<form Name="calc">
+<form name="calc" id="calc" action="<?php echo url_for('horarios/registro') ?>" method="post">
 <div id="contenido" align="center" >
 <table style="width:200px;" border=1>
 <tr>
@@ -24,7 +24,7 @@
 </tr>
 <tr>
 <td><input style="height: 70px;width: 90px;font-size: 18px;" type=button value="9" OnClick="calc.display.value+='9'"></td>
-<td colspan=2><input style="height: 70px;width: 185px;font-size: 18px;" type=button value="Registrar" OnClick="calc.display.value=''"></td>
+<td colspan=2><input style="height: 70px;width: 185px;font-size: 18px;" type=submit value="Registrar"></td>
 </tr>
 </table>
 </div>
