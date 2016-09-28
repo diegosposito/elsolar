@@ -24,6 +24,27 @@ class horariosActions extends sfActions
 
   public function executeRegistro(sfWebRequest $request)
   {
+    if ($request->isMethod(sfRequest::POST)){
+       
+        $persona = Doctrine_Core::getTable('Personas')->obtenerPersonaxnrodoc($request->getParameter('display')); 
+        $oPersona = Doctrine_Core::getTable('Personas')->find($persona[0]['idpersona']);
+
+        if (trim($persona[0]['idpersona'])==''){
+            $this->msgError = "Registro no válido, intente nuevamente!!";
+        } else {
+           
+            $oHorario = new Horarios();
+            $oHorario->setIdpersona($oPersona->getIdpersona());
+            $oHorario->setAnulado(false);
+            $oHorario->setTiporegistro(Doctrine_Core::getTable('Horarios')->obtenerProximoEstado($oPersona->getIdpersona()));
+            $oHorario->setObservaciones('');
+            $oHorario->save();
+
+            $this->msgSuccess = "Registro ingresado correctamente!!";
+        }  
+    } 
+
+    // Obtener ultimos 50 registros
     $this->horarioss = Doctrine_Core::getTable('Horarios')
       ->createQuery('a')
       ->where('a.anulado = false')
