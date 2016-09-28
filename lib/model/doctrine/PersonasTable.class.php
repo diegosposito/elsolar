@@ -32,6 +32,17 @@ class PersonasTable extends Doctrine_Table
         return $q;
     }
 
+    // Obtiene persona buscando por nro de documento
+    public static function obtenerPersonaxnrodoc($nrodoc)
+    {
+         $sql ="SELECT per.idpersona, per.nombre, per.apellido, per.idsexo, per.idtipodoc, per.nrodoc, per.fechaingreso, per.email, per.telefono, per.ciudad, per.celular, per.direccion, per.activo, per.mostrarinfocontacto, per.otrainformacionrelevante, per.horarios from personas per
+where per.activo AND per.nrodoc = '".$nrodoc."'";
+        
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
+
+        return $q;
+    }  
+
     // Obtener obras sociales
     public static function obtenerProfesionales($estado=NULL)
     {
