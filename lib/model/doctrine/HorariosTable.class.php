@@ -16,4 +16,14 @@ class HorariosTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('Horarios');
     }
+
+    // Obtiene persona buscando por nro de documento
+    public static function obtenerProximoEstado($idpersona)
+    {
+        $sql ="SELECT IFNULL((SELECT CASE WHEN tiporegistro='E' THEN 'S'  WHEN tiporegistro='S' THEN 'E' END FROM horarios WHERE DATE(created_at) = DATE(NOW()) AND idpersona = ".$idpersona." ORDER BY created_at DESC LIMIT 1), 'E') AS estado;";
+        
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
+
+        return $q;
+    }  
 }
