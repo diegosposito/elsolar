@@ -1,3 +1,8 @@
+<script>
+window.onload = function() {
+  document.getElementById("display").focus();
+};
+</script>
 <br/>
 <h1 align="center">Registrar Ingreso / Egreso</h1>
 <br/>
@@ -5,7 +10,7 @@
 <div id="contenido" align="center" >
 <table style="width:200px;" border=1>
 <tr>
-<td colspan=4><input style="height: 70px;font-weight: bold;font-size: 32px;" type=text Name="display" size="12"></td>
+<td colspan=4><input style="height: 70px;font-weight: bold;font-size: 32px;" type=text id="display" name="display" size="12"></td>
 </tr>
 <tr>
 <td><input style="height: 70px;width: 90px;font-size: 18px;" type=button value="0" OnClick="calc.display.value+='0'"></td>
@@ -24,7 +29,7 @@
 </tr>
 <tr>
 <td><input style="height: 70px;width: 90px;font-size: 18px;" type=button value="9" OnClick="calc.display.value+='9'"></td>
-<td colspan=2><input style="height: 70px;width: 185px;font-size: 18px;" type=submit value="Registrar"></td>
+<td colspan=2><input style="background:#f79de7;height: 70px;width: 185px;font-size: 18px;" type=submit value="Registrar"></td>
 </tr>
 </table>
 </div>
