@@ -33,9 +33,19 @@ class HorariosTable extends Doctrine_Table
     } 
 
     // Obtiene persona buscando por nro de documento
-    public static function obtenerTiempoTrabajadoxDiaxPersona($idpersona, $fecha)
+    public static function obtenerTiempoTrabajadoxDiaxPersona($idpersona='', $fecha='')
     {
-        $sql ="SELECT idpersona, created_at, time(sum(created_at *(1-2 * tiporegistro))) as totalhoras  FROM horarios WHERE idpersona = ".$idpersona." GROUP BY idpersona HAVING DATE(created_at) = '".$fecha."';";
+        $sql =" SELECT idpersona, DATE(created_at) AS `date`, SUM(UNIX_TIMESTAMP(created_at)*(1-2* tiporegistro))/3600 AS `hours_worked`, SEC_TO_TIME(SUM(UNIX_TIMESTAMP(created_at)*(1-2* tiporegistro))) as hora
+                FROM horarios WHERE 1=1 ";
+        
+        if ($idpersona<>'')
+             $sql.=" AND idpersona = ".$idpersona." ";
+
+        if ($fecha<>'')
+             $sql.=" AND date(created_at) = '".$fecha."' "; 
+        
+        $sql.=" GROUP BY date(created_at), idpersona;";
+        
         $resultado = '';
 
         $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
