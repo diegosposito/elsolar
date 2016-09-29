@@ -20,10 +20,30 @@ class HorariosTable extends Doctrine_Table
     // Obtiene persona buscando por nro de documento
     public static function obtenerProximoEstado($idpersona)
     {
-        $sql ="SELECT IFNULL((SELECT CASE WHEN tiporegistro='E' THEN 'S'  WHEN tiporegistro='S' THEN 'E' END FROM horarios WHERE DATE(created_at) = DATE(NOW()) AND idpersona = ".$idpersona." ORDER BY created_at DESC LIMIT 1), 'E') AS estado;";
-        
-        $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
+        $sql ="SELECT IFNULL((SELECT CASE WHEN tiporegistro=1 THEN 0 WHEN tiporegistro=0 THEN 1 END FROM horarios WHERE DATE(created_at) = DATE(NOW()) AND idpersona = ".$idpersona." ORDER BY created_at DESC LIMIT 1), 1) AS estado;";
+        $resultado = '';
 
-        return $q;
-    }  
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
+        
+        foreach ($q as $item){
+    		$resultado = $item['estado'];
+    	}
+
+        return $resultado;
+    } 
+
+    // Obtiene persona buscando por nro de documento
+    public static function obtenerTiempoTrabajadoxDiaxPersona($idpersona, $fecha)
+    {
+        $sql ="SELECT idpersona, created_at, time(sum(created_at *(1-2 * tiporegistro))) as totalhoras  FROM horarios WHERE idpersona = ".$idpersona." GROUP BY idpersona HAVING DATE(created_at) = '".$fecha."';";
+        $resultado = '';
+
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
+        
+        foreach ($q as $item){
+    		$resultado = $item['totalhoras'];
+    	}
+
+        return $resultado;
+    }   
 }
