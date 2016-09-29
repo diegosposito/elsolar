@@ -2,6 +2,10 @@
 # http://www.symfony-project.org/reference/1_4/en/05-Factories
 
 prod:
+  user:
+    class: myUser
+    param:
+      timeout:         60000
   logger:
     class:   sfNoLogger
     param:
@@ -49,6 +53,10 @@ test:
           password:   522ucu2013
 
 dev:
+  user:
+    class: myUser
+    param:
+      timeout:         3600
   mailer:
     class: sfMailer
     param:
