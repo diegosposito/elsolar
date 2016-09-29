@@ -549,7 +549,7 @@ Horarios:
   columns:
     idpersona: { type: integer, primary: false, autoincrement: false, default: '1' }
     anulado: { type: boolean, primary: false, notnull: true, default: 1 } 
-    tiporegistro: { type: string(1), notnull: true }
+    tiporegistro: { type: integer, primary: false, autoincrement: false, default: '1' }
     observaciones: { type: string(255), notnull: true }
   relations:
     Personas: 
