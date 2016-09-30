@@ -18,6 +18,15 @@ class horariosActions extends sfActions
       ->execute();
   }
 
+  public function executePersonal(sfWebRequest $request)
+  {
+      $this->profesionaless = Doctrine_Core::getTable('Personas')
+        ->createQuery('a')
+        ->where('activo')
+        ->orderBy('a.apellido, a.nombre')
+        ->execute();
+  }
+
   public function executeIngresar(sfWebRequest $request)
   {
   }
