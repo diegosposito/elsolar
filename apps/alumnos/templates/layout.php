@@ -171,6 +171,7 @@
 			<!-- END Featured Products -->			
 			<!-- Footer  -->
 			<div id="footer">
+			<!--
 				<div id="footer-top"></div>
 				<div id="footer-middle">
 					<div class="col styles">
@@ -197,8 +198,9 @@
 					</div>
 					<div class="cl"></div>
 				</div>
+				-->
 				<div id="footer-bottom">
-					<p>&copy;Copyright  Círculo Odontológico. Diseñado por <a href="#">C.del U.</a></p>
+					<p>&copy;Copyright El Solar Uruguay. Diseñado por <a href="#">C.del U.</a></p>
 				</div>
 			</div>
 			<!-- END Footer -->
