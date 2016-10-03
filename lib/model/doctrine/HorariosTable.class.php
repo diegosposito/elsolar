@@ -32,11 +32,23 @@ class HorariosTable extends Doctrine_Table
         return $resultado;
     } 
 
+    // Actualizar todos los estados de una persona a controlar si estan en No controlar
+    public static function updEntradaAControlar($idpersona)
+    {
+         
+        // actualizar designaciones
+        $sql ="UPDATE horarios set controlar = true WHERE (NOT controlar) AND idpersona = ".$idpersona.";";
+
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection();
+        
+        return $q->execute($sql);
+    } 
+
     // Obtiene persona buscando por nro de documento
     public static function obtenerTiempoTrabajadoxDiaxPersona($idpersona='', $fecha='')
     {
         $sql =" SELECT idpersona, DATE(created_at) AS `date`, SUM(UNIX_TIMESTAMP(created_at)*(1-2* tiporegistro))/3600 AS `hours_worked`, SEC_TO_TIME(SUM(UNIX_TIMESTAMP(created_at)*(1-2* tiporegistro))) as hora
-                FROM horarios WHERE 1=1 ";
+                FROM horarios WHERE controlar ";
         
         if ($idpersona<>'')
              $sql.=" AND idpersona = ".$idpersona." ";
@@ -55,5 +67,33 @@ class HorariosTable extends Doctrine_Table
     	}
 
         return $resultado;
-    }   
+    } 
+
+    // Obtiene persona buscando por nro de documento
+    public static function obtenerTiempoTrabajadoxPeriodo($idpersona='', $mes='', $anio='')
+    {
+        $sql =" SELECT h.idpersona, per.apellido, per.nombre, CONCAT(per.apellido, ', ', per.nombre) as nombrecompleto,DATE(h.created_at) AS `date`, SUM(UNIX_TIMESTAMP(h.created_at)*(1- 2 * h.tiporegistro))/3600 AS `hours_worked`, 
+                SEC_TO_TIME(SUM(UNIX_TIMESTAMP(h.created_at)*(1- 2 * h.tiporegistro))) as hora,
+                SEC_TO_TIME(SUM(UNIX_TIMESTAMP((CASE WHEN DATE(h.created_at) = DATE(NOW()) THEN h.created_at ELSE 0 END))*(1- 2 * h.tiporegistro))) as hora_del_dia 
+                FROM horarios h JOIN personas per ON h.idpersona = per.idpersona WHERE h.controlar ";
+        
+        if ($idpersona<>'')
+             $sql.=" AND h.idpersona = ".$idpersona." ";
+
+        if ($mes<>'')
+             $sql.=" AND MONTH(h.created_at) = '".$mes."' ";
+
+        if ($anio<>'')
+            $sql.=" AND YEAR(h.created_at) = '".$anio."' "; 
+        
+        $sql.=" GROUP BY h.idpersona";
+
+        $sql.=" ORDER BY per.apellido, per.nombre;";
+        
+        $resultado = '';
+
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
+        
+        return $q;
+    }     
 }
