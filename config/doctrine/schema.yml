@@ -551,6 +551,7 @@ Horarios:
     anulado: { type: boolean, primary: false, notnull: true, default: 1 } 
     tiporegistro: { type: integer, primary: false, autoincrement: false, default: '1' }
     observaciones: { type: string(255), notnull: true }
+    controlar: { type: boolean, primary: false, notnull: true, default: 1 }
   relations:
     Personas: 
       local: idpersona
