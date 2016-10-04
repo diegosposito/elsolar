@@ -37,7 +37,7 @@ class HorariosTable extends Doctrine_Table
     {
          
         // actualizar designaciones
-        $sql ="UPDATE horarios set controlar = true WHERE (NOT controlar) AND idpersona = ".$idpersona.";";
+        $sql ="UPDATE horarios set controlar = true WHERE (NOT controlar) AND DATE(created_at)=DATE(NOW()) AND idpersona = ".$idpersona.";";
 
         $q = Doctrine_Manager::getInstance()->getCurrentConnection();
         
@@ -95,5 +95,39 @@ class HorariosTable extends Doctrine_Table
         $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
         
         return $q;
-    }     
+    } 
+
+    // Obtiene persona buscando por nro de documento
+    public static function obtenerResumenMensualxPer($idpersona, $mes, $anio, $detallado=false)
+    {
+        $sql =" SELECT h.idpersona, per.apellido, per.nombre, CONCAT(per.apellido, ', ', per.nombre) as nombrecompleto,DATE(h.created_at) AS `date`, SUM(UNIX_TIMESTAMP(h.created_at)*(1- 2 * h.tiporegistro))/3600 AS `hours_worked`, 
+                SEC_TO_TIME(SUM(UNIX_TIMESTAMP(h.created_at)*(1- 2 * h.tiporegistro))) as hora
+                FROM horarios h JOIN personas per ON h.idpersona = per.idpersona 
+                WHERE h.controlar AND h.idpersona = ".$idpersona." AND MONTH(h.created_at) = '".$mes."' AND YEAR(h.created_at) = '".$anio."' GROUP BY h.idpersona ";
+        
+        if ($detallado)
+             $sql .= " , DATE(h.created_at) ";
+
+        $resultado = '';
+
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
+        
+        return $q;
+    } 
+
+    // Obtiene persona buscando por nro de documento
+    public static function obtenerDetalleMensualxPer($idpersona, $mes, $anio)
+    {
+        $sql =" SELECT h.idpersona, per.apellido, per.nombre, CONCAT(per.apellido, ', ', per.nombre) as nombrecompleto,h.created_at AS `date`, 
+                CASE WHEN h.tiporegistro = 1 THEN 'Entrada' ELSE 'Salida' END as tiporegistro,
+                CASE WHEN NOT h.controlar THEN 'Registro inconsistente' ELSE '' END as estado 
+                FROM horarios h JOIN personas per ON h.idpersona = per.idpersona  
+                WHERE h.idpersona = ".$idpersona." AND MONTH(h.created_at) = '".$mes."' AND YEAR(h.created_at) = '".$anio."' ORDER BY h.created_at;";
+      
+        $resultado = '';
+
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
+        
+        return $q;
+    }                
 }
