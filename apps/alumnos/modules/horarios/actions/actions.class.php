@@ -155,6 +155,63 @@ class horariosActions extends sfActions
     $this->forward404Unless($this->horarios);
   }
 
+  public function executeVerdetalle(sfWebRequest $request)
+  { 
+    
+    $this->detalle_mensual_detallado = Doctrine_Core::getTable('Horarios')->obtenerResumenMensualxPer($request->getParameter('id'), $request->getParameter('idmes'), $request->getParameter('idanio'), true); 
+    $this->detalle_mensual = Doctrine_Core::getTable('Horarios')->obtenerResumenMensualxPer($request->getParameter('id'), $request->getParameter('idmes'), $request->getParameter('idanio'), false); 
+    $this->superdetallado = Doctrine_Core::getTable('Horarios')->obtenerDetalleMensualxPer($request->getParameter('id'), $request->getParameter('idmes'), $request->getParameter('idanio'), false); 
+  
+    $this->horas_mensuales_trabajadas='';
+    foreach ($this->detalle_mensual as $dm){
+        $this->horas_mensuales_trabajadas=$dm['hora'];
+    }
+
+    switch ($request->getParameter('idmes')) {
+    case '1':
+        $mesactual ='Enero';
+        break;
+    case '2':
+        $mesactual ='Febrero';
+        break;
+    case '3':
+        $mesactual ='Marzo';
+        break;
+    case '4':
+        $mesactual ='Abril';
+        break;
+    case '5':
+        $mesactual ='Mayo';
+        break;
+    case '6':
+        $mesactual ='Junio';
+        break;
+    case '7':
+        $mesactual ='Julio';
+        break;
+    case '8':
+        $mesactual ='Agosto';
+        break;
+    case '9':
+        $mesactual ='Setiembre';
+        break;
+    case '10':
+        $mesactual ='Octubre';
+        break;
+    case '11':
+        $mesactual ='Noviembre';
+        break;
+    case '12':
+        $mesactual ='Diciembre';
+        break;           
+    }
+    
+    $this->mesactual = $mesactual;
+    $this->anio = $request->getParameter('idanio');
+    $this->horarios = Doctrine_Core::getTable('Horarios')->find(array($request->getParameter('id')));
+    $this->forward404Unless($this->horarios);
+  }
+
   public function executeNew(sfWebRequest $request)
   {
     $this->form = new HorariosForm();

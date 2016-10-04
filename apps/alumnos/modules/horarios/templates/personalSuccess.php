@@ -54,7 +54,7 @@ for($i = $anioactual; $i >= $anioactual-10; $i--){
         <td width="20%" align="left"><?php echo $personatiempo['hora'] ?></td>
         <td width="20%" align="left"><?php echo $personatiempo['hora_del_dia'] ?></td>
         <?php if ($sf_user->isAuthenticated() && $sf_user->getGuardUser()->getIsSuperAdmin()){ ?>
-                <td width="20%" align="center"><a target="_blank" href="<?php echo url_for('horarios/show?id='.$personatiempo['idpersona']).'/idmes/'.$idmes.'/idanio/'.$idanio ?>"><?php echo 'Ver Detalle' ?></a></td>
+                <td width="20%" align="center"><a href="<?php echo url_for('horarios/verdetalle?id='.$personatiempo['idpersona']).'/idmes/'.$idmes.'/idanio/'.$idanio ?>"><?php echo 'Ver Detalle' ?></a></td>
         <?php } else { ?>
                 <td width="20%" align="center"><?php echo ' - ' ?></a></td>
         <?php } ?>
