@@ -44,9 +44,57 @@ class horariosActions extends sfActions
 
   public function executePersonalhoraspdf(sfWebRequest $request){
 
-    $personas_tiempos = Doctrine_Core::getTable('Horarios')->obtenerTiempoTrabajadoxPeriodo(null, $request->getParameter('meses'), $request->getParameter('anio')); 
+    $this->idpersona = null;
+    $this->idmes = (int) date('m');
+    $this->idanio = date('Y');
+    $this->personas_tiempos = "";
 
-    $oAutoridades = Doctrine_Core::getTable('Autoridades')->obtenerAutoridades();
+    $this->idmes = $request->getParameter('idmes');
+    $this->idanio =$request->getParameter('idanio');
+    if ($request->getParameter('idpersona')>0)
+          $this->idpersona = $request->getParameter('idpersona'); 
+
+    switch ($request->getParameter('idmes')) {
+    case '1':
+        $mesactual ='Enero';
+        break;
+    case '2':
+        $mesactual ='Febrero';
+        break;
+    case '3':
+        $mesactual ='Marzo';
+        break;
+    case '4':
+        $mesactual ='Abril';
+        break;
+    case '5':
+        $mesactual ='Mayo';
+        break;
+    case '6':
+        $mesactual ='Junio';
+        break;
+    case '7':
+        $mesactual ='Julio';
+        break;
+    case '8':
+        $mesactual ='Agosto';
+        break;
+    case '9':
+        $mesactual ='Setiembre';
+        break;
+    case '10':
+        $mesactual ='Octubre';
+        break;
+    case '11':
+        $mesactual ='Noviembre';
+        break;
+    case '12':
+        $mesactual ='Diciembre';
+        break;           
+    }    
+        
+    // Obtener informacion mensual para imprimir 
+    $this->personas_tiempos = Doctrine_Core::getTable('Horarios')->obtenerTiempoTrabajadoxPeriodo($this->idpersona, $request->getParameter('meses'), $request->getParameter('anio')); 
 
     // pdf object
     $pdf = new PDF('P');
@@ -63,27 +111,32 @@ class horariosActions extends sfActions
     $encabezado = '
       <div style="text-align: center; font-family: Times New Roman,Times,serif;"><span
       style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/header_elsolar.png" height="70px" width="550px">
-      <b>Autoridades:</b> '.$current_date.'</div>';        
+      <b>Autoridades:</b> '.$mesactual.' del '.$this->idanio.'</div>';        
 
     $pdf->writeHTML($encabezado, true, false, true, false, '');   
     
     $y = 45;
     $pdf->SetXY(10,$y);
-    $pdf->Cell(15,5,'Entidad',0,0,'C');    
+    $pdf->Cell(15,5,'Persona',0,0,'C');    
     $pdf->SetXY(45,$y);
-    $pdf->Cell(120,5,'Autoridad',0,0,'C');    
+    $pdf->Cell(100,5,'Mensual',0,0,'C'); 
+    $pdf->SetXY(45,$y);
+    $pdf->Cell(170,5,'Día actual',0,0,'C'); 
+    $pdf->SetXY(45,$y);
     $y = $y + 5;    
     $contador = 1;
     
     $pdf->Line(10,$y,190,$y);
     
-      foreach ($oAutoridades as $oautoridad){ 
+      foreach ($this->personas_tiempos as $pt){ 
                       
         $pdf->SetXY(0,$y-5);
             $pdf->SetXY(10,$y);
-        $pdf->Cell(15,5,$oautoridad['entidad'],0,0,'L');
-        $pdf->SetXY(100,$y);        
-        $pdf->Cell(120,5,$oautoridad['autoridad'],0,0,'L');        
+        $pdf->Cell(15,5,$pt['nombrecompleto'],0,0,'L');
+        $pdf->SetXY(85,$y);        
+        $pdf->Cell(100,5,$pt['hora'],0,0,'L'); 
+        $pdf->SetXY(125,$y);        
+        $pdf->Cell(170,5,$pt['hora_del_dia'],0,0,'L');        
         $pdf->SetXY(130,$y); 
         
     
