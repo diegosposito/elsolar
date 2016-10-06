@@ -16,7 +16,7 @@
 
 <hr />
 <br>
-<a target="_blank" href="<?php echo url_for('horarios/personalhoraspdf?idmes='.$idmes).'/idanio/'.$idanio ?>"><img src='<?php echo $sf_request->getRelativeUrlRoot();?>/images/printer.png' align='center' size='20' /></a>
+<a target="_blank" href="<?php echo url_for('horarios/personalhorasdetallepdf?idpersona='.$idpersona).'/idmes/'.$idmes.'/idanio/'.$anio ?>"><img src='<?php echo $sf_request->getRelativeUrlRoot();?>/images/printer.png' align='center' size='20' /></a>
 <table width="100%" cellspacing="0" class="stats">
     <thead>
       <tr>

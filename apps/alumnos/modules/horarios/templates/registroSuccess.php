@@ -26,7 +26,7 @@
         <td width="50%" align="left"><a href="#" title="<?php echo $horarios->getPersonas()->getHorarios() ?>"> <?php echo $horarios->getPersonas()->getApellido().', '.$horarios->getPersonas()->getNombre() ?> </a></td>
         <td width="10%" align="left"><?php echo $horarios->getTiporegistro()==1 ? 'ENTRADA' : 'SALIDA' ?></td>
         <td width="25%" align="left"><?php echo date('d-m-Y H:i:s', strtotime($horarios->getCreatedAt())) ?></td>
-        <?php if ($sf_user->isAuthenticated() && $sf_user->getGuardUser()->getIsSuperAdmin()){ ?>
+        <?php if ($sf_user->isAuthenticated() && $sf_user->hasCredential('administracion')){ ?>
                 <td width="10%" align="left"><a href="<?php echo url_for('horarios/show?id='.$horarios->getId()) ?>"><?php echo 'Mostrar' ?></a></td>
         <?php } else { ?>
                 <td width="10%" align="left"><?php echo ' - ' ?></a></td>
