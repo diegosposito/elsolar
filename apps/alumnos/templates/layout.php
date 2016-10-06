@@ -142,20 +142,27 @@
 				        <div class="box" style="width=200px"><br></div>	
 				        
 					    <div class="box" style="background-color:#AA4375;width=200px">
-								<p style="text-align:center;color:#ffffff;font-weight:bold"><a style="text-align:left;color:#ffffff;font-weight:bold" href="<?php echo url_for('guard/login') ?>">Administrador</a></p>
+								<p style="margin-left: 0em;text-align:center;color:#ffffff;font-weight:bold"><a style="text-align:left;color:#ffffff;font-weight:bold" href="<?php echo url_for('guard/login') ?>">Administrador</a></p>
 						</div>
 						<div class="box" style="width=200px">
 							<a  href="<?php echo url_for('guard/login') ?>"><img alt="Smiley face"  src="<?php echo $sf_request->getRelativeUrlRoot();?>/images/login.png"></a>
 						</div>
                         <div class="box" style="background-color:#AA4375;width=200px">
-								<p style="text-align:center;color:#ffffff;font-weight:bold"><a style="text-align:left;color:#ffffff;font-weight:bold" href="<?php echo url_for('guard/login') ?>">Comunicación</a></p>
+								<p style="margin-left: 0em;text-align:center;color:#ffffff;font-weight:bold"><a style="text-align:left;color:#ffffff;font-weight:bold" href="<?php echo url_for('ingreso/registro') ?>">Ingreso</a></p>
 						</div>
 						<div class="box" style="width=200px">
-						   <a  href="<?php echo url_for('guard/login') ?>"><img alt="Comunicaciones" height="100" width="220" src="<?php echo $sf_request->getRelativeUrlRoot();?>/images/comunicaciones.jpg"></a>
+						   <a  href="<?php echo url_for('ingreso/registro') ?>"><img alt="Comunicaciones" height="100" width="220" src="<?php echo $sf_request->getRelativeUrlRoot();?>/images/registro.jpg"></a>
 						</div>
                         <br>
                         <div class="box" style="background-color:#AA4375;width=200px">
-								<p style="text-align:center;color:#ffffff;font-weight:bold"><a style="text-align:left;color:#ffffff;font-weight:bold" href="<?php echo url_for('guard/login') ?>">Biblioteca</a></p>
+								<p style="margin-left: 0em;text-align:center;color:#ffffff;font-weight:bold"><a style="text-align:left;color:#ffffff;font-weight:bold" href="<?php echo url_for('guard/login') ?>">Comunicación</a></p>
+						</div>
+						<div class="box" style="width=200px">
+						   <a  href="<?php echo url_for('guard/login') ?>"><img alt="Comunicaciones" height="100" width="220" src="<?php echo $sf_request->getRelativeUrlRoot();?>/images/comunicaciones.png"></a>
+						</div>
+                        <br>
+                        <div class="box" style="background-color:#AA4375;width=200px">
+								<p style="margin-left: 0em;text-align:center;color:#ffffff;font-weight:bold"><a style="text-align:left;color:#ffffff;font-weight:bold" href="<?php echo url_for('guard/login') ?>">Biblioteca</a></p>
 						</div>
 						<div class="box" style="width=200px">
 					        <a  href="<?php echo url_for('guard/login') ?>"><img alt="libros" height="100" width="220" src="<?php echo $sf_request->getRelativeUrlRoot();?>/images/libros.jpg"></a>
