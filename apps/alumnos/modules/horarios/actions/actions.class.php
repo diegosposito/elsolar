@@ -121,17 +121,17 @@ class horariosActions extends sfActions
     $encabezado = '
       <div style="text-align: center; font-family: Times New Roman,Times,serif;"><span
       style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/header_elsolar.png" height="70px" width="550px">
-      <b>Autoridades:</b> '.$mesactual.' del '.$this->idanio.'</div>';        
+      <br><br><b>Resumen Mensual Horas Trabajadas:</b> '.$mesactual.' del '.$this->idanio.'</div>';        
 
     $pdf->writeHTML($encabezado, true, false, true, false, '');   
     
-    $y = 45;
+    $y = 48;
     $pdf->SetXY(10,$y);
     $pdf->Cell(15,5,'Persona',0,0,'C');    
-    $pdf->SetXY(45,$y);
+    $pdf->SetXY(41,$y);
     $pdf->Cell(100,5,'Mensual',0,0,'C'); 
     $pdf->SetXY(45,$y);
-    $pdf->Cell(170,5,'Día actual',0,0,'C'); 
+    $pdf->Cell(170,5,'Día actual: '.date('d/m/Y'),0,0,'C'); 
     $pdf->SetXY(45,$y);
     $y = $y + 5;    
     $contador = 1;
@@ -157,7 +157,7 @@ class horariosActions extends sfActions
  
   
         $pdf->writeHTML($encabezado, true, false, true, false, '');   
-        $y=60;
+        $y=48;
 
       }
   
@@ -178,13 +178,13 @@ class horariosActions extends sfActions
     if (!($currentUser->isAuthenticated() && $currentUser->hasCredential("rrhh"))) 
         $this->redirect('ingreso');
 
-    $this->detalle_mensual_detallado = Doctrine_Core::getTable('Horarios')->obtenerResumenMensualxPer($request->getParameter('id'), $request->getParameter('idmes'), $request->getParameter('idanio'), true); 
-    $this->detalle_mensual = Doctrine_Core::getTable('Horarios')->obtenerResumenMensualxPer($request->getParameter('id'), $request->getParameter('idmes'), $request->getParameter('idanio'), false); 
-    $this->superdetallado = Doctrine_Core::getTable('Horarios')->obtenerDetalleMensualxPer($request->getParameter('id'), $request->getParameter('idmes'), $request->getParameter('idanio'), false); 
+    $detalle_mensual_detallado = Doctrine_Core::getTable('Horarios')->obtenerResumenMensualxPer($request->getParameter('idpersona'), $request->getParameter('idmes'), $request->getParameter('idanio'), true); 
+    $detalle_mensual = Doctrine_Core::getTable('Horarios')->obtenerResumenMensualxPer($request->getParameter('idpersona'), $request->getParameter('idmes'), $request->getParameter('idanio'), false); 
+    $superdetallado = Doctrine_Core::getTable('Horarios')->obtenerDetalleMensualxPer($request->getParameter('idpersona'), $request->getParameter('idmes'), $request->getParameter('idanio'), false); 
   
-    $this->horas_mensuales_trabajadas='';
-    foreach ($this->detalle_mensual as $dm){
-        $this->horas_mensuales_trabajadas=$dm['hora'];
+    $horas_mensuales_trabajadas='';
+    foreach ($detalle_mensual as $dm){
+        $horas_mensuales_trabajadas=$dm['hora'];
     }
 
     switch ($request->getParameter('idmes')) {
@@ -226,9 +226,6 @@ class horariosActions extends sfActions
         break;           
     }
         
-    // Obtener informacion mensual para imprimir 
-    $this->personas_tiempos = Doctrine_Core::getTable('Horarios')->obtenerTiempoTrabajadoxPeriodo($this->idpersona, $request->getParameter('meses'), $request->getParameter('anio')); 
-
     // pdf object
     $pdf = new PDF('P');
 
@@ -238,56 +235,107 @@ class horariosActions extends sfActions
     $pdf->setPrintHeader(false);
     $pdf->setPrintFooter(false); 
  
-        // add a page
+    // add a page
     $pdf->AddPage();
     $current_date = date("Y");
     $encabezado = '
       <div style="text-align: center; font-family: Times New Roman,Times,serif;"><span
       style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/header_elsolar.png" height="70px" width="550px">
-      <b>Autoridades:</b> '.$mesactual.' del '.$this->idanio.'</div>';        
+      <br><br><b>Resumen Mensual Horas Trabajadas:</b> '.$mesactual.' del '.$request->getParameter('idanio').'
+      <br>Total mensual horas: '.$horas_mensuales_trabajadas.'</div>';        
+      
 
     $pdf->writeHTML($encabezado, true, false, true, false, '');   
     
-    $y = 45;
+    $y = 53;
     $pdf->SetXY(10,$y);
     $pdf->Cell(15,5,'Persona',0,0,'C');    
     $pdf->SetXY(45,$y);
-    $pdf->Cell(100,5,'Mensual',0,0,'C'); 
+    $pdf->Cell(100,5,'Fecha',0,0,'C'); 
     $pdf->SetXY(45,$y);
-    $pdf->Cell(170,5,'Día actual',0,0,'C'); 
+    $pdf->Cell(170,5,'Hs. Trabajadas',0,0,'C'); 
     $pdf->SetXY(45,$y);
     $y = $y + 5;    
     $contador = 1;
     
     $pdf->Line(10,$y,190,$y);
+
+    // Imprimir reporte acumulado de horas trabajads por dia por persona
     
-      foreach ($this->personas_tiempos as $pt){ 
+      foreach ($detalle_mensual_detallado as $dt){ 
                       
         $pdf->SetXY(0,$y-5);
             $pdf->SetXY(10,$y);
-        $pdf->Cell(15,5,$pt['nombrecompleto'],0,0,'L');
+        $pdf->Cell(15,5,$dt['nombrecompleto'],0,0,'L');
         $pdf->SetXY(85,$y);        
-        $pdf->Cell(100,5,$pt['hora'],0,0,'L'); 
+        $pdf->Cell(100,5,$dt['date'],0,0,'L'); 
         $pdf->SetXY(125,$y);        
-        $pdf->Cell(170,5,$pt['hora_del_dia'],0,0,'L');        
+        $pdf->Cell(170,5,$dt['hora'],0,0,'L');        
         $pdf->SetXY(130,$y); 
         
     
-      $y = $y + 5;  
-      // add a page
-      if($y>=265) {
-        $pdf->AddPage();
- 
-  
-        $pdf->writeHTML($encabezado, true, false, true, false, '');   
-        $y=60;
+        $y = $y + 5;  
+        // add a page
+        if($y>=265) {
+          $pdf->AddPage();
+          $pdf->writeHTML($encabezado, true, false, true, false, '');   
+          $y=53;
+        }
+      } // fin (foreach) 
 
-      }
-  
-        } // fin (foreach)  
+    // Imprimir reporte detallado de todas las entradas/salidas por dia por persona
+
+    // add a page
+    $pdf->AddPage();
+    $current_date = date("Y");
+    $encabezado = '
+      <div style="text-align: center; font-family: Times New Roman,Times,serif;"><span
+      style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/header_elsolar.png" height="70px" width="550px">
+      <br><br><b>Resumen Detallado de Ingresos/Egresos:</b> '.$mesactual.' del '.$request->getParameter('idanio').'</div>';        
+      
+
+    $pdf->writeHTML($encabezado, true, false, true, false, '');   
+    
+    $y = 48;
+    $pdf->SetXY(10,$y);
+    $pdf->Cell(15,5,'Persona',0,0,'C');    
+    $pdf->SetXY(45,$y);
+    $pdf->Cell(100,5,'Fecha',0,0,'C'); 
+    $pdf->SetXY(45,$y);
+    $pdf->Cell(170,5,'Tipo Registro',0,0,'C'); 
+    $pdf->SetXY(65,$y);
+    $pdf->Cell(180,5,'Estado',0,0,'C'); 
+    $pdf->SetXY(65,$y);
+    $y = $y + 5;    
+    $contador = 1;
+    
+    $pdf->Line(10,$y,190,$y);
+    
+      foreach ($superdetallado as $st){ 
+                      
+        $pdf->SetXY(0,$y-5);
+            $pdf->SetXY(10,$y);
+        $pdf->Cell(15,5,$st['nombrecompleto'],0,0,'L');
+        $pdf->SetXY(85,$y);        
+        $pdf->Cell(100,5,$st['date'],0,0,'L'); 
+        $pdf->SetXY(125,$y);        
+        $pdf->Cell(170,5,$st['tiporegistro'],0,0,'L'); 
+        $pdf->SetXY(145,$y);        
+        $pdf->Cell(180,5,$st['estado'],0,0,'L');       
+        $pdf->SetXY(130,$y); 
+        
+    
+        $y = $y + 5;  
+        // add a page
+        if($y>=265) {
+          $pdf->AddPage();
+          $pdf->writeHTML($encabezado, true, false, true, false, '');   
+          $y=48;
+        }
+      } // fin (foreach) 
 
        
-    $pdf->Output('planilla.pdf', 'I');
+    $pdf->Output('planilladetallada.pdf', 'I');
  
     // stop symfony process
     throw new sfStopException();
@@ -297,10 +345,19 @@ class horariosActions extends sfActions
 
   public function executeIngresar(sfWebRequest $request)
   {
+    // Control de acceso de usuarios de administracion
+    $currentUser = sfContext::getInstance()->getUser();
+    if (!($currentUser->isAuthenticated() && $currentUser->hasCredential("administracion"))) 
+      $this->redirect('ingreso');
   }
 
   public function executeRegistro(sfWebRequest $request)
   {
+    // Control de acceso de usuarios de administracion
+    $currentUser = sfContext::getInstance()->getUser();
+    if (!($currentUser->isAuthenticated() && $currentUser->hasCredential("administracion"))) 
+      $this->redirect('ingreso'); 
+
     if ($request->isMethod(sfRequest::POST)){
        
         $persona = Doctrine_Core::getTable('Personas')->obtenerPersonaxnrodoc($request->getParameter('display')); 
@@ -344,6 +401,11 @@ class horariosActions extends sfActions
   public function executeVerdetalle(sfWebRequest $request)
   { 
     
+    // Control del acceso al modulo para RRHH
+    $currentUser = sfContext::getInstance()->getUser();
+    if (!($currentUser->isAuthenticated() && $currentUser->hasCredential("rrhh"))) 
+        $this->redirect('ingreso');
+
     $this->detalle_mensual_detallado = Doctrine_Core::getTable('Horarios')->obtenerResumenMensualxPer($request->getParameter('id'), $request->getParameter('idmes'), $request->getParameter('idanio'), true); 
     $this->detalle_mensual = Doctrine_Core::getTable('Horarios')->obtenerResumenMensualxPer($request->getParameter('id'), $request->getParameter('idmes'), $request->getParameter('idanio'), false); 
     $this->superdetallado = Doctrine_Core::getTable('Horarios')->obtenerDetalleMensualxPer($request->getParameter('id'), $request->getParameter('idmes'), $request->getParameter('idanio'), false); 
@@ -397,8 +459,8 @@ class horariosActions extends sfActions
     $this->idmes = $request->getParameter('idmes');
     $this->idpersona = $request->getParameter('id');
   
-    $this->horarios = Doctrine_Core::getTable('Horarios')->find(array($request->getParameter('id')));
-    $this->forward404Unless($this->horarios);
+    $this->persona = Doctrine_Core::getTable('Personas')->find(array($request->getParameter('id')));
+    $this->forward404Unless($this->persona);
   }
 
   public function executeNew(sfWebRequest $request)
