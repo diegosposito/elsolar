@@ -28,7 +28,7 @@ $(document).ready(function(){
 	        </td> 
 	        <td align="center" >
 	        <a href="javascript:document.login.submit()">
-				<img height="40px" width="90px"src="<?php echo $sf_request->getRelativeUrlRoot();?>/images/botonIngresar.jpg" border="0" alt="Ingresar">
+				<img height="35px" width="90px"src="<?php echo $sf_request->getRelativeUrlRoot();?>/images/botonIngresar.jpg" border="0" alt="Ingresar">
 			</a> 
 	        </td> 
 	        </tr>
