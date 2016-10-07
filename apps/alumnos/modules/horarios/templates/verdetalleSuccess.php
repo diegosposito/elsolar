@@ -2,7 +2,7 @@
   <tbody>
     <tr>
       <th>Persona:</th>
-      <td><?php echo $horarios->getPersonas()->getApellido().', '.$horarios->getPersonas()->getNombre(); ?></td>
+      <td><?php echo $persona->getApellido().', '.$persona->getNombre(); ?></td>
     </tr>
       <th>Período Informado:</th>
       <td><?php echo $mesactual." de ".$anio; ?></td>
