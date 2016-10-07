@@ -127,12 +127,33 @@
 							    	            echo '<li>'.link_to('Usuarios', 'sf_guard_user').'</li>' ; 
 							    	        } 
 							    	    } ?>   
-								<?php echo '<li>'.link_to('Profesionales', 'personas/buscar').'</li>' ; ?>
-								<?php echo '<li>'.link_to('Obras Sociales', 'obrassociales/index').'</li>' ; ?>
-								<?php echo '<li>'.link_to('Autoridades', 'autoridades').'</li>' ; ?>
-								<?php echo '<li>'.link_to('Entidades', 'cargoautoridades/index').'</li>' ; ?>
-								<?php echo '<li>'.link_to('Gestión Contenido', 'personas/new').'</li>' ; ?>
-								<?php echo '<li>'.link_to('Salir', 'sf_guard_signout').'</li>' ; ?>
+								
+								<?php
+ 
+								$currentUser = sfContext::getInstance()->getUser();
+								 
+								// DEFINIR MENU DERECHO para usuarios logueados      
+								if ($currentUser->isAuthenticated()) {
+
+									// Menu del grupo administracion
+									if ($currentUser->hasCredential("administracion")){ ?>
+									    <?php echo '<li>'.link_to('Horarios', 'horarios/registro').'</li>' ; ?>
+										<?php echo '<li>'.link_to('Obras Sociales', 'obrassociales/index').'</li>' ; ?>
+										<?php echo '<li>'.link_to('Autoridades', 'autoridades').'</li>' ; ?>
+										<?php echo '<li>'.link_to('Entidades', 'cargoautoridades/index').'</li>' ; ?>
+										<?php echo '<li>'.link_to('Salir', 'sf_guard_signout').'</li>' ; ?>
+									<?php } 
+
+									// Menu del grupo rrhh
+									if ($currentUser->hasCredential("rrhh")){ ?>
+								       <?php echo '<li>'.link_to('Horarios', 'horarios/personal').'</li>' ; ?>
+										<?php echo '<li>'.link_to('Obras Sociales', 'obrassociales/index').'</li>' ; ?>
+										<?php echo '<li>'.link_to('Autoridades', 'autoridades').'</li>' ; ?>
+										<?php echo '<li>'.link_to('Entidades', 'cargoautoridades/index').'</li>' ; ?>
+										<?php echo '<li>'.link_to('Salir', 'sf_guard_signout').'</li>' ; ?>
+									<?php }  
+
+								} ?>
 							</ul>
 						</div>
 					</div>	
