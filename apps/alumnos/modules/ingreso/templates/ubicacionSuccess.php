@@ -1,6 +1,12 @@
 <div class="post">
-					<h2>SALUDENT</h2>
-					<h2>Historia</h2>
-					<p><strong>Fundado el 03/12/1979</strong> en la ciudad de Concepción del Uruguay, Provincia de Entre Ríos.<strong> Todos los presentes involucrados atestiguan el acontencimiento..</strong> Bienvenidos al sitio web online. </p>
-					<p><strong>Circulo Odontogócio Concepcion del Uruguay.</strong> En la ciudad de Concepción del Uruguay, Provincia de Entre Ríos, a los 3 días del mes de Diciembre de 1999 y siendo las 19 y 1/2 horas, los Doctores en Odontología y Dentistas al margen anotados reunidos en la casa del Dr. Víctor F. Perez y con la conformidad de los Dres. Perez Sosa, exteriorizando un anhelo colectivo dentro de la profesión de constituir una asociación de sus colegas con los objetivos más elevados en bien de los intereses morales, intelectuales y materiales de la profesión común, resolvieron constituir dicha asociación. A moción de la Dra. Lopez designó Presidente Provisional al Dr. Perez y Secretario al Dr. Miguel Gonzalez. Acto continuo el Dr. Perez presenta la moción, que fue aceptada, de que este centro llevara el nombre de 'Círculo Odontológico Concepción del Uruguay'...“</p>
+			<h2 class="title">Datos de contacto</h2>
+			<p><b>Dirección: </b>Alem 120 Concepción del Uruguay E.R., Argentina</p>
+			<p><abbr title="Phone">Tel</abbr>: +54 3442 42-2505</p>
+			<p><abbr title="Email">Email</abbr>: <a href="mailto:administracion@elsolaruruguay.com.ar">administracion@elsolaruruguay.com.ar</a>
+			</p>
+			<p><abbr title="Hours">Horarios</abbr>: Lunes - Viernes: 8 a 17hs</p>
+			<br>
+</div>
+<div class="post">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5660.217771860886!2d-58.23841016544823!3d-32.483773490719585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95afdb005d0d92a1%3A0xdd0450acd4e195f0!2sEl+Solar+Uruguay!5e0!3m2!1ses-419!2sar!4v1476808957362" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 </div>
