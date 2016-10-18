@@ -84,9 +84,9 @@
 					<a title="Institucionales" href="#"><span class="sep-left"></span>Institucionales<span class="sep-right"></span></a>
 					<div class="dd">
 						<ul>
-							<li><a title="Autoridades" href="<?php echo url_for('informes/autoridades') ?>"><span class="sep-left"></span>Autoridades</a></li>
+							<!--<li><a title="Autoridades" href="<?php echo url_for('informes/autoridades') ?>"><span class="sep-left"></span>Autoridades</a></li> -->
 							<li><a title="Historia" href="<?php echo url_for('ingreso/historia') ?>"><span class="sep-left"></span>Historia</a></li>
-							<li><a title="Saludent" href="<?php echo url_for('ingreso/saludent') ?>"><span class="sep-left"></span>Saludent</a></li>
+							<!--<li><a title="Saludent" href="<?php echo url_for('ingreso/saludent') ?>"><span class="sep-left"></span>Saludent</a></li> -->
 						</ul>
 					</div>
 				</li>
@@ -95,7 +95,7 @@
 					<div class="dd">
 						<ul>
 							<li><a title="Ubicacion" href="<?php echo url_for('ingreso/ubicacion') ?>"><span class="sep-left"></span>Ubicación</a></li>
-							<li><a title="Concacto" href="<?php echo url_for('ingreso/contacto') ?>"><span class="sep-left"></span>Contacto</a></li>
+							<!--<li><a title="Concacto" href="<?php echo url_for('ingreso/contacto') ?>"><span class="sep-left"></span>Contacto</a></li> -->
 						</ul>
 					</div>
 				</li>
@@ -139,8 +139,8 @@
 									if ($currentUser->hasCredential("administracion")){ ?>
 									    <?php echo '<li>'.link_to('Horarios', 'horarios/registro').'</li>' ; ?>
 										<?php echo '<li>'.link_to('Obras Sociales', 'obrassociales/index').'</li>' ; ?>
-										<?php echo '<li>'.link_to('Autoridades', 'autoridades').'</li>' ; ?>
-										<?php echo '<li>'.link_to('Entidades', 'cargoautoridades/index').'</li>' ; ?>
+										<!--<?php echo '<li>'.link_to('Autoridades', 'autoridades').'</li>' ; ?>  -->
+										<!--<?php echo '<li>'.link_to('Entidades', 'cargoautoridades/index').'</li>' ; ?> -->
 										<?php echo '<li>'.link_to('Salir', 'sf_guard_signout').'</li>' ; ?>
 									<?php } 
 
@@ -148,8 +148,6 @@
 									if ($currentUser->hasCredential("rrhh")){ ?>
 								       <?php echo '<li>'.link_to('Horarios', 'horarios/personal').'</li>' ; ?>
 										<?php echo '<li>'.link_to('Obras Sociales', 'obrassociales/index').'</li>' ; ?>
-										<?php echo '<li>'.link_to('Autoridades', 'autoridades').'</li>' ; ?>
-										<?php echo '<li>'.link_to('Entidades', 'cargoautoridades/index').'</li>' ; ?>
 										<?php echo '<li>'.link_to('Salir', 'sf_guard_signout').'</li>' ; ?>
 									<?php }  
 
