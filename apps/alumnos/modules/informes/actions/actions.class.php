@@ -379,24 +379,16 @@ class informesActions extends sfActions
 		$current_date = date("Y");
 		$encabezado = '
 			<div style="text-align: center; font-family: Times New Roman,Times,serif;"><span
-			style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/headerlogo2.png" height="70px" width="850px">
-			<b>Obras Sociales:</b> '.$current_date.'</div>';        
+			style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/header_elsolar.png" height="90px" width="820px">
+			<b>Obras Sociales:</b> '.$current_date.'</div>';   
 
 		$pdf->writeHTML($encabezado, true, false, true, false, '');   
 		
-		$y = 45;
+		$y = 50;
 		$pdf->SetXY(10,$y);
 		$pdf->Cell(15,5,'Obra Social',0,0,'C');    
 		$pdf->SetXY(68,$y);
-		$pdf->Cell(120,5,'Abrev.',0,0,'C');    
-		$pdf->SetXY(66,$y);
-		$pdf->Cell(200,5,'General',0,0,'C'); 
-		$pdf->SetXY(62,$y);
-		$pdf->Cell(268,5,'Prótesis',0,0,'C'); 
-		$pdf->SetXY(80,$y);
-		$pdf->Cell(299,5,'Ortodoncia',0,0,'C'); 
-		$pdf->SetXY(85,$y);
-		$pdf->Cell(350,5,'Implantes',0,0,'C'); 
+		$pdf->Cell(200,5,'Abrev',0,0,'C'); 
 		$pdf->SetXY(20,$y);
 		$y = $y + 5;		
 		$contador = 1;
@@ -408,40 +400,23 @@ class informesActions extends sfActions
 		   	$pdf->SetXY(0,$y-5);
             $pdf->SetXY(10,$y);
 		    $pdf->Cell(15,5,$osocial['denominacion'],0,0,'L');
-		    $pdf->SetXY(123,$y);        
+		    $pdf->SetXY(163,$y);        
 		    $pdf->Cell(100,5,$osocial['abreviada'],0,0,'L');        
-		    $pdf->SetXY(160,$y); 
-		    $pdf->Cell(10,5,$osocial['general']==1 ? 'Habilitada' : 'No Habilitada',0,0,'L'); 
-		    $pdf->SetXY(190,$y); 
-		    $pdf->Cell(10,5,$osocial['protesis']==1 ? 'Habilitada' : 'No Habilitada',0,0,'L'); 
-		    $pdf->SetXY(220,$y); 
-		    $pdf->Cell(10,5,$osocial['ortodoncia']==1 ? 'Habilitada' : 'No Habilitada',0,0,'L'); 
-		    $pdf->SetXY(250,$y); 
-		    $pdf->Cell(10,5,$osocial['implantes']==1 ? 'Habilitada' : 'No Habilitada',0,0,'L'); 
-		    
-		
+		   
  			$y = $y + 5;  
 		 	// add a page
 			if($y>=180) {
 				$pdf->AddPage();
 	
 				$pdf->writeHTML($encabezado, true, false, true, false, '');   
-				$y=45;
+				$y=50;
 
 				$pdf->SetXY(10,$y);
 				$pdf->Cell(15,5,'Obra Social',0,0,'C');    
 				$pdf->SetXY(68,$y);
-				$pdf->Cell(120,5,'Abrev.',0,0,'C');    
-				$pdf->SetXY(66,$y);
-				$pdf->Cell(200,5,'General',0,0,'C'); 
-				$pdf->SetXY(62,$y);
-				$pdf->Cell(268,5,'Prótesis',0,0,'C'); 
-				$pdf->SetXY(80,$y);
-				$pdf->Cell(299,5,'Ortodoncia',0,0,'C'); 
-				$pdf->SetXY(85,$y);
-				$pdf->Cell(350,5,'Implantes',0,0,'C'); 
+				$pdf->Cell(200,5,'Abrev',0,0,'C'); 
 				$pdf->SetXY(20,$y);
-				$y = $y + 5;		
+				$y = $y + 5;
 				$contador = 1;
 				$pdf->Line(10,$y,280,$y);
 
@@ -476,12 +451,12 @@ class informesActions extends sfActions
 		$current_date = date("Y");
 		$encabezado = '
 			<div style="text-align: center; font-family: Times New Roman,Times,serif;"><span
-			style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/header_elsolar.png" height="70px" width="850px">
+			style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/header_elsolar.png" height="90px" width="820px">
 			<b>Profesionales:</b> '.$current_date.'</div>';        
 
 		$pdf->writeHTML($encabezado, true, false, true, false, '');   
 		
-		$y = 45;
+		$y = 50;
 		$pdf->SetXY(10,$y);
 		$pdf->Cell(15,5,'Nombre',0,0,'C');    
 		$pdf->SetXY(45,$y);
@@ -516,12 +491,12 @@ class informesActions extends sfActions
 		
  			$y = $y + 5;  
 		 	// add a page
-			if($y>=180) {
+			if($y>=190) {
 				$pdf->AddPage();
 
 				$pdf->writeHTML($encabezado, true, false, true, false, '');   
 		
-				$y = 45;
+				$y = 50;
 				$pdf->SetXY(10,$y);
 				$pdf->Cell(15,5,'Nombre',0,0,'C');    
 				$pdf->SetXY(45,$y);
