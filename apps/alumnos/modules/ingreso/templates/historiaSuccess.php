@@ -1,6 +1,6 @@
 <div class="post">
-					<h2>CIRCULO ODONTOLOGICO Concepción del Uruguay</h2>
+					<h2>EL SOLAR Uruguay</h2>
 					<h2>Historia</h2>
-					<p><strong>Fundado el 03/12/1979</strong> en la ciudad de Concepción del Uruguay, Provincia de Entre Ríos.<strong> Todos los presentes involucrados atestiguan el acontencimiento..</strong> Bienvenidos al sitio web online. </p>
-					<p><strong>Circulo Odontogócio Concepcion del Uruguay.</strong> En la ciudad de Concepción del Uruguay, Provincia de Entre Ríos, a los 3 días del mes de Diciembre de 1999 y siendo las 19 y 1/2 horas, los Doctores en Odontología y Dentistas al margen anotados reunidos en la casa del Dr. Víctor F. Perez y con la conformidad de los Dres. Perez Sosa, exteriorizando un anhelo colectivo dentro de la profesión de constituir una asociación de sus colegas con los objetivos más elevados en bien de los intereses morales, intelectuales y materiales de la profesión común, resolvieron constituir dicha asociación. A moción de la Dra. Lopez designó Presidente Provisional al Dr. Perez y Secretario al Dr. Miguel Gonzalez. Acto continuo el Dr. Perez presenta la moción, que fue aceptada, de que este centro llevara el nombre de 'Círculo Odontológico Concepción del Uruguay'...“</p>
+					<p><strong>Desde 1996 brindando un abordaje de características educativas y terapéuticas</strong>, involucrando los aspectos individuales, familiares y sociales.</p>
+					<p>Apuntando a contribuir a una mejor calidad de vida. </p>
 </div>
