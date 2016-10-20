@@ -11,10 +11,10 @@ all:
     facultad:    3
     profesor:    4
   envio_mail:
-    contacto: webmaster@correo.edu.ar
-    administracion: tramitesalumnos@correo.edu.ar
+    contacto: administracion@elsolaruruguay.com.ar
+    administracion: administracion@elsolaruruguay.com.ar
   pathfiles:
-    folder: /home/newp/circulo/web/files  
+    folder: /home/newp/elsolar/web/files  
   wsalumnoslan:
     personas: http://128.1.32.3/ucu/sitio/webservices/personas.php?wsdl
   wsalumnoswan:
