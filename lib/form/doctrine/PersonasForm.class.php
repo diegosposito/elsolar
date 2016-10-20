@@ -13,9 +13,18 @@ class PersonasForm extends BasePersonasForm
   public function configure()
   {
 
-        unset( $this['cantgrupofamiliar'],$this['titulo'],$this['monto'],$this['idcobrador'], $this['activo'], $this['idprofesion'],$this['vive'],$this['created_at'], $this['updated_at'], $this['tienefoto'], $this['created_by'], $this['updated_by'] ,$this['nrodoc'] ,$this['fechanac'],$this['socio'],$this['fechaingreso'] ,$this['idciudadnac'],$this['idnacionalidad'],$this['estadocivil']         );
+      unset( $this['cantgrupofamiliar'],$this['titulo'],$this['monto'],$this['idcobrador'], $this['activo'], $this['idprofesion'],$this['vive'],$this['created_at'], $this['updated_at'], $this['tienefoto'], $this['created_by'], $this['updated_by'] ,$this['nrodoc'] ,$this['fechanac'],$this['socio'],$this['fechaingreso'] ,$this['idciudadnac'],$this['idnacionalidad'],$this['estadocivil']         );
      
-      // Se define los labels
+      $areas = Doctrine_Core::getTable('Areas')
+      ->createQuery('a')
+      ->orderBy('a.descripcion ASC')
+      ->execute();    
+      
+      foreach($areas as $area){
+        $arregloAreas[$area->getIdarea()] = $area->getDescripcion(); 
+      }  
+
+       // Se define los labels
 	    $this->widgetSchema->setLabel('nombre', '<p align="left">Nombre:</p>');
  	    $this->widgetSchema->setLabel('apellido', '<p align="left">Apellido:</p>');
       $this->widgetSchema->setLabel('idsexo', '<p align="left">Sexo:</p>');
@@ -23,22 +32,27 @@ class PersonasForm extends BasePersonasForm
       $this->widgetSchema->setLabel('idusuario', '<p align="left">Usuario:</p>');
       $this->widgetSchema->setLabel('numerodoc', '<p align="left">Numero Doc:</p>');
       $this->widgetSchema->setLabel('direccion', '<p align="left">Dirección:</p>');
+      $this->widgetSchema->setLabel('idarea', '<p align="left">Area:</p>');
       $this->widgetSchema->setLabel('ciudad', '<p align="left">Ciudad:</p>');
       $this->widgetSchema->setLabel('email', '<p align="left">Email:</p>');
       $this->widgetSchema->setLabel('telefono', '<p align="left">Teléfono:</p>');
       $this->widgetSchema->setLabel('celular', '<p align="left">Celular:</p>');
       $this->widgetSchema->setLabel('nrolector', '<p align="left">Matrícula Nro.:</p>');
+      $this->widgetSchema['idarea'] = new sfWidgetFormSelect(array('choices' => $arregloAreas));
      /* $this->widgetSchema['idcobrador'] = new sfWidgetFormSelect(array('choices' => $arregloCobradores));
       $this->widgetSchema->setLabel('idcobrador', '<p align="left">Cobrador:</p>'); */
       $this->widgetSchema->setLabel('horarios', '<p align="left">Horarios:</p>');
       $this->widgetSchema->setLabel('otrainformacionrelevante', '<p align="left">Observaciones:</p>');
       $this->widgetSchema->setLabel('mostrarinfocontacto', '<p align="left">Muestra Info Contacto?:</p>');
+      $this->widgetSchema->setLabel('idarea', '<p align="left">Area:</p>');
+     
 
       $this->setValidators(array(
         'apellido' => new sfValidatorString(array('required' => true), array('required' => 'El apellido es obligatorio.')),
         'nombre' => new sfValidatorString(array('required' => true), array('required' => 'El nombre es obligatorio.')),
         'numerodoc' => new sfValidatorString(array('required' => true), array('required' => 'El documento es obligatorio.')),
         'celular' => new sfValidatorString(array('max_length' => 200, 'required' => false)),
+        'idarea' => new sfValidatorString(array('max_length' => 200, 'required' => false)),
         'nrolector' => new sfValidatorString(array('max_length' => 200, 'required' => false)),
         'direccion' => new sfValidatorString(array('max_length' => 200, 'required' => false)),
         'ciudad' => new sfValidatorString(array('max_length' => 200, 'required' => false)),
