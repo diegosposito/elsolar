@@ -13,19 +13,19 @@ class ObrasSocialesForm extends BaseObrasSocialesForm
   public function configure()
   {
 
-  	    unset( $this['created_at'], $this['updated_at'], $this['created_by'], $this['updated_by'] );
+  	    unset( $this['created_at'], $this['updated_at'], $this['ninterno'], $this['general'], $this['protesis'], $this['ortodoncia'], $this['implantes'], $this['created_by'], $this['updated_by'] );
      
       // Se define los labels
 	    $this->widgetSchema->setLabel('denominacion', '<p align="left">Obra Social:</p>');
  	    $this->widgetSchema->setLabel('abreviada', '<p align="left">Nombre Abreviado:</p>');
       $this->widgetSchema->setLabel('fechaaranceltexto', '<p align="left">Aranceles / Texto:</p>');
  	    $this->widgetSchema->setLabel('fechaultimoperiodotexto', '<p align="left">Ultimo Período / Texto:</p>');
-      $this->widgetSchema->setLabel('ninterno', '<p align="left">Nro.Interno:</p>');
+     /* $this->widgetSchema->setLabel('ninterno', '<p align="left">Nro.Interno:</p>');
       $this->widgetSchema->setLabel('general', '<p align="left">General:</p>');
       $this->widgetSchema->setLabel('protesis', '<p align="left">Prótesis:</p>');
       $this->widgetSchema->setLabel('ortodoncia', '<p align="left">Ortodoncia:</p>');
       $this->widgetSchema->setLabel('implantes', '<p align="left">Implantes:</p>');
-      
+     */ 
 
 
  	    
