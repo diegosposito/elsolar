@@ -15,7 +15,7 @@
       </tr>
       <tr>
         <td>
-          &nbsp;<a href="<?php echo url_for('personas/buscar') ?>">Volver al listado de Profesionales</a>
+          &nbsp;<a href="<?php echo url_for('personas/buscar') ?>">Volver al listado de Personal</a>
         </td>
         <td align="center">
           <input type="submit" value="Guardar" />

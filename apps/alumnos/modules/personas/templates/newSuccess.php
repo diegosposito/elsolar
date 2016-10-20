@@ -3,7 +3,7 @@
   </style>
 
 <br>
-<h1 align="center" style="color:black;">Nuevos Profesionales</h1>
+<h1 align="center" style="color:black;">Nuevo Personal</h1>
 <br>
 
 <?php include_partial('form', array('form' => $form)) ?>
