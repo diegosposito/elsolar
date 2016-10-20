@@ -1,4 +1,3 @@
-<h1>Buscador</h1> 
 <br>
 <div align="center">
 <form action="<?php echo url_for('personas/buscar') ?>" method="post">
@@ -25,7 +24,7 @@
     </tr>    
   </table>
 </form>
-<a href="<?php echo url_for('personas/new') ?>">Agregar Nuevos Profesionales</a>
+<a href="<?php echo url_for('personas/new') ?>">Agregar Nuevo Personal</a>
 
 <?php if (count($resultado) > 0){ ?>		    	   	
 	<table cellspacing="0" class="stats">
