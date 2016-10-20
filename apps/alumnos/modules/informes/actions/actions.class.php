@@ -192,7 +192,7 @@ class informesActions extends sfActions
 	{
 	    $this->profesionaless = Doctrine_Core::getTable('Personas')
 	      ->createQuery('a')
-	      ->where('idprofesion=1')
+	      ->where('idarea=3 AND activo')
 	      ->orderBy('a.apellido')
 	      ->execute();
 	}
