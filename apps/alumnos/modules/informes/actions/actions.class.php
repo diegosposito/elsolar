@@ -183,6 +183,7 @@ class informesActions extends sfActions
 	{
 	    $this->obras_socialess = Doctrine_Core::getTable('ObrasSociales')
 	      ->createQuery('a')
+	      ->where('a.estado=1')
 	      ->orderBy('a.ninterno')
 	      ->execute();
 	}
@@ -363,7 +364,7 @@ class informesActions extends sfActions
 
 	public function executeObrassocialespdf(sfWebRequest $request){
 
-		$oObrasSociales = Doctrine_Core::getTable('ObrasSociales')->obtenerObrasSociales();
+		$oObrasSociales = Doctrine_Core::getTable('ObrasSociales')->obtenerObrasSociales(1);
 
 		// pdf object
 		$pdf = new PDF();
