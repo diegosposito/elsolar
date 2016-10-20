@@ -146,7 +146,8 @@
 
 									// Menu del grupo rrhh
 									if ($currentUser->hasCredential("rrhh")){ ?>
-								       <?php echo '<li>'.link_to('Horarios', 'horarios/personal').'</li>' ; ?>
+								        <?php echo '<li>'.link_to('Horarios', 'horarios/personal').'</li>' ; ?>
+								        <?php echo '<li>'.link_to('Personal', 'personas/buscar').'</li>' ; ?>
 										<?php echo '<li>'.link_to('Obras Sociales', 'obrassociales/index').'</li>' ; ?>
 										<?php echo '<li>'.link_to('Salir', 'sf_guard_signout').'</li>' ; ?>
 									<?php }  
