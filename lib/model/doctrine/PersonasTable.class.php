@@ -47,10 +47,10 @@ where per.activo AND per.nrodoc = '".$nrodoc."'";
     public static function obtenerProfesionales($estado=NULL)
     {
         $sql ="SELECT per.idpersona, per.nombre, per.horarios, per.mostrarinfocontacto, per.apellido, per.direccion, per.nrodoc, per.nrolector as matricula, per.email, per.telefono, per.celular, per.ciudad
-        FROM personas per ";
+        FROM personas per WHERE per.idarea = 3 ";
 
         if($estado !== NULL)
-            $sql .=  " WHERE per.activo = ".$estado." "; 
+            $sql .=  " AND per.activo = ".$estado." "; 
 
         $sql .= " ORDER BY per.apellido;";
         
