@@ -1,5 +1,6 @@
-<h1>Modificar de Datos Personales de Alumnos</h1>
-
+<br>
+<h1>Modificar Información de la Obra Social</h1>
+<br>
 <script>
 
   function deleteFile(parametro){
