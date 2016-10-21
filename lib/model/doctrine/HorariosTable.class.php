@@ -115,11 +115,11 @@ class HorariosTable extends Doctrine_Table
         return $q;
     } 
 
-    // Obtiene persona buscando por nro de documento
+    // Obtiene detalle horas trabajadas mensuales por persona
     public static function obtenerDetalleMensualxPer($idpersona, $mes, $anio)
     {
         $sql =" SELECT h.idpersona, per.apellido, per.nombre, CONCAT(per.apellido, ', ', per.nombre) as nombrecompleto,h.created_at AS `date`, 
-                CASE WHEN h.tiporegistro = 1 THEN 'Entrada' ELSE 'Salida' END as tiporegistro,
+                h.tiporegistro, h.controlar,
                 CASE WHEN NOT h.controlar THEN 'Registro inconsistente' ELSE '' END as estado 
                 FROM horarios h JOIN personas per ON h.idpersona = per.idpersona  
                 WHERE h.idpersona = ".$idpersona." AND MONTH(h.created_at) = '".$mes."' AND YEAR(h.created_at) = '".$anio."' ORDER BY h.created_at;";
@@ -129,5 +129,46 @@ class HorariosTable extends Doctrine_Table
         $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
         
         return $q;
-    }                
+    } 
+
+    // Obtiene detalle horas trabajadas mensuales por persona FORMATEADO
+   public static function obtenerDetalleMensualxPerFormat($idpersona, $mes, $anio)
+    {
+        $sql =" SELECT h.idpersona, per.apellido, per.nombre, CONCAT(per.apellido, ', ', per.nombre) as nombrecompleto,h.created_at AS `date`, 
+                h.tiporegistro, h.controlar,
+                CASE WHEN NOT h.controlar THEN 'Registro inconsistente' ELSE '' END as estado 
+                FROM horarios h JOIN personas per ON h.idpersona = per.idpersona  
+                WHERE h.idpersona = ".$idpersona." AND MONTH(h.created_at) = '".$mes."' AND YEAR(h.created_at) = '".$anio."' ORDER BY h.created_at;";
+      
+        $resultado = '';
+
+        $result = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
+        
+        $datos = array(); $hora_ingreso = '';
+        foreach($result as $st){
+            // Si es un registro inconsistente no se muestra horario de salida
+            if(!$st['controlar']){
+                $datos[] = array('nombrecompleto' => $st['nombrecompleto'],
+                               'fecha'          => date("d-m-Y", strtotime($st['date'])),
+                               'horaingreso'    => date("H:i:s", strtotime($st['date'])),
+                               'horaegreso'     => '',
+                               'estado'     => '0');
+            }
+            
+            // si es una entrada correcta, converso el horario de entrada y no agrego
+            if($st['controlar'] && ($st['tiporegistro']))
+                $hora_ingreso = date("H:i:s", strtotime($st['date']));
+           
+            // Si es salida y es un registro consistente, agrego el registro + horario entrada del anterior
+            if($st['controlar'] && (!$st['tiporegistro'])){
+                $datos[] = array('nombrecompleto' => $st['nombrecompleto'],
+                               'fecha'          => date("d-m-Y", strtotime($st['date'])),
+                               'horaingreso'    => $hora_ingreso,
+                               'horaegreso'     => date("H:i:s", strtotime($st['date'])),
+                               'estado'     => '1');
+                $hora_ingreso = '';
+            }
+        }
+        return $datos;
+    }                    
 }
