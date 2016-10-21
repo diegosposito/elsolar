@@ -408,7 +408,7 @@ class horariosActions extends sfActions
 
     $this->detalle_mensual_detallado = Doctrine_Core::getTable('Horarios')->obtenerResumenMensualxPer($request->getParameter('id'), $request->getParameter('idmes'), $request->getParameter('idanio'), true); 
     $this->detalle_mensual = Doctrine_Core::getTable('Horarios')->obtenerResumenMensualxPer($request->getParameter('id'), $request->getParameter('idmes'), $request->getParameter('idanio'), false); 
-    $this->superdetallado = Doctrine_Core::getTable('Horarios')->obtenerDetalleMensualxPer($request->getParameter('id'), $request->getParameter('idmes'), $request->getParameter('idanio'), false); 
+    $this->superdetallado = Doctrine_Core::getTable('Horarios')->obtenerDetalleMensualxPerFormat($request->getParameter('id'), $request->getParameter('idmes'), $request->getParameter('idanio'), false); 
   
     $this->horas_mensuales_trabajadas='';
     foreach ($this->detalle_mensual as $dm){
