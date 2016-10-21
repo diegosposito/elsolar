@@ -180,7 +180,7 @@ class horariosActions extends sfActions
 
     $detalle_mensual_detallado = Doctrine_Core::getTable('Horarios')->obtenerResumenMensualxPer($request->getParameter('idpersona'), $request->getParameter('idmes'), $request->getParameter('idanio'), true); 
     $detalle_mensual = Doctrine_Core::getTable('Horarios')->obtenerResumenMensualxPer($request->getParameter('idpersona'), $request->getParameter('idmes'), $request->getParameter('idanio'), false); 
-    $superdetallado = Doctrine_Core::getTable('Horarios')->obtenerDetalleMensualxPer($request->getParameter('idpersona'), $request->getParameter('idmes'), $request->getParameter('idanio'), false); 
+    $superdetallado = Doctrine_Core::getTable('Horarios')->obtenerDetalleMensualxPerFormat($request->getParameter('idpersona'), $request->getParameter('idmes'), $request->getParameter('idanio'), false); 
   
     $horas_mensuales_trabajadas='';
     foreach ($detalle_mensual as $dm){
@@ -299,11 +299,13 @@ class horariosActions extends sfActions
     $y = 48;
     $pdf->SetXY(10,$y);
     $pdf->Cell(15,5,'Persona',0,0,'C');    
-    $pdf->SetXY(45,$y);
+    $pdf->SetXY(35,$y);
     $pdf->Cell(100,5,'Fecha',0,0,'C'); 
-    $pdf->SetXY(45,$y);
-    $pdf->Cell(170,5,'Tipo Registro',0,0,'C'); 
-    $pdf->SetXY(65,$y);
+    $pdf->SetXY(46,$y);
+    $pdf->Cell(170,5,'Hora Entrada',0,0,'C'); 
+    $pdf->SetXY(70,$y);
+    $pdf->Cell(170,5,'Hora Salida',0,0,'C'); 
+    $pdf->SetXY(85,$y);
     $pdf->Cell(180,5,'Estado',0,0,'C'); 
     $pdf->SetXY(65,$y);
     $y = $y + 5;    
@@ -316,11 +318,13 @@ class horariosActions extends sfActions
         $pdf->SetXY(0,$y-5);
             $pdf->SetXY(10,$y);
         $pdf->Cell(15,5,$st['nombrecompleto'],0,0,'L');
-        $pdf->SetXY(85,$y);        
-        $pdf->Cell(100,5,$st['date'],0,0,'L'); 
-        $pdf->SetXY(125,$y);        
-        $pdf->Cell(170,5,$st['tiporegistro'],0,0,'L'); 
-        $pdf->SetXY(145,$y);        
+        $pdf->SetXY(80,$y);        
+        $pdf->Cell(100,5,$st['fecha'],0,0,'L'); 
+        $pdf->SetXY(122,$y);        
+        $pdf->Cell(170,5,$st['horaingreso'],0,0,'L'); 
+        $pdf->SetXY(150,$y);        
+        $pdf->Cell(170,5,$st['horaegreso'],0,0,'L'); 
+        $pdf->SetXY(173,$y);        
         $pdf->Cell(180,5,$st['estado'],0,0,'L');       
         $pdf->SetXY(130,$y); 
         
