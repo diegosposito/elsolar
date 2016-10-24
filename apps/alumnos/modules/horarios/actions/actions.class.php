@@ -324,8 +324,8 @@ class horariosActions extends sfActions
         $pdf->Cell(170,5,$st['horaingreso'],0,0,'L'); 
         $pdf->SetXY(150,$y);        
         $pdf->Cell(170,5,$st['horaegreso'],0,0,'L'); 
-        $pdf->SetXY(173,$y);        
-        $pdf->Cell(180,5,$st['estado'],0,0,'L');       
+        $pdf->SetXY(169,$y);        
+        $pdf->Cell(180,5,$st['estado']==0 ? 'Falta salida' :'' ,0,0,'L');       
         $pdf->SetXY(130,$y); 
         
     
