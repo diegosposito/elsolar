@@ -32,6 +32,34 @@ class HorariosTable extends Doctrine_Table
         return $resultado;
     } 
 
+    // Obtiene persona buscando por nro de documento
+    public static function obtenerUltimoRegistro($idpersona)
+    {
+        $sql ="SELECT id FROM horarios WHERE DATE(created_at) = DATE(NOW()) AND idpersona = ".$idpersona." ORDER BY created_at DESC LIMIT 1;";
+        $resultado = '';
+
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
+        
+        $resultado = 0;
+        foreach ($q as $item){
+            $resultado = $item['id'];
+        }
+
+        return $resultado;
+    } 
+
+    // Actualizar todos los estados de una persona a controlar si estan en No controlar
+    public static function updEstadoPorRegistro($idregistro, $estado)
+    {
+         
+        // actualizar designaciones
+        $sql ="UPDATE horarios set controlar = ".$estado." WHERE id = ".$idregistro.";";
+
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection();
+        
+        return $q->execute($sql);
+    } 
+
     // Actualizar todos los estados de una persona a controlar si estan en No controlar
     public static function updEntradaAControlar($idpersona)
     {
