@@ -355,6 +355,22 @@ class horariosActions extends sfActions
       $this->redirect('ingreso');
   }
 
+  public function executeEntrada(sfWebRequest $request)
+  {
+    // Control de acceso de usuarios de administracion
+    $currentUser = sfContext::getInstance()->getUser();
+    if (!($currentUser->isAuthenticated() && $currentUser->hasCredential("administracion"))) 
+      $this->redirect('ingreso');
+  }
+
+  public function executeSalida(sfWebRequest $request)
+  {
+    // Control de acceso de usuarios de administracion
+    $currentUser = sfContext::getInstance()->getUser();
+    if (!($currentUser->isAuthenticated() && $currentUser->hasCredential("administracion"))) 
+      $this->redirect('ingreso');
+  }
+
   public function executeRegistro(sfWebRequest $request)
   {
     // Control de acceso de usuarios de administracion
@@ -370,19 +386,50 @@ class horariosActions extends sfActions
         if (trim($persona[0]['idpersona'])==''){
             $this->msgError = "Registro no válido, intente nuevamente!!";
         } else {
-            $proximo_estado = Doctrine_Core::getTable('Horarios')->obtenerProximoEstado($oPersona->getIdpersona());
+            $idultimoregistro = Doctrine_Core::getTable('Horarios')->obtenerUltimoRegistro($oPersona->getIdpersona());
+        
+        $ultHorario = '';
+        if ($idultimoregistro<>'0')    
+            $ultHorario = Doctrine_Core::getTable('Horarios')->find($idultimoregistro);
+        
+        $actualizar_anterior = false;
+         
+            // Si es entraba solo se graba el nuevo registro sin controla nada
+            // Si es salida, se graba que lo controle al registro, y se busca la ultima entrada
             $oHorario = new Horarios();
             $oHorario->setIdpersona($oPersona->getIdpersona());
             $oHorario->setAnulado(false);
-            $oHorario->setTiporegistro($proximo_estado);
-            if($proximo_estado=='1'){
+
+            if ($request->getParameter('registro')=='E')
+                $oHorario->setTiporegistro(1);
+            
+            if ($request->getParameter('registro')=='S')
+               $oHorario->setTiporegistro(0);
+            
+            if($request->getParameter('registro')=='E'){
               $oHorario->setControlar(false);
             }
+
+            if($request->getParameter('registro')=='S'){
+                if ($idultimoregistro<>'0') {
+                    if ($ultHorario->getTiporegistro()){
+                        $oHorario->setControlar(true);
+                        $actualizar_anterior = true;
+                    } else {
+                        $oHorario->setControlar(false);
+                        $actualizar_anterior = false;
+                    }
+                } else { // si el ultimo anterior es 0, no hubo registros previos
+                    $oHorario->setControlar(false);
+                    $actualizar_anterior = false;
+                }
+            }
+
             $oHorario->setObservaciones('');
             $oHorario->save();
             
-            if($proximo_estado=='0'){
-                Doctrine_Core::getTable('Horarios')->updEntradaAControlar($oPersona->getIdpersona());
+            if($actualizar_anterior){
+                Doctrine_Core::getTable('Horarios')->updEstadoPorRegistro($ultHorario->getId(), true);
             }
             $this->msgSuccess = "Registro ingresado correctamente!!";
         }  
