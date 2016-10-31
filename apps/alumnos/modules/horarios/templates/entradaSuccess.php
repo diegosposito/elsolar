@@ -34,5 +34,6 @@ window.onload = function() {
 <td colspan=2><input style="background:#f79de7;height: 70px;width: 185px;font-size: 18px;" type=submit value="Registrar"></td>
 </tr>
 </table>
+<p>Registrar entrada</p>
 </div>
 </form>
