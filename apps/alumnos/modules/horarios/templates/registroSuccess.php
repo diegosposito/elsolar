@@ -9,8 +9,7 @@
  <a href="<?php echo url_for('horarios/entrada') ?>"><img style="width:250px;height=250px"src='<?php echo $sf_request->getRelativeUrlRoot();?>/images/entrada.png' size='30' /></a>
  <a href="<?php echo url_for('horarios/salida') ?>"><img style="width:250px;height=250px"src='<?php echo $sf_request->getRelativeUrlRoot();?>/images/salida.png' size='30' /></a>
 </div>
-<br>
-<br>
+
 <table cellspacing="0" class="stats">
     <thead>
       <tr>
