@@ -1,7 +1,6 @@
  <style type="text/css">
     p { margin-left:5em; /* Or another measurement unit, like px */ }
   </style>
-  <br>
 <div align="center"><p style="font-size:18px;font-weight:bold;color:red"><b> <?php echo $msgError ?> </b></p></div>
 <div align="center"><p style="font-size:18px;font-weight:bold;color:green"><b> <?php echo $msgSuccess ?> </b></p></div>  
 <br/>
