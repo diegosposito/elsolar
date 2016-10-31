@@ -1,11 +1,6 @@
-<script>
-$(document).ready(function() {
-   $('#arriba').click();
-});
-</script>
 <br/>
 <h1 align="center">Registrar Salida</h1>
-<a id="arriba" name="arriba"></a>
+<a id="ver" name="ver"></a>
 <form name="calc" id="calc" action="<?php echo url_for('horarios/registro') ?>" method="post">
 <input type="hidden" id="registro" name="registro" value="S">
 <div id="contenido" align="center" >
@@ -35,4 +30,3 @@ $(document).ready(function() {
 </table>
 </div>
 </form>
-<a href="#arriba">Regiitro</a>
