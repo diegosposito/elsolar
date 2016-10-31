@@ -1,11 +1,11 @@
 <script>
-window.onload = function() {
-  document.getElementById("display").focus();
-};
+$(document).ready(function() {
+   $('#arriba').click();
+});
 </script>
 <br/>
 <h1 align="center">Registrar Salida</h1>
-<a name="arriba"></a>
+<a id="arriba" name="arriba"></a>
 <form name="calc" id="calc" action="<?php echo url_for('horarios/registro') ?>" method="post">
 <input type="hidden" id="registro" name="registro" value="S">
 <div id="contenido" align="center" >
@@ -35,4 +35,4 @@ window.onload = function() {
 </table>
 </div>
 </form>
-<a href="#arriba">Ir a la parte de arriba</a>
+<a href="#arriba">Regiitro</a>
