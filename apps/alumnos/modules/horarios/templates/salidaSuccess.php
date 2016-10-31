@@ -11,7 +11,8 @@ window.onload = function() {
 <div id="contenido" align="center" >
 <table style="width:200px;" border=1>
 <tr>
-<td colspan=4><input style="height: 70px;font-weight: bold;font-size: 32px;" type=text id="display" name="display" size="12"></td>
+<td colspan=2><input style="width: 185px; height: 70px;font-weight: bold;font-size: 32px;" type=text id="display" name="display" size="12"></td>
+<td><input style="height: 70px;width: 90px;font-size: 18px;background:#f79de7;" type=button value="Borrar" OnClick="calc.display.value=''"></td>
 </tr>
 <tr>
 <td><input style="height: 70px;width: 90px;font-size: 18px;" type=button value="0" OnClick="calc.display.value+='0'"></td>
