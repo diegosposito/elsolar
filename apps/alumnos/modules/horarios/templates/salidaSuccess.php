@@ -5,7 +5,7 @@ window.onload = function() {
 </script>
 <br/>
 <h1 align="center">Registrar Salida</h1>
-<br/>
+<a name="arriba"></a>
 <form name="calc" id="calc" action="<?php echo url_for('horarios/registro') ?>" method="post">
 <input type="hidden" id="registro" name="registro" value="S">
 <div id="contenido" align="center" >
@@ -35,3 +35,4 @@ window.onload = function() {
 </table>
 </div>
 </form>
+<a href="#arriba">Ir a la parte de arriba</a>
