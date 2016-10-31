@@ -1,11 +1,6 @@
-<script>
-window.onload = function() {
-  document.getElementById("display").focus();
-};
-</script>
 <br/>
 <h1 align="center">Registrar Entrada</h1>
-<br/>
+<a id="ver" name="ver"></a>
 <form name="calc" id="calc" action="<?php echo url_for('horarios/registro') ?>" method="post">
 <input type="hidden" id="registro" name="registro" value="E">
 <div id="contenido" align="center" >
