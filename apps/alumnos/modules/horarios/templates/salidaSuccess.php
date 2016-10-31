@@ -1,3 +1,8 @@
+<script>
+window.onload = function() {
+  document.getElementById("display").focus();
+};
+</script>
 <br/>
 <h1 align="center">Registrar Salida</h1>
 <a id="ver" name="ver"></a>
