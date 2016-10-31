@@ -5,8 +5,8 @@
 <div align="center"><p style="font-size:18px;font-weight:bold;color:green"><b> <?php echo $msgSuccess ?> </b></p></div>  
 <br/>
 <div id="boton" align='center'>
- <a href="<?php echo url_for('horarios/entrada') ?>"><img style="width:250px;height=250px"src='<?php echo $sf_request->getRelativeUrlRoot();?>/images/entrada.png' size='30' /></a>
- <a href="<?php echo url_for('horarios/salida') ?>"><img style="width:250px;height=250px"src='<?php echo $sf_request->getRelativeUrlRoot();?>/images/salida.png' size='30' /></a>
+ <a href="<?php echo url_for('horarios/entrada#ver') ?>"><img style="width:250px;height=250px"src='<?php echo $sf_request->getRelativeUrlRoot();?>/images/entrada.png' size='30' /></a>
+ <a href="<?php echo url_for('horarios/salida#ver') ?>"><img style="width:250px;height=250px"src='<?php echo $sf_request->getRelativeUrlRoot();?>/images/salida.png' size='30' /></a>
 </div>
 
 <table cellspacing="0" class="stats">
