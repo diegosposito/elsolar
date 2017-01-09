@@ -375,7 +375,7 @@ class horariosActions extends sfActions
   {
     // Control de acceso de usuarios de administracion
     $currentUser = sfContext::getInstance()->getUser();
-    if (!($currentUser->isAuthenticated() && $currentUser->hasCredential("administracion"))) 
+    if (!($currentUser->isAuthenticated() && $currentUser->hasCredential("registro"))) 
       $this->redirect('ingreso'); 
 
     if ($request->isMethod(sfRequest::POST)){
