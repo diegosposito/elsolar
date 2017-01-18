@@ -3,10 +3,11 @@
   </style>
   <br>
 <h1 align="center" style="color:black;">Listado de Obras Sociales</h1>
-<?php if($sf_user->getGuardUser()->getIsSuperAdmin()){ ?>
-         <img src='<?php echo $sf_request->getRelativeUrlRoot();?>/images/new.png' align='center' size='20' />
-         <a href="<?php echo url_for('obrassociales/new') ?>">Nueva Obra Social</a>
-  <?php } ?>
+<img src='<?php echo $sf_request->getRelativeUrlRoot();?>/images/new.png' align='center' size='20' />
+<a href="<?php echo url_for('obrassociales/new') ?>">Nueva Obra Social</a>
+<br>
+<img src='<?php echo $sf_request->getRelativeUrlRoot();?>/images/new.png' align='center' size='20' />
+<a href="<?php echo url_for('planesobras/index') ?>">Ver Planes de Obras Sociales</a>
 
  <br>
  <a href="<?php echo url_for('informes/obrassocialespdf') ?>"><img src='<?php echo $sf_request->getRelativeUrlRoot();?>/images/printer.png' align='center' size='20' /></a>
@@ -16,7 +17,6 @@
         <td width="40%" align="center" class="hed">Obra Social</td>
         <td width="5%" align="center" class="hed">Abrev.</td>
         <td width="15%" align="center" class="hed">Estado</td>
-        <td width="10%" align="center" class="hed">Fec.Arancel</td>
         <td width="10%" align="center" class="hed">Fec.Ult.Per</td>
         <td width="5%" align="center" class="hed">Edicion</td>
         <td width="5%" align="center" class="hed">Archivos</td>
@@ -30,7 +30,6 @@
         <td width="5%"><?php echo $obras_sociales->getAbreviada() ?></td>
         <?php $estado = ($obras_sociales->getEstado()==1) ? 'Habilitada' : 'No Habilitada'; ?>
         <td width="15%"><?php echo $estado ?></td>
-        <td width="10%"><?php echo date("d/m/Y", strtotime($obras_sociales->getFechaarancel())) ?></td>
         <td width="10%"><?php echo date("d/m/Y", strtotime($obras_sociales->getFechaultimoperiodo())) ?></td>
         <td align="center"><?php echo link_to("Editar", 'obrassociales/edit?idobrasocial='.$obras_sociales->getIdobrasocial() ,'class="mhead"'); ?></td>
         <td align="center"><?php echo link_to("Agregar", 'obrassociales/mostrar?idobrasocial='.$obras_sociales->getIdobrasocial() ,'class="mhead"'); ?></td>

@@ -1,7 +1,6 @@
 <h1>Comparativa de Ingresantes</h1>
 <script>
   $(function() {
-    $( "#fechaarancel" ).datepicker({ dateFormat: 'dd-mm-yy' });
     $( "#fechaultimoperiodo" ).datepicker({ dateFormat: 'dd-mm-yy' });
   });
 
@@ -36,16 +35,7 @@
           <?php echo $form['denominacion'] ?>
         </td>
       </tr>
-      <tr>        
-        <td><?php echo $form['fechaarancel']->renderLabel() ?></td>
-        <td colspan="3">
-           <input id="fechaarancel" name="fechaarancel" type="text">
-        </td>
-      </tr>  
-          <?php echo $form['fechaarancel']->renderError() ?>
-          <?php echo $form['fechaarancel'] ?>
-        </td>
-      </tr>
+     
       <tr>        
         <td><?php echo $form['fechaultimoperiodo']->renderLabel() ?></td>
         <td colspan="3">

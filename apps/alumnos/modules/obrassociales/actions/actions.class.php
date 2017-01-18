@@ -18,6 +18,12 @@ class obrassocialesActions extends sfActions
       ->execute();
   }
 
+  public function executeObtenerplanes(sfWebRequest $request)
+  {
+    $os = Doctrine_Core::getTable('ObrasSociales')->find($request->getParameter('idobrasocial'));
+    $this->planes = $os->obtenerPlanes();
+  }
+
   public function executeMostrar(sfWebRequest $request)
   {
     $this->obras_sociales = Doctrine_Core::getTable('ObrasSociales')->find(array($request->getParameter('idobrasocial')));
@@ -101,7 +107,8 @@ class obrassocialesActions extends sfActions
   {
     // Redirige al inicio si no tiene acceso
     if($this->getUser())
-    if (!$this->getUser()->getGuardUser()->getIsSuperAdmin())
+     // Redirige al inicio si no tiene acceso
+    if (!($this->getUser()->hasCredential("rrhh") || $this->getUser()->hasCredential("administracion") || $this->getUser()->getGuardUser()->getIsSuperAdmin()))
       $this->redirect('ingreso');
 
      $this->form = new ObrasSocialesForm();
@@ -120,9 +127,9 @@ class obrassocialesActions extends sfActions
 
   public function executeEdit(sfWebRequest $request)
   {
-      // Redirige al inicio si no tiene acceso
-      if (!$this->getUser()->getGuardUser()->getIsSuperAdmin())
-         $this->redirect('ingreso');
+     // Redirige al inicio si no tiene acceso
+    if (!($this->getUser()->hasCredential("rrhh") || $this->getUser()->hasCredential("administracion") || $this->getUser()->getGuardUser()->getIsSuperAdmin()))
+      $this->redirect('ingreso');
 
       $this->forward404Unless($obras_sociales = Doctrine_Core::getTable('ObrasSociales')->find(array($request->getParameter('idobrasocial'))), sprintf('Object obras_sociales does not exist (%s).', $request->getParameter('idobrasocial')));
       $this->form = new ObrasSocialesForm($obras_sociales);
@@ -247,7 +254,6 @@ $pdf->Line(10,$y,199,$y);
     {
       $obras_sociales = $form->save();
 
-      $obras_sociales->setFechaarancel($request->getPostParameter('obras_sociales[fechaarancel][year]').'-'.$request->getPostParameter('obras_sociales[fechaarancel][month]').'-'.$request->getPostParameter('obras_sociales[fechaarancel][day]'));
       $obras_sociales->setFechaultimoperiodo($request->getPostParameter('obras_sociales[fechaultimoperiodo][year]').'-'.$request->getPostParameter('obras_sociales[fechaultimoperiodo][month]').'-'.$request->getPostParameter('obras_sociales[fechaultimoperiodo][day]'));
 
 
