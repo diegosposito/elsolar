@@ -12,4 +12,20 @@
  */
 class ObrasSociales extends BaseObrasSociales
 {
+
+	public function __toString() {
+        return $this->getAbreviada();
+    }
+
+     // Obtiene todas los planes de las obras sociales
+    public function obtenerPlanes() 
+    {
+	    $q = Doctrine_Query::create()
+	  		->select('*')
+	 		->from('PlanesObras po')
+	    	->where('po.idobrasocial = '.$this->getIdobrasocial())
+	    	->orderBy('po.nombre ASC');
+	    	
+		return $q->execute();
+    }
 }
