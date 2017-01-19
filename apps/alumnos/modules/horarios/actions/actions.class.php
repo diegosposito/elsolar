@@ -458,12 +458,15 @@ class horariosActions extends sfActions
         $this->redirect('ingreso');
 
     $this->detalle_mensual_detallado = Doctrine_Core::getTable('Horarios')->obtenerResumenMensualxPer($request->getParameter('id'), $request->getParameter('idmes'), $request->getParameter('idanio'), true); 
-    $this->detalle_mensual = Doctrine_Core::getTable('Horarios')->obtenerResumenMensualxPer($request->getParameter('id'), $request->getParameter('idmes'), $request->getParameter('idanio'), false); 
+    $this->detalle_mensual = Doctrine_Core::getTable('Horarios')->obtenerTiempoTrabajadoxPeriodo($request->getParameter('id'), $request->getParameter('idmes'), $request->getParameter('idanio')); 
     $this->superdetallado = Doctrine_Core::getTable('Horarios')->obtenerDetalleMensualxPerFormat($request->getParameter('id'), $request->getParameter('idmes'), $request->getParameter('idanio'), false); 
-  
-    $this->horas_mensuales_trabajadas='';
+    
+
+    $this->horas_mensuales_trabajadas=''; $this->horas_primer_quincena=$dm['hora']=''; $this->horas_segunda_quincena='';
     foreach ($this->detalle_mensual as $dm){
         $this->horas_mensuales_trabajadas=$dm['hora'];
+        $this->horas_primer_quincena=$dm['hours_worked_first'];
+        $this->horas_segunda_quincena=$dm['hours_worked_second'];
     }
 
     switch ($request->getParameter('idmes')) {
