@@ -11,6 +11,14 @@
       <th>Total de horas trabajadas en el mes:</th>
       <td><?php echo $horas_mensuales_trabajadas; ?></td>
     </tr>
+     </tr>
+      <th>Total Primer Quincena:</th>
+      <td><?php echo $horas_primer_quincena; ?></td>
+    </tr>
+     </tr>
+      <th>Total Segunda Quincena:</th>
+      <td><?php echo $horas_segunda_quincena; ?></td>
+    </tr>
   </tbody>
 </table>
 

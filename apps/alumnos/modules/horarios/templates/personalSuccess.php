@@ -41,9 +41,10 @@ for($i = $anioactual; $i >= $anioactual-10; $i--){
     <thead>
       <tr>
         <td width="40%" align="center" class="hed">Persona</td>
-        <td width="20%" align="center" class="hed">Mensual</td>
-        <td width="20%" align="center" class="hed">Día Actual</td>
-        <td width="20%" align="center" class="hed">Acciones</td>
+        <td width="15%" align="center" class="hed">Mensual</td>
+        <td width="15%" align="center" class="hed">1er Quinc</td>
+        <td width="15%" align="center" class="hed">2da Quinc</td>
+        <td width="15%" align="center" class="hed">Acciones</td>
       </tr>
     </thead>
     <tbody>
@@ -51,8 +52,9 @@ for($i = $anioactual; $i >= $anioactual-10; $i--){
       <?php foreach ($personas_tiempos as $personatiempo){ ?>
       <tr class="fila_<?php echo $i%2 ; ?>">
         <td width="40%" align="left"><?php echo $personatiempo['nombrecompleto'] ?></td>
-        <td width="20%" align="left"><?php echo $personatiempo['hora'] ?></td>
-        <td width="20%" align="left"><?php echo $personatiempo['hora_del_dia'] ?></td>
+        <td width="15%" align="left"><?php echo $personatiempo['hora'] ?></td>
+        <td width="15%" align="left"><?php echo $personatiempo['hours_worked_first'] ?></td>
+        <td width="15%" align="left"><?php echo $personatiempo['hours_worked_second'] ?></td>
         <?php if ($sf_user->isAuthenticated() && $sf_user->hasCredential('rrhh')){ ?>
                 <td width="20%" align="center"><a href="<?php echo url_for('horarios/verdetalle?id='.$personatiempo['idpersona']).'/idmes/'.$idmes.'/idanio/'.$idanio ?>"><?php echo 'Ver Detalle' ?></a></td>
         <?php } else { ?>
