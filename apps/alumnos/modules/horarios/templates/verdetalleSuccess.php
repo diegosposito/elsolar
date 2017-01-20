@@ -1,3 +1,6 @@
+<br>
+ <a href="<?php echo url_for('horarios/personal') ?>"><< Volver al listado</a>
+ <br>
 <table>
   <tbody>
     <tr>
