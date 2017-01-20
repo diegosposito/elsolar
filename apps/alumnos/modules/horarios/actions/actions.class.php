@@ -54,7 +54,7 @@ class horariosActions extends sfActions
     if (!($currentUser->isAuthenticated() && $currentUser->hasCredential("rrhh"))) 
         $this->redirect('ingreso');
 
-    $this->idpersona = null;
+    $this->idpersona = "";
     $this->idmes = (int) date('m');
     $this->idanio = date('Y');
     $this->personas_tiempos = "";
@@ -104,7 +104,7 @@ class horariosActions extends sfActions
     }    
         
     // Obtener informacion mensual para imprimir 
-    $this->personas_tiempos = Doctrine_Core::getTable('Horarios')->obtenerTiempoTrabajadoxPeriodo($this->idpersona, $request->getParameter('meses'), $request->getParameter('anio')); 
+    $this->personas_tiempos = Doctrine_Core::getTable('Horarios')->obtenerTiempoTrabajadoxPeriodo($this->idpersona, $request->getParameter('idmes'), $request->getParameter('idanio')); 
 
     // pdf object
     $pdf = new PDF('P');
@@ -131,7 +131,9 @@ class horariosActions extends sfActions
     $pdf->SetXY(41,$y);
     $pdf->Cell(100,5,'Mensual',0,0,'C'); 
     $pdf->SetXY(45,$y);
-    $pdf->Cell(170,5,'Día actual: '.date('d/m/Y'),0,0,'C'); 
+    $pdf->Cell(160,5,'1er Quinc. ',0,0,'C'); 
+    $pdf->SetXY(45,$y);
+     $pdf->Cell(195,5,'2da Quinc. ',0,0,'C'); 
     $pdf->SetXY(45,$y);
     $y = $y + 5;    
     $contador = 1;
@@ -145,9 +147,12 @@ class horariosActions extends sfActions
         $pdf->Cell(15,5,$pt['nombrecompleto'],0,0,'L');
         $pdf->SetXY(85,$y);        
         $pdf->Cell(100,5,$pt['hora'],0,0,'L'); 
-        $pdf->SetXY(125,$y);        
-        $pdf->Cell(170,5,$pt['hora_del_dia'],0,0,'L');        
+        $pdf->SetXY(115,$y);        
+        $pdf->Cell(170,5,$pt['hours_worked_first'],0,0,'L'); 
+        $pdf->SetXY(135,$y);        
+        $pdf->Cell(170,5,$pt['hours_worked_second'],0,0,'L');         
         $pdf->SetXY(130,$y); 
+
         
     
       $y = $y + 5;  
@@ -179,12 +184,14 @@ class horariosActions extends sfActions
         $this->redirect('ingreso');
 
     $detalle_mensual_detallado = Doctrine_Core::getTable('Horarios')->obtenerResumenMensualxPer($request->getParameter('idpersona'), $request->getParameter('idmes'), $request->getParameter('idanio'), true); 
-    $detalle_mensual = Doctrine_Core::getTable('Horarios')->obtenerResumenMensualxPer($request->getParameter('idpersona'), $request->getParameter('idmes'), $request->getParameter('idanio'), false); 
+    $detalle_mensual = Doctrine_Core::getTable('Horarios')->obtenerTiempoTrabajadoxPeriodo($request->getParameter('idpersona'), $request->getParameter('idmes'), $request->getParameter('idanio'));
     $superdetallado = Doctrine_Core::getTable('Horarios')->obtenerDetalleMensualxPerFormat($request->getParameter('idpersona'), $request->getParameter('idmes'), $request->getParameter('idanio'), false); 
   
     $horas_mensuales_trabajadas='';
     foreach ($detalle_mensual as $dm){
         $horas_mensuales_trabajadas=$dm['hora'];
+        $horas_primer_quincena=$dm['hours_worked_first'];
+        $horas_segunda_quincena=$dm['hours_worked_second'];
     }
 
     switch ($request->getParameter('idmes')) {
@@ -240,9 +247,12 @@ class horariosActions extends sfActions
     $current_date = date("Y");
     $encabezado = '
       <div style="text-align: center; font-family: Times New Roman,Times,serif;"><span
-      style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/header_elsolar.png" height="70px" width="550px">
+      style="font-size: 11;"><img src="'.$request->getRelativeUrlRoot().'/images/header_elsolar.png" height="70px" width="550px">
       <br><br><b>Resumen Mensual Horas Trabajadas:</b> '.$mesactual.' del '.$request->getParameter('idanio').'
-      <br>Total mensual horas: '.$horas_mensuales_trabajadas.'</div>';        
+      <br>Total mensual horas: <b>'.$horas_mensuales_trabajadas.'</b>
+      1er Quinc: <b>'.$horas_primer_quincena.'</b>
+      2da Quinc: <b>'.$horas_segunda_quincena.'</b>
+      </div>';        
       
 
     $pdf->writeHTML($encabezado, true, false, true, false, '');   
