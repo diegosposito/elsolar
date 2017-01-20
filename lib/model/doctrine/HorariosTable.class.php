@@ -100,9 +100,12 @@ class HorariosTable extends Doctrine_Table
     // Obtiene persona buscando por nro de documento
     public static function obtenerTiempoTrabajadoxPeriodo($idpersona='', $mes='', $anio='')
     {
-        $sql =" SELECT h.idpersona, per.apellido, per.nombre, CONCAT(per.apellido, ', ', per.nombre) as nombrecompleto,DATE(h.created_at) AS `date`, SUM(UNIX_TIMESTAMP(h.created_at)*(1- 2 * h.tiporegistro))/3600 AS `hours_worked`, 
-                SEC_TO_TIME(SUM(UNIX_TIMESTAMP(h.created_at)*(1- 2 * h.tiporegistro))) as hora,
-                SEC_TO_TIME(SUM(UNIX_TIMESTAMP((CASE WHEN DATE(h.created_at) = DATE(NOW()) THEN h.created_at ELSE 0 END))*(1- 2 * h.tiporegistro))) as hora_del_dia 
+        $sql =" SELECT h.idpersona, per.apellido, per.nombre, CONCAT(per.apellido, ', ', per.nombre) as nombrecompleto,DATE(h.created_at) AS `date`, 
+                    SUM(UNIX_TIMESTAMP(h.created_at)*(1- 2 * h.tiporegistro))/3600 AS `hours_worked`, 
+                    SEC_TO_TIME(SUM(UNIX_TIMESTAMP(IF(DAY(h.created_at)<=15,h.created_at,0))*(1- 2 * h.tiporegistro))) AS `hours_worked_first`, 
+                    SEC_TO_TIME(SUM(UNIX_TIMESTAMP(IF(DAY(h.created_at)>15,h.created_at,0))*(1- 2 * h.tiporegistro))) AS `hours_worked_second`,  
+                    SEC_TO_TIME(SUM(UNIX_TIMESTAMP(h.created_at)*(1- 2 * h.tiporegistro))) as hora,
+                    SEC_TO_TIME(SUM(UNIX_TIMESTAMP((CASE WHEN DATE(h.created_at) = DATE(NOW()) THEN h.created_at ELSE 0 END))*(1- 2 * h.tiporegistro))) as hora_del_dia 
                 FROM horarios h JOIN personas per ON h.idpersona = per.idpersona WHERE h.controlar ";
         
         if ($idpersona<>'')
