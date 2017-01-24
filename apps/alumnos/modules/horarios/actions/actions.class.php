@@ -459,6 +459,24 @@ class horariosActions extends sfActions
     $this->forward404Unless($this->horarios);
   }
 
+  public function executeAgregarobservacion(sfWebRequest $request)
+  {
+   
+       $this->horarios = Doctrine_Core::getTable('Horarios')->find(array($request->getParameter('id')));
+       $this->persona = Doctrine_Core::getTable('Personas')->find(array( $this->horarios->getIdpersona()));
+       $this->forward404Unless($this->horarios);
+  }
+
+   public function executeGuardarobservacion(sfWebRequest $request)
+  {
+    if ($request->isMethod('post')) {
+       $horarios = Doctrine_Core::getTable('Horarios')->find(array($request->getParameter('id')));
+       $horarios->setObservaciones($request->getParameter('observaciones'));
+       $horarios->save();
+       $this->redirect('horarios/registro?msgSuccess='.'Observaciones actualizadas correctamente!!');
+    } 
+  }
+
   public function executeVerdetalle(sfWebRequest $request)
   { 
     
