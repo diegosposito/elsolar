@@ -25,14 +25,15 @@
       <?php $i=0; ?>
       <?php foreach ($horarioss as $horarios){ ?>
       <tr class="fila_<?php echo $i%2 ; ?>">
-        <td width="50%" align="left"><a href="#" title="<?php echo $horarios->getPersonas()->getHorarios() ?>"> <?php echo $horarios->getPersonas()->getApellido().', '.$horarios->getPersonas()->getNombre() ?> </a></td>
-        <td width="10%" align="left"><?php echo $horarios->getTiporegistro()==1 ? 'ENTRADA' : 'SALIDA' ?></td>
-        <td width="20%" align="left"><?php echo date('d-m-Y H:i:s', strtotime($horarios->getCreatedAt())) ?></td>
-        <?php if ($sf_user->isAuthenticated() && $sf_user->hasCredential('administracion')){ ?>
-                <td width="20%" align="left"><a href="<?php echo url_for('horarios/show?id='.$horarios->getId()) ?>"><?php echo 'Mostrar' ?></a></td>
-        <?php } else { ?>
-                <td width="20%" align="left"><?php echo ' - ' ?></a></td>
-        <?php } ?>                
+        <td style="height:30px;width='50%'" align="left"><a href="#" title="<?php echo $horarios->getPersonas()->getHorarios() ?>"> <?php echo $horarios->getPersonas()->getApellido().', '.$horarios->getPersonas()->getNombre() ?> </a></td>
+        <td style="height:30px;width='10%'" align="left"><?php echo $horarios->getTiporegistro()==1 ? 'ENTRADA' : 'SALIDA' ?></td>
+        <td style="height:30px;width='20%'" align="left"><?php echo date('d-m-Y H:i:s', strtotime($horarios->getCreatedAt())) ?></td>
+        <td style="height:30px;width='50%'" align="center">
+            <form action="<?php echo url_for('horarios/agregarobservacion?id='.$horarios->getId()) ?>" method="post"> 
+              <input type="hidden" value="<?php echo $horarios->getId(); ?>" name="idpersona" />
+              <input type="submit" style="height:30px; width:100px" class="botonEditar" value="Observaciones" title="Observaciones" >
+            </form>           
+        </td>
       </tr>
       <?php $i++; ?>
       <?php } ?>
