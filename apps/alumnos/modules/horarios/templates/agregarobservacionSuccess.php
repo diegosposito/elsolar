@@ -9,7 +9,7 @@ window.onload = function() {
 <form name="guardarobservacion" id="guardarobservacion" action="<?php echo url_for('horarios/guardarobservacion') ?>" method="post">
 <div id="contenido" align="center" >
 <input type="hidden" name="id" value="<?php echo $horarios->getId(); ?>">
-<input style="height: 25px;width: 400px; font-weight: bold;font-size: 16px;" type=text id="observaciones" name="observaciones" size="16">
+<input style="height: 25px;width: 400px; font-weight: bold;font-size: 16px;" type=text id="observaciones" value="<?php echo $horarios->getObservaciones(); ?>" name="observaciones" size="16">
 <br><br>
 <input style="background:#f79de7;height: 70px;width: 185px;font-size: 18px;" type=submit value="Guardar">
 <br><br>
