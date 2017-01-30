@@ -1,3 +1,26 @@
+ <style type="text/css">
+    p { margin-left:5em; /* Or another measurement unit, like px */ }
+    a.tooltip {outline:none; }
+
+    a.tooltip strong {line-height:30px;}
+    a.tooltip:hover {text-decoration:none;} 
+    a.tooltip span {
+        z-index:10;display:none; padding:14px 20px;
+        margin-top:-30px; margin-left:28px;
+        width:315px; line-height:16px;
+    }
+    a.tooltip:hover span{
+        display:inline; position:absolute; color:#111;
+        border:1px solid #DCA; background:#fffAF0;}
+    .callout {z-index:20;position:absolute;top:30px;border:0;left:-12px;}
+        
+    /*CSS3 extras*/
+    a.tooltip span
+    {
+        border-radius:4px;
+        box-shadow: 5px 5px 8px #CCC;
+    }
+  </style>
 <br>
  <a href="<?php echo url_for('horarios/personal') ?>"><< Volver al listado</a>
  <br>
@@ -31,18 +54,25 @@
 <table width="100%" cellspacing="0" class="stats">
     <thead>
       <tr>
-        <td width="60%" align="center" class="hed">Persona</td>
+        <td width="50%" align="center" class="hed">Persona</td>
         <td width="20%" align="center" class="hed">Fecha</td>
         <td width="20%" align="center" class="hed">Horas Trabajadas</td>
+        <td width="20%" align="center" class="hed">Observaciones</td>
       </tr>
     </thead>
     <tbody>
       <?php $i=0; ?>
       <?php foreach ($detalle_mensual_detallado as $dt){ ?>
       <tr class="fila_<?php echo $i%2 ; ?>">
-        <td width="60%" align="left"><?php echo $dt['nombrecompleto'] ?></td>
-        <td width="20%" align="left"><?php echo $dt['date'] ?></td>
-        <td width="20%" align="left"><?php echo $dt['hora'] ?></td>
+        <td width="50%" align="left"><?php echo $dt['nombrecompleto'] ?></td>
+        <td width="20%" align="center"><?php echo $dt['date'] ?></td>
+        <td width="20%" align="center"><?php echo $dt['hora'] ?></td>
+        <?php if ($dt['cantidadobs'] > 0) { ?>
+        <td width="10%" align="left"><a href="#" class="tooltip"><div style="align: left;"><?php echo "Observaciones"; ?><span><br><strong><?php echo "Observaciones"; ?></strong><br><?php echo htmlspecialchars_decode($dt['observaciones']) ?></span></div></a></td>
+        <?php } else { ?>
+       <td width="10%" align="left"> </td>
+       <?php } ?>
+      
       </tr>
       <?php $i++; ?>
       <?php } ?>
