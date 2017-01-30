@@ -132,7 +132,7 @@ class HorariosTable extends Doctrine_Table
     public static function obtenerResumenMensualxPer($idpersona, $mes, $anio, $detallado=false)
     {
         $sql =" SELECT h.idpersona, per.apellido, per.nombre, CONCAT(per.apellido, ', ', per.nombre) as nombrecompleto,DATE(h.created_at) AS `date`, SUM(UNIX_TIMESTAMP(h.created_at)*(1- 2 * h.tiporegistro))/3600 AS `hours_worked`, 
-                SEC_TO_TIME(SUM(UNIX_TIMESTAMP(h.created_at)*(1- 2 * h.tiporegistro))) as hora
+                SEC_TO_TIME(SUM(UNIX_TIMESTAMP(h.created_at)*(1- 2 * h.tiporegistro))) as hora, GROUP_CONCAT(DISTINCT h.observaciones SEPARATOR ' - ') as observaciones, SUM(IF(h.observaciones<> '', 1, 0)) as cantidadobs 
                 FROM horarios h JOIN personas per ON h.idpersona = per.idpersona 
                 WHERE h.controlar AND h.idpersona = ".$idpersona." AND MONTH(h.created_at) = '".$mes."' AND YEAR(h.created_at) = '".$anio."' GROUP BY h.idpersona ";
         
