@@ -76,6 +76,13 @@ class planesobrasActions extends sfActions
     {
       $planes_obras = $form->save();
 
+      if ($request->getPostParameter('planes_obras[activo]') == 'on') {
+        $planes_obras->setActivo(1);
+      } else {
+        $planes_obras->setActivo(0);
+      }
+      $planes_obras->save();
+
       $this->redirect('planesobras/edit?id='.$planes_obras->getId());
     }
   }
