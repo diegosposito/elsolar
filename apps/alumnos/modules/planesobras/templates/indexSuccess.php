@@ -12,7 +12,8 @@
     <thead>
       <tr>
         <td width="70%" align="center" class="hed">Obra Social</td>
-        <td width="30%" align="center" class="hed">Plan</td>
+        <td width="20%" align="center" class="hed">Plan</td>
+        <td width="20%" align="center" class="hed">Activa</td>
         <td width="10%" align="center" class="hed">Edicion</td>
       </tr>
     </thead>
@@ -21,7 +22,8 @@
       <?php foreach ($planes_obrass as $planes_obras){ ?>
       <tr class="fila_<?php echo $i%2 ; ?>">
         <td width="70%"><?php echo  $planes_obras->getObrasSociales()->getAbreviada() ?></td>
-        <td width="30%" align="center"><?php echo $planes_obras->getNombre() ?></td>
+        <td width="20%" align="center"><?php echo $planes_obras->getNombre() ?></td>
+        <td width="20%" align="center"><?php echo $planes_obras->getActivo() ? 'Si' : 'No' ?></td>
         <td align="center"><?php echo link_to("Editar", 'planesobras/edit?id='.$planes_obras->getId() ,'class="mhead"'); ?></td>
       </tr>
       <?php $i++; ?>
