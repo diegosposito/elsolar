@@ -51,6 +51,12 @@ Sede: '.$oSede.'
 	
 	}	
 
+	public function executeShow(sfWebRequest $request)
+    {
+      $this->personas = Doctrine_Core::getTable('Personas')->find(array($request->getParameter('id')));
+      $this->forward404Unless($this->personas);
+    }
+
 	// Guarda la documentacion laboral seleccionada de la persona
   public function executeGuardarestudioprevio(sfWebRequest $request) {
 	  	if($request->getParameter('idestudio')) {
@@ -611,6 +617,11 @@ Sede: '.$oSede.'
 			'tipo' => $this->tipo,				
 			'referer' => $request->getGetParameter('referer', str_replace($request->getUriPrefix(), '', $request->getUri()))
 		));	
+
+		$this->habilitado_edicion = false;
+
+		if ($this->getUser()->hasCredential("rrhh") || $this->getUser()->getGuardUser()->getIsSuperAdmin())
+			$this->habilitado_edicion = true;
 
 		if ($request->isMethod('post')) {
 			$this->form->bind($request->getParameter($this->form->getName()));
