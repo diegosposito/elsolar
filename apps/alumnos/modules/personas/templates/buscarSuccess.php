@@ -1,1 +1,1 @@
-<?php include_partial('buscar', array('form' => $form,'resultado' => $resultado, 'titulo' => $titulo, 'tipo' => $tipo)) ?>
+<?php include_partial('buscar', array('form' => $form,'resultado' => $resultado,'habilitado_edicion' => $habilitado_edicion, 'titulo' => $titulo, 'tipo' => $tipo)) ?>
