@@ -24,7 +24,9 @@
     </tr>    
   </table>
 </form>
+<?php if ($habilitado_edicion){ ?>
 <a href="<?php echo url_for('personas/new') ?>">Agregar Nuevo Personal</a>
+<?php } ?>
 
 <?php if (count($resultado) > 0){ ?>		    	   	
 	<table cellspacing="0" class="stats">
@@ -45,7 +47,11 @@
 	    <td width="40%" align="left"><a href="#" title="<?php echo $item['horarios'] ?>"> <?php echo $item['apellido'].', '.$item['nombre'] ?> </a></td>
 	      <td width="20%" align="center"><?php echo $item['username'] ?></td>
 	      <td width="20%" align="center"><?php echo $item['nrodoc'] ?></td>
+	      <?php if ($habilitado_edicion){ ?>
 	      <td align="center"><?php echo link_to("Editar", 'personas/edit?idpersona='.$item['idpersona'] ,'class="mhead"'); ?></td>
+	      <?php } else { ?>
+          <td align="center"><?php echo link_to("Visualizar", 'personas/show?id='.$item['idpersona'] ,'class="mhead"'); ?></td>
+	      <?php } ?>
 	    </tr>
             <?php $i++; ?>
 	    <?php } ?>
