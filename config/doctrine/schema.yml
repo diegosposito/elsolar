@@ -574,6 +574,7 @@ Personas:
     fechanac: { type: date(25), primary: false, notnull: true, default: '2002-01-01' }
     fechaingreso: { type: date(25), primary: false, notnull: true, default: '2002-01-01' }
     idciudadnac: { type: integer, primary: false, autoincrement: false, default: '734' }
+    idprovincia: { type: integer, primary: false, default: '0' }
     idnacionalidad: { type: integer, primary: false, autoincrement: false, default: '1' }
     estadocivil: { type: integer, primary: false, autoincrement: false, default: '1' }
     vive: { type: integer, primary: false, autoincrement: false, default: '1' }
@@ -593,6 +594,7 @@ Personas:
     otrainformacionrelevante: { type: string(2000) }
     horarios: { type: string(2000) }
     monto: { type: float, primary: false, notnull: true, default: '' }
+    imagefile: { type: string(254), primary: false, autoincrement: false, default: '' }
     idusuario: { type: integer, primary: false, autoincrement: false, default: '1' }
   relations:
     TiposDocumentos: 
@@ -615,6 +617,10 @@ Personas:
       local: idsexo
       foreign: idsexo
       foreignAlias: Sexo
+    Areas: 
+      local: idarea
+      foreign: idarea
+      foreignAlias: Areas  
     sfGuardUser: 
       local: idusuario
       foreign: id
