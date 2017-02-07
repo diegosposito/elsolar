@@ -46,6 +46,8 @@ Sede: '.$oSede.'
 		
 		return sfView::NONE;		
 	}
+
+	
 	
 	public function executeBuscarpersonas(sfWebRequest $request) {
 	
@@ -766,8 +768,10 @@ Sede: '.$oSede.'
     if (!($this->getUser()->hasCredential("rrhh") || $this->getUser()->getGuardUser()->getIsSuperAdmin()))
      	$this->redirect('ingreso');
 
-    $this->forward404Unless($personas = Doctrine_Core::getTable('Personas')->find(array($request->getParameter('idpersona'))), sprintf('Object personas does not exist (%s).', $request->getParameter('idpersona')));
-    $this->form = new PersonasForm($personas);
+    $this->forward404Unless($this->persona = Doctrine_Core::getTable('Personas')->find(array($request->getParameter('idpersona'))), sprintf('Object personas does not exist (%s).', $request->getParameter('idpersona')));
+    $this->form = new PersonasForm($this->persona);
+
+
   }
 
   public function executeEditcobrador(sfWebRequest $request)
@@ -1029,7 +1033,7 @@ Sede: '.$oSede.'
     if ($form->isValid())
     {
       $personas = $form->save();
-      $nrodoc = preg_replace("/[^\d]/", "", $personas->getNumeroDoc());
+      $nrodoc = preg_replace("/[^\d]/", "", $personas->getNroDoc());
       $personas->setNroDoc($nrodoc);
       $personas->setIdtipodoc($request->getPostParameter('personas[idtipodoc]'));
       $personas->setIdusuario($request->getPostParameter('personas[idusuario]'));
@@ -1039,6 +1043,24 @@ Sede: '.$oSede.'
    			$personas->setMostrarinfocontacto(0);
       }
       $personas->setIdsexo($request->getPostParameter('personas[idsexo]'));
+      
+
+      $folder_path_name = sfConfig::get('app_pathfiles_folder')."/personal/".$personas->getIdpersona();
+      
+      if (!is_dir($folder_path_name) && !mkdir($folder_path_name)){
+          die("Error creando carpeta $uploaddir");
+      }
+
+      $hasfile =false;
+
+      foreach ($request->getFiles() as $fileName) {
+
+           if (trim($fileName['imagefile']['name'])<>'') {
+              $targetFolder = sfConfig::get('app_pathfiles_folder')."/personal/".$personas->getIdpersona().'/'.$fileName['imagefile']['name'];
+              move_uploaded_file($fileName['imagefile']['tmp_name'], $targetFolder);
+              $personas->setImagefile($fileName['imagefile']['name']);
+           }   
+      } 
       $personas->save();
 
       $this->redirect('personas/edit?idpersona='.$personas->getIdpersona());
