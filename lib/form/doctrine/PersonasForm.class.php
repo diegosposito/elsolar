@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Personas form.
+ * Pacientes form.
  *
  * @package    sig
  * @subpackage form
@@ -13,93 +13,62 @@ class PersonasForm extends BasePersonasForm
   public function configure()
   {
 
-      unset( $this['cantgrupofamiliar'],$this['titulo'],$this['horarios'],$this['idusuario'],$this['monto'],$this['idcobrador'], $this['activo'], $this['idprofesion'],$this['vive'],$this['created_at'], $this['updated_at'], $this['tienefoto'], $this['created_by'], $this['updated_by'] ,$this['nrodoc'] ,$this['fechanac'],$this['socio'],$this['fechaingreso'] ,$this['idciudadnac'],$this['idnacionalidad'],$this['estadocivil']         );
-     
-      $areas = Doctrine_Core::getTable('Areas')
-      ->createQuery('a')
-      ->orderBy('a.descripcion ASC')
-      ->execute();    
-      
-      foreach($areas as $area){
-        $arregloAreas[$area->getIdarea()] = $area->getDescripcion(); 
-      }  
+      unset( $this['created_at'], $this['vive'],$this['otrainformacionrelevante'],$this['monto'],$this['idusuario'],$this['horarios'],$this['titulo'],$this['socio'],$this['nrolector'],$this['mostrarinfocontacto'],$this['tienefoto'],$this['idciudadnac'],$this['idprovincia'],$this['cantgrupofamiliar'],$this['idprofesion'],$this['idnacionalidad'],$this['idtipodoc'],$this['numerodoc'],$this['updated_at'], $this['created_by'], $this['updated_by'] );
 
-       // Se define los labels
-	    $this->widgetSchema->setLabel('nombre', '<p align="left">Nombre:</p>');
- 	    $this->widgetSchema->setLabel('apellido', '<p align="left">Apellido:</p>');
+      // Se define los labels
+      $this->widgetSchema->setLabel('nombre', '<p align="left">Nombre:</p>');
+      $this->widgetSchema->setLabel('apellido', '<p align="left">Apellido:</p>');
+      $this->widgetSchema->setLabel('idpersona', '<p align="left">Nro. Afiliado:</p>');
+      $this->widgetSchema->setLabel('nrodoc', '<p align="left">Documento:</p>');
       $this->widgetSchema->setLabel('idsexo', '<p align="left">Sexo:</p>');
- 	    $this->widgetSchema->setLabel('idtipodoc', '<p align="left">Tipo Documento:</p>');
-    //  $this->widgetSchema->setLabel('idusuario', '<p align="left">Usuario:</p>');
-      $this->widgetSchema->setLabel('numerodoc', '<p align="left">Numero Doc:</p>');
-      $this->widgetSchema->setLabel('direccion', '<p align="left">Dirección:</p>');
       $this->widgetSchema->setLabel('idarea', '<p align="left">Area:</p>');
+      $this->widgetSchema->setLabel('estadocivil', '<p align="left">E. Civil:</p>');
+      $this->widgetSchema->setLabel('fechanac', '<p align="left">Fec. Nacimiento:</p>');
+      $this->widgetSchema->setLabel('fechaingreso', '<p align="left">Fec. Ing.:</p>');
+      $this->widgetSchema->setLabel('direccion', '<p align="left">Dirección:</p>');
+
+
       $this->widgetSchema->setLabel('ciudad', '<p align="left">Ciudad:</p>');
       $this->widgetSchema->setLabel('email', '<p align="left">Email:</p>');
-      $this->widgetSchema->setLabel('telefono', '<p align="left">Teléfono:</p>');
       $this->widgetSchema->setLabel('celular', '<p align="left">Celular:</p>');
-      $this->widgetSchema->setLabel('nrolector', '<p align="left">Matrícula Nro.:</p>');
-      $this->widgetSchema['idarea'] = new sfWidgetFormSelect(array('choices' => $arregloAreas));
-     /* $this->widgetSchema['idcobrador'] = new sfWidgetFormSelect(array('choices' => $arregloCobradores));
-      $this->widgetSchema->setLabel('idcobrador', '<p align="left">Cobrador:</p>'); */
-     // $this->widgetSchema->setLabel('horarios', '<p align="left">Horarios:</p>');
-      $this->widgetSchema->setLabel('otrainformacionrelevante', '<p align="left">Observaciones:</p>');
-      $this->widgetSchema->setLabel('mostrarinfocontacto', '<p align="left">Muestra Info Contacto?:</p>');
-      $this->widgetSchema->setLabel('idarea', '<p align="left">Area:</p>');
+      $this->widgetSchema->setLabel('telefono', '<p align="left">Teléfono:</p>');
+      $this->widgetSchema->setLabel('activo', '<p align="left">Activo:</p>');
      
+      $this->widgetSchema['imagefile'] = new sfWidgetFormInputFile(array(
+                                               'label' => 'Archivo',
+                                             ));
+      $this->widgetSchema->setLabel('imagefile', '<p align="left">Foto:</p>');
 
-      $this->setValidators(array(
-        'apellido' => new sfValidatorString(array('required' => true), array('required' => 'El apellido es obligatorio.')),
-        'nombre' => new sfValidatorString(array('required' => true), array('required' => 'El nombre es obligatorio.')),
-        'numerodoc' => new sfValidatorString(array('required' => true), array('required' => 'El documento es obligatorio.')),
-        'celular' => new sfValidatorString(array('max_length' => 200, 'required' => false)),
-        'idarea' => new sfValidatorString(array('max_length' => 200, 'required' => false)),
-        'nrolector' => new sfValidatorString(array('max_length' => 200, 'required' => false)),
-        'direccion' => new sfValidatorString(array('max_length' => 200, 'required' => false)),
-        'ciudad' => new sfValidatorString(array('max_length' => 200, 'required' => false)),
-        'email' => new sfValidatorString(array('max_length' => 200, 'required' => false)),
-        'telefono' => new sfValidatorString(array('max_length' => 200, 'required' => false)),
-        'mostrarinfocontacto' => new sfValidatorString(array('required' => false)),
-       // 'horarios' => new sfValidatorString(array('required' => false)),
-        'otrainformacionrelevante' => new sfValidatorString(array('max_length' => 2000, 'required' => false)),
-        ));
+     $this->widgetSchema['credencial'] = new sfWidgetFormInputFile(array(
+                                               'label' => 'Archivo',
+                                             ));
+      $this->widgetSchema->setLabel('credencial', '<p align="left">Foto:</p>');
 
-      $this->validatorSchema->setOption('allow_extra_fields',true); 
-      
-
+      /* oss = Doctrine_Core::getTable('ObrasSociales')->obtenerTodas();
+      foreach($oss as $os){
+        $arregloOS[$os->getIdObrasocial()] = $os->getAbreviada(); 
+      }  
+        
+      $this->widgetSchema['idobrasocial'] = new sfWidgetFormSelect(array('choices' => $arregloOS));
+      $this->widgetSchema->setLabel('idobrasocial', '<p align="left">O. Social:</p>'); */
+     
    
-	 }
+      $this->widgetSchema->setLabel('credencial', '<p align="left">Credencial:</p>');
+         
+      $range  = range(date('Y')-80, date('Y')+1);
+      $years = array_combine($range,$range);
 
- 
+      $this->widgetSchema['direccion'] = new sfWidgetFormInputText(array(), array("style"=>'width: 250px;'));
+      $this->widgetSchema->setLabel('direccion', '<p align="left">Dirección:</p>');
+      
+      $this->widgetSchema['fechanac'] =
+      new sfWidgetFormDate(array('format' => '%day%/%month%/%year%','years' => $years));
+      $this->widgetSchema['fechaingreso'] =
+      new sfWidgetFormDate(array('format' => '%day%/%month%/%year%','years' => $years));     
 
-    public function checkDni($validator, $values)
-    {
-      // no debe estar vacio el campo numerodoc
-      if(empty($values['numerodoc']) )
-      {
-        // nrodoc incorrecto
-        throw new sfValidatorError($validator, 'Numero de documento invalido');
-      } else {
-
-		$nrodoc = preg_replace("/[^\d]/", "", $values['numerodoc']);
-		//$values['idtipodoc']
-		$oTipoDocumento = Doctrine_Core::getTable('TiposDocumentos')->find(1);        
-		$this->formato = $oTipoDocumento->getFormato();  
-
-   		if (preg_match($this->formato, $values['numerodoc'])) {
-
-		    // CONTROLAR QUE EL NRODOC NO EXISTA PREVIAMENTE
-		    //===================================================
-		    $oPersona = Doctrine_Core::getTable('Personas')->buscarPersona($values['idtipodoc'],$nrodoc);
-			if($oPersona) throw new sfValidatorError($validator, 'La persona ya esta en la base , se encontro el DNI.');
-
-		} else {
-			throw new sfValidatorError($validator, 'Formato de documento incorrecto');
-		}
-
-	}
- 
-      // nrodocincorrecto
-      return $values;
-    }
-
+      $this->widgetSchema->setLabel('fechanac', '<p align="left">Fec. Nac.:</p>');
+      $this->widgetSchema->setLabel('fechaingreso', '<p align="left">Fec. Ing.:</p>');
+            
+      
+  }
 }
