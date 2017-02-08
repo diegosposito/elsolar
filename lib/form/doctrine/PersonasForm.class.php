@@ -73,8 +73,18 @@ class PersonasForm extends BasePersonasForm
         'nombre' => new sfValidatorString(array('required' => true), array('required' => 'El nombre es obligatorio.')),
         'apellido' => new sfValidatorString(array('required' => true), array('required' => 'El apellido no es obligatorio.')),
         'nrodoc' => new sfValidatorString(array('required' => true), array('required' => 'El documento es obligatorio.')),
+        'direccion' => new sfValidatorString(array('required' => false)),
+        'ciudad' => new sfValidatorString(array('required' => false)),
+        'idarea' => new sfValidatorString(array('required' => false)),
+        'activo' => new sfValidatorString(array('required' => false)),
+        'email' => new sfValidatorString(array('required' => false)),
+        'celular' => new sfValidatorString(array('required' => false)),
+        'telefono' => new sfValidatorString(array('required' => false)),
+        'fechanac'                 => new sfValidatorDate(array('required' => false)),
+        'fechaingreso'             => new sfValidatorDate(array('required' => false)),
         ));
 
+   
         $this->validatorSchema->setOption('allow_extra_fields',true);   
             
       
