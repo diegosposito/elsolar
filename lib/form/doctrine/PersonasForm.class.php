@@ -76,7 +76,7 @@ class PersonasForm extends BasePersonasForm
         'direccion' => new sfValidatorString(array('required' => false)),
         'ciudad' => new sfValidatorString(array('required' => false)),
         'idarea' => new sfValidatorString(array('required' => false)),
-        'activo' => new sfValidatorString(array('required' => false)),
+        'activo'                   => new sfValidatorBoolean(array('required' => false)),
         'email' => new sfValidatorString(array('required' => false)),
         'celular' => new sfValidatorString(array('required' => false)),
         'telefono' => new sfValidatorString(array('required' => false)),
