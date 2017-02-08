@@ -783,8 +783,8 @@ Sede: '.$oSede.'
   public function executeUpdate(sfWebRequest $request)
   {
     $this->forward404Unless($request->isMethod(sfRequest::POST) || $request->isMethod(sfRequest::PUT));
-    $this->forward404Unless($personas = Doctrine_Core::getTable('Personas')->find(array($request->getParameter('idpersona'))), sprintf('Object personas does not exist (%s).', $request->getParameter('idpersona')));
-    $this->form = new PersonasForm($personas);
+    $this->forward404Unless($this->persona = Doctrine_Core::getTable('Personas')->find(array($request->getParameter('idpersona'))), sprintf('Object personas does not exist (%s).', $request->getParameter('idpersona')));
+    $this->form = new PersonasForm($this->persona);
 
     $this->processForm($request, $this->form);
 
