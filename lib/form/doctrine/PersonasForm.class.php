@@ -68,6 +68,14 @@ class PersonasForm extends BasePersonasForm
 
       $this->widgetSchema->setLabel('fechanac', '<p align="left">Fec. Nac.:</p>');
       $this->widgetSchema->setLabel('fechaingreso', '<p align="left">Fec. Ing.:</p>');
+
+        $this->setValidators(array(
+        'nombre' => new sfValidatorString(array('required' => true), array('required' => 'El nombre es obligatorio.')),
+        'apellido' => new sfValidatorString(array('required' => true), array('required' => 'El apellido no es obligatorio.')),
+        'nrodoc' => new sfValidatorString(array('required' => true), array('required' => 'El documento es obligatorio.')),
+        ));
+
+        $this->validatorSchema->setOption('allow_extra_fields',true);   
             
       
   }
