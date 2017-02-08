@@ -22,8 +22,11 @@
         <th align="center" colspan=4><?php echo ''.'D A T O S &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P E R S O N A L E S ' ?></th>
         </tr>  
         <tr>
+        <td colspan="4"><?php echo "<b> (*) Datos Obligatorios </b>" ?></td>
+        </tr>
+        <tr>
           <td width="10%">
-            <?php echo "<b>".$form['nombre']->renderLabel()."</b>" ?>
+            <?php echo "<p align='left'><b>Nombre(*)</b></p>" ?>
           </td>
           <td>
             <?php echo $form['nombre']->render() ?>
@@ -40,7 +43,7 @@
         </tr>  
         <tr>
           <td width="10%">
-            <?php echo "<b>".$form['apellido']->renderLabel()."</b>" ?>
+            <?php echo "<p align='left'><b>Apellido(*)</b></p>" ?>
           </td>
           <td>
             <?php echo $form['apellido']->render() ?>
@@ -48,7 +51,7 @@
         </tr>  
         <tr>
           <td width="10%">
-            <?php echo "<b>".$form['nrodoc']->renderLabel()."</b>" ?>
+            <?php echo "<p align='left'><b>Documento(*)</b></p>" ?>
           </td>
           <td>
             <?php echo $form['nrodoc']->render() ?>
