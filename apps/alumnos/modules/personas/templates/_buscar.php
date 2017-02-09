@@ -36,8 +36,9 @@
 	    <tr>
 	      <td width="40%" align="center" class="hed">Nombre</td>
 	      <td width="20%" align="center" class="hed">Usuario</td>
-	      <td width="20%" align="center" class="hed">Nro. de Documento</td>
-	      <td width="20%" align="center" class="hed">Edicion</td>
+	      <td width="14%" align="center" class="hed">Email</td>
+	      <td width="13%" align="center" class="hed">Documento</td>
+	      <td width="13%" align="center" class="hed">Edicion</td>
 	    </tr>
 	  </thead>
 	  <tbody>
@@ -46,7 +47,8 @@
 	    <tr class="fila_<?php echo $i%2 ; ?>">
 	    <td width="40%" align="left"><a href="#" title="<?php echo $item['horarios'] ?>"> <?php echo $item['apellido'].', '.$item['nombre'] ?> </a></td>
 	      <td width="20%" align="center"><?php echo $item['username'] ?></td>
-	      <td width="20%" align="center"><?php echo $item['nrodoc'] ?></td>
+	      <td width="14%" align="center"><?php echo $item['email'] ?></td>
+	      <td width="13%" align="center"><?php echo $item['nrodoc'] ?></td>
 	      <?php if ($habilitado_edicion){ ?>
 	      <td align="center"><?php echo link_to("Editar", 'personas/edit?idpersona='.$item['idpersona'] ,'class="mhead"'); ?></td>
 	      <?php } else { ?>
