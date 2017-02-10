@@ -57,7 +57,23 @@ where per.activo AND per.nrodoc = '".$nrodoc."'";
         $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
 
         return $q;
-    } 	
+    } 
+
+     // Obtener obras sociales
+    public static function obtenerPersonal($estado=NULL)
+    {
+        $sql ="SELECT per.idarea, a.descripcion as area, per.idpersona, per.nombre, per.horarios, per.mostrarinfocontacto, per.apellido, per.direccion, per.nrodoc, per.nrolector as matricula, per.email, per.telefono, per.celular, per.ciudad
+        FROM personas per JOIN areas a ON per.idarea = a.idarea WHERE 1=1 ";
+
+        if($estado !== NULL)
+            $sql .=  " AND per.activo = ".$estado." "; 
+
+        $sql .= " ORDER BY a.descripcion, per.apellido;";
+        
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
+
+        return $q;
+    }   	
 
     // Obtener designaciones por persona, filtrando tambien por area y sede
     public static function obtenerRecibosAGenerar()
