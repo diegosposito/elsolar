@@ -24,6 +24,7 @@
     </tr>    
   </table>
 </form>
+ <a target="_blank" href="<?php echo url_for('personas/personalpdf') ?>"><img src='<?php echo $sf_request->getRelativeUrlRoot();?>/images/printer.png' align='left' size='20' /></a>
 <?php if ($habilitado_edicion){ ?>
 <a href="<?php echo url_for('personas/new') ?>">Agregar Nuevo Personal</a>
 <?php } ?>
