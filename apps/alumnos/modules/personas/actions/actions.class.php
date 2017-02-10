@@ -53,6 +53,101 @@ Sede: '.$oSede.'
 	
 	}	
 
+	public function executePersonalpdf(sfWebRequest $request){
+
+  	  	$oPersonas = Doctrine_Core::getTable('Personas')->obtenerPersonal(1);
+
+		// pdf object
+		$pdf = new PDF();
+
+    	// settings
+		$pdf->SetFont("Times", "", 10);
+		// sentencias para retirar encabezados y pie por defecto
+		$pdf->setPrintHeader(false);
+		$pdf->setPrintFooter(false); 
+ 
+        // add a page
+		$pdf->AddPage();
+		$current_date = date("Y");
+		$encabezado = '
+			<div style="text-align: center; font-family: Times New Roman,Times,serif;"><span
+			style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/header_elsolar.png" height="90px" width="820px">
+			<b>Personal:</b> '.$current_date.'</div>';        
+
+		$pdf->writeHTML($encabezado, true, false, true, false, '');   
+		
+		$y = 50;
+		$pdf->SetXY(10,$y);
+		$pdf->Cell(15,5,'Nombre',0,0,'C');    
+		$pdf->SetXY(45,$y);
+		$pdf->Cell(80,5,'Area',0,0,'C');    
+		$pdf->SetXY(20,$y);
+		$pdf->Cell(205,5,'Dirección',0,0,'C'); 
+		$pdf->SetXY(45,$y);
+		$pdf->Cell(284,5,'Teléfono',0,0,'C'); 
+		$pdf->SetXY(45,$y);
+		$pdf->Cell(350,5,'Email',0,0,'C'); 
+		$pdf->SetXY(20,$y);
+		$y = $y + 5;		
+		$contador = 1;
+		
+		$pdf->Line(10,$y,280,$y);
+
+
+	    foreach ($oPersonas as $opersona){	
+		    			    		
+		   	$pdf->SetXY(0,$y-5);
+            $pdf->SetXY(10,$y);
+		    $pdf->Cell(15,5,$opersona['apellido'].", ".$opersona['nombre'],0,0,'L');
+		    $pdf->SetXY(80,$y);        
+		    $pdf->Cell(60,5,$opersona['area'],0,0,'L');        
+		    $pdf->SetXY(115,$y); 
+		    $pdf->Cell(10,5,$opersona['mostrarinfocontacto'] ? $opersona['direccion'] : ' - ',0,0,'L'); 
+		    $pdf->SetXY(180,$y); 
+		    $pdf->Cell(10,5,$opersona['mostrarinfocontacto'] ? $opersona['telefono'] : ' - ',0,0,'L'); 
+		    $pdf->SetXY(215,$y); 
+		    $pdf->Cell(10,5,$opersona['mostrarinfocontacto'] ? $opersona['email'] : ' - ',0,0,'L'); 
+		    
+		
+ 			$y = $y + 5;  
+		 	// add a page
+			if($y>=180) {
+				$pdf->AddPage();
+
+				$pdf->writeHTML($encabezado, true, false, true, false, '');   
+		
+			$y = 50;
+			$pdf->SetXY(10,$y);
+			$pdf->Cell(15,5,'Nombre',0,0,'C');    
+			$pdf->SetXY(45,$y);
+			$pdf->Cell(80,5,'Area',0,0,'C');    
+			$pdf->SetXY(20,$y);
+			$pdf->Cell(205,5,'Dirección',0,0,'C'); 
+			$pdf->SetXY(45,$y);
+			$pdf->Cell(284,5,'Teléfono',0,0,'C'); 
+			$pdf->SetXY(45,$y);
+			$pdf->Cell(350,5,'Email',0,0,'C'); 
+			$pdf->SetXY(20,$y);
+			$y = $y + 5;		
+			$contador = 1;
+				
+				$pdf->Line(10,$y,280,$y);
+
+			}
+	
+		    } // fin (foreach)	
+
+			 
+		$pdf->Output('profesionales.pdf', 'I');
+ 
+		// stop symfony process
+		throw new sfStopException();
+				
+		return sfView::NONE;
+  } 
+
+
+
 	public function executeShow(sfWebRequest $request)
     {
       $this->personas = Doctrine_Core::getTable('Personas')->find(array($request->getParameter('id')));
