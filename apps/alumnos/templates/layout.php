@@ -139,6 +139,7 @@
 									if ($currentUser->hasCredential("administracion")){ ?>
 									   <?php echo '<li>'.link_to('Obras Sociales', 'obrassociales/index').'</li>' ; ?>
 									   <?php echo '<li>'.link_to('Personal', 'personas/buscar').'</li>' ; ?>
+									   <?php echo '<li>'.link_to('Configuracion General', 'centros/verconfiguracion').'</li>' ; ?>
 										<!--<?php echo '<li>'.link_to('Autoridades', 'autoridades').'</li>' ; ?>  -->
 										<!--<?php echo '<li>'.link_to('Entidades', 'cargoautoridades/index').'</li>' ; ?> -->
 										<?php echo '<li>'.link_to('Salir', 'sf_guard_signout').'</li>' ; ?>
