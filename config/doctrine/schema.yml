@@ -2544,3 +2544,54 @@ MateriasEquivalencias:
       foreign: idestadoequivalencia
       foreignAlias: EstadosEquivalencias
 
+ListaHorarios:
+  actAs: 
+    Timestampable: ~ 
+    fzblameable: ~
+  columns: 
+    id: { type: integer, primary: true, autoincrement: true }
+    descripcion: { type: string(200) }
+    activa: { type: boolean, primary: false, notnull: true, default: 0 } 
+  relations:
+    DetalleHorarios: 
+      local: id
+      foreign: iddetallehorarios
+      foreignAlias: DetalleHorarios    
+
+DetalleHorarios:
+  actAs: 
+    Timestampable: ~ 
+    fzblameable: ~
+  columns: 
+    id: { type: integer, primary: true, autoincrement: true }
+    nombre: { type: string(200) }
+    orden: { type: integer, notnull: true, default: '0' } 
+    idlistahorarios: { type: integer, notnull: true, default: '0' }
+    idcentro: { type: integer, notnull: true, default: '0' }
+    idpersona: { type: integer, notnull: true, default: '0' }
+    hdesde:    { type: time }
+    hhasta:    { type: time }
+  relations:
+    Centros: 
+      local: idcentro
+      foreign: id
+      foreignAlias: Centros
+    ListaHorarios: 
+      local: idlistahorarios
+      foreign: id
+      foreignAlias: ListaHorarios
+    Personas: 
+      local: idpersona
+      foreign: idpersona
+      foreignAlias: Personas
+
+Centros:
+  actAs: 
+    Timestampable: ~ 
+    fzblameable: ~
+  columns:
+    id: { type: integer, primary: true, autoincrement: true }
+    descripcion: { type: string(255), notnull: true }  
+    abreviacion: { type: string(255), notnull: true }  
+    activo: { type: boolean, primary: false, notnull: true, default: 0 }   
+
