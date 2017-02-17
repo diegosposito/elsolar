@@ -18,6 +18,11 @@ class centrosActions extends sfActions
       ->execute();
   }
 
+  public function executeVerconfiguracion(sfWebRequest $request)
+  {
+   
+  }
+
   public function executeShow(sfWebRequest $request)
   {
     $this->centros = Doctrine_Core::getTable('Centros')->find(array($request->getParameter('id')));
