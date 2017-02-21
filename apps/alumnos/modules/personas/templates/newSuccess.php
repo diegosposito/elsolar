@@ -143,10 +143,8 @@
 
 <ul class="tab">
   <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Datos')">Datos Personales</a></li>
-<!--  <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Contacto')">Contacto</a></li>
   <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Documentacion')">Documentacion</a></li>
-  <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Guardar')">Guardar</a></li>
- -- >
+  
 </ul>
 
 <div id="Datos" class="tabcontent">
