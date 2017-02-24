@@ -22,7 +22,7 @@
         <?php $estado = ($lista_horarios->getActiva()==1) ? 'Activa' : 'No Activa'; ?>
         <td width="20%"><?php echo $estado ?></td>
         <td align="center"><?php echo link_to("Editar", 'listahorarios/edit?id='.$lista_horarios->getId() ,'class="mhead"'); ?></td>
-        <td align="center"><?php echo link_to("Ver detalle", 'detallehorarios/index?id='.$lista_horarios->getId() ,'class="mhead"'); ?></td>
+        <td align="center"><?php echo link_to("Ver detalle", 'detallehorarios/index?idlistahorario='.$lista_horarios->getId() ,'class="mhead"'); ?></td>
       </tr>
       <?php $i++; ?>
       <?php } ?>
