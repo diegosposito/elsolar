@@ -5,6 +5,7 @@
 <?php if (!$form->getObject()->isNew()): ?>
 <input type="hidden" name="sf_method" value="put" />
 <?php endif; ?>
+<input type="hidden" id="idlistahorario" name="idlistahorario" value="<?php echo $idlistahorario; ?>">
   <table>
     <tfoot>
       <tr>

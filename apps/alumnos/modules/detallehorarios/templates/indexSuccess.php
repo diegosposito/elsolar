@@ -25,7 +25,7 @@
       <td><?php echo $detalle_horarios->getOrden() ?></td>
       <td><?php echo $detalle_horarios->getIdlistahorarios() ?></td>
       <td><?php echo $detalle_horarios->getIdcentro() ?></td>
-      <td><?php echo $detalle_horarios->getIdpersona() ?></td>
+      <td><?php echo $detalle_horarios->getIdprofesional() ?></td>
       <td><?php echo $detalle_horarios->getHdesde() ?></td>
       <td><?php echo $detalle_horarios->getHhasta() ?></td>
       <td><?php echo $detalle_horarios->getCreatedAt() ?></td>
@@ -37,4 +37,4 @@
   </tbody>
 </table>
 
-  <a href="<?php echo url_for('detallehorarios/new') ?>">New</a>
+  <a href="<?php echo url_for('detallehorarios/new?idlistahorario='.$idlistahorario) ?>">New</a>
