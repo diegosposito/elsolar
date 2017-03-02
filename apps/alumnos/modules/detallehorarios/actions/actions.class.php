@@ -12,11 +12,9 @@ class detallehorariosActions extends sfActions
 {
   public function executeIndex(sfWebRequest $request)
   {
-    $this->detalle_horarioss = Doctrine_Core::getTable('DetalleHorarios')
-      ->createQuery('a')
-      ->where('a.idlistahorarios = ?', $request->getParameter('idlistahorario'))
-      ->execute();
-
+    
+    $this->detalle_horarioss = Doctrine_Core::getTable('DetalleHorarios')->obtenerDetalleHorarios($idlistahorario='', $orderby='1');
+   
     $this->idlistahorario = $request->getParameter('idlistahorario');
   }
 
@@ -87,6 +85,7 @@ class detallehorariosActions extends sfActions
         $detalle_horario->setIdpaciente($paciente);
         $detalle_horario->setHdesde($request->getPostParameter('detalle_horarios[hdesde][hour]').":".$request->getPostParameter('detalle_horarios[hdesde][minute]'));
         $detalle_horario->setHhasta($request->getPostParameter('detalle_horarios[hhasta][hour]').":".$request->getPostParameter('detalle_horarios[hhasta][minute]'));
+        $detalle_horario->setIddia($request->getPostParameter('detalle_horarios[iddia]'));
         $detalle_horario->save();
           /* $detalle_horarios = $form->save();
            $detalle_horarios->setIdlistahorarios($request->getPostParameter('idlistahorario'));
