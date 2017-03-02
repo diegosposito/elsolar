@@ -4,34 +4,20 @@
   <thead>
     <tr>
       <th>Id</th>
-      <th>Nombre</th>
-      <th>Orden</th>
-      <th>Idlistahorarios</th>
-      <th>Idcentro</th>
-      <th>Idpersona</th>
+      <th>Centro</th>
+      <th>Profesional</th>
       <th>Hdesde</th>
       <th>Hhasta</th>
-      <th>Created at</th>
-      <th>Updated at</th>
-      <th>Created by</th>
-      <th>Updated by</th>
     </tr>
   </thead>
   <tbody>
     <?php foreach ($detalle_horarioss as $detalle_horarios): ?>
     <tr>
-      <td><a href="<?php echo url_for('detallehorarios/show?id='.$detalle_horarios->getId()) ?>"><?php echo $detalle_horarios->getId() ?></a></td>
-      <td><?php echo $detalle_horarios->getNombre() ?></td>
-      <td><?php echo $detalle_horarios->getOrden() ?></td>
-      <td><?php echo $detalle_horarios->getIdlistahorarios() ?></td>
-      <td><?php echo $detalle_horarios->getIdcentro() ?></td>
-      <td><?php echo $detalle_horarios->getIdprofesional() ?></td>
-      <td><?php echo $detalle_horarios->getHdesde() ?></td>
-      <td><?php echo $detalle_horarios->getHhasta() ?></td>
-      <td><?php echo $detalle_horarios->getCreatedAt() ?></td>
-      <td><?php echo $detalle_horarios->getUpdatedAt() ?></td>
-      <td><?php echo $detalle_horarios->getCreatedBy() ?></td>
-      <td><?php echo $detalle_horarios->getUpdatedBy() ?></td>
+      <td><a href="<?php echo url_for('detallehorarios/show?id='.$detalle_horarios['id']) ?>"><?php echo $detalle_horarios['id'] ?></a></td>
+      <td><?php echo $detalle_horarios['centro'] ?></td>
+      <td><?php echo $detalle_horarios['profesional'] ?></td>
+      <td><?php echo $detalle_horarios['hdesde'] ?></td>
+      <td><?php echo $detalle_horarios['hhasta'] ?></td>
     </tr>
     <?php endforeach; ?>
   </tbody>
