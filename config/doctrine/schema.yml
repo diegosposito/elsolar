@@ -2569,6 +2569,7 @@ DetalleHorarios:
     idlistahorarios: { type: integer, notnull: true, default: '0' }
     idcentro: { type: integer, notnull: true, default: '0' }
     idprofesional: { type: integer, notnull: true, default: '0' }
+    iddia: { type: integer, notnull: true, default: '0' }
     idpaciente: { type: integer, notnull: true, default: '0' }
     hdesde:    { type: time }
     hhasta:    { type: time }
@@ -2588,7 +2589,11 @@ DetalleHorarios:
     Pacientes: 
       local: idpaciente
       foreign: id
-      foreignAlias: Pacientes  
+      foreignAlias: Pacientes
+    Dias: 
+      local: iddia
+      foreign: id
+      foreignAlias: Dias    
 
 Centros:
   actAs: 
@@ -2599,6 +2604,15 @@ Centros:
     descripcion: { type: string(255), notnull: true }  
     abreviacion: { type: string(255), notnull: true }  
     activo: { type: boolean, primary: false, notnull: true, default: 0 }   
+
+Dias:
+  actAs: 
+    Timestampable: ~ 
+    fzblameable: ~
+  columns:
+    id: { type: integer, primary: true, autoincrement: true }
+    descripcion: { type: string(255), notnull: true }  
+    abreviacion: { type: string(255), notnull: true }  
 
 Pacientes:
   actAs: 
