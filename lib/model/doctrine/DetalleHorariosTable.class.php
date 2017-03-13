@@ -21,7 +21,8 @@ class DetalleHorariosTable extends Doctrine_Table
     public static function obtenerDetalleHorarios($idlistahorario='', $orderby='1')
     {
     	$sql ="SELECT dh.id, dh.nombre, dh.orden, dh.idlistahorarios, dh.idcentro, dh.idprofesional, dh.idpaciente, dh.hdesde, dh.hhasta,
-				lh.descripcion as lista, CONCAT(per.apellido, ', ',per.nombre) as profesional, CONCAT(pac.apellido, ', ',pac.nombre) as paciente, cen.descripcion as centro  
+				lh.descripcion as lista, CONCAT(per.apellido, ', ',per.nombre) as profesional, CONCAT(pac.apellido, ', ',pac.nombre) as paciente, cen.descripcion as centro, cen.abreviacion as cenabreviado,  
+                CASE iddia WHEN 1 THEN 'Lunes' WHEN 2 THEN 'Martes' WHEN 3 THEN 'Miércoles' WHEN 4 THEN 'Jueves' WHEN 5 THEN 'Viernes' WHEN 6 THEN 'Sábado' END as dia_descripcion, iddia  
 				FROM detalle_horarios dh
 				JOIN lista_horarios lh ON dh.idlistahorarios = lh.id
 				JOIN personas per ON dh.idprofesional = per.idpersona 
@@ -46,5 +47,18 @@ class DetalleHorariosTable extends Doctrine_Table
 		$q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
     	
     	return $q;
+    }
+
+     // Obtener designaciones por persona, filtrando tambien por area y sede
+    public static function obtenerPacientesRelacionadosAlRegistro($id)
+    {
+        $sql ="SELECT det.idpaciente FROM detalle_horarios det JOIN
+                  (SELECT idlistahorarios, idcentro, idprofesional, iddia, hdesde FROM detalle_horarios where id = ".$id.") 
+                AS dato ON det.idlistahorarios = dato.idlistahorarios AND det.idcentro = dato.idcentro AND det.idprofesional = dato.idprofesional AND det.iddia = dato.iddia AND det.hdesde = dato.hdesde
+                ;   ";
+                        
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
+        
+        return $q;
     }
 }
