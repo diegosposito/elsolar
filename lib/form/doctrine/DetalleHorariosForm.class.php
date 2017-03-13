@@ -37,14 +37,21 @@ class DetalleHorariosForm extends BaseDetalleHorariosForm
     $this->widgetSchema['idprofesional'] = new sfWidgetFormSelect(array('choices' => $arregloProfesionales));
     $this->widgetSchema['idcentro'] = new sfWidgetFormSelect(array('choices' => $arregloServicios));
 
-    if($es_nuevo)
+    if($es_nuevo){
         // $this->widgetSchema['idpaciente'] = new sfWidgetFormSelect(array('choices' => $arregloPacientes));
         $this->widgetSchema['idpaciente'] = new sfWidgetFormSelect(array('multiple' => true, 'choices' => $arregloPacientes));
-  	  else
+    }  else {
         $this->widgetSchema['idpaciente'] = new sfWidgetFormSelect(array('choices' => $arregloPacientes));
+    }
 
       	// Se define los labels
     $this->widgetSchema->setLabel('idprofesional', '<p align="left">Profesional:</p>');
+    $this->widgetSchema->setLabel('idpaciente', '<p align="left">Pacientes:</p>');
+    $this->widgetSchema->setLabel('idcentro', '<p align="left">Centro:</p>');
+    $this->widgetSchema->setLabel('hdesde', '<p align="left">Desde:</p>');
+    $this->widgetSchema->setLabel('hhasta', '<p align="left">Hasta:</p>');
+    $this->widgetSchema->setLabel('iddia', '<p align="left">Día:</p>');
+    $this->widgetSchema->setLabel('nombre', '<p align="left">Observaciones:</p>');
 
     $this->setValidators(array(
         'nombre' => new sfValidatorString(array('required' => false)),
