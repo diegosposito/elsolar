@@ -13,12 +13,11 @@ class ListaHorariosForm extends BaseListaHorariosForm
    public function configure()
   { 
 
-    unset( $this['created_at'], $this['updated_at'], $this['created_by'], $this['updated_by'] );
+    unset( $this['created_at'], $this['updated_at'], $this['created_by'], $this['updated_by'], $this['activa'] );
     
 
 	$this->widgetSchema->setLabel('descripcion', '<p align="left">Descripción:</p>');
-	$this->widgetSchema->setLabel('activa', '<p align="left">Activa:</p>');
-
+	
     $this->setValidators(array(
       'descripcion' => new sfValidatorString(array('required' => true), array('required' => 'La descripcion es obligatoria.')),
      
