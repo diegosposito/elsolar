@@ -1,3 +1,3 @@
-<h1>Edit Detalle horarios</h1>
+<h1>Editar Horario</h1>
 
-<?php include_partial('form', array('form' => $form)) ?>
+<?php include_partial('form', array('form' => $form, 'idlistahorario' => $idlistahorario)) ?>

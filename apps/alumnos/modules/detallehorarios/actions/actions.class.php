@@ -30,6 +30,40 @@ class detallehorariosActions extends sfActions
     $this->form = new DetalleHorariosForm(array(), array('nuevo' => true, 'idlistahorario' => $request->getParameter('idlistahorario')));
   }
 
+  public function executeClonar(sfWebRequest $request)
+  { 
+    $detalle_horario = Doctrine_Core::getTable('DetalleHorarios')->find(array($request->getParameter('id')));
+    $pacientes = Doctrine_Core::getTable('DetalleHorarios')->obtenerPacientesRelacionadosAlRegistro($request->getParameter('id'));
+    
+    $arrpacientes = array();
+
+    foreach($pacientes as $paciente){
+        $arrpacientes[] = $paciente['idpaciente'];
+    }
+
+    $this->idlistahorario = $request->getParameter('id');
+    $this->form = new DetalleHorariosForm(array(), array('nuevo' => true, 'idlistahorario' => $request->getParameter('idlistahorario')));
+    $this->form->setDefault('idpaciente', $arrpacientes);
+    $this->form->setDefault('idcentro', $detalle_horario->getIdcentro());
+    $this->form->setDefault('idprofesional', $detalle_horario->getIdprofesional());
+    $this->form->setDefault('iddia', $detalle_horario->getIddia());
+    
+    $date = new \DateTime($detalle_horario->getHdesde());
+    $format_date = $date->format('H:i');
+    $timestamp = strtotime($format_date) + 60*60;
+    $time = date('H:i', $timestamp);
+    
+    $this->form->setDefault('hdesde', $time);
+
+    $date = new \DateTime($detalle_horario->getHhasta());
+    $format_date = $date->format('H:i');
+    $timestamp = strtotime($format_date) + 60*60;
+    $time = date('H:i', $timestamp);
+
+    $this->form->setDefault('hhasta', $time);   
+
+  }
+
   public function executeCreate(sfWebRequest $request)
   {
     $this->forward404Unless($request->isMethod(sfRequest::POST));
@@ -44,7 +78,9 @@ class detallehorariosActions extends sfActions
   public function executeEdit(sfWebRequest $request)
   {
     $this->forward404Unless($detalle_horarios = Doctrine_Core::getTable('DetalleHorarios')->find(array($request->getParameter('id'))), sprintf('Object detalle_horarios does not exist (%s).', $request->getParameter('id')));
-    $this->form = new DetalleHorariosForm($detalle_horarios);
+   // $this->form = new DetalleHorariosForm(array(), array('nuevo' => true, 'idlistahorario' => $request->getParameter('idlistahorario')));
+    $this->form = new DetalleHorariosForm($detalle_horarios, array('nuevo' => true, 'idlistahorario' => $request->getParameter('idlistahorario')));
+    $this->idlistahorario = $detalle_horarios->getIdlistahorarios();
   }
 
   public function executeUpdate(sfWebRequest $request)
@@ -53,7 +89,7 @@ class detallehorariosActions extends sfActions
     $this->forward404Unless($detalle_horarios = Doctrine_Core::getTable('DetalleHorarios')->find(array($request->getParameter('id'))), sprintf('Object detalle_horarios does not exist (%s).', $request->getParameter('id')));
     $this->form = new DetalleHorariosForm($detalle_horarios);
 
-    $this->processForm($request, $this->form);
+    $this->processFormEdit($request, $this->form);
 
     $this->setTemplate('edit');
   }
@@ -97,6 +133,29 @@ class detallehorariosActions extends sfActions
 
       //$detalle_horarios->save();
  
+      $this->redirect('detallehorarios/index?idlistahorario='.$request->getPostParameter('idlistahorario'));
+    }
+  }
+
+  protected function processFormEdit(sfWebRequest $request, sfForm $form)
+  {
+    $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
+    if ($form->isValid())
+    {
+      $detalle_horario = $form->save();
+
+     
+        $detalle_horario->setNombre($request->getPostParameter('detalle_horarios[nombre]'));
+        $detalle_horario->setOrden(1);
+      //  $detalle_horario->setIdlistahorarios($request->getPostParameter('idlista'));
+        $detalle_horario->setIdcentro($request->getPostParameter('detalle_horarios[idcentro]'));
+        $detalle_horario->setIdprofesional($request->getPostParameter('detalle_horarios[idprofesional]'));
+        $detalle_horario->setIdpaciente($request->getPostParameter('detalle_horarios[idpaciente][0]'));
+        $detalle_horario->setHdesde($request->getPostParameter('detalle_horarios[hdesde][hour]').":".$request->getPostParameter('detalle_horarios[hdesde][minute]'));
+        $detalle_horario->setHhasta($request->getPostParameter('detalle_horarios[hhasta][hour]').":".$request->getPostParameter('detalle_horarios[hhasta][minute]'));
+        $detalle_horario->setIddia($request->getPostParameter('detalle_horarios[iddia]'));
+        $detalle_horario->save();
+
       $this->redirect('detallehorarios/index?idlistahorario='.$request->getPostParameter('idlistahorario'));
     }
   }
