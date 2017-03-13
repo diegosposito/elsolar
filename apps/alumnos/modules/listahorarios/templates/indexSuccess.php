@@ -11,7 +11,7 @@
       <tr>
         <td width="40%" align="center" class="hed">Detalle</td>
          <td width="20%" align="center" class="hed">Estado</td>
-        <td colspan=2 width="40% width="10%" align="center" class="hed">Acciones</td>
+        <td colspan=3 width="40% width="10%" align="center" class="hed">Acciones</td>
       </tr>
     </thead>
     <tbody>
@@ -23,6 +23,7 @@
         <td width="20%"><?php echo $estado ?></td>
         <td align="center"><?php echo link_to("Editar", 'listahorarios/edit?id='.$lista_horarios->getId() ,'class="mhead"'); ?></td>
         <td align="center"><?php echo link_to("Ver detalle", 'detallehorarios/index?idlistahorario='.$lista_horarios->getId() ,'class="mhead"'); ?></td>
+        <td align="center"><?php echo link_to("Activar Lista", 'listahorarios/index?idlistahorario='.$lista_horarios->getId() ,'class="mhead"'); ?></td>
       </tr>
       <?php $i++; ?>
       <?php } ?>

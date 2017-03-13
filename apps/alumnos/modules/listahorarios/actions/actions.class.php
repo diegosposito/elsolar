@@ -12,6 +12,11 @@ class listahorariosActions extends sfActions
 {
   public function executeIndex(sfWebRequest $request)
   {
+    
+    if ($request->getParameter('idlistahorario')!==NULL &&  $request->getParameter('idlistahorario')>0){
+        Doctrine_Core::getTable('ListaHorarios')->activarLista($request->getParameter('idlistahorario'));
+    }
+
     $this->lista_horarioss = Doctrine_Core::getTable('ListaHorarios')
       ->createQuery('a')
       ->execute();
