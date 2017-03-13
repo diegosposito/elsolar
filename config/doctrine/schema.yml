@@ -2564,7 +2564,6 @@ DetalleHorarios:
     fzblameable: ~
   columns: 
     id: { type: integer, primary: true, autoincrement: true }
-    nombre: { type: string(200) }
     orden: { type: integer, notnull: true, default: '0' } 
     idlistahorarios: { type: integer, notnull: true, default: '0' }
     idcentro: { type: integer, notnull: true, default: '0' }
@@ -2573,6 +2572,7 @@ DetalleHorarios:
     idpaciente: { type: integer, notnull: true, default: '0' }
     hdesde:    { type: time }
     hhasta:    { type: time }
+    nombre: { type: string(200) }
   relations:
     Centros: 
       local: idcentro
