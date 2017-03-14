@@ -15,7 +15,7 @@
       </tr>
       <tr>
         <td>
-          &nbsp;<a href="<?php echo url_for('centros/index') ?>">Volver al listado de Servicios</a>
+          &nbsp;<a href="<?php echo url_for('centros/index') ?>">Volver al listado de Modalidades</a>
         </td>
         <td align="center">
           <input type="submit" value="Guardar" />
