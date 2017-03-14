@@ -26,7 +26,7 @@ class DetalleHorariosTable extends Doctrine_Table
 				FROM detalle_horarios dh
 				JOIN lista_horarios lh ON dh.idlistahorarios = lh.id
 				JOIN personas per ON dh.idprofesional = per.idpersona 
-				JOIN pacientes pac ON dh.idpaciente = pac.id 
+				JOIN paciente pac ON dh.idpaciente = pac.id 
                 JOIN centros cen ON dh.idcentro = cen.id WHERE 1=1 ";
 				        
         if ($idlistahorario<>'' AND $idlistahorario > 0)
