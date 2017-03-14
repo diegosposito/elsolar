@@ -29,7 +29,7 @@ class DetalleHorariosForm extends BaseDetalleHorariosForm
   				$arregloServicios[$servicio['id']] = $servicio['abreviacion']; 
 		}	
 
-		$pacientes = Doctrine_Core::getTable('Pacientes')->obtenerPacientesActivos($activos);
+		$pacientes = Doctrine_Core::getTable('Paciente')->obtenerPacientesActivos($activos);
   		foreach($pacientes as $paciente){
   				$arregloPacientes[$paciente['id']] = $paciente['apellido'].', '.$paciente['nombre']; 
 		}	
