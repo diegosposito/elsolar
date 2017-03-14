@@ -28,11 +28,15 @@
     <?php use_javascript('tiny_mce/tiny_mce.js') ?>    
     <?php use_javascript('jquery.ui.timepicker.js') ?>
     <?php use_javascript('jquery.tablescroll.js') ?>
-    <?php use_javascript('jquery-1.7.min.js') ?>
     <?php use_javascript('jquery.jcarousel.js') ?>
     <?php use_javascript('DD_belatedPNG-min.js') ?>
     <?php use_javascript('functions.js') ?>
     <?php use_javascript('ddaccordion.js') ?>
+
+    <?php use_javascript('prettyCheckboxes.js') ?>
+
+    <?php use_javascript('jquery-1.7.min.js') ?>
+   
  
     <?php include_stylesheets() ?>
     <?php include_javascripts() ?>
@@ -78,7 +82,7 @@
 					<a title="Profesionales" href="<?php echo url_for('informes/profesionales') ?>"><span class="sep-left"></span>Profesionales<span class="sep-right"></span></a>
 				</li>
 				<li>
-					<a title="Profesionales" href="<?php echo url_for('informes/obrassociales') ?>"><span class="sep-left"></span>Obras Sociales<span class="sep-right"></span></a>
+					<a title="Obras Sociales" href="<?php echo url_for('informes/obrassociales') ?>"><span class="sep-left"></span>Obras Sociales<span class="sep-right"></span></a>
 				</li>
 				<li>
 					<a title="Institucionales" href="#"><span class="sep-left"></span>Institucionales<span class="sep-right"></span></a>
@@ -139,6 +143,7 @@
 									if ($currentUser->hasCredential("administracion")){ ?>
 									   <?php echo '<li>'.link_to('Obras Sociales', 'obrassociales/index').'</li>' ; ?>
 									   <?php echo '<li>'.link_to('Personal', 'personas/buscar').'</li>' ; ?>
+									   <?php echo '<li>'.link_to('Pacientes', 'paciente/index').'</li>' ; ?>
 									   <?php echo '<li>'.link_to('Configuracion General', 'centros/verconfiguracion').'</li>' ; ?>
 										<!--<?php echo '<li>'.link_to('Autoridades', 'autoridades').'</li>' ; ?>  -->
 										<!--<?php echo '<li>'.link_to('Entidades', 'cargoautoridades/index').'</li>' ; ?> -->
@@ -155,7 +160,8 @@
 									if ($currentUser->hasCredential("rrhh")){ ?>
 								        <?php echo '<li>'.link_to('Horarios', 'horarios/personal').'</li>' ; ?>
 								        <?php echo '<li>'.link_to('Personal', 'personas/buscar').'</li>' ; ?>
-										<?php echo '<li>'.link_to('Obras Sociales', 'obrassociales/index').'</li>' ; ?>
+									    <?php echo '<li>'.link_to('Pacientes', 'paciente/index').'</li>' ; ?>
+									  <?php echo '<li>'.link_to('Obras Sociales', 'obrassociales/index').'</li>' ; ?>
 										<?php echo '<li>'.link_to('Salir', 'sf_guard_signout').'</li>' ; ?>
 									<?php }  
 
