@@ -2,13 +2,13 @@
     p { margin-left:5em; /* Or another measurement unit, like px */ }
   </style>
   <br>
-<h1 align="center" style="color:black;">Listado de Servicios ofrecidos</h1>
+<h1 align="center" style="color:black;">Listado de Modalidades ofrecidas</h1>
 <img src='<?php echo $sf_request->getRelativeUrlRoot();?>/images/new.png' align='center' size='20' />
-<a href="<?php echo url_for('centros/new') ?>">Nueva Servicio</a>
+<a href="<?php echo url_for('centros/new') ?>">Nueva Modalidad</a>
 <table cellspacing="0" class="stats">
     <thead>
       <tr>
-        <td width="60%" align="center" class="hed">Servicio</td>
+        <td width="60%" align="center" class="hed">Modalidad</td>
         <td width="20%" align="center" class="hed">Abrev.</td>
         <td width="10%" align="center" class="hed">Estado</td>
         <td width="10%" align="center" class="hed">Acciones</td>

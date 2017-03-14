@@ -13,7 +13,7 @@
     <tbody>
       <tr class="fila_<?php echo 0 ; ?>">
         <td width="100%"><img src='<?php echo $sf_request->getRelativeUrlRoot();?>/images/new.png' align='center' size='20' />
-<a href="<?php echo url_for('centros/index') ?>">Servicios ofrecidos por la Institución</a></td>
+<a href="<?php echo url_for('centros/index') ?>">Modalidades ofrecidas por la Institución</a></td>
       </tr>
       <tr class="fila_<?php echo 1 ; ?>">
         <td width="100%"><img src='<?php echo $sf_request->getRelativeUrlRoot();?>/images/new.png' align='center' size='20' />

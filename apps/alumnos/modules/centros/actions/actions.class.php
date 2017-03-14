@@ -84,7 +84,7 @@ class centrosActions extends sfActions
       } else {
         $centros->setActivo(0);
       }
-       $centros->save();
+      $centros->save();
 
       $this->redirect('centros/edit?id='.$centros->getId());
     }
