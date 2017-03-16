@@ -55,6 +55,16 @@
 		$sis=$sf_user->getGuardUser()->obtenerSistemas();
 		$sf_user->setAttribute('idsede',$sf_user->getProfile()->getIdsede());
 	}	
+
+	// Obtener areas de documentos
+	$q = Doctrine_Query::create()
+					->distinct(true)
+					->from('AreaDocumentos a')
+					->Where('visible')
+					->orderBy('orden');
+				          	
+	$area_documentos = $q->execute();
+	
 ?>
 
 	<div class="shell">
@@ -76,7 +86,7 @@
 		<div id="navigation">
 			<ul>
 				<li>
-					<a title="Profesionales" href="<?php echo url_for('ingreso/index') ?>"><span class="sep-left"></span>Inicio<span class="sep-right"></span></a>
+					<a title="Ingreso" href="<?php echo url_for('ingreso/index') ?>"><span class="sep-left"></span>Inicio<span class="sep-right"></span></a>
 				</li>
 				<li>
 					<a title="Profesionales" href="<?php echo url_for('informes/profesionales') ?>"><span class="sep-left"></span>Profesionales<span class="sep-right"></span></a>
@@ -85,12 +95,12 @@
 					<a title="Obras Sociales" href="<?php echo url_for('informes/obrassociales') ?>"><span class="sep-left"></span>Obras Sociales<span class="sep-right"></span></a>
 				</li>
 				<li>
-					<a title="Institucionales" href="#"><span class="sep-left"></span>Institucionales<span class="sep-right"></span></a>
+					<a title="Documentacion" href="#"><span class="sep-left"></span>Documentacion<span class="sep-right"></span></a>
 					<div class="dd">
 						<ul>
-							<!--<li><a title="Autoridades" href="<?php echo url_for('informes/autoridades') ?>"><span class="sep-left"></span>Autoridades</a></li> -->
-							<li><a title="Historia" href="<?php echo url_for('ingreso/historia') ?>"><span class="sep-left"></span>Historia</a></li>
-							<!--<li><a title="Saludent" href="<?php echo url_for('ingreso/saludent') ?>"><span class="sep-left"></span>Saludent</a></li> -->
+						<?php foreach($area_documentos as $areas_doc){ ?>
+							<li><a title="<?php echo $areas_doc ?>" href="<?php echo url_for('documentosinstitucion/index?idareadocumento='.$areas_doc->getId()) ?>"><span class="sep-left"></span><?php echo $areas_doc->getNombre() ?></a></li>
+						<?php } ?>
 						</ul>
 					</div>
 				</li>
