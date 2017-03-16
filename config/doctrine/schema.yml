@@ -6,7 +6,34 @@ Facultades:
     idfacultad: { type: integer, primary: true, autoincrement: true }
     nombre: { type: string(1000) } 
     decano: { type: string(200) } 
-    nombreabrev: { type: string(50) } 
+    nombreabrev: { type: string(50) }
+
+DocumentosInstitucion:
+  actAs: 
+    Timestampable: ~ 
+    fzblameable: ~
+  columns:
+    id: { type: integer, primary: true, autoincrement: true }
+    nombre: { type: string(100), primary: false, autoincrement: false, default: '' }
+    visible: { type: boolean, primary: false, notnull: true, default: 1 }
+    idorden: { type: integer, primary: false, autoincrement: false, default: '1' }
+    idareadocumento: { type: integer, notnull: true, default: '0' }
+    imagefile: { type: string(254), primary: false, autoincrement: false, default: '' }
+  relations:
+    AreaDocumentos: 
+      local: idareadocumento
+      foreign: id
+      foreignAlias: AreaDocumentos   
+
+AreaDocumentos:
+  actAs: 
+    Timestampable: ~ 
+    fzblameable: ~
+  columns: 
+    id: { type: integer, primary: true, autoincrement: true }
+    nombre: { type: string(200) }
+    orden: { type: integer, notnull: true, default: '0' }
+    visible: { type: boolean, primary: false, notnull: true, default: 1 }
 
 Autoridades:
   actAs: 
