@@ -22,11 +22,7 @@
           <a href="<?php echo url_for('listahorarios/index') ?>">Lista de horarios de Pacientes</a>
         </td>
       </tr>
-      <tr class="fila_<?php echo 0 ; ?>">
-        <td width="100%"><img src='<?php echo $sf_request->getRelativeUrlRoot();?>/images/new.png' align='center' size='20' />
-          <a href="<?php echo url_for('listahorarios/index') ?>">Lista de horarios de Pacientes</a>
-        </td>
-      </tr>
+     
       <br>
   
     </tbody>
