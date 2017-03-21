@@ -1131,7 +1131,7 @@ Sede: '.$oSede.'
       $nrodoc = preg_replace("/[^\d]/", "", $personas->getNroDoc());
       $personas->setNroDoc($nrodoc);
       $personas->setIdtipodoc($request->getPostParameter('personas[idtipodoc]'));
-      $personas->setIdusuario($request->getPostParameter('personas[idusuario]'));
+   //   $personas->setIdusuario($request->getPostParameter('personas[idusuario]'));
       if ($request->getPostParameter('personas[mostrarinfocontacto]') == 'on') {
    			$personas->setMostrarinfocontacto(1);
       } else {
