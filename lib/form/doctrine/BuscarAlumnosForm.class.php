@@ -6,7 +6,7 @@ class BuscarAlumnosForm extends sfForm
   public function configure()
   {        
   	$idarea = sfContext::getInstance()->getUser()->getAttribute('id_area','');
-  	$carreras = Doctrine_Core::getTable('AreasCarrera')->obtenerCarrerasPorArea(1);
+  	/*$carreras = Doctrine_Core::getTable('AreasCarrera')->obtenerCarrerasPorArea(1);
   	//$arr = array(1, 2, 6);
 	$arr = array(1);
   	foreach ($carreras as $carrera) {
@@ -18,10 +18,15 @@ class BuscarAlumnosForm extends sfForm
   			}
   		}
   	}
-	asort($arregloPlanes);
+	asort($arregloPlanes); */
+	$arrActivos = array();
+	$arrActivos[1] = "Activo";
+	$arrActivos[0] = "No Activo";
+
 	
 	// Se define el esquema del form
   	//$this->widgetSchema['idplanestudio'] = new sfWidgetFormSelect(array('choices' => $arregloPlanes));
+  	$this->widgetSchema['idactivo'] = new sfWidgetFormSelect(array('choices' => $arrActivos));
 	$this->widgetSchema['tipocriterio'] = new sfWidgetFormSelect(array('choices' => self::$tiposcriterios));
 	$this->widgetSchema['criterio'] = new sfWidgetFormInput();
 	$this->widgetSchema['referer'] = new sfWidgetFormInputHidden();
@@ -31,6 +36,7 @@ class BuscarAlumnosForm extends sfForm
 	
  	// Se define los labels
 	//$this->widgetSchema->setLabel('idplanestudio', '<p align="left">Carrera:</p>');
+	$this->widgetSchema->setLabel('idactivo', '<p align="left">Estado:</p>');
  	$this->widgetSchema->setLabel('tipocriterio', '<p align="left">Buscar en:</p>');
  	$this->widgetSchema->setLabel('criterio', '<p align="left"></p>');
 
