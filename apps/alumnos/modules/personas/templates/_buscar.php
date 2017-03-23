@@ -18,6 +18,13 @@
           <?php echo $form['criterio'] ?>
         </td>
       </tr>  
+      <tr>
+        <td><b><?php echo $form['idactivo']->renderLabel() ?></b></td>
+        <td>
+          <?php echo $form['idactivo']->renderError() ?>
+          <?php echo $form['idactivo'] ?>
+        </td>
+      </tr>
 	<tr>
 		<?php echo $form->renderHiddenFields(false) ?>
 		<td colspan="2" align="center"><input type="submit" value="Buscar" /></td>
