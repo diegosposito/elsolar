@@ -731,8 +731,9 @@ Sede: '.$oSede.'
         		$this->criterio = $arreglo['criterio'];
         		$this->titulo = $arreglo['titulo'];
         		$this->tipo = $arreglo['tipo'];
+        		$this->idactivo = $arreglo['idactivo'];
         	
-  				$this->resultado = Doctrine_Core::getTable('Alumnos')->buscarPersonas($this->tipocriterio, $this->criterio, $this->idplanestudio, $this->getUser()->getProfile()->getIdsede(), $this->tipo);			
+  				$this->resultado = Doctrine_Core::getTable('Alumnos')->buscarPersonas($this->tipocriterio, $this->criterio, $this->idactivo, $this->getUser()->getProfile()->getIdsede(), $this->tipo);			
 			}
 		} else {
 			$this->resultado = array();
