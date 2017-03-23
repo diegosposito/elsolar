@@ -339,7 +339,7 @@ class AlumnosTable extends Doctrine_Table
     }   
 
     // Busca todas los alumnos segun los criterios
-    public static function buscarPersonas($tipocriterio, $criterio, $idplanestudio, $idsede, $tipo)
+    public static function buscarPersonas($tipocriterio, $criterio, $idactivo, $idsede, $tipo)
     {
       
         if($tipocriterio==1) {
@@ -347,14 +347,14 @@ class AlumnosTable extends Doctrine_Table
                 SELECT sf.username, pe.* FROM personas pe JOIN sf_guard_user sf ON pe.idusuario = sf.id 
                 WHERE
                         ((pe.apellido LIKE '%".$criterio."%') OR (pe.nombre LIKE '%".$criterio."%'))
-                         AND pe.activo 
+                         AND pe.activo = ".$idactivo." 
                         ORDER BY pe.apellido ASC, pe.nombre ASC
             ");
         }else{
             $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc("
                 SELECT sf.username, pe.* FROM personas pe JOIN sf_guard_user sf ON pe.idusuario = sf.id 
                     WHERE
-                        (pe.nrodoc LIKE '%".$criterio."%') AND pe.activo
+                        (pe.nrodoc LIKE '%".$criterio."%') AND pe.activo = ".$idactivo." 
                          ORDER BY pe.apellido ASC, pe.nombre ASC
             ");
         }       
