@@ -105,10 +105,11 @@
 					</div>
 				</li>
 				<li>
-					<a title="Contacto" href="#"><span class="sep-left"></span>Contacto<span class="sep-right"></span></a>
+					<a title="General" href="#"><span class="sep-left"></span>General<span class="sep-right"></span></a>
 					<div class="dd">
 						<ul>
 							<li><a title="Ubicacion" href="<?php echo url_for('ingreso/ubicacion') ?>"><span class="sep-left"></span>Ubicación</a></li>
+							<li><a title="Horarios" href="<?php echo url_for('informes/verdetalle') ?>"><span class="sep-left"></span>Horarios</a></li>
 							<!--<li><a title="Concacto" href="<?php echo url_for('ingreso/contacto') ?>"><span class="sep-left"></span>Contacto</a></li> -->
 						</ul>
 					</div>
