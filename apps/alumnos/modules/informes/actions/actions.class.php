@@ -45,8 +45,10 @@ class informesActions extends sfActions
     }
     
     $this->idanio = $request->getParameter('idanio');
+    $this->anio = $request->getParameter('idanio');
     if($request->getParameter('idanio')==''){
     	$this->anio = date('Y');
+    	$this->idanio = date('Y');
     }
 
 
@@ -104,7 +106,7 @@ class informesActions extends sfActions
     }
 
     $this->mesactual = $mesactual;
-    $this->anioelegido = $this->anio;
+    $this->anioelegido = $this->idanio;
     $this->idpersona = $idpersona;
 
 
