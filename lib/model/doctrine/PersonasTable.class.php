@@ -287,6 +287,24 @@ where per.activo AND per.nrodoc = '".$nrodoc."'";
         return $q;
     } 
 
+    // Obtiene las materias cursando de un alumno
+    public static function getIdPersonaByUser($idusuario)
+    {
+        $idpersona =1;
+
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc("
+            SELECT idpersona FROM personas 
+            WHERE
+                idusuario = ".$idusuario." 
+        ");
+        
+        foreach($q as $item) {
+            $idpersona = $item['idpersona'];
+         }
+    
+        return $idpersona;
+    }
+
     // Busca todas los alumnos segun los criterios
     public static function obtenerCobradores()
     {   
