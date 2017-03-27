@@ -24,6 +24,92 @@ class informesActions extends sfActions
 	      ->execute();
 	}
 
+	public function executeVerdetalle(sfWebRequest $request)
+  { 
+    
+    // Control del acceso al modulo para RRHH
+    $currentUser = sfContext::getInstance()->getUser();
+    if (!($currentUser->isAuthenticated())) 
+        $this->redirect('ingreso'); 
+
+    $idusuario = sfContext::getInstance()->getUser()->getGuardUser()->getId();
+    $idpersona = Doctrine_Core::getTable('Personas')->getIdPersonaByUser($idusuario);
+
+    $this->persona = Doctrine_Core::getTable('Personas')->find(array($idpersona));
+    $this->forward404Unless($this->persona);
+
+    $this->idmes = $request->getParameter('idmes');
+
+    if (trim($request->getParameter('idmes'))==''){
+    	$this->idmes = date('n');
+    }
+    
+    $this->idanio = $request->getParameter('idanio');
+    if($request->getParameter('idanio')==''){
+    	$this->anio = date('Y');
+    }
+
+
+    $this->detalle_mensual_detallado = Doctrine_Core::getTable('Horarios')->obtenerResumenMensualxPer($this->persona->getIdpersona(), $this->idmes, $this->anio, true); 
+    $this->detalle_mensual = Doctrine_Core::getTable('Horarios')->obtenerTiempoTrabajadoxPeriodo($this->persona->getIdpersona(), $this->idmes, $this->anio); 
+    $this->superdetallado = Doctrine_Core::getTable('Horarios')->obtenerDetalleMensualxPerFormat($this->persona->getIdpersona(), $this->idmes, $this->anio, false); 
+    
+
+    $this->horas_mensuales_trabajadas=''; $this->horas_primer_quincena=$dm['hora']=''; $this->horas_segunda_quincena='';
+    foreach ($this->detalle_mensual as $dm){
+        $this->horas_mensuales_trabajadas=$dm['hora'];
+        $this->horas_primer_quincena=$dm['hours_worked_first'];
+        $this->horas_segunda_quincena=$dm['hours_worked_second'];
+    }
+    
+   
+
+    switch ($this->idmes) {
+    case '1':
+        $mesactual ='Enero';
+        break;
+    case '2':
+        $mesactual ='Febrero';
+        break;
+    case '3':
+        $mesactual ='Marzo';
+        break;
+    case '4':
+        $mesactual ='Abril';
+        break;
+    case '5':
+        $mesactual ='Mayo';
+        break;
+    case '6':
+        $mesactual ='Junio';
+        break;
+    case '7':
+        $mesactual ='Julio';
+        break;
+    case '8':
+        $mesactual ='Agosto';
+        break;
+    case '9':
+        $mesactual ='Setiembre';
+        break;
+    case '10':
+        $mesactual ='Octubre';
+        break;
+    case '11':
+        $mesactual ='Noviembre';
+        break;
+    case '12':
+        $mesactual ='Diciembre';
+        break;           
+    }
+
+    $this->mesactual = $mesactual;
+    $this->anioelegido = $this->anio;
+    $this->idpersona = $idpersona;
+
+
+  }
+
 	public function executeAutoridadespdf(sfWebRequest $request){
 
 		$oAutoridades = Doctrine_Core::getTable('Autoridades')->obtenerAutoridades();
