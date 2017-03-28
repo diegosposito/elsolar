@@ -26,7 +26,9 @@ class informesActions extends sfActions
 
 	public function executeVerdetalle(sfWebRequest $request)
   { 
-    
+    // Esperar para implementar
+    $this->redirect('ingreso');
+
     // Control del acceso al modulo para RRHH
     $currentUser = sfContext::getInstance()->getUser();
     if (!($currentUser->isAuthenticated())) 
