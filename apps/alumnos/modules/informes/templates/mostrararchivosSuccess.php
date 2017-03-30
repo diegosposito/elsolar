@@ -19,10 +19,6 @@
       <td><?php echo ($obras_sociales->getEstado()==1) ? 'Habilitada' : 'No Habilitada'; ?></td>
     </tr>
     <tr>
-      <th>Fecha Arancel:</th>
-      <td><?php echo date("d/m/Y", strtotime($obras_sociales->getFechaarancel())) ?></td>
-    </tr>
-    <tr>
       <th>Fecha Ultimo Periodo:</th>
       <td><?php echo date("d/m/Y", strtotime($obras_sociales->getFechaultimoperiodo())) ?></td>
     </tr>
