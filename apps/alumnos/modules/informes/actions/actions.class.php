@@ -647,7 +647,7 @@ class informesActions extends sfActions
 		$pdf = new PDF();
 
     	// settings
-		$pdf->SetFont("Times", "", 10);
+		$pdf->SetFont("Times", "", 12);
 		// sentencias para retirar encabezados y pie por defecto
 		$pdf->setPrintHeader(false);
 		$pdf->setPrintFooter(false); 
@@ -657,21 +657,24 @@ class informesActions extends sfActions
 		$current_date = date("Y");
 		$encabezado = '
 			<div style="text-align: center; font-family: Times New Roman,Times,serif;"><span
-			style="font-size: 12;"><img src="'.$request->getRelativeUrlRoot().'/images/header_elsolar.png" height="90px" width="820px">
+			style="font-size: 14;"><img src="'.$request->getRelativeUrlRoot().'/images/header_elsolar.png" height="90px" width="820px">
 			<b>Obras Sociales:</b> '.$current_date.'</div>';   
 
 		$pdf->writeHTML($encabezado, true, false, true, false, '');   
 		
+        $pdf->SetFont("Times", "B", 14);
 		$y = 50;
 		$pdf->SetXY(10,$y);
-		$pdf->Cell(15,5,'Obra Social',0,0,'C');    
+		$pdf->Cell(25,5,'Obra Social',0,0,'C');    
 		$pdf->SetXY(68,$y);
 		$pdf->Cell(200,5,'Abrev',0,0,'C'); 
 		$pdf->SetXY(20,$y);
 		$y = $y + 5;		
 		$contador = 1;
+        $pdf->SetFont("Times", "", 12);
 		
 		$pdf->Line(10,$y,280,$y);
+        $y = $y + 5;
 		
 	    foreach ($oObrasSociales as $osocial){	
 		    			    		
@@ -688,15 +691,18 @@ class informesActions extends sfActions
 	
 				$pdf->writeHTML($encabezado, true, false, true, false, '');   
 				$y=50;
-
+                
+                $pdf->SetFont("Times", "B", 14); 
 				$pdf->SetXY(10,$y);
-				$pdf->Cell(15,5,'Obra Social',0,0,'C');    
+				$pdf->Cell(25,5,'Obra Social',0,0,'C');    
 				$pdf->SetXY(68,$y);
 				$pdf->Cell(200,5,'Abrev',0,0,'C'); 
 				$pdf->SetXY(20,$y);
 				$y = $y + 5;
 				$contador = 1;
 				$pdf->Line(10,$y,280,$y);
+                $y = $y + 5;
+                $pdf->SetFont("Times", "", 12);
 
 			}
 	
