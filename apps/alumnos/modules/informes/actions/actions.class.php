@@ -387,6 +387,10 @@ class informesActions extends sfActions
    	}
   
     $this->obras_sociales = Doctrine_Core::getTable('ObrasSociales')->find(array($request->getParameter('idobrasocial')));
+    
+    // Obtener planes activos de la Obra Social seleccionada
+    $this->planes_obra = Doctrine_Core::getTable('ObrasSociales')->obtenerPlanes($request->getParameter('idobrasocial'), 1);
+
    // $this->obras_sociales = Doctrine_Core::getTable('ObrasSociales')->find(array(1));
     $this->forward404Unless($this->obras_sociales);
 
@@ -453,6 +457,7 @@ class informesActions extends sfActions
       $this->ficheros[] = array($nombre_fichero, $this->obras_sociales->getIdObrasocial()."/".$nombre_fichero, $image_file);
     }
     sort($this->ficheros);
+   
 
   } // end function
 
