@@ -1,5 +1,5 @@
 <h1>Gestión de Archivos de la Obra Social</h1>
-
+<br>
 <div id="mensajeInfo"></div>
 
 <form action="<?php echo url_for('informes/mostrararchivos') ?>"  enctype="multipart/form-data" method="post" ?>
