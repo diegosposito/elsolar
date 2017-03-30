@@ -33,6 +33,16 @@ class ObrasSocialesTable extends Doctrine_Table
         return $q;
     } 
 
+    // Obtener obras sociales
+    public static function obtenerPlanes($idobrasocial, $estado=1)
+    {
+        $sql ="SELECT id, nombre, activo, idobrasocial FROM planes_obras WHERE idobrasocial = ".$idobrasocial." AND activo = ".$estado." ORDER BY nombre";
+
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection()->fetchAssoc($sql);
+
+        return $q;
+    } 
+
     // Obtiene todas las OS ordeandas por campo abreviada
     public static function obtenerTodas()
     {
