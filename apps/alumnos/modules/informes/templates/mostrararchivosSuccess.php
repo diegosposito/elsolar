@@ -35,9 +35,30 @@
 
 <br>
 <hr />
-<br>
 
 </form>
+
+<?php if(count($planes_obra) > 0) { ?>
+<table align="left" width="300px" cellspacing="0" class="stats">
+    <thead>
+      <tr>
+        <td width="60%" align="center" class="hed">Listado de Planes Activos</td>
+      </tr>
+    </thead>
+    <tbody>
+      <?php foreach ($planes_obra as $planes){ ?>
+                 <tr class="fila_<?php echo $i%2 ; ?>">
+                  <td width="60%" align="center"><?php echo $planes['nombre'] ?></td>
+                 </tr>
+      <?php } ?>
+
+      <br>
+  
+    </tbody>
+  </table>
+<br><br>
+<?php } ?>
+
 
 <table width="550px" cellspacing="0" class="stats">
     <thead>
