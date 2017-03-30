@@ -1,4 +1,4 @@
-<h1>Gestión de Archivos de la Obra Social</h1>
+<h1>Información Detallada de Obra Social</h1>
 <br>
 <div id="mensajeInfo"></div>
 
