@@ -5,9 +5,7 @@
 <h1 align="center" style="color:black;">Listado de Obras Sociales</h1>
 <img src='<?php echo $sf_request->getRelativeUrlRoot();?>/images/new.png' align='center' size='20' />
 <a href="<?php echo url_for('obrassociales/new') ?>">Nueva Obra Social</a>
-<br>
-<img src='<?php echo $sf_request->getRelativeUrlRoot();?>/images/new.png' align='center' size='20' />
-<a href="<?php echo url_for('planesobras/index') ?>">Ver Planes de Obras Sociales</a>
+
 
  <br>
  <a href="<?php echo url_for('informes/obrassocialespdf') ?>"><img src='<?php echo $sf_request->getRelativeUrlRoot();?>/images/printer.png' align='center' size='20' /></a>
@@ -38,10 +36,6 @@
       <?php } ?>
 
       <br>
-  
+
     </tbody>
   </table>
-
-
- 
-
