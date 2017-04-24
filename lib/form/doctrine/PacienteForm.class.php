@@ -36,7 +36,7 @@ class PacienteForm extends BasePacienteForm
         $this->widgetSchema->setLabel('parentesco', '<p align="left">Parentesco:</p>');
         $this->widgetSchema->setLabel('ocupacion', '<p align="left">Ocupación:</p>');
         $this->widgetSchema->setLabel('siglas', '<p align="left">Siglas:</p>');
-        $this->widgetSchema->setLabel('idplan', '<p align="left">Plan:</p>');
+      //  $this->widgetSchema->setLabel('idplan', '<p align="left">Plan:</p>');
         $this->widgetSchema->setLabel('trabajo', '<p align="left">Trabajo:</p>');
         $this->widgetSchema->setLabel('jerarquia', '<p align="left">Jerarquía:</p>');
         $this->widgetSchema->setLabel('anotaciones', '<p align="left">Anotaciones:</p>');
@@ -55,16 +55,16 @@ class PacienteForm extends BasePacienteForm
 
       $oss = Doctrine_Core::getTable('ObrasSociales')->obtenerTodas();
       foreach($oss as $os){
-        $arregloOS[$os->getIdObrasocial()] = $os->getAbreviada(); 
-      }  
-        
+        $arregloOS[$os->getIdObrasocial()] = $os->getAbreviada();
+      }
+
       $this->widgetSchema['idobrasocial'] = new sfWidgetFormSelect(array('choices' => $arregloOS));
       $this->widgetSchema->setLabel('idobrasocial', '<p align="left">O. Social:</p>');
-      
-      $arregloTitular = array('1' => 'Si', '2' => 'No'); 
-      $arregloParentesco = array('1' => 'Titular', '2' => 'Esposo/a', '3' => 'Hijo/a', '4' => 'Hermano/a', '5' => 'Padre/Madre'); 
-      $arregloTipoiva = array('1' => 'No Grabado', '2' => 'Grabado'); 
-     
+
+      $arregloTitular = array('1' => 'Si', '2' => 'No');
+      $arregloParentesco = array('1' => 'Titular', '2' => 'Esposo/a', '3' => 'Hijo/a', '4' => 'Hermano/a', '5' => 'Padre/Madre');
+      $arregloTipoiva = array('1' => 'No Grabado', '2' => 'Grabado');
+
       $this->widgetSchema['titular'] = new sfWidgetFormSelect(array('choices' => $arregloTitular));
       $this->widgetSchema->setLabel('titular', '<p align="left">Titular:</p>');
 
@@ -73,17 +73,17 @@ class PacienteForm extends BasePacienteForm
 
       //$this->widgetSchema['idtipoiva'] = new sfWidgetFormSelect(array('choices' => $arregloTipoiva));
       //$this->widgetSchema->setLabel('idtipoiva', '<p align="left">IVA:</p>');
-     
-   
+
+
       $this->widgetSchema->setLabel('credencial', '<p align="left">Credencial:</p>');
-         
+
       $range  = range(date('Y')-80, date('Y')+1);
 		  $years = array_combine($range,$range);
 
       $this->widgetSchema['direccion'] = new sfWidgetFormInputText(array(), array("style"=>'width: 250px;'));
       $this->widgetSchema->setLabel('direccion', '<p align="left">Dirección:</p>');
       /* $this->widgetSchema['titular'] = new sfWidgetFormInputText(array(), array("style"=>'width: 250px;'));
-      $this->widgetSchema->setLabel('titular', '<p align="left">Titular:</p>'); 
+      $this->widgetSchema->setLabel('titular', '<p align="left">Titular:</p>');
       $this->widgetSchema['parentesco'] = new sfWidgetFormInputText(array(), array("style"=>'width: 250px;')); */
       $this->widgetSchema->setLabel('parentesco', '<p align="left">Parentesco:</p>');
       $this->widgetSchema['ocupacion'] = new sfWidgetFormInputText(array(), array("style"=>'width: 250px;'));
@@ -92,11 +92,11 @@ class PacienteForm extends BasePacienteForm
 		  $this->widgetSchema['fechanac'] =
 		  new sfWidgetFormDate(array('format' => '%day%/%month%/%year%','years' => $years));
 		  $this->widgetSchema['fechaingreso'] =
-		  new sfWidgetFormDate(array('format' => '%day%/%month%/%year%','years' => $years));     
+		  new sfWidgetFormDate(array('format' => '%day%/%month%/%year%','years' => $years));
 
 		  $this->widgetSchema->setLabel('fechanac', '<p align="left">Fec. Nac.:</p>');
       $this->widgetSchema->setLabel('fechaingreso', '<p align="left">Fec. Ingreso:</p>');
-            
-      
+
+
   }
 }
