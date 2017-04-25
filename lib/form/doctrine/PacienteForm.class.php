@@ -24,7 +24,7 @@ class PacienteForm extends BasePacienteForm
         $this->widgetSchema->setLabel('estadocivil', '<p align="left">E. Civil:</p>');
         $this->widgetSchema->setLabel('fechanac', '<p align="left">Fec. Nacimiento:</p>');
         $this->widgetSchema->setLabel('fechaingreso', '<p align="left">Fec. Ingreso:</p>');
-        $this->widgetSchema->setLabel('direccion', '<p align="left">Dirección:</p>');
+        $this->widgetSchema->setLabel('direccion', '<p align="left">Domicilio:</p>');
     //  $this->widgetSchema->setLabel('idtipoiva', '<p align="left">IVA:</p>');
 
         $this->widgetSchema->setLabel('idprovincia', '<p align="left">Provincia:</p>');
@@ -81,7 +81,7 @@ class PacienteForm extends BasePacienteForm
 		  $years = array_combine($range,$range);
 
       $this->widgetSchema['direccion'] = new sfWidgetFormInputText(array(), array("style"=>'width: 250px;'));
-      $this->widgetSchema->setLabel('direccion', '<p align="left">Dirección:</p>');
+      $this->widgetSchema->setLabel('direccion', '<p align="left">Domicilio:</p>');
       /* $this->widgetSchema['titular'] = new sfWidgetFormInputText(array(), array("style"=>'width: 250px;'));
       $this->widgetSchema->setLabel('titular', '<p align="left">Titular:</p>');
       $this->widgetSchema['parentesco'] = new sfWidgetFormInputText(array(), array("style"=>'width: 250px;')); */
@@ -96,6 +96,44 @@ class PacienteForm extends BasePacienteForm
 
 		  $this->widgetSchema->setLabel('fechanac', '<p align="left">Fec. Nac.:</p>');
       $this->widgetSchema->setLabel('fechaingreso', '<p align="left">Fec. Ingreso:</p>');
+
+      $this->widgetSchema['mamnombre'] = new sfWidgetFormInputText(array(), array("style"=>'width: 250px;'));
+      $this->widgetSchema->setLabel('mamnombre', '<p align="left">Apellido-Nombre/Apoderado:</p>');
+
+      $this->widgetSchema['mamfechanac'] =
+      new sfWidgetFormDate(array('format' => '%day%/%month%/%year%','years' => $years));
+      $this->widgetSchema->setLabel('mamfechanac', '<p align="left">Fec. Nac.:</p>');
+
+      $this->widgetSchema['mamnrodoc'] = new sfWidgetFormInputText(array(), array("style"=>'width: 250px;'));
+      $this->widgetSchema->setLabel('mamnrodoc', '<p align="left">Documento:</p>');
+
+      $this->widgetSchema['mamnacionalidad'] = new sfWidgetFormInputText(array(), array("style"=>'width: 250px;'));
+      $this->widgetSchema->setLabel('mamnacionalidad', '<p align="left">Nacionalidad:</p>');
+
+    //  $this->widgetSchema['mamestudios'] = new sfWidgetFormInputText(array(), array("style"=>'width: 250px;'));
+      $this->widgetSchema->setLabel('mamestudios', '<p align="left">Estudios / Ocupación:</p>');
+
+      $this->widgetSchema['mamdireccion'] = new sfWidgetFormInputText(array(), array("style"=>'width: 250px;'));
+      $this->widgetSchema->setLabel('mamdireccion', '<p align="left">Domicilio:</p>');
+
+      $this->widgetSchema['papnombre'] = new sfWidgetFormInputText(array(), array("style"=>'width: 250px;'));
+      $this->widgetSchema->setLabel('papnombre', '<p align="left">Apellido-Nombre/Familiar:</p>');
+
+      $this->widgetSchema['papfechanac'] =
+      new sfWidgetFormDate(array('format' => '%day%/%month%/%year%','years' => $years));
+      $this->widgetSchema->setLabel('papfechanac', '<p align="left">Fec. Nac.:</p>');
+
+      $this->widgetSchema['papnrodoc'] = new sfWidgetFormInputText(array(), array("style"=>'width: 250px;'));
+      $this->widgetSchema->setLabel('papnrodoc', '<p align="left">Documento:</p>');
+
+      $this->widgetSchema['papnacionalidad'] = new sfWidgetFormInputText(array(), array("style"=>'width: 250px;'));
+      $this->widgetSchema->setLabel('papnacionalidad', '<p align="left">Nacionalidad:</p>');
+
+      //$this->widgetSchema['papestudios'] = new sfWidgetFormInputText(array(), array("style"=>'width: 250px;'));
+      $this->widgetSchema->setLabel('papestudios', '<p align="left">Estudios / Ocupación:</p>');
+
+      $this->widgetSchema['papdireccion'] = new sfWidgetFormInputText(array(), array("style"=>'width: 250px;'));
+      $this->widgetSchema->setLabel('papdireccion', '<p align="left">Domicilio:</p>');
 
 
   }
