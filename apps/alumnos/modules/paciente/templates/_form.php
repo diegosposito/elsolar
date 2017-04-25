@@ -118,7 +118,7 @@
         <td align="left" colspan=4><b><label id="osdescripcion" name="osdescripcion" for="osdescripcion">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label></b></td>
       </tr>
       <tr>
-          <td colspan="1" width="10%"> 
+          <td colspan="1" width="10%">
             <?php echo "<b>".$form['idobrasocial']->renderLabel()."</b>" ?>
           </td>
           <td colspan="3">
@@ -149,23 +149,7 @@
             <?php echo $form['parentesco']->render() ?>
           </td>
         </tr>
-     <!--  <tr>
-          <td width="10%">
-            <?php echo "<b>".$form['idtipoiva']->renderLabel()."</b>" ?>
-          </td>
-          <td colspan=2>
-            <?php echo $form['idtipoiva']->render() ?>
-          </td>
-        </tr>
-
-      <tr>
-        <td><?php echo "<b>".$form['trabajo']->renderLabel()."</b>" ?></td>
-        <td><?php echo $form['trabajo'] ?></td>
-        <td align="left"><?php echo "<b>".$form['jerarquia']->renderLabel()."</b>" ?></td>
-        <td align="left"><?php echo $form['jerarquia'] ?></td>
-      </tr>  -->
-
-      <tr>
+        <tr>
         <td colspan="1"><?php echo "<b>".$form['anotaciones']->renderLabel()."</b>" ?></td>
         <td colspan="3"><?php echo $form['anotaciones'] ?></td>
       </tr>
@@ -178,6 +162,114 @@
         <td align="left"><?php echo "<b>".$form['imagefile']->renderLabel()."</b>" ?></td>
         <td  colspan="3" align="left"><?php echo $form['imagefile'] ?></td>
       </tr>
+
+      <tr>
+        <th align="center" colspan=4><?php echo '_' ?></th>
+      </tr>
+      <tr>
+        <th align="center" colspan=4><?php echo ''.'D A T O S &nbsp;&nbsp;&nbsp;M A D R E / A P O D E R A D O ' ?></th>
+      </tr>
+      <tr>
+        <td align="left" colspan=4><b><label id="osdescripcion" name="osdescripcion" for="osdescripcion">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label></b></td>
+      </tr>
+        <tr>
+          <td colspan="1" width="10%">
+            <?php echo "<b>".$form['mamnombre']->renderLabel()."</b>" ?>
+          </td>
+          <td colspan="3">
+            <?php echo $form['mamnombre']->render() ?>
+          </td>
+        </tr>
+        <tr>
+          <td width="10%">
+            <?php echo "<b>".$form['mamfechanac']->renderLabel()."</b>" ?>
+          </td>
+          <td>
+            <?php echo $form['mamfechanac']->render() ?>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1" width="10%">
+            <?php echo "<b>".$form['mamnrodoc']->renderLabel()."</b>" ?>
+          </td>
+          <td colspan="3">
+            <?php echo $form['mamnrodoc']->render() ?>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1" width="10%">
+            <?php echo "<b>".$form['mamnacionalidad']->renderLabel()."</b>" ?>
+          </td>
+          <td colspan="3">
+            <?php echo $form['mamnacionalidad']->render() ?>
+          </td>
+        </tr>
+        <tr>
+         <td colspan="1"><?php echo "<b>".$form['mamestudios']->renderLabel()."</b>" ?></td>
+         <td colspan="3"><?php echo $form['mamestudios'] ?></td>
+       </tr>
+       <tr>
+         <td colspan="1" width="10%">
+           <?php echo "<b>".$form['mamdireccion']->renderLabel()."</b>" ?>
+         </td>
+         <td colspan="3">
+           <?php echo $form['mamdireccion']->render() ?>
+         </td>
+       </tr>
+       <tr>
+         <th align="center" colspan=4><?php echo '_' ?></th>
+       </tr>
+        <tr>
+          <th align="center" colspan=4><?php echo ''.'D A T O S &nbsp;&nbsp;&nbsp;P A D R E / F A M I L I A R ' ?></th>
+        </tr>
+        <tr>
+          <td align="left" colspan=4><b><label id="osdescripcion" name="osdescripcion" for="osdescripcion">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label></b></td>
+        </tr>
+          <tr>
+            <td colspan="1" width="10%">
+              <?php echo "<b>".$form['papnombre']->renderLabel()."</b>" ?>
+            </td>
+            <td colspan="3">
+              <?php echo $form['papnombre']->render() ?>
+            </td>
+          </tr>
+          <tr>
+            <td width="10%">
+              <?php echo "<b>".$form['papfechanac']->renderLabel()."</b>" ?>
+            </td>
+            <td>
+              <?php echo $form['papfechanac']->render() ?>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="1" width="10%">
+              <?php echo "<b>".$form['papnrodoc']->renderLabel()."</b>" ?>
+            </td>
+            <td colspan="3">
+              <?php echo $form['papnrodoc']->render() ?>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="1" width="10%">
+              <?php echo "<b>".$form['papnacionalidad']->renderLabel()."</b>" ?>
+            </td>
+            <td colspan="3">
+              <?php echo $form['papnacionalidad']->render() ?>
+            </td>
+          </tr>
+          <tr>
+           <td colspan="1"><?php echo "<b>".$form['papestudios']->renderLabel()."</b>" ?></td>
+           <td colspan="3"><?php echo $form['papestudios'] ?></td>
+         </tr>
+         <tr>
+           <td colspan="1" width="10%">
+             <?php echo "<b>".$form['papdireccion']->renderLabel()."</b>" ?>
+           </td>
+           <td colspan="3">
+             <?php echo $form['papdireccion']->render() ?>
+           </td>
+         </tr>
+
 
     </tbody>
   </table>
