@@ -163,7 +163,6 @@ class pacienteActions extends sfActions
           $paciente->save();
 
 
-     RECUPERAR ESTE CODIGO QUE VA
       $folder_path_name = sfConfig::get('app_pathfiles_folder')."/paciente/".$paciente->getId();
 
       if (!is_dir($folder_path_name) && !mkdir($folder_path_name)){
