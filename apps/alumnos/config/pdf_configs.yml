@@ -5,15 +5,15 @@ default:
 
   # Disable default TCPDF default config
   K_TCPDF_EXTERNAL_CONFIG: true
-  
+
   # Auto-detected parameters (leave empty for auto-detection) ##################
-  # Installation path (/var/www/tcpdf/) 
-  K_PATH_MAIN: 
-  K_PATH_URL: 
-  K_PATH_FONTS: 
-  K_PATH_CACHE: 
-  K_PATH_URL_CACHE: 
-  K_PATH_IMAGES: 
+  # Installation path (/var/www/tcpdf/)
+  K_PATH_MAIN:
+  K_PATH_URL:
+  K_PATH_FONTS:
+  K_PATH_CACHE:
+  K_PATH_URL_CACHE:
+  K_PATH_IMAGES:
   K_BLANK_IMAGE:
 
   # Other parameters  ##########################################################
@@ -22,11 +22,11 @@ default:
   # page orientation (P=portrait, L=landscape)
   PDF_PAGE_ORIENTATION: "P"
   # document creator
-  PDF_CREATOR: "Circulo Odontologico"
+  PDF_CREATOR: "El Solar Uruguay"
   # document author
-  PDF_AUTHOR: "Circulo Odontologico"
+  PDF_AUTHOR: "El Solar Uruguay"
   # header title
-  PDF_HEADER_TITLE: "Circulo Odontologico"
+  PDF_HEADER_TITLE: "El Solar Uruguay"
   # header description string
   PDF_HEADER_STRING: "Sistema de Gestion"
   # image logo
@@ -59,7 +59,7 @@ default:
 # Configuracion A4
 config_a4:
   # header title
-  PDF_HEADER_TITLE: "Circulo Odontologico"
+  PDF_HEADER_TITLE: "El Solar Uruguay"
   # page format
   PDF_PAGE_FORMAT: "A4"
   # header margin
@@ -74,4 +74,3 @@ config_a4:
   PDF_MARGIN_LEFT: "0"
   # right margin
   PDF_MARGIN_RIGHT: "0"
-  
