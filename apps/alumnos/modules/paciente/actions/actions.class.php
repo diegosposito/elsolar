@@ -15,6 +15,7 @@ class pacienteActions extends sfActions
     $this->criterio = '';
     $this->pacientes = Doctrine_Core::getTable('Paciente')
       ->createQuery('a')
+      ->where('a.activo=1')
       ->limit(200)
       ->execute();
 
@@ -23,6 +24,7 @@ class pacienteActions extends sfActions
       $this->pacientes = Doctrine_Core::getTable('Paciente')
       ->createQuery('a')
       ->where('a.apellido  like "%'.$request->getParameter('idbuscarname').'%"')
+      ->andwhere('a.activo=1')
       ->execute();
 
       $this->criterio = $request->getParameter('idbuscarname');
@@ -115,7 +117,8 @@ class pacienteActions extends sfActions
     $request->checkCSRFProtection();
 
     $this->forward404Unless($paciente = Doctrine_Core::getTable('Paciente')->find(array($request->getParameter('id'))), sprintf('Object paciente does not exist (%s).', $request->getParameter('id')));
-    $paciente->delete();
+    $paciente->setActivo(0);
+    $paciente->save();
 
     $this->redirect('paciente/index');
   }
@@ -184,7 +187,7 @@ class pacienteActions extends sfActions
               $paciente->setCredencial($fileName['credencial']['name']);
            }
 
-      } 
+      }
 
       $paciente->save();
 
