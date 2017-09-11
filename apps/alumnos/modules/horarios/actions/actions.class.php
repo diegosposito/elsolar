@@ -36,16 +36,18 @@ class horariosActions extends sfActions
     $this->idanio = date('Y');
     $this->personas_tiempos = "";
 
-    if ($request->isMethod(sfRequest::POST)){    
-        $this->idmes = $request->getParameter('meses');
-        $this->idanio =$request->getParameter('anio');
+    if($request->getParameter('meses')>0)
+       $this->idmes = $request->getParameter('meses');
 
-        if ($request->getParameter('idpersona')>0)
-           $this->idpersona = $request->getParameter('idpersona'); 
-        
-        $this->personas_tiempos = Doctrine_Core::getTable('Horarios')->obtenerTiempoTrabajadoxPeriodo($this->idpersona, $request->getParameter('meses'), $request->getParameter('anio')); 
-        
-    } 
+    if($request->getParameter('anio')>0)
+       $this->idanio = $request->getParameter('anio');
+       
+    if($request->getParameter('idpersona')>0)
+        $this->idpersona = $request->getParameter('idpersona'); 
+
+    $this->personas_tiempos = Doctrine_Core::getTable('Horarios')->obtenerTiempoTrabajadoxPeriodo($this->idpersona, $request->getParameter('meses'), $request->getParameter('anio')); 
+      
+ 
   }
 
   public function executePersonalhoraspdf(sfWebRequest $request){
