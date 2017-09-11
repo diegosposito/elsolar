@@ -22,7 +22,7 @@
     }
   </style>
 <br>
- <a href="<?php echo url_for('horarios/personal') ?>"><< Volver al listado</a>
+ <a href="<?php echo url_for('horarios/personal?meses='.$idmes).'/anio/'.$anio ?>"><?php echo '<< Volver al listado' ?></a>
  <br>
 <table>
   <tbody>
