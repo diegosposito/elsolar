@@ -32,8 +32,8 @@ class horariosActions extends sfActions
       ->execute();
 
     $this->idpersona = "";
-    $this->idmes = (int) date('m');
-    $this->idanio = date('Y');
+   // $this->idmes = (int) date('m');
+   // $this->idanio = date('Y');
     $this->personas_tiempos = "";
 
     if($request->getParameter('meses')>0)
@@ -45,7 +45,14 @@ class horariosActions extends sfActions
     if($request->getParameter('idpersona')>0)
         $this->idpersona = $request->getParameter('idpersona'); 
 
-    $this->personas_tiempos = Doctrine_Core::getTable('Horarios')->obtenerTiempoTrabajadoxPeriodo($this->idpersona, $request->getParameter('meses'), $request->getParameter('anio')); 
+    if(!$this->idmes>0)  
+      $this->idmes = (int) date('m');
+
+    if(!$this->idanio>0)  
+      $this->idanio = date('Y');
+
+
+    $this->personas_tiempos = Doctrine_Core::getTable('Horarios')->obtenerTiempoTrabajadoxPeriodo($this->idpersona, $this->idmes, $this->idanio); 
       
  
   }
