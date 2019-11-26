@@ -155,6 +155,8 @@ class pacienteActions extends sfActions
 
       $paciente = $form->save();
 
+      $paciente->setActivo(1);
+
       if($recuperar_credencial && !$es_nuevo)
          $paciente->setCredencial($credencial_name);
 
