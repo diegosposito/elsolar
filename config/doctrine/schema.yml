@@ -2662,6 +2662,7 @@ Paciente:
     titular: { type: integer, primary: false, default: '0' }
     parentesco: { type: integer, primary: false, default: '0' }
     ocupacion: { type: string(200), primary: false, notnull: true, default: '' }
+    diagnostico: { type: string(2000), primary: false, notnull: true, default: '' }
     siglas: { type: string(200), primary: false, notnull: true, default: '' }
     trabajo: { type: string(200), primary: false, notnull: true, default: '' }
     jerarquia: { type: string(200), primary: false, notnull: true, default: '' }
