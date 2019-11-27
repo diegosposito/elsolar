@@ -20,7 +20,7 @@
     <tbody>
           <?php echo $form->renderGlobalErrors() ?>
         <tr>
-        <th align="center" colspan=4><?php echo ''.'D A T O S &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P E R S O N A L E S ' ?></th>
+        <th align="center" colspan=4><?php echo ''.'I N F O R M A C I O N &nbsp;&nbsp;D E L&nbsp;&nbsp;&nbsp;B E N E F I C I A R I O ' ?></th>
         </tr>
 
         <tr>
@@ -92,6 +92,16 @@
        <td align="left"><?php echo "<b>".$form['imagefile']->renderLabel()."</b>" ?></td>
        <td  colspan="3" align="left"><?php echo $form['imagefile'] ?></td>
      </tr>
+
+     <tr>
+        <th align="center" colspan=4><?php echo ''.'D I A G N O S T I C O ' ?></th>
+      </tr>
+         <tr>
+           <td colspan="1"><?php echo "<b>".$form['diagnostico']->renderLabel()."</b>" ?></td>
+           <td colspan="3"><?php echo $form['diagnostico'] ?></td>
+         </tr>
+      
+
       <tr>
         <th align="center" colspan=4><?php echo ''.'D A T O S &nbsp;&nbsp;&nbsp;C O N T A C T O ' ?></th>
       </tr>
