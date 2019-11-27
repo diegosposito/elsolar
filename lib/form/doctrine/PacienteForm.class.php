@@ -35,6 +35,7 @@ class PacienteForm extends BasePacienteForm
         $this->widgetSchema->setLabel('titular', '<p align="left">Titular:</p>');
         $this->widgetSchema->setLabel('parentesco', '<p align="left">Parentesco:</p>');
         $this->widgetSchema->setLabel('ocupacion', '<p align="left">Ocupación:</p>');
+        $this->widgetSchema->setLabel('diagnostico', '<p align="left">Diagnóstico:</p>');
         $this->widgetSchema->setLabel('siglas', '<p align="left">Siglas:</p>');
       //  $this->widgetSchema->setLabel('idplan', '<p align="left">Plan:</p>');
         $this->widgetSchema->setLabel('trabajo', '<p align="left">Trabajo:</p>');
@@ -88,6 +89,9 @@ class PacienteForm extends BasePacienteForm
       $this->widgetSchema->setLabel('parentesco', '<p align="left">Parentesco:</p>');
       $this->widgetSchema['ocupacion'] = new sfWidgetFormInputText(array(), array("style"=>'width: 250px;'));
       $this->widgetSchema->setLabel('ocupacion', '<p align="left">Ocupación:</p>');
+
+      //$this->widgetSchema['diagnostico'] = new sfWidgetFormInputText(array(), array("style"=>'width: 250px;'));
+      $this->widgetSchema->setLabel('diagnostico', '<p align="left">Diagnóstico:</p>');
 
 		  $this->widgetSchema['fechanac'] =
 		  new sfWidgetFormDate(array('format' => '%day%/%month%/%year%','years' => $years));
