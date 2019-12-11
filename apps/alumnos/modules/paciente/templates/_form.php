@@ -186,7 +186,13 @@
            <?php echo $form['mamdireccion']->render() ?>
          </td>
        </tr>
-
+        <tr>
+        <td><?php echo "<b>".$form['vivemadre']->renderLabel()."</b>" ?></td>
+        <td><?php echo $form['vivemadre'] ?></td>
+        <td align="left"><?php echo "<b>".$form['convivemadre']->renderLabel()."</b>" ?></td>
+        <td align="left"><?php echo $form['convivemadre'] ?></td>
+      </tr>
+      
        <tr>
          <th align="center" colspan=4><?php echo ''.'D A T O S &nbsp;&nbsp;&nbsp;P A D R E / F A M I L I A R ' ?></th>
        </tr>
@@ -234,6 +240,12 @@
              <?php echo $form['papdireccion']->render() ?>
            </td>
          </tr>
+          <tr>
+        <td><?php echo "<b>".$form['vivepadre']->renderLabel()."</b>" ?></td>
+        <td><?php echo $form['vivepadre'] ?></td>
+        <td align="left"><?php echo "<b>".$form['convivepadre']->renderLabel()."</b>" ?></td>
+        <td align="left"><?php echo $form['convivepadre'] ?></td>
+      </tr>
 
 
     </tbody>
