@@ -69,6 +69,22 @@ class PacienteForm extends BasePacienteForm
       $this->widgetSchema['titular'] = new sfWidgetFormSelect(array('choices' => $arregloTitular));
       $this->widgetSchema->setLabel('titular', '<p align="left">Titular:</p>');
 
+
+      $this->widgetSchema['vivepadre'] = new sfWidgetFormSelect(array('choices' => $arregloTitular));
+      $this->widgetSchema->setLabel('vivepadre', '<p align="left">Vive?:</p>');
+
+
+      $this->widgetSchema['convivepadre'] = new sfWidgetFormSelect(array('choices' => $arregloTitular));
+      $this->widgetSchema->setLabel('convivepadre', '<p align="left">Conviven?</p>');
+
+
+      $this->widgetSchema['vivemadre'] = new sfWidgetFormSelect(array('choices' => $arregloTitular));
+      $this->widgetSchema->setLabel('vivemadre', '<p align="left">Vive?</p>');
+
+
+      $this->widgetSchema['convivemadre'] = new sfWidgetFormSelect(array('choices' => $arregloTitular));
+      $this->widgetSchema->setLabel('convivemadre', '<p align="left">Conviven?</p>');
+
       $this->widgetSchema['parentesco'] = new sfWidgetFormSelect(array('choices' => $arregloParentesco));
       $this->widgetSchema->setLabel('parentesco', '<p align="left">Parentesco:</p>');
 
