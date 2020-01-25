@@ -161,6 +161,20 @@
 										<?php echo '<li>'.link_to('Salir', 'sf_guard_signout').'</li>' ; ?>
 									<?php } 
 
+                                                                         // Menu del grupo trabajo social
+                                                                         if ($currentUser->hasCredential("trabajosocial")){ ?>
+                                                                              <?php echo '<li>'.link_to('Obras Sociales', 'obrassociales/index').'</li>' ; ?>
+                                                                              <?php echo '<li>'.link_to('Pacientes', 'paciente/index').'</li>' ; ?>
+                                                                             <?php echo '<li>'.link_to('Salir', 'sf_guard_signout').'</li>' ; ?>
+                                                                        <?php }
+
+                                                                       // Menu del grupo trabajo social solo lectura
+                                                                       if ($currentUser->hasCredential("trabajosociallectura")){ ?>
+                                                                           <?php echo '<li>'.link_to('Obras Sociales', 'obrassociales/index').'</li>' ; ?>
+                                                                           <?php echo '<li>'.link_to('Pacientes', 'paciente/index').'</li>' ; ?>
+                                                                           <?php echo '<li>'.link_to('Salir', 'sf_guard_signout').'</li>' ; ?>
+                                                                        <?php }
+
 									// Menu del grupo administracion
 									if ($currentUser->hasCredential("registro")){ ?>
 									    <?php echo '<li>'.link_to('Horarios', 'horarios/registro').'</li>' ; ?>
