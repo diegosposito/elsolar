@@ -2717,3 +2717,35 @@ Paciente:
       local: idsexo
       foreign: idsexo
       foreignAlias: Sexo
+
+Historialpaciente:
+  actAs:
+    Timestampable: ~
+    fzblameable: ~
+  columns:
+    id: { type: integer, primary: true, autoincrement: true }
+    familiara: { type: string(150), primary: false, notnull: true, default: '' }
+    familiarb: { type: string(150), primary: false, notnull: true, default: '' }
+    familiarc: { type: string(150), primary: false, notnull: true, default: '' }
+    fecharegistro: { type: date(25), primary: false, notnull: true, default: '2020-01-01' }
+    detalle: { type: string(2000), primary: false, notnull: true, default: '' }
+    activo: { type: boolean, notnull: true, default: 1 }
+    idmovimiento: { type: integer, notnull: true }
+  relations:
+    Profesionalesasociado:
+      local: idmovimiento
+      foreign: idmovimiento
+      foreignAlias: Profesionalesasociado
+
+Profesionalesasociado:
+  actAs:
+    Timestampable: ~
+    fzblameable: ~
+  columns:
+    id: { type: integer, primary: true, autoincrement: true }
+    familiara: { type: string(150), primary: false, notnull: true, default: '' }
+    familiarb: { type: string(150), primary: false, notnull: true, default: '' }
+    familiarc: { type: string(150), primary: false, notnull: true, default: '' }
+    fecharegistro: { type: date(25), primary: false, notnull: true, default: '2020-01-01' }
+    detalle: { type: string(2000), primary: false, notnull: true, default: '' }
+    idmovimiento: { type: integer, notnull: true }
