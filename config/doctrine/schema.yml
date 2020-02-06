@@ -2749,3 +2749,9 @@ Profesionalesasociado:
     fecharegistro: { type: date(25), primary: false, notnull: true, default: '2020-01-01' }
     detalle: { type: string(2000), primary: false, notnull: true, default: '' }
     idmovimiento: { type: integer, notnull: true }
+    idpersona: { type: integer, primary: false, autoincrement: false, default: '1' }
+  relations:
+    Personas:
+      local: idpersona
+      foreign: idpersona
+      foreignAlias: Personas
