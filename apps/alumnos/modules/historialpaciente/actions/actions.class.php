@@ -70,8 +70,17 @@ class historialpacienteActions extends sfActions
   {
     $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
     if ($form->isValid())
-    {
+    {  
+
+       $es_nuevo = true;$credencial_name= ''; $imagefile_name= '';
+      if ($request->getPostParameter('paciente[id]')>0)
+          $es_nuevo=false;
+
       $historialpaciente = $form->save();
+ 
+      $historialpaciente->setActivo(1);
+
+      $historialpaciente->save();
 
       $this->redirect('historialpaciente/edit?id='.$historialpaciente->getId());
     }
