@@ -2731,11 +2731,12 @@ Historialpaciente:
     detalle: { type: string(2000), primary: false, notnull: true, default: '' }
     activo: { type: boolean, notnull: true, default: 1 }
     idmovimiento: { type: integer, notnull: true }
+    idpaciente: { type: integer, primary: false, autoincrement: false, default: '1' }
   relations:
-    Profesionalesasociado:
-      local: idmovimiento
-      foreign: idmovimiento
-      foreignAlias: Profesionalesasociado
+    Paciente:
+      local: idpaciente
+      foreign: id
+      foreignAlias: Paciente
 
 Profesionalesasociado:
   actAs:
@@ -2754,4 +2755,4 @@ Profesionalesasociado:
     Personas:
       local: idpersona
       foreign: idpersona
-      foreignAlias: Personas
+      foreignAlias: Personas   
