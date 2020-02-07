@@ -78,7 +78,7 @@ class historialpacienteActions extends sfActions
 
       $historialpaciente = $form->save();
  
-      $historialpaciente->setActivo(1);
+     // $historialpaciente->setActivo(1);
 
       $historialpaciente->save();
 
