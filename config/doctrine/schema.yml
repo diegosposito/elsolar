@@ -2724,27 +2724,12 @@ Historialpaciente:
     fzblameable: ~
   columns:
     id: { type: integer, primary: true, autoincrement: true }
-    familiara: { type: string(150), primary: false, notnull: true, default: '' }
-    familiarb: { type: string(150), primary: false, notnull: true, default: '' }
-    familiarc: { type: string(150), primary: false, notnull: true, default: '' }
-    fechaalta: { type: date(25), primary: false, notnull: true, default: '2020-01-01' }
-    observaciones: { type: string(2000), primary: false, notnull: true, default: '' }
-    idmovimiento: { type: integer, notnull: true }
+    fecha: { type: date(25), primary: false, notnull: true, default: '2020-01-01' }
+    detalle: { type: string(2000), primary: false, notnull: true, default: '' }
+    profesionales: { type: string(2000), primary: false, notnull: true, default: '' }
     idpaciente: { type: integer, primary: false, autoincrement: false, default: '1' }
   relations:
     Paciente:
       local: idpaciente
       foreign: id
       foreignAlias: Paciente
-
-Detallehistorialpaciente:
-  actAs:
-    Timestampable: ~
-    fzblameable: ~
-  columns:
-    id: { type: integer, primary: true, autoincrement: true }
-    fecha: { type: date(25), primary: false, notnull: true, default: '2020-01-01' }
-    detalle: { type: string(2000), primary: false, notnull: true, default: '' }
-    profesionales: { type: string(2000), primary: false, notnull: true, default: '' }
-    idmovimiento: { type: integer, notnull: true }
-    activo: { type: boolean, notnull: true, default: 1 }  
