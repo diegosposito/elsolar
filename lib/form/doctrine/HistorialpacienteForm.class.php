@@ -16,11 +16,9 @@ class HistorialpacienteForm extends BaseHistorialpacienteForm
   	  unset( $this['created_at'], $this['updated_at'], $this['created_by'], $this['updated_by'], $this['idmovimiento'] );
 
   	    // Se define los labels
-	    $this->widgetSchema->setLabel('familiara', '<p align="left">Padre:</p>');
- 	    $this->widgetSchema->setLabel('familiarb', '<p align="left">Madre:</p>');
-        $this->widgetSchema->setLabel('familiarc', '<p align="left">Tutor:</p>');
- 	    $this->widgetSchema->setLabel('fechaalta', '<p align="left">Fecha Inicio:</p>');
- 	    $this->widgetSchema->setLabel('observaciones', '<p align="left">Detalle:</p>');
+	    $this->widgetSchema->setLabel('fecha', '<p align="left">Fecha Inicio:</p>');
+ 	    $this->widgetSchema->setLabel('detalle', '<p align="left">Detalle:</p>');
+ 	    $this->widgetSchema->setLabel('profesionales', '<p align="left">Profesionales:</p>');
        
 
       /*$oss = Doctrine_Core::getTable('ObrasSociales')->obtenerTodas();
@@ -34,13 +32,13 @@ class HistorialpacienteForm extends BaseHistorialpacienteForm
 	  $years = array_combine($range,$range);
 
      
-	  $this->widgetSchema['fechaalta'] =
+	  $this->widgetSchema['fecha'] =
 	  new sfWidgetFormDate(array('format' => '%day%/%month%/%year%','years' => $years));
 	  
-	  $this->widgetSchema->setLabel('fechaalta', '<p align="left">Fecha:</p>');
+	  $this->widgetSchema->setLabel('fecha', '<p align="left">Fecha:</p>');
       
-      $this->widgetSchema['familiara'] = new sfWidgetFormInputText(array(), array("style"=>'width: 250px;'));
-      $this->widgetSchema->setLabel('familiara', '<p align="left">Padre:</p>');
+      //$this->widgetSchema['detalle'] = new sfWidgetFormInputText(array(), array("style"=>'width: 250px;'));
+      $this->widgetSchema->setLabel('detalle', '<p align="left">Detalle:</p>');
 
       
   }
