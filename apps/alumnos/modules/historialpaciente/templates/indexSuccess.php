@@ -4,17 +4,10 @@
   <thead>
     <tr>
       <th>Id</th>
-      <th>Familiara</th>
-      <th>Familiarb</th>
-      <th>Familiarc</th>
-      <th>Fecharegistro</th>
       <th>Detalle</th>
-      <th>Activo</th>
-      <th>Idmovimiento</th>
-      <th>Created at</th>
-      <th>Updated at</th>
-      <th>Created by</th>
-      <th>Updated by</th>
+      <th>Profesionales</th>
+      <th>Fecha</th>
+      <th>Paciente</th>
     </tr>
   </thead>
   <tbody>
