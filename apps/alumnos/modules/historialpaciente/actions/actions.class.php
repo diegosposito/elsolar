@@ -46,6 +46,7 @@ class historialpacienteActions extends sfActions
   {
     $this->forward404Unless($historialpaciente = Doctrine_Core::getTable('Historialpaciente')->find(array($request->getParameter('id'))), sprintf('Object historialpaciente does not exist (%s).', $request->getParameter('id')));
     $this->form = new HistorialpacienteForm($historialpaciente);
+    $this->idpaciente = $historialpaciente->getIdpaciente();
   }
 
   public function executeUpdate(sfWebRequest $request)
@@ -75,13 +76,13 @@ class historialpacienteActions extends sfActions
     if ($form->isValid())
     {  
 
-       $es_nuevo = true;$credencial_name= ''; $imagefile_name= '';
-      if ($request->getPostParameter('paciente[id]')>0)
+      $es_nuevo = true;
+      if ($request->getPostParameter('historialpaciente[id]')>0)
           $es_nuevo=false;
 
       $historialpaciente = $form->save();
  
-     // $historialpaciente->setActivo(1);
+      $historialpaciente->setIdpaciente($request->getPostParameter('historialpaciente[idpaciente]'));
 
       $historialpaciente->save();
 

@@ -47,7 +47,7 @@
             <?php $i=0; ?>
       <?php foreach($historialpacientes as $historialpaciente){ ?>
       <tr class="fila_<?php echo $i%2 ; ?>">
-      <td width="40%" align="left"><a href="#" class="tooltip"><div style="align: left;"><?php echo substr($historialpaciente->getDetalle(), 0, 25);  ?><span>
+      <td width="40%" align="left"><a href="#" class="tooltip"><div style="align: left;"><?php echo substr($historialpaciente->getDetalle()."...", 0, 35);  ?><span>
         <strong><?php echo "Fecha : ".date("d/m/Y", strtotime($historialpaciente->getFecha())) ?></strong><br>
         <?php echo htmlspecialchars_decode($historialpaciente->getDetalle()) ?></span></div"></a>
       </td>
