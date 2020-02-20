@@ -99,6 +99,12 @@ class pacienteActions extends sfActions
     $this->form = new PacienteForm($paciente);
     $this->forward404Unless($this->paciente = Doctrine_Core::getTable('Paciente')->find(array($request->getParameter('id'))), sprintf('Object paciente does not exist (%s).', $request->getParameter('id')));
 
+    $this->historialpacientes = Doctrine_Core::getTable('Historialpaciente')
+      ->createQuery('a')
+      ->Where('a.idpaciente = ?', $request->getParameter('id'))
+      ->orderBy('a.fecha DESC')
+      ->execute();
+
   }
 
   public function executeUpdate(sfWebRequest $request)
