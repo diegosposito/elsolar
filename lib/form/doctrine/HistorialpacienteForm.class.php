@@ -19,7 +19,7 @@ class HistorialpacienteForm extends BaseHistorialpacienteForm
 	    $this->widgetSchema->setLabel('fecha', '<p align="left">Fecha Inicio:</p>');
  	    $this->widgetSchema->setLabel('detalle', '<p align="left">Detalle:</p>');
  	    $this->widgetSchema->setLabel('profesionales', '<p align="left">Profesionales:</p>');
-       
+        $this->widgetSchema['idpaciente'] = new sfWidgetFormInputHidden();
 
       /*$oss = Doctrine_Core::getTable('ObrasSociales')->obtenerTodas();
       foreach($oss as $os){
