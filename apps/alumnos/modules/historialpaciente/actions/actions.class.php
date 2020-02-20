@@ -14,7 +14,10 @@ class historialpacienteActions extends sfActions
   {
     $this->historialpacientes = Doctrine_Core::getTable('Historialpaciente')
       ->createQuery('a')
+      ->Where('a.idpaciente = 1')
+      ->orderBy('a.fecha DESC')
       ->execute();
+
   }
 
   public function executeShow(sfWebRequest $request)
