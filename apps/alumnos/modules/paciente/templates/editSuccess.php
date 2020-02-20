@@ -59,6 +59,8 @@
         actualizarFormato('#ostiponroafiliado', $(this).val(), 0);
     }); 
 
+    openCity(event, 'Historial');
+
   });
 
     $('#paciente_idprovincia').click(function() {
@@ -158,13 +160,13 @@
 </script>
 
 <br>
-<h1 align="center" style="color:black;">Editar Pacientes</h1>
+<h1 align="left" style="color:black;">Ficha Paciente : <?php echo $paciente->getApellido().', '.$paciente->getNombre(); ?> </h1>
 <br>
 
 <ul class="tab">
   <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Datos')">Datos Personales</a></li>
-  <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Documentacion')">Documentacion</a></li>
   <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Historial')">Historial</a></li>
+  <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Actualizar')">Registrar Movimientos</a></li>
  </ul>
 
 <div id="Datos" class="tabcontent">
@@ -175,5 +177,10 @@ include_partial('form', array('form' => $form, 'paciente' => $paciente)) ?>
 <div id="Historial" class="tabcontent">
 <?php 
 include_partial('formhistorial', array('historialpacientes' => $historialpacientes, 'paciente' => $paciente)) ?>
+ </div>
+
+ <div id="Actualizar" class="tabcontent">
+<?php 
+include_partial('formnewhistorial', array('form' => $formnewhistorial, 'paciente' => $paciente)) ?>
  </div>
 

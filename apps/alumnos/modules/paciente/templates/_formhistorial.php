@@ -26,9 +26,7 @@
   </style>
   <br>
 <h1 align="center" style="color:black;">Historial Paciente</h1>
-<br>
 <div align="center">
-<a href="<?php echo url_for('historialpaciente/new') ?>">Agregar Historial</a>
 
 <?php if (count($historialpacientes) > 0){ ?>              
   <table cellspacing="0" class="stats">
@@ -47,7 +45,7 @@
             <?php $i=0; ?>
       <?php foreach($historialpacientes as $historialpaciente){ ?>
       <tr class="fila_<?php echo $i%2 ; ?>">
-      <td width="40%" align="left"><a href="#" class="tooltip"><div style="align: left;"><?php echo substr($historialpaciente->getDetalle(), 0, 25);  ?><span>
+      <td width="40%" align="left"><a href="#" class="tooltip"><div style="align: left;"><?php echo substr($historialpaciente->getDetalle(), 0, 31)."...";  ?><span>
         <strong><?php echo "Fecha : ".date("d/m/Y", strtotime($historialpaciente->getFecha())) ?></strong><br>
         <?php echo htmlspecialchars_decode($historialpaciente->getDetalle()) ?></span></div"></a>
       </td>

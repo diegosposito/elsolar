@@ -95,15 +95,25 @@ class pacienteActions extends sfActions
 
   public function executeEdit(sfWebRequest $request)
   {
+    
+    // Formulario para agregar un nuevo paciente
     $this->forward404Unless($paciente = Doctrine_Core::getTable('Paciente')->find(array($request->getParameter('id'))), sprintf('Object paciente does not exist (%s).', $request->getParameter('id')));
     $this->form = new PacienteForm($paciente);
     $this->forward404Unless($this->paciente = Doctrine_Core::getTable('Paciente')->find(array($request->getParameter('id'))), sprintf('Object paciente does not exist (%s).', $request->getParameter('id')));
 
+    // Consulta para rellenar el historial de pacientes
     $this->historialpacientes = Doctrine_Core::getTable('Historialpaciente')
       ->createQuery('a')
       ->Where('a.idpaciente = ?', $request->getParameter('id'))
       ->orderBy('a.fecha DESC')
       ->execute();
+
+
+    $this->formnewhistorial = new HistorialpacienteForm();
+    $this->formnewhistorial->setDefault('idpaciente', $request->getParameter('id')); 
+   // $this->processForm($request, $this->formnewhistorial);
+
+   // $this->setTemplate('new');  
 
   }
 
