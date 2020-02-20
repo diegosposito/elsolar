@@ -67,7 +67,7 @@ class historialpacienteActions extends sfActions
     $this->forward404Unless($historialpaciente = Doctrine_Core::getTable('Historialpaciente')->find(array($request->getParameter('id'))), sprintf('Object historialpaciente does not exist (%s).', $request->getParameter('id')));
     $historialpaciente->delete();
 
-    $this->redirect('historialpaciente/index');
+     $this->redirect('paciente/edit?id='.$historialpaciente->getIdpaciente());
   }
 
   protected function processForm(sfWebRequest $request, sfForm $form)
