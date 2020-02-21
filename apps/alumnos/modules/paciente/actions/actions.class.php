@@ -74,7 +74,11 @@ class pacienteActions extends sfActions
 
   public function executeNew(sfWebRequest $request)
   {
-    $this->form = new PacienteForm();
+    
+    $this->form ='';
+    if ($currentUser->isAuthenticated() and in_array("trabajosocial", $currentUser->getCredentials())) {
+       $this->form = new PacienteForm();
+    }
   }
 
   public function executeNuevo(sfWebRequest $request)
@@ -113,8 +117,13 @@ class pacienteActions extends sfActions
     $this->formnewhistorial->setDefault('idpaciente', $request->getParameter('id')); 
    // $this->processForm($request, $this->formnewhistorial);
 
-   // $this->setTemplate('new');  
+    $currentUser = sfContext::getInstance()->getUser();
 
+   $this->modulohabilitado = false;
+     if ($currentUser->isAuthenticated() and in_array("trabajosocial", $currentUser->getCredentials())) {
+       
+       $this->modulohabilitado = true;
+     }
   }
 
   public function executeUpdate(sfWebRequest $request)
