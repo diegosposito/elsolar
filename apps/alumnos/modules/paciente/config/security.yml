@@ -1,3 +1,3 @@
 all:
   is_secure:  true        # off es el valor por defecto
-  credentials: [[administracion, rrhh, trabajosocial ]]
+  credentials: [[administracion, rrhh, trabajosocial, trabajosociallectura ]]
