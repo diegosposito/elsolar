@@ -171,16 +171,16 @@
 
 <div id="Datos" class="tabcontent">
 <?php 
-include_partial('form', array('form' => $form, 'paciente' => $paciente)) ?>
+include_partial('form', array('form' => $form, 'paciente' => $paciente, 'modulohabilitado' => $modulohabilitado)) ?>
  </div>
 
 <div id="Historial" class="tabcontent">
 <?php 
-include_partial('formhistorial', array('historialpacientes' => $historialpacientes, 'paciente' => $paciente)) ?>
+include_partial('formhistorial', array('historialpacientes' => $historialpacientes, 'paciente' => $paciente, 'modulohabilitado' => $modulohabilitado)) ?>
  </div>
 
  <div id="Actualizar" class="tabcontent">
 <?php 
-include_partial('formnewhistorial', array('form' => $formnewhistorial, 'paciente' => $paciente)) ?>
+include_partial('formnewhistorial', array('form' => $formnewhistorial, 'paciente' => $paciente, 'modulohabilitado' => $modulohabilitado)) ?>
  </div>
 
