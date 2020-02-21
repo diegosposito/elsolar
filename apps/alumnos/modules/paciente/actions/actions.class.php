@@ -141,9 +141,14 @@ class pacienteActions extends sfActions
   {
     $request->checkCSRFProtection();
 
-    $this->forward404Unless($paciente = Doctrine_Core::getTable('Paciente')->find(array($request->getParameter('id'))), sprintf('Object paciente does not exist (%s).', $request->getParameter('id')));
-    $paciente->setActivo(0);
-    $paciente->save();
+    // solo de trabajo social pueden borrar pacientes
+    if ($currentUser->isAuthenticated() and in_array("trabajosocial", $currentUser->getCredentials())) {
+
+        $this->forward404Unless($paciente = Doctrine_Core::getTable('Paciente')->find(array($request->getParameter('id'))), sprintf('Object paciente does not exist (%s).', $request->getParameter('id')));
+        $paciente->setActivo(0);
+        $paciente->save();
+
+     }   
 
     $this->redirect('paciente/index');
   }
