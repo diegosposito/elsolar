@@ -13,7 +13,9 @@
         <td colspan="6">
           &nbsp;<a href="<?php echo url_for('paciente/index') ?>">Volver al listado</a>
           <?php echo $form->renderHiddenFields(false) ?>
-          <input type="submit" value="Guardar" />
+          <?php if ($modulohabilitado) { ?>
+              <input type="submit" value="Guardar" />
+          <?php } ?>
         </td>
       </tr>
     </tfoot>
